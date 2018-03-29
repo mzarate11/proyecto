@@ -144,12 +144,6 @@
     <Compile Include="Proyecto_2_VentanasDelMenu\Listar\frm_Vuelos.Designer.cs">
       <DependentUpon>frm_Vuelos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Proyecto_2_VentanasDelMenu\Modificar\frm_Mostrar_Estados.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Proyecto_2_VentanasDelMenu\Modificar\frm_Mostrar_Estados.Designer.cs">
-      <DependentUpon>frm_Mostrar_Estados.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -207,9 +201,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Proyecto_2_VentanasDelMenu\Listar\frm_Vuelos.resx">
       <DependentUpon>frm_Vuelos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Proyecto_2_VentanasDelMenu\Modificar\frm_Mostrar_Estados.resx">
-      <DependentUpon>frm_Mostrar_Estados.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
