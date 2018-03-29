@@ -65,7 +65,7 @@ namespace Proyecto_2_BLL.Catagolos_Mantinimiento_BLL
             Obj_BLL.TablaParametros(ref Obj_DAL);
             Obj_DAL.DT_Parametros.Rows.Add("@IdTipoAvion", 3, sFiltro);
 
-            Obj_DAL.sSentencia = ConfigurationManager.AppSettings["Eliminar_Estados"].ToString().Trim();
+            Obj_DAL.sSentencia = ConfigurationManager.AppSettings["Eliminar_tipos_aviones"].ToString().Trim();
             Obj_BLL.Ejec_NonQuery(ref Obj_DAL);
 
             if (Obj_DAL.sMsgError == string.Empty)
