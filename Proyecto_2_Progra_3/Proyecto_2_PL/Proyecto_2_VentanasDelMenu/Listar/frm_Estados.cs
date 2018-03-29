@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Proyecto_2_BLL.Catagolos_Mantinimiento_BLL;
-using Proyecto_2_PL.Proyecto_2_VentanasDelMenu.Modificar;
+using Proyecto_2_PL.Proyecto_2_VentanasDelMenu;
 using Proyecto_2_DAL.Catalogos_y_Mantenimientos;
 
 namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
@@ -106,7 +106,6 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
         private void bnt_Nuevo_Click(object sender, EventArgs e)
         {
             ObjEstadosDAL = new cls_Estados_DAL();
-            frm_Mostrar_Estados PantEstados = new frm_Mostrar_Estados();
             ObjEstadosDAL.cBandAX = 'I';
             PantEstados.Obj_DAL_Estados = ObjEstadosDAL;
             PantEstados.ShowDialog();
