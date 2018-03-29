@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{505D7F79-CF88-4BD4-B881-9928F73B43FA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Proyecto_2_BLL</RootNamespace>
+    <AssemblyName>Proyecto_2_BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Catagolos_Mantinimiento_BLL\cls_Aerolineas_BLL.cs" />
+    <Compile Include="Catagolos_Mantinimiento_BLL\cls_Aviones_BLL.cs" />
+    <Compile Include="Catagolos_Mantinimiento_BLL\cls_Clientes_BLL.cs" />
+    <Compile Include="Catagolos_Mantinimiento_BLL\cls_Destinos_BLL.cs" />
+    <Compile Include="Catagolos_Mantinimiento_BLL\cls_Empleados_BLL.cs" />
+    <Compile Include="Catagolos_Mantinimiento_BLL\cls_Estados_BLL.cs" />
+    <Compile Include="Catagolos_Mantinimiento_BLL\cls_Paises_BLL.cs" />
+    <Compile Include="Catagolos_Mantinimiento_BLL\cls_TiposA_BLL.cs" />
+    <Compile Include="Catagolos_Mantinimiento_BLL\cls_TiposClientes_BLL.cs" />
+    <Compile Include="Catagolos_Mantinimiento_BLL\cls_TiposEmpleados_BLL.cs" />
+    <Compile Include="Catagolos_Mantinimiento_BLL\cls_T_CategoriasVuelos_BLL.cs" />
+    <Compile Include="Catagolos_Mantinimiento_BLL\cls_Usuarios_BLL.cs" />
+    <Compile Include="Catagolos_Mantinimiento_BLL\cls_Vuelos_BLL.cs" />
+    <Compile Include="cls_Bases_BLL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Proyecto_2_DAL\Proyecto_2_DAL.csproj">
+      <Project>{8eda95e4-ffed-47a1-a703-6e4aa06ca65f}</Project>
+      <Name>Proyecto_2_DAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
