@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="BaseDatos_DAL\cls_BaseDatos_DAL.cs" />
     <Compile Include="Catalogos y Mantenimientos\cls_Estados_DAL.cs" />
+    <Compile Include="Catalogos y Mantenimientos\cls_TipoAviones_DAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
