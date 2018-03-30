@@ -25,6 +25,7 @@ namespace Proyecto_2_BLL.Catagolos_Mantinimiento_BLL
             {
                 sMsjError = string.Empty;
                 return Obj_DAL.DataSet.Tables[0];
+
             }
             else
             {

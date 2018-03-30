@@ -210,7 +210,7 @@
             this.dgv_Estados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_Estados.Size = new System.Drawing.Size(815, 370);
             this.dgv_Estados.TabIndex = 4;
-            this.dgv_Estados.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Estados_CellContentDoubleClick);
+            this.dgv_Estados.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_Estados_RowHeaderMouseDoubleClick);
             // 
             // frm_Estados
             // 

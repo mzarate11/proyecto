@@ -8,11 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Proyecto_2_BLL.Catagolos_Mantinimiento_BLL;
+using Proyecto_2_DAL.Catalogos_y_Mantenimientos;
+using Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar;
 
 namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
 {
     public partial class frm_Clientes : Form
     {
+        #region Global
+        cls_Clientes_DAL ObjCLientes_DAL;
+        #endregion
         public frm_Clientes()
         {
             InitializeComponent();
@@ -95,6 +100,59 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
             {
                 MessageBox.Show("No hay registros para eliminar");
             }
+        }
+
+        private void bnt_Nuevo_Click(object sender, EventArgs e)
+        {
+            ObjCLientes_DAL = new cls_Clientes_DAL();
+            frm_ModificarClientes pantCLientes = new frm_ModificarClientes();
+            ObjCLientes_DAL.cBandAxn = 'I';
+            pantCLientes.ObjClientes_DAL = ObjCLientes_DAL;
+            pantCLientes.ShowDialog();
+
+            txtFiltro.Text = string.Empty;
+            CargarDatos();
+
+        }
+
+        private void btn_Modificar_Click(object sender, EventArgs e)
+        {
+            ObjCLientes_DAL = new cls_Clientes_DAL();
+            frm_ModificarClientes pantClientes = new frm_ModificarClientes();
+            ObjCLientes_DAL.cBandAxn = 'U';
+            ObjCLientes_DAL.sIdCliente = dgv_Clientes.SelectedRows[0].Cells[0].Value.ToString().Trim();
+            ObjCLientes_DAL.sCedula = dgv_Clientes.SelectedRows[0].Cells[1].Value.ToString().Trim();
+            ObjCLientes_DAL.sNombre = dgv_Clientes.SelectedRows[0].Cells[2].Value.ToString().Trim();
+            ObjCLientes_DAL.sApellido = dgv_Clientes.SelectedRows[0].Cells[3].Value.ToString().Trim();
+            ObjCLientes_DAL.sTelefono = dgv_Clientes.SelectedRows[0].Cells[4].Value.ToString().Trim();
+
+
+
+            pantClientes.ObjClientes_DAL = ObjCLientes_DAL;
+            pantClientes.ShowDialog();
+
+            txtFiltro.Text = string.Empty;
+            CargarDatos();
+        }
+
+        private void dgv_Clientes_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            ObjCLientes_DAL = new cls_Clientes_DAL();
+            frm_ModificarClientes pantClientes = new frm_ModificarClientes();
+            ObjCLientes_DAL.cBandAxn = 'U';
+            ObjCLientes_DAL.sIdCliente = dgv_Clientes.SelectedRows[0].Cells[0].Value.ToString().Trim();
+            ObjCLientes_DAL.sCedula = dgv_Clientes.SelectedRows[0].Cells[1].Value.ToString().Trim();
+            ObjCLientes_DAL.sNombre = dgv_Clientes.SelectedRows[0].Cells[2].Value.ToString().Trim();
+            ObjCLientes_DAL.sApellido = dgv_Clientes.SelectedRows[0].Cells[3].Value.ToString().Trim();
+            ObjCLientes_DAL.sTelefono = dgv_Clientes.SelectedRows[0].Cells[4].Value.ToString().Trim();
+
+
+
+            pantClientes.ObjClientes_DAL = ObjCLientes_DAL;
+            pantClientes.ShowDialog();
+
+            txtFiltro.Text = string.Empty;
+            CargarDatos();
         }
     }
 }
