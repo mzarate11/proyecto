@@ -144,6 +144,18 @@
     <Compile Include="Proyecto_2_VentanasDelMenu\Listar\frm_Vuelos.Designer.cs">
       <DependentUpon>frm_Vuelos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\fmr_ModificarNuevo_Vuelos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\fmr_ModificarNuevo_Vuelos.Designer.cs">
+      <DependentUpon>fmr_ModificarNuevo_Vuelos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_ModificarNuevo_TipoAvion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_ModificarNuevo_TipoAvion.Designer.cs">
+      <DependentUpon>frm_ModificarNuevo_TipoAvion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Mostrar_Estados.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -207,6 +219,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Proyecto_2_VentanasDelMenu\Listar\frm_Vuelos.resx">
       <DependentUpon>frm_Vuelos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proyecto_2_VentanasDelMenu\NuevoModificar\fmr_ModificarNuevo_Vuelos.resx">
+      <DependentUpon>fmr_ModificarNuevo_Vuelos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_ModificarNuevo_TipoAvion.resx">
+      <DependentUpon>frm_ModificarNuevo_TipoAvion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Mostrar_Estados.resx">
       <DependentUpon>frm_Mostrar_Estados.cs</DependentUpon>
@@ -284,7 +302,12 @@
   <ItemGroup>
     <None Include="Resources\inicio.jpg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\tipoAviones.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vuelos.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
