@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Proyecto_2_DAL;
 using Proyecto_2_BLL.Catagolos_Mantinimiento_BLL;
+using Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar;
 
 namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
 {
@@ -97,6 +98,23 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
             {
                 MessageBox.Show("No hay registros para eliminar");
             }
+        }
+
+        private void VentanaNuevoModificar()
+        {
+            frm_ModificarNuevo_TipoAvion Pantalla = new frm_ModificarNuevo_TipoAvion();
+            Hide();
+            Pantalla.ShowDialog();
+            Show();
+        }
+        private void btn_Modificar_Click(object sender, EventArgs e)
+        {
+            VentanaNuevoModificar();
+        }
+
+        private void bnt_Nuevo_Click(object sender, EventArgs e)
+        {
+            VentanaNuevoModificar();
         }
     }
 }

@@ -16,5 +16,14 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
         {
             InitializeComponent();
         }
+
+        private void fmr_ModificarNuevo_Vuelos_Load(object sender, EventArgs e)
+        {
+            time_HoraLlegada.Format = DateTimePickerFormat.Custom;
+            time_HoraLlegada.CustomFormat = "hh:mm tt";
+
+            time_HoraSalida.Format = DateTimePickerFormat.Custom;
+            time_HoraSalida.CustomFormat = "hh:mm tt";
+        }
     }
 }

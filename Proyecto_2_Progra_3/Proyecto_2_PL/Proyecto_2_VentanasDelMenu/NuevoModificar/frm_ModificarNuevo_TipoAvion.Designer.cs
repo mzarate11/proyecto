@@ -53,6 +53,8 @@
             // cmb_IdEstado
             // 
             this.cmb_IdEstado.FormattingEnabled = true;
+            this.cmb_IdEstado.Items.AddRange(new object[] {
+            "A"});
             this.cmb_IdEstado.Location = new System.Drawing.Point(483, 291);
             this.cmb_IdEstado.Name = "cmb_IdEstado";
             this.cmb_IdEstado.Size = new System.Drawing.Size(146, 21);
@@ -76,6 +78,7 @@
             this.txt_CantidadPeso.Name = "txt_CantidadPeso";
             this.txt_CantidadPeso.Size = new System.Drawing.Size(64, 20);
             this.txt_CantidadPeso.TabIndex = 32;
+            this.txt_CantidadPeso.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_CantidadPeso_KeyPress);
             // 
             // txt_CantidadPasajeros
             // 
@@ -84,6 +87,7 @@
             this.txt_CantidadPasajeros.Name = "txt_CantidadPasajeros";
             this.txt_CantidadPasajeros.Size = new System.Drawing.Size(62, 20);
             this.txt_CantidadPasajeros.TabIndex = 31;
+            this.txt_CantidadPasajeros.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_CantidadPasajeros_KeyPress);
             // 
             // txt_Descripcion
             // 
@@ -103,12 +107,12 @@
             // 
             // txt_IdTipoAvion
             // 
-            this.txt_IdTipoAvion.Enabled = false;
             this.txt_IdTipoAvion.Location = new System.Drawing.Point(256, 80);
             this.txt_IdTipoAvion.MaxLength = 7;
             this.txt_IdTipoAvion.Name = "txt_IdTipoAvion";
             this.txt_IdTipoAvion.Size = new System.Drawing.Size(125, 20);
             this.txt_IdTipoAvion.TabIndex = 28;
+            this.txt_IdTipoAvion.TextChanged += new System.EventHandler(this.txt_IdTipoAvion_TextChanged);
             // 
             // label8
             // 
@@ -177,7 +181,7 @@
             this.toolStripLabel2});
             this.toolStrip1.Location = new System.Drawing.Point(9, 9);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(251, 39);
+            this.toolStrip1.Size = new System.Drawing.Size(220, 39);
             this.toolStrip1.TabIndex = 35;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -246,6 +250,7 @@
             this.Name = "frm_ModificarNuevo_TipoAvion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_ModificarNuevo_TipoAvion";
+            this.Load += new System.EventHandler(this.frm_ModificarNuevo_TipoAvion_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);

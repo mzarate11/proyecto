@@ -307,6 +307,7 @@
             this.Name = "fmr_ModificarNuevo_Vuelos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fmr_ModificarNuevo_Vuelos";
+            this.Load += new System.EventHandler(this.fmr_ModificarNuevo_Vuelos_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);

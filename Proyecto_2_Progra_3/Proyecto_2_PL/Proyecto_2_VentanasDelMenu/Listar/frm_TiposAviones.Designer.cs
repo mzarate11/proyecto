@@ -58,12 +58,11 @@
             this.dgv_TiposA.AllowUserToResizeRows = false;
             this.dgv_TiposA.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_TiposA.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgv_TiposA.Location = new System.Drawing.Point(13, 57);
-            this.dgv_TiposA.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dgv_TiposA.Location = new System.Drawing.Point(9, 37);
             this.dgv_TiposA.MultiSelect = false;
             this.dgv_TiposA.Name = "dgv_TiposA";
             this.dgv_TiposA.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_TiposA.Size = new System.Drawing.Size(1223, 570);
+            this.dgv_TiposA.Size = new System.Drawing.Size(815, 370);
             this.dgv_TiposA.TabIndex = 1;
             // 
             // MenuVentana
@@ -95,10 +94,9 @@
             this.btn_Salir,
             this.toolStripLabel6});
             this.MenuVentana.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
-            this.MenuVentana.Location = new System.Drawing.Point(13, 9);
+            this.MenuVentana.Location = new System.Drawing.Point(9, 6);
             this.MenuVentana.Name = "MenuVentana";
-            this.MenuVentana.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
-            this.MenuVentana.Size = new System.Drawing.Size(1223, 43);
+            this.MenuVentana.Size = new System.Drawing.Size(815, 28);
             this.MenuVentana.TabIndex = 2;
             this.MenuVentana.Text = "toolStrip1";
             // 
@@ -115,7 +113,7 @@
             // toolStripLabel1
             // 
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(83, 25);
+            this.toolStripLabel1.Size = new System.Drawing.Size(55, 15);
             this.toolStripLabel1.Text = "Refrescar";
             // 
             // toolStripSeparator1
@@ -131,11 +129,12 @@
             this.bnt_Nuevo.Name = "bnt_Nuevo";
             this.bnt_Nuevo.Size = new System.Drawing.Size(28, 28);
             this.bnt_Nuevo.Text = "toolStripButton2";
+            this.bnt_Nuevo.Click += new System.EventHandler(this.bnt_Nuevo_Click);
             // 
             // toolStripLabel2
             // 
             this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(64, 25);
+            this.toolStripLabel2.Size = new System.Drawing.Size(42, 15);
             this.toolStripLabel2.Text = "Nuevo";
             // 
             // toolStripSeparator2
@@ -151,11 +150,12 @@
             this.btn_Modificar.Name = "btn_Modificar";
             this.btn_Modificar.Size = new System.Drawing.Size(28, 28);
             this.btn_Modificar.Text = "toolStripButton3";
+            this.btn_Modificar.Click += new System.EventHandler(this.btn_Modificar_Click);
             // 
             // toolStripLabel3
             // 
             this.toolStripLabel3.Name = "toolStripLabel3";
-            this.toolStripLabel3.Size = new System.Drawing.Size(87, 25);
+            this.toolStripLabel3.Size = new System.Drawing.Size(58, 15);
             this.toolStripLabel3.Text = "Modificar";
             // 
             // toolStripSeparator3
@@ -176,7 +176,7 @@
             // toolStripLabel4
             // 
             this.toolStripLabel4.Name = "toolStripLabel4";
-            this.toolStripLabel4.Size = new System.Drawing.Size(74, 25);
+            this.toolStripLabel4.Size = new System.Drawing.Size(50, 15);
             this.toolStripLabel4.Text = "Eliminar";
             // 
             // toolStripSeparator4
@@ -187,13 +187,13 @@
             // toolStripLabel5
             // 
             this.toolStripLabel5.Name = "toolStripLabel5";
-            this.toolStripLabel5.Size = new System.Drawing.Size(56, 25);
+            this.toolStripLabel5.Size = new System.Drawing.Size(37, 15);
             this.toolStripLabel5.Text = "Filtro:";
             // 
             // txtFiltro
             // 
             this.txtFiltro.Name = "txtFiltro";
-            this.txtFiltro.Size = new System.Drawing.Size(148, 31);
+            this.txtFiltro.Size = new System.Drawing.Size(100, 23);
             this.txtFiltro.TextChanged += new System.EventHandler(this.txtFiltro_TextChanged_1);
             // 
             // btn_Salir
@@ -210,19 +210,18 @@
             // toolStripLabel6
             // 
             this.toolStripLabel6.Name = "toolStripLabel6";
-            this.toolStripLabel6.Size = new System.Drawing.Size(45, 25);
+            this.toolStripLabel6.Size = new System.Drawing.Size(29, 15);
             this.toolStripLabel6.Text = "Salir";
             // 
             // frm_TiposAviones
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(1249, 641);
+            this.ClientSize = new System.Drawing.Size(833, 417);
             this.Controls.Add(this.MenuVentana);
             this.Controls.Add(this.dgv_TiposA);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frm_TiposAviones";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menú Tipo Aviones";
