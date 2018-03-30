@@ -150,17 +150,23 @@
     <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\fmr_ModificarNuevo_Vuelos.Designer.cs">
       <DependentUpon>fmr_ModificarNuevo_Vuelos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_ModificarClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_ModificarClientes.Designer.cs">
+      <DependentUpon>frm_ModificarClientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_ModificarNuevo_TipoAvion.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_ModificarNuevo_TipoAvion.Designer.cs">
       <DependentUpon>frm_ModificarNuevo_TipoAvion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Mostrar_Estados.cs">
+    <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Modificar_Estados.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Mostrar_Estados.Designer.cs">
-      <DependentUpon>frm_Mostrar_Estados.cs</DependentUpon>
+    <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Modificar_Estados.Designer.cs">
+      <DependentUpon>frm_Modificar_Estados.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -223,11 +229,14 @@
     <EmbeddedResource Include="Proyecto_2_VentanasDelMenu\NuevoModificar\fmr_ModificarNuevo_Vuelos.resx">
       <DependentUpon>fmr_ModificarNuevo_Vuelos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_ModificarClientes.resx">
+      <DependentUpon>frm_ModificarClientes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_ModificarNuevo_TipoAvion.resx">
       <DependentUpon>frm_ModificarNuevo_TipoAvion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Mostrar_Estados.resx">
-      <DependentUpon>frm_Mostrar_Estados.cs</DependentUpon>
+    <EmbeddedResource Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Modificar_Estados.resx">
+      <DependentUpon>frm_Modificar_Estados.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -307,6 +316,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\vuelos.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\aerolineas.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clientes.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

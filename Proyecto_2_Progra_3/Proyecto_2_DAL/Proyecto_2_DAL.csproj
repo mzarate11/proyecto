@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseDatos_DAL\cls_BaseDatos_DAL.cs" />
+    <Compile Include="Catalogos y Mantenimientos\cls_Clientes_DAL.cs" />
     <Compile Include="Catalogos y Mantenimientos\cls_Estados_DAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
