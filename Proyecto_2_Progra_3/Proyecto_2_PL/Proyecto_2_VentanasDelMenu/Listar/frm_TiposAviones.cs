@@ -126,6 +126,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
             frm_ModificarNuevo_TipoAvion V_Modificar = new frm_ModificarNuevo_TipoAvion();
             V_Modificar.Obj_Mant_DAL = Obj_Mant_DAL; // pasamos en objeto dal a la otra pantalla
             V_Modificar.ShowDialog();
+            this.Show();
             CargarDatosEstados();
         }
     }

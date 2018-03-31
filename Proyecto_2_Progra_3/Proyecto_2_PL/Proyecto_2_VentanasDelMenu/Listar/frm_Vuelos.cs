@@ -128,6 +128,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
             fmr_ModificarNuevo_Vuelos V_Modificar = new fmr_ModificarNuevo_Vuelos();
             V_Modificar.Obj_Mant_DAL = Obj_Mant_DAL; // pasamos en objeto dal a la otra pantalla
             V_Modificar.ShowDialog();
+            this.Show();
             CargarDatos();
         }
     }
