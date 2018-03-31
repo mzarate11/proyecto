@@ -12,7 +12,8 @@ namespace Proyecto_2_DAL.Catalogos_y_Mantenimientos
         char _cIdEstado, _cbanderaAccion;
         DateTime _DtFechaHoraSalida, _DtFechaHoraLLegada;
         int _iIdAerolinea;
-
+        char[] _cEstados;
+        string[] _asIdAviones, _asIdDestinos, _asIdAerolineas;
         public string sIdVuelo
         {
             get
@@ -115,6 +116,45 @@ namespace Proyecto_2_DAL.Catalogos_y_Mantenimientos
             set
             {
                 _cbanderaAccion = value;
+            }
+        }
+
+        public string[] asIdAviones
+        {
+            get
+            {
+                return _asIdAviones;
+            }
+
+            set
+            {
+                _asIdAviones = value;
+            }
+        }
+
+        public string[] as_IdDestinos
+        {
+            get
+            {
+                return _asIdDestinos;
+            }
+
+            set
+            {
+                _asIdDestinos = value;
+            }
+        }
+
+        public string[] asIdAerolineas
+        {
+            get
+            {
+                return _asIdAerolineas;
+            }
+
+            set
+            {
+                _asIdAerolineas = value;
             }
         }
     }

@@ -12,6 +12,7 @@ namespace Proyecto_2_DAL.Catalogos_y_Mantenimientos
         string _sNombreTipoAvion, _sDescTipoAvion, _sIdTipoAvion;
         double _dcapacidadPeso;
         char _cbanderaAccion, _cIdEstado;
+        char[] _cEstados;
 
         public int iCapacidadPasajeros
         {
@@ -101,6 +102,19 @@ namespace Proyecto_2_DAL.Catalogos_y_Mantenimientos
             set
             {
                 _cIdEstado = value;
+            }
+        }
+
+        public char[] cEstados
+        {
+            get
+            {
+                return _cEstados;
+            }
+
+            set
+            {
+                _cEstados = value;
             }
         }
     }
