@@ -30,22 +30,22 @@
         {
             this.dgv_view = new System.Windows.Forms.DataGridView();
             this.MenuVentana = new System.Windows.Forms.ToolStrip();
-            this.btn_Refrescar = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bnt_Nuevo = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.btn_Modificar = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.btn_Eliminar = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel4 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel5 = new System.Windows.Forms.ToolStripLabel();
             this.txtFiltro = new System.Windows.Forms.ToolStripTextBox();
-            this.btn_Salir = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel6 = new System.Windows.Forms.ToolStripLabel();
+            this.btn_Refrescar = new System.Windows.Forms.ToolStripButton();
+            this.bnt_Nuevo = new System.Windows.Forms.ToolStripButton();
+            this.btn_Modificar = new System.Windows.Forms.ToolStripButton();
+            this.btn_Eliminar = new System.Windows.Forms.ToolStripButton();
+            this.btn_Salir = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_view)).BeginInit();
             this.MenuVentana.SuspendLayout();
             this.SuspendLayout();
@@ -57,6 +57,7 @@
             this.dgv_view.Name = "dgv_view";
             this.dgv_view.Size = new System.Drawing.Size(815, 370);
             this.dgv_view.TabIndex = 0;
+            this.dgv_view.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_view_CellContentDoubleClick);
             // 
             // MenuVentana
             // 
@@ -93,15 +94,6 @@
             this.MenuVentana.TabIndex = 4;
             this.MenuVentana.Text = "toolStrip1";
             // 
-            // btn_Refrescar
-            // 
-            this.btn_Refrescar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btn_Refrescar.Image = global::Proyecto_2_PL.Properties.Resources.refrescar;
-            this.btn_Refrescar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btn_Refrescar.Name = "btn_Refrescar";
-            this.btn_Refrescar.Size = new System.Drawing.Size(28, 28);
-            this.btn_Refrescar.Text = "toolStripButton1";
-            // 
             // toolStripLabel1
             // 
             this.toolStripLabel1.Name = "toolStripLabel1";
@@ -112,15 +104,6 @@
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 23);
-            // 
-            // bnt_Nuevo
-            // 
-            this.bnt_Nuevo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bnt_Nuevo.Image = global::Proyecto_2_PL.Properties.Resources.agregar;
-            this.bnt_Nuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.bnt_Nuevo.Name = "bnt_Nuevo";
-            this.bnt_Nuevo.Size = new System.Drawing.Size(28, 28);
-            this.bnt_Nuevo.Text = "toolStripButton2";
             // 
             // toolStripLabel2
             // 
@@ -133,15 +116,6 @@
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 23);
             // 
-            // btn_Modificar
-            // 
-            this.btn_Modificar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btn_Modificar.Image = global::Proyecto_2_PL.Properties.Resources.modificar;
-            this.btn_Modificar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btn_Modificar.Name = "btn_Modificar";
-            this.btn_Modificar.Size = new System.Drawing.Size(28, 28);
-            this.btn_Modificar.Text = "toolStripButton3";
-            // 
             // toolStripLabel3
             // 
             this.toolStripLabel3.Name = "toolStripLabel3";
@@ -152,16 +126,6 @@
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 23);
-            // 
-            // btn_Eliminar
-            // 
-            this.btn_Eliminar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btn_Eliminar.Image = global::Proyecto_2_PL.Properties.Resources.eliminar;
-            this.btn_Eliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btn_Eliminar.Name = "btn_Eliminar";
-            this.btn_Eliminar.Size = new System.Drawing.Size(28, 28);
-            this.btn_Eliminar.Text = "toolStripButton4";
-            this.btn_Eliminar.Click += new System.EventHandler(this.btn_Eliminar_Click);
             // 
             // toolStripLabel4
             // 
@@ -186,6 +150,51 @@
             this.txtFiltro.Size = new System.Drawing.Size(100, 23);
             this.txtFiltro.TextChanged += new System.EventHandler(this.txtFiltro_TextChanged_1);
             // 
+            // toolStripLabel6
+            // 
+            this.toolStripLabel6.Name = "toolStripLabel6";
+            this.toolStripLabel6.Size = new System.Drawing.Size(29, 15);
+            this.toolStripLabel6.Text = "Salir";
+            // 
+            // btn_Refrescar
+            // 
+            this.btn_Refrescar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btn_Refrescar.Image = global::Proyecto_2_PL.Properties.Resources.refrescar;
+            this.btn_Refrescar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_Refrescar.Name = "btn_Refrescar";
+            this.btn_Refrescar.Size = new System.Drawing.Size(28, 28);
+            this.btn_Refrescar.Text = "toolStripButton1";
+            // 
+            // bnt_Nuevo
+            // 
+            this.bnt_Nuevo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bnt_Nuevo.Image = global::Proyecto_2_PL.Properties.Resources.agregar;
+            this.bnt_Nuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bnt_Nuevo.Name = "bnt_Nuevo";
+            this.bnt_Nuevo.Size = new System.Drawing.Size(28, 28);
+            this.bnt_Nuevo.Text = "toolStripButton2";
+            this.bnt_Nuevo.Click += new System.EventHandler(this.bnt_Nuevo_Click);
+            // 
+            // btn_Modificar
+            // 
+            this.btn_Modificar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btn_Modificar.Image = global::Proyecto_2_PL.Properties.Resources.modificar;
+            this.btn_Modificar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_Modificar.Name = "btn_Modificar";
+            this.btn_Modificar.Size = new System.Drawing.Size(28, 28);
+            this.btn_Modificar.Text = "toolStripButton3";
+            this.btn_Modificar.Click += new System.EventHandler(this.btn_Modificar_Click);
+            // 
+            // btn_Eliminar
+            // 
+            this.btn_Eliminar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btn_Eliminar.Image = global::Proyecto_2_PL.Properties.Resources.eliminar;
+            this.btn_Eliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_Eliminar.Name = "btn_Eliminar";
+            this.btn_Eliminar.Size = new System.Drawing.Size(28, 28);
+            this.btn_Eliminar.Text = "toolStripButton4";
+            this.btn_Eliminar.Click += new System.EventHandler(this.btn_Eliminar_Click);
+            // 
             // btn_Salir
             // 
             this.btn_Salir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -196,12 +205,6 @@
             this.btn_Salir.Size = new System.Drawing.Size(28, 28);
             this.btn_Salir.Text = "toolStripButton5";
             this.btn_Salir.Click += new System.EventHandler(this.btn_Salir_Click_1);
-            // 
-            // toolStripLabel6
-            // 
-            this.toolStripLabel6.Name = "toolStripLabel6";
-            this.toolStripLabel6.Size = new System.Drawing.Size(29, 15);
-            this.toolStripLabel6.Text = "Salir";
             // 
             // frm_TipoEmpleados
             // 

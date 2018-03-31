@@ -58,6 +58,7 @@
             this.Dgv_View.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Dgv_View.Size = new System.Drawing.Size(815, 370);
             this.Dgv_View.TabIndex = 0;
+            this.Dgv_View.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_View_CellContentDoubleClick);
             // 
             // MenuVentana
             // 
@@ -122,6 +123,7 @@
             this.bnt_Nuevo.Name = "bnt_Nuevo";
             this.bnt_Nuevo.Size = new System.Drawing.Size(28, 28);
             this.bnt_Nuevo.Text = "toolStripButton2";
+            this.bnt_Nuevo.Click += new System.EventHandler(this.bnt_Nuevo_Click);
             // 
             // toolStripLabel2
             // 
@@ -142,6 +144,7 @@
             this.btn_Modificar.Name = "btn_Modificar";
             this.btn_Modificar.Size = new System.Drawing.Size(28, 28);
             this.btn_Modificar.Text = "toolStripButton3";
+            this.btn_Modificar.Click += new System.EventHandler(this.btn_Modificar_Click);
             // 
             // toolStripLabel3
             // 
@@ -185,6 +188,7 @@
             // 
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(100, 23);
+            this.txtFiltro.Click += new System.EventHandler(this.txtFiltro_Click);
             this.txtFiltro.TextChanged += new System.EventHandler(this.txtFiltro_TextChanged_1);
             // 
             // btn_Salir

@@ -8,11 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Proyecto_2_BLL.Catagolos_Mantinimiento_BLL;
+using Proyecto_2_PL.Proyecto_2_VentanasDelMenu.Modificar;
+using Proyecto_2_DAL.Catalogos_y_Mantenimientos;
 
 namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
 {
     public partial class frm_TipoEmpleados : Form
     {
+        #region
+        cls_TipoEmpleados_DAL ObjTipoEmpleadosDAL;
+        #endregion
         public frm_TipoEmpleados()
         {
             InitializeComponent();
@@ -101,6 +106,52 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
 
         private void txtFiltro_TextChanged_1(object sender, EventArgs e)
         {
+            CargarDatos();
+        }
+
+        private void bnt_Nuevo_Click(object sender, EventArgs e)
+        {
+            ObjTipoEmpleadosDAL = new cls_TipoEmpleados_DAL();
+            frm_Mostrar_TipoEmpleado PantTipoEmpleado = new frm_Mostrar_TipoEmpleado();
+            ObjTipoEmpleadosDAL.CBandAX = 'I';
+
+            PantTipoEmpleado.Obj_DAL_TipoEmpleado = ObjTipoEmpleadosDAL;
+            PantTipoEmpleado.ShowDialog();
+
+
+            txtFiltro.Text = string.Empty;
+            CargarDatos();
+        }
+
+        private void btn_Modificar_Click(object sender, EventArgs e)
+        {
+            ObjTipoEmpleadosDAL = new cls_TipoEmpleados_DAL();
+            frm_Mostrar_TipoEmpleado PantTipoEmpleado = new frm_Mostrar_TipoEmpleado();
+            ObjTipoEmpleadosDAL.CBandAX = 'U';
+            ObjTipoEmpleadosDAL.ITipoEmpleado = Convert.ToInt32(dgv_view.SelectedRows[0].Cells[0].Value.ToString().Trim());
+            ObjTipoEmpleadosDAL.SDescTipo = dgv_view.SelectedRows[0].Cells[1].Value.ToString().Trim();
+            ObjTipoEmpleadosDAL.CIdEstado = Convert.ToChar(dgv_view.SelectedRows[0].Cells[3].Value.ToString().Trim());
+
+            PantTipoEmpleado.Obj_DAL_TipoEmpleado = ObjTipoEmpleadosDAL;
+            PantTipoEmpleado.ShowDialog();
+
+            txtFiltro.Text = string.Empty;
+            CargarDatos();
+
+        }
+
+        private void dgv_view_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            ObjTipoEmpleadosDAL = new cls_TipoEmpleados_DAL();
+            frm_Mostrar_TipoEmpleado Pant_tipoEmpleados = new frm_Mostrar_TipoEmpleado();
+            ObjTipoEmpleadosDAL.CBandAX = 'U';
+            ObjTipoEmpleadosDAL.ITipoEmpleado = Convert.ToInt32(dgv_view.SelectedRows[0].Cells[0].Value.ToString().Trim());
+            ObjTipoEmpleadosDAL.SDescTipo = dgv_view.SelectedRows[0].Cells[1].Value.ToString().Trim();
+            ObjTipoEmpleadosDAL.CIdEstado = Convert.ToChar(dgv_view.SelectedRows[0].Cells[2].Value.ToString().Trim());
+
+            Pant_tipoEmpleados.Obj_DAL_TipoEmpleado = ObjTipoEmpleadosDAL;
+
+            txtFiltro.Text = string.Empty;
             CargarDatos();
         }
     }
