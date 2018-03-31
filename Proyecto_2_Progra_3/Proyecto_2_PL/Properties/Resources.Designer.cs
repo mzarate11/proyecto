@@ -83,6 +83,26 @@ namespace Proyecto_2_PL.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bGuardar {
+            get {
+                object obj = ResourceManager.GetObject("bGuardar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bNuevo {
+            get {
+                object obj = ResourceManager.GetObject("bNuevo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap boton1 {
             get {
                 object obj = ResourceManager.GetObject("boton1", resourceCulture);
@@ -96,6 +116,16 @@ namespace Proyecto_2_PL.Properties {
         internal static System.Drawing.Bitmap boton2 {
             get {
                 object obj = ResourceManager.GetObject("boton2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bSalir {
+            get {
+                object obj = ResourceManager.GetObject("bSalir", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

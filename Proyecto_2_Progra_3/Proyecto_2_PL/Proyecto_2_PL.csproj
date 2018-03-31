@@ -162,6 +162,12 @@
     <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_ModificarNuevo_TipoAvion.Designer.cs">
       <DependentUpon>frm_ModificarNuevo_TipoAvion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Modificar_Empleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Modificar_Empleados.Designer.cs">
+      <DependentUpon>frm_Modificar_Empleados.cs</DependentUpon>
+    </Compile>
     <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Modificar_Estados.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -234,6 +240,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_ModificarNuevo_TipoAvion.resx">
       <DependentUpon>frm_ModificarNuevo_TipoAvion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Modificar_Empleados.resx">
+      <DependentUpon>frm_Modificar_Empleados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Modificar_Estados.resx">
       <DependentUpon>frm_Modificar_Estados.cs</DependentUpon>
@@ -322,6 +331,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\clientes.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bNuevo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bSalir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bGuardar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
