@@ -79,10 +79,9 @@
             this.tls_btn_Salir,
             this.toolStripLabel6});
             this.MenuVentana.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
-            this.MenuVentana.Location = new System.Drawing.Point(12, 23);
+            this.MenuVentana.Location = new System.Drawing.Point(8, 15);
             this.MenuVentana.Name = "MenuVentana";
-            this.MenuVentana.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
-            this.MenuVentana.Size = new System.Drawing.Size(1223, 43);
+            this.MenuVentana.Size = new System.Drawing.Size(815, 28);
             this.MenuVentana.TabIndex = 5;
             this.MenuVentana.Text = "toolStrip1";
             // 
@@ -99,7 +98,7 @@
             // toolStripLabel1
             // 
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(83, 25);
+            this.toolStripLabel1.Size = new System.Drawing.Size(55, 15);
             this.toolStripLabel1.Text = "Refrescar";
             // 
             // toolStripSeparator1
@@ -115,11 +114,12 @@
             this.tls_btn_Nuevo.Name = "tls_btn_Nuevo";
             this.tls_btn_Nuevo.Size = new System.Drawing.Size(28, 28);
             this.tls_btn_Nuevo.Text = "toolStripButton2";
+            this.tls_btn_Nuevo.Click += new System.EventHandler(this.tls_btn_Nuevo_Click);
             // 
             // toolStripLabel2
             // 
             this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(64, 25);
+            this.toolStripLabel2.Size = new System.Drawing.Size(42, 15);
             this.toolStripLabel2.Text = "Nuevo";
             // 
             // toolStripSeparator2
@@ -135,11 +135,12 @@
             this.tls_btn_Modificar.Name = "tls_btn_Modificar";
             this.tls_btn_Modificar.Size = new System.Drawing.Size(28, 28);
             this.tls_btn_Modificar.Text = "toolStripButton3";
+            this.tls_btn_Modificar.Click += new System.EventHandler(this.tls_btn_Modificar_Click);
             // 
             // toolStripLabel3
             // 
             this.toolStripLabel3.Name = "toolStripLabel3";
-            this.toolStripLabel3.Size = new System.Drawing.Size(87, 25);
+            this.toolStripLabel3.Size = new System.Drawing.Size(58, 15);
             this.toolStripLabel3.Text = "Modificar";
             // 
             // toolStripSeparator3
@@ -160,7 +161,7 @@
             // toolStripLabel4
             // 
             this.toolStripLabel4.Name = "toolStripLabel4";
-            this.toolStripLabel4.Size = new System.Drawing.Size(74, 25);
+            this.toolStripLabel4.Size = new System.Drawing.Size(50, 15);
             this.toolStripLabel4.Text = "Eliminar";
             // 
             // toolStripSeparator4
@@ -171,13 +172,13 @@
             // toolStripLabel5
             // 
             this.toolStripLabel5.Name = "toolStripLabel5";
-            this.toolStripLabel5.Size = new System.Drawing.Size(56, 25);
+            this.toolStripLabel5.Size = new System.Drawing.Size(37, 15);
             this.toolStripLabel5.Text = "Filtro:";
             // 
             // tls_txt_Filtro
             // 
             this.tls_txt_Filtro.Name = "tls_txt_Filtro";
-            this.tls_txt_Filtro.Size = new System.Drawing.Size(148, 31);
+            this.tls_txt_Filtro.Size = new System.Drawing.Size(100, 23);
             // 
             // tls_btn_Salir
             // 
@@ -193,7 +194,7 @@
             // toolStripLabel6
             // 
             this.toolStripLabel6.Name = "toolStripLabel6";
-            this.toolStripLabel6.Size = new System.Drawing.Size(45, 25);
+            this.toolStripLabel6.Size = new System.Drawing.Size(29, 15);
             this.toolStripLabel6.Text = "Salir";
             // 
             // dgv_Destinos
@@ -202,24 +203,22 @@
             this.dgv_Destinos.AllowUserToDeleteRows = false;
             this.dgv_Destinos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Destinos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgv_Destinos.Location = new System.Drawing.Point(13, 71);
-            this.dgv_Destinos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dgv_Destinos.Location = new System.Drawing.Point(9, 46);
             this.dgv_Destinos.MultiSelect = false;
             this.dgv_Destinos.Name = "dgv_Destinos";
             this.dgv_Destinos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_Destinos.Size = new System.Drawing.Size(1223, 585);
+            this.dgv_Destinos.Size = new System.Drawing.Size(815, 380);
             this.dgv_Destinos.TabIndex = 6;
             // 
             // frm_Destinos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(1249, 641);
+            this.ClientSize = new System.Drawing.Size(833, 417);
             this.Controls.Add(this.dgv_Destinos);
             this.Controls.Add(this.MenuVentana);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frm_Destinos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Destinos";

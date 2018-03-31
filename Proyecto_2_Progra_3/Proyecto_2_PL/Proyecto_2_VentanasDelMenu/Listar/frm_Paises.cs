@@ -8,11 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Proyecto_2_BLL.Catagolos_Mantinimiento_BLL;
+using Proyecto_2_DAL.Catalogos_y_Mantenimientos;
+using Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar;
 
 namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
 {
     public partial class frm_Paises : Form
     {
+        cls_Paises_DAL ObjPaises_DAL;
         public frm_Paises()
         {
             InitializeComponent();
@@ -45,11 +48,6 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
                 dgv_Paises.DataSource = null;
                 MessageBox.Show("Se Presentó un error : [ " + sMsjError + " ].", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void MenuVentana_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
         }
 
         private void frm_Paises_Load(object sender, EventArgs e)
@@ -98,8 +96,53 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
             }
             else
             {
-                MessageBox.Show("No hay registros para eliminar");
+                MessageBox.Show("No hay registros para eliminar","Info",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
+        }
+
+        private void tls_btn_Modificar_Click(object sender, EventArgs e)
+        {
+            frm_Modificar_Paises ModificarPaises = new frm_Modificar_Paises();
+            if (dgv_Paises.RowCount > 0)
+            {
+                ObjPaises_DAL = new cls_Paises_DAL();
+
+                ObjPaises_DAL.cBandera = 'U';
+                ObjPaises_DAL.sNombrePais = dgv_Paises.SelectedRows[0].Cells[1].Value.ToString().Trim();
+                ObjPaises_DAL.sCodigoISOPais = dgv_Paises.SelectedRows[0].Cells[2].Value.ToString().Trim();
+                ObjPaises_DAL.sCodigoAreaPais = dgv_Paises.SelectedRows[0].Cells[3].Value.ToString().Trim();
+                ObjPaises_DAL.cIdEstado = Convert.ToChar(dgv_Paises.SelectedRows[0].Cells[4].Value);
+
+                ModificarPaises.Obj_Paises_DAL = ObjPaises_DAL;
+                Hide();
+                ModificarPaises.ShowDialog();
+
+                tls_txt_Filtro.Text = string.Empty;
+                CargarDatos();
+            }
+            else
+            {
+                MessageBox.Show("No se pueden realizar la acción, debido a que no existen datos por modificar", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+        }
+
+        private void tls_btn_Nuevo_Click(object sender, EventArgs e)
+        {
+            ObjPaises_DAL = new cls_Paises_DAL();
+            frm_Modificar_Paises ModificarPaises = new frm_Modificar_Paises();
+
+            ObjPaises_DAL.cBandera = 'I';
+            ObjPaises_DAL.sNombrePais = string.Empty;
+            ObjPaises_DAL.sCodigoISOPais = string.Empty;
+            ObjPaises_DAL.sCodigoAreaPais = string.Empty;
+            ObjPaises_DAL.cIdEstado = ' ';
+
+            ModificarPaises.Obj_Paises_DAL = ObjPaises_DAL;
+            Hide();
+            ModificarPaises.ShowDialog();
+
+            tls_txt_Filtro.Text = string.Empty;
+            CargarDatos();
         }
     }
 }

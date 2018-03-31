@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Proyecto_2_BLL.Catagolos_Mantinimiento_BLL;
+using Proyecto_2_DAL.Catalogos_y_Mantenimientos;
+using Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar;
 
 namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
 {
@@ -18,6 +20,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
             InitializeComponent();
         }
 
+        cls_Destinos_DAL ObjDestinos_DAL;
         private void CargarDatos()
         {
 
@@ -90,6 +93,57 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
             {
                 MessageBox.Show("No hay registros para eliminar");
             }
+        }
+
+        private void tls_btn_Modificar_Click(object sender, EventArgs e)
+        {
+            frm_Modificar_Destinos ModificarDestinos = new frm_Modificar_Destinos();
+            if(dgv_Destinos.RowCount>0)
+            {
+                ObjDestinos_DAL = new cls_Destinos_DAL();
+
+                ObjDestinos_DAL.cBandera = 'U';
+                ObjDestinos_DAL.sIdDestino = dgv_Destinos.SelectedRows[0].Cells[0].Value.ToString().Trim();
+                ObjDestinos_DAL.bIdAerolinea = Convert.ToByte(dgv_Destinos.SelectedRows[0].Cells[1].Value);
+                ObjDestinos_DAL.sNomDestino = dgv_Destinos.SelectedRows[0].Cells[2].Value.ToString().Trim();
+                ObjDestinos_DAL.bPaisSalida = Convert.ToByte(dgv_Destinos.SelectedRows[0].Cells[3].Value);
+                ObjDestinos_DAL.bPaisLlegada = Convert.ToByte(dgv_Destinos.SelectedRows[0].Cells[4].Value);
+                ObjDestinos_DAL.cIdEstado = Convert.ToChar(dgv_Destinos.SelectedRows[0].Cells[5].Value);
+
+                ModificarDestinos.Obj_Destinos_DAL = ObjDestinos_DAL;
+                Hide();
+                ModificarDestinos.ShowDialog();
+
+                tls_txt_Filtro.Text = string.Empty;
+                CargarDatos();
+
+            }
+            else
+            {
+                MessageBox.Show("No se pueden realizar la acción, debido a que no existen datos por modificar", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+        }
+
+        private void tls_btn_Nuevo_Click(object sender, EventArgs e)
+        {
+            frm_Modificar_Destinos ModificarDestinos = new frm_Modificar_Destinos();
+            ObjDestinos_DAL = new cls_Destinos_DAL();
+
+            ObjDestinos_DAL.cBandera = 'I';
+            ObjDestinos_DAL.sIdDestino = string.Empty;
+            ObjDestinos_DAL.bIdAerolinea = 0;
+            ObjDestinos_DAL.sNomDestino = string.Empty;
+            ObjDestinos_DAL.bPaisSalida = 0;
+            ObjDestinos_DAL.bPaisLlegada = 0;
+            ObjDestinos_DAL.cIdEstado = ' ';
+
+            ModificarDestinos.Obj_Destinos_DAL = ObjDestinos_DAL;
+            Hide();
+            ModificarDestinos.ShowDialog();
+
+            tls_txt_Filtro.Text = string.Empty;
+            CargarDatos();
         }
     }
 }
