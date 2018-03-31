@@ -96,5 +96,13 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
         {
             Close();
         }
+
+        private void tls_btn_Nuevo_Click(object sender, EventArgs e)
+        {
+            NuevoModificar.frm_Modificar_Empleados PantEditar = new NuevoModificar.frm_Modificar_Empleados();
+            PantEditar.ShowDialog();
+            Show();
+            this.Hide();
+        }
     }
 }
