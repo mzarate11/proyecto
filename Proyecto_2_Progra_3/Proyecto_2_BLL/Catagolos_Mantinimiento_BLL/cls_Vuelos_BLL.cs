@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Configuration;
 using Proyecto_2_DAL.BaseDatos_DAL;
-
+using Proyecto_2_DAL.Catalogos_y_Mantenimientos;
 namespace Proyecto_2_BLL.Catagolos_Mantinimiento_BLL
 {
     public class cls_Vuelos_BLL
@@ -76,6 +76,16 @@ namespace Proyecto_2_BLL.Catagolos_Mantinimiento_BLL
             {
                 sMsjError = Obj_DAL.sMsgError;
             }
+        }
+
+        public void ModificarVuelos(ref string sMsjError, ref cls_Vuelos_DAL Obj_TipoAviones_DAL)
+        {
+
+        }
+
+        public void AgregarVuelos(ref string sMsjError, ref cls_Vuelos_DAL Obj_TipoAviones_DAL)
+        {
+
         }
     }
 }

@@ -86,7 +86,16 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
         {
             if (validaciones())
             {
-
+                cls_TiposA_BLL Obj_Mant_BLL = new cls_TiposA_BLL();
+                string sMsjError = string.Empty;
+                if (Obj_Mant_DAL.cbanderaAccion == 'I')
+                {
+                    Obj_Mant_BLL.AgregarTipoAviones(ref sMsjError, ref Obj_Mant_DAL);
+                }
+                else
+                {
+                    Obj_Mant_BLL.ModificarTipoAviones(ref sMsjError, ref Obj_Mant_DAL);
+                }
             }
             else
             {
@@ -98,6 +107,8 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
         {
             cmb_IdEstado.DropDownStyle = ComboBoxStyle.DropDownList;
             cmb_IdEstado.Enabled = true;
+            cargarDatos();
+            
         }
 
         private void txt_CantidadPasajeros_KeyPress(object sender, KeyPressEventArgs e)
@@ -177,5 +188,40 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 }
             }
         }
+
+        private void cargarDatos()
+        {
+            if (Obj_Mant_DAL != null)
+            {
+                if (Obj_Mant_DAL.cbanderaAccion == 'I')
+                {
+                    //limpiar cajas de texto
+                    txt_IdTipoAvion.Enabled = true;
+                    txt_CantidadPasajeros.Clear();
+                    txt_CantidadPeso.Clear();
+                    txt_Descripcion.Clear();
+                    txt_IdTipoAvion.Clear();
+                    txt_NombreAvion.Clear();
+                }
+                else
+                {
+                    txt_IdTipoAvion.Enabled = false;
+                    txt_CantidadPasajeros.Text = Obj_Mant_DAL.iCapacidadPasajeros.ToString().Trim();
+                    txt_CantidadPeso.Text = Obj_Mant_DAL.dcapacidadPeso.ToString().Trim();
+                    txt_Descripcion.Text = Obj_Mant_DAL.sDescTipoAvion.ToString().Trim();
+                    txt_IdTipoAvion.Text = Obj_Mant_DAL.sIdTipoAvion.ToString().Trim();
+                    txt_NombreAvion.Text = Obj_Mant_DAL.sNombreTipoAvion.ToString().Trim();
+                    cmb_IdEstado.Text = Obj_Mant_DAL.cIdEstado.ToString().Trim();
+
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Se presentó un error, contacte a soporte", "Error datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+            }
+        }
+
     }
 }

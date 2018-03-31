@@ -35,7 +35,7 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.btnSalir = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
-            this.cmb_IdEstado_TipoAviones = new System.Windows.Forms.ComboBox();
+            this.cmb_IdEstado = new System.Windows.Forms.ComboBox();
             this.comb_IdEstado = new System.Windows.Forms.Label();
             this.txt_IdVuelo = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -43,14 +43,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cmb_IdAerolinea = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.cmb_IdVuelo = new System.Windows.Forms.ComboBox();
+            this.cmb_IdAvion = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.calendario_FechaSalida = new System.Windows.Forms.MonthCalendar();
-            this.calendarioFechaLLegada = new System.Windows.Forms.MonthCalendar();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.time_HoraSalida = new System.Windows.Forms.DateTimePicker();
             this.time_HoraLlegada = new System.Windows.Forms.DateTimePicker();
             this.toolStrip1.SuspendLayout();
@@ -68,7 +64,7 @@
             this.toolStripLabel2});
             this.toolStrip1.Location = new System.Drawing.Point(9, 9);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(220, 39);
+            this.toolStrip1.Size = new System.Drawing.Size(251, 39);
             this.toolStrip1.TabIndex = 36;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -81,6 +77,7 @@
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(36, 36);
             this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // toolStripLabel1
             // 
@@ -103,6 +100,7 @@
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(36, 36);
             this.btnSalir.Text = "Salir";
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // toolStripLabel2
             // 
@@ -111,13 +109,13 @@
             this.toolStripLabel2.Size = new System.Drawing.Size(49, 36);
             this.toolStripLabel2.Text = "Salir";
             // 
-            // cmb_IdEstado_TipoAviones
+            // cmb_IdEstado
             // 
-            this.cmb_IdEstado_TipoAviones.FormattingEnabled = true;
-            this.cmb_IdEstado_TipoAviones.Location = new System.Drawing.Point(152, 238);
-            this.cmb_IdEstado_TipoAviones.Name = "cmb_IdEstado_TipoAviones";
-            this.cmb_IdEstado_TipoAviones.Size = new System.Drawing.Size(125, 21);
-            this.cmb_IdEstado_TipoAviones.TabIndex = 38;
+            this.cmb_IdEstado.FormattingEnabled = true;
+            this.cmb_IdEstado.Location = new System.Drawing.Point(152, 238);
+            this.cmb_IdEstado.Name = "cmb_IdEstado";
+            this.cmb_IdEstado.Size = new System.Drawing.Size(125, 21);
+            this.cmb_IdEstado.TabIndex = 38;
             // 
             // comb_IdEstado
             // 
@@ -134,10 +132,11 @@
             // 
             this.txt_IdVuelo.Enabled = false;
             this.txt_IdVuelo.Location = new System.Drawing.Point(152, 70);
-            this.txt_IdVuelo.MaxLength = 7;
+            this.txt_IdVuelo.MaxLength = 5;
             this.txt_IdVuelo.Name = "txt_IdVuelo";
             this.txt_IdVuelo.Size = new System.Drawing.Size(125, 20);
             this.txt_IdVuelo.TabIndex = 40;
+            this.txt_IdVuelo.TextChanged += new System.EventHandler(this.txt_IdVuelo_TextChanged);
             // 
             // label14
             // 
@@ -188,13 +187,13 @@
             this.label2.TabIndex = 43;
             this.label2.Text = "Id Aerolinea";
             // 
-            // cmb_IdVuelo
+            // cmb_IdAvion
             // 
-            this.cmb_IdVuelo.FormattingEnabled = true;
-            this.cmb_IdVuelo.Location = new System.Drawing.Point(152, 190);
-            this.cmb_IdVuelo.Name = "cmb_IdVuelo";
-            this.cmb_IdVuelo.Size = new System.Drawing.Size(125, 21);
-            this.cmb_IdVuelo.TabIndex = 46;
+            this.cmb_IdAvion.FormattingEnabled = true;
+            this.cmb_IdAvion.Location = new System.Drawing.Point(152, 190);
+            this.cmb_IdAvion.Name = "cmb_IdAvion";
+            this.cmb_IdAvion.Size = new System.Drawing.Size(125, 21);
+            this.cmb_IdAvion.TabIndex = 46;
             // 
             // label3
             // 
@@ -205,76 +204,42 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(75, 23);
             this.label3.TabIndex = 45;
-            this.label3.Text = "Id Vuelo";
+            this.label3.Text = "Id Avión";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label4.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(307, 199);
+            this.label4.Location = new System.Drawing.Point(346, 176);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(120, 23);
             this.label4.TabIndex = 47;
             this.label4.Text = "Fecha Llegada";
-            // 
-            // calendario_FechaSalida
-            // 
-            this.calendario_FechaSalida.Location = new System.Drawing.Point(439, 0);
-            this.calendario_FechaSalida.Name = "calendario_FechaSalida";
-            this.calendario_FechaSalida.TabIndex = 48;
-            // 
-            // calendarioFechaLLegada
-            // 
-            this.calendarioFechaLLegada.Location = new System.Drawing.Point(439, 169);
-            this.calendarioFechaLLegada.Name = "calendarioFechaLLegada";
-            this.calendarioFechaLLegada.TabIndex = 49;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label5.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(307, 25);
+            this.label5.Location = new System.Drawing.Point(346, 90);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(108, 23);
+            this.label5.Size = new System.Drawing.Size(153, 23);
             this.label5.TabIndex = 50;
-            this.label5.Text = "Fecha Salida";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label6.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(720, 199);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(112, 23);
-            this.label6.TabIndex = 51;
-            this.label6.Text = "Hora Llegada";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label7.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(718, 25);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(100, 23);
-            this.label7.TabIndex = 52;
-            this.label7.Text = "Hora Salida";
+            this.label5.Text = "Fecha/Hora Salida";
             // 
             // time_HoraSalida
             // 
-            this.time_HoraSalida.Location = new System.Drawing.Point(724, 67);
+            this.time_HoraSalida.Location = new System.Drawing.Point(346, 131);
             this.time_HoraSalida.Name = "time_HoraSalida";
-            this.time_HoraSalida.Size = new System.Drawing.Size(108, 20);
+            this.time_HoraSalida.Size = new System.Drawing.Size(153, 20);
             this.time_HoraSalida.TabIndex = 53;
             // 
             // time_HoraLlegada
             // 
-            this.time_HoraLlegada.Location = new System.Drawing.Point(722, 239);
+            this.time_HoraLlegada.Location = new System.Drawing.Point(346, 211);
             this.time_HoraLlegada.Name = "time_HoraLlegada";
-            this.time_HoraLlegada.Size = new System.Drawing.Size(108, 20);
+            this.time_HoraLlegada.Size = new System.Drawing.Size(153, 20);
             this.time_HoraLlegada.TabIndex = 54;
             // 
             // fmr_ModificarNuevo_Vuelos
@@ -283,16 +248,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Proyecto_2_PL.Properties.Resources.vuelos;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(856, 336);
+            this.ClientSize = new System.Drawing.Size(705, 337);
             this.Controls.Add(this.time_HoraLlegada);
             this.Controls.Add(this.time_HoraSalida);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.calendarioFechaLLegada);
-            this.Controls.Add(this.calendario_FechaSalida);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.cmb_IdVuelo);
+            this.Controls.Add(this.cmb_IdAvion);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cmb_IdAerolinea);
             this.Controls.Add(this.label2);
@@ -300,7 +261,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txt_IdVuelo);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.cmb_IdEstado_TipoAviones);
+            this.Controls.Add(this.cmb_IdEstado);
             this.Controls.Add(this.comb_IdEstado);
             this.Controls.Add(this.toolStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -323,7 +284,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton btnSalir;
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
-        private System.Windows.Forms.ComboBox cmb_IdEstado_TipoAviones;
+        private System.Windows.Forms.ComboBox cmb_IdEstado;
         private System.Windows.Forms.Label comb_IdEstado;
         private System.Windows.Forms.TextBox txt_IdVuelo;
         private System.Windows.Forms.Label label14;
@@ -331,14 +292,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmb_IdAerolinea;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cmb_IdVuelo;
+        private System.Windows.Forms.ComboBox cmb_IdAvion;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.MonthCalendar calendario_FechaSalida;
-        private System.Windows.Forms.MonthCalendar calendarioFechaLLegada;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DateTimePicker time_HoraSalida;
         private System.Windows.Forms.DateTimePicker time_HoraLlegada;
     }

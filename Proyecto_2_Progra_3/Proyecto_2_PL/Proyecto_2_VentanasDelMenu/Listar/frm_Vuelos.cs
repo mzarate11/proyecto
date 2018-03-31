@@ -8,11 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Proyecto_2_BLL.Catagolos_Mantinimiento_BLL;
+using Proyecto_2_DAL.Catalogos_y_Mantenimientos;
+using Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar;
 
 namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
 {
     public partial class frm_Vuelos : Form
     {
+        cls_Vuelos_DAL Obj_Mant_DAL;
         public frm_Vuelos()
         {
             InitializeComponent();
@@ -93,6 +96,40 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
             {
                 MessageBox.Show("No hay registros para eliminar");
             }
+        }
+
+        private void btn_Modificar_Click(object sender, EventArgs e)
+        {
+            if (dgv_Vuelos.RowCount > 0)
+            {
+
+                Obj_Mant_DAL = new cls_Vuelos_DAL();
+                Obj_Mant_DAL.cbanderaAccion = 'U';
+                Obj_Mant_DAL.sIdVuelo = dgv_Vuelos.SelectedRows[0].Cells[0].Value.ToString().Trim();
+
+                fmr_ModificarNuevo_Vuelos V_Modificar = new fmr_ModificarNuevo_Vuelos();
+                this.Hide();
+                V_Modificar.Obj_Mant_DAL = Obj_Mant_DAL; // pasamos en objeto dal a la otra pantalla
+                V_Modificar.ShowDialog();
+                this.Show();
+                CargarDatos();
+            }
+            else
+            {
+                MessageBox.Show("No se puede realizar la acción, se necesita al menos una fila seleccionada","Eror datos",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+        }
+
+        private void bnt_Nuevo_Click(object sender, EventArgs e)
+        {
+            Obj_Mant_DAL = new cls_Vuelos_DAL();
+            Obj_Mant_DAL.cbanderaAccion = 'I';
+            this.Hide();
+            fmr_ModificarNuevo_Vuelos V_Modificar = new fmr_ModificarNuevo_Vuelos();
+            V_Modificar.Obj_Mant_DAL = Obj_Mant_DAL; // pasamos en objeto dal a la otra pantalla
+            V_Modificar.ShowDialog();
+            this.Show();
+            CargarDatos();
         }
     }
 }
