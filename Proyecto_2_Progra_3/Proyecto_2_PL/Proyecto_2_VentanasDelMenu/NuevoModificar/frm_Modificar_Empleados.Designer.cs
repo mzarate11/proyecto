@@ -29,8 +29,10 @@
         private void InitializeComponent()
         {
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.tls_btn_Guardar = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.tls_btn_Salir = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.label1 = new System.Windows.Forms.Label();
@@ -41,19 +43,19 @@
             this.txt_Apellidos = new System.Windows.Forms.TextBox();
             this.txt_Edad = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txt_Cedula = new System.Windows.Forms.TextBox();
+            this.mb_Cedula = new System.Windows.Forms.MaskedTextBox();
+            this.mb_TelReferencia = new System.Windows.Forms.MaskedTextBox();
+            this.mb_TelCasa = new System.Windows.Forms.MaskedTextBox();
+            this.mb_Celular = new System.Windows.Forms.MaskedTextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_Direccion = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cb_Estado = new System.Windows.Forms.ComboBox();
+            this.cb_TipoEmpleado = new System.Windows.Forms.ComboBox();
+            this.cb_IdAerolinea = new System.Windows.Forms.ComboBox();
             this.txt_IdEmpleado = new System.Windows.Forms.TextBox();
             this.txt_Salario = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -61,8 +63,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.tls_btn_Guardar = new System.Windows.Forms.ToolStripButton();
-            this.tls_btn_Salir = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -85,6 +85,15 @@
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
+            // tls_btn_Guardar
+            // 
+            this.tls_btn_Guardar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tls_btn_Guardar.Image = global::Proyecto_2_PL.Properties.Resources.bGuardar;
+            this.tls_btn_Guardar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tls_btn_Guardar.Name = "tls_btn_Guardar";
+            this.tls_btn_Guardar.Size = new System.Drawing.Size(31, 31);
+            this.tls_btn_Guardar.Text = "toolStripButton1";
+            // 
             // toolStripLabel1
             // 
             this.toolStripLabel1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -96,6 +105,16 @@
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 34);
+            // 
+            // tls_btn_Salir
+            // 
+            this.tls_btn_Salir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tls_btn_Salir.Image = global::Proyecto_2_PL.Properties.Resources.bSalir;
+            this.tls_btn_Salir.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tls_btn_Salir.Name = "tls_btn_Salir";
+            this.tls_btn_Salir.Size = new System.Drawing.Size(31, 31);
+            this.tls_btn_Salir.Text = "toolStripButton2";
+            this.tls_btn_Salir.Click += new System.EventHandler(this.tls_btn_Salir_Click);
             // 
             // toolStripLabel2
             // 
@@ -153,9 +172,11 @@
             // 
             this.txt_Nombre.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Nombre.Location = new System.Drawing.Point(99, 21);
+            this.txt_Nombre.MaxLength = 15;
             this.txt_Nombre.Name = "txt_Nombre";
             this.txt_Nombre.Size = new System.Drawing.Size(136, 25);
             this.txt_Nombre.TabIndex = 5;
+            this.txt_Nombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Nombre_KeyPress);
             // 
             // txt_Apellidos
             // 
@@ -164,6 +185,7 @@
             this.txt_Apellidos.Name = "txt_Apellidos";
             this.txt_Apellidos.Size = new System.Drawing.Size(245, 25);
             this.txt_Apellidos.TabIndex = 6;
+            this.txt_Apellidos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Apellidos_KeyPress);
             // 
             // txt_Edad
             // 
@@ -176,15 +198,15 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Controls.Add(this.txt_Cedula);
+            this.groupBox1.Controls.Add(this.mb_Cedula);
+            this.groupBox1.Controls.Add(this.mb_TelReferencia);
+            this.groupBox1.Controls.Add(this.mb_TelCasa);
+            this.groupBox1.Controls.Add(this.mb_Celular);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txt_Direccion);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txt_Edad);
             this.groupBox1.Controls.Add(this.label1);
@@ -198,13 +220,45 @@
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             // 
-            // txt_Cedula
+            // mb_Cedula
             // 
-            this.txt_Cedula.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Cedula.Location = new System.Drawing.Point(99, 58);
-            this.txt_Cedula.Name = "txt_Cedula";
-            this.txt_Cedula.Size = new System.Drawing.Size(136, 25);
-            this.txt_Cedula.TabIndex = 16;
+            this.mb_Cedula.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mb_Cedula.Location = new System.Drawing.Point(99, 58);
+            this.mb_Cedula.Mask = "0-0000-0000";
+            this.mb_Cedula.Name = "mb_Cedula";
+            this.mb_Cedula.Size = new System.Drawing.Size(88, 25);
+            this.mb_Cedula.TabIndex = 20;
+            this.mb_Cedula.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // mb_TelReferencia
+            // 
+            this.mb_TelReferencia.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mb_TelReferencia.Location = new System.Drawing.Point(170, 91);
+            this.mb_TelReferencia.Mask = "0000-0000";
+            this.mb_TelReferencia.Name = "mb_TelReferencia";
+            this.mb_TelReferencia.Size = new System.Drawing.Size(100, 25);
+            this.mb_TelReferencia.TabIndex = 19;
+            this.mb_TelReferencia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // mb_TelCasa
+            // 
+            this.mb_TelCasa.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mb_TelCasa.Location = new System.Drawing.Point(524, 58);
+            this.mb_TelCasa.Mask = "0000-0000";
+            this.mb_TelCasa.Name = "mb_TelCasa";
+            this.mb_TelCasa.Size = new System.Drawing.Size(100, 25);
+            this.mb_TelCasa.TabIndex = 18;
+            this.mb_TelCasa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // mb_Celular
+            // 
+            this.mb_Celular.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mb_Celular.Location = new System.Drawing.Point(304, 58);
+            this.mb_Celular.Mask = "0000-0000";
+            this.mb_Celular.Name = "mb_Celular";
+            this.mb_Celular.Size = new System.Drawing.Size(100, 25);
+            this.mb_Celular.TabIndex = 17;
+            this.mb_Celular.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label8
             // 
@@ -215,30 +269,6 @@
             this.label8.Size = new System.Drawing.Size(48, 17);
             this.label8.TabIndex = 15;
             this.label8.Text = "Cédula";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(186, 91);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(112, 25);
-            this.textBox4.TabIndex = 14;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(315, 58);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(112, 25);
-            this.textBox3.TabIndex = 13;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(589, 58);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(112, 25);
-            this.textBox2.TabIndex = 12;
             // 
             // label7
             // 
@@ -264,27 +294,27 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(484, 61);
+            this.label5.Location = new System.Drawing.Point(428, 61);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(90, 17);
             this.label5.TabIndex = 9;
             this.label5.Text = "Teléfono Casa";
             // 
-            // textBox1
+            // txt_Direccion
             // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(391, 94);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(310, 53);
-            this.textBox1.TabIndex = 8;
+            this.txt_Direccion.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Direccion.Location = new System.Drawing.Point(391, 94);
+            this.txt_Direccion.Multiline = true;
+            this.txt_Direccion.Name = "txt_Direccion";
+            this.txt_Direccion.Size = new System.Drawing.Size(310, 53);
+            this.txt_Direccion.TabIndex = 8;
             // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox2.Controls.Add(this.comboBox3);
-            this.groupBox2.Controls.Add(this.comboBox2);
-            this.groupBox2.Controls.Add(this.comboBox1);
+            this.groupBox2.Controls.Add(this.cb_Estado);
+            this.groupBox2.Controls.Add(this.cb_TipoEmpleado);
+            this.groupBox2.Controls.Add(this.cb_IdAerolinea);
             this.groupBox2.Controls.Add(this.txt_IdEmpleado);
             this.groupBox2.Controls.Add(this.txt_Salario);
             this.groupBox2.Controls.Add(this.label13);
@@ -298,32 +328,32 @@
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             // 
-            // comboBox3
+            // cb_Estado
             // 
-            this.comboBox3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(544, 76);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 25);
-            this.comboBox3.TabIndex = 21;
+            this.cb_Estado.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_Estado.FormattingEnabled = true;
+            this.cb_Estado.Location = new System.Drawing.Point(544, 76);
+            this.cb_Estado.Name = "cb_Estado";
+            this.cb_Estado.Size = new System.Drawing.Size(121, 25);
+            this.cb_Estado.TabIndex = 21;
             // 
-            // comboBox2
+            // cb_TipoEmpleado
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(544, 48);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 25);
-            this.comboBox2.TabIndex = 20;
+            this.cb_TipoEmpleado.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_TipoEmpleado.FormattingEnabled = true;
+            this.cb_TipoEmpleado.Location = new System.Drawing.Point(544, 48);
+            this.cb_TipoEmpleado.Name = "cb_TipoEmpleado";
+            this.cb_TipoEmpleado.Size = new System.Drawing.Size(121, 25);
+            this.cb_TipoEmpleado.TabIndex = 20;
             // 
-            // comboBox1
+            // cb_IdAerolinea
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(544, 17);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 25);
-            this.comboBox1.TabIndex = 19;
+            this.cb_IdAerolinea.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_IdAerolinea.FormattingEnabled = true;
+            this.cb_IdAerolinea.Location = new System.Drawing.Point(544, 17);
+            this.cb_IdAerolinea.Name = "cb_IdAerolinea";
+            this.cb_IdAerolinea.Size = new System.Drawing.Size(121, 25);
+            this.cb_IdAerolinea.TabIndex = 19;
             // 
             // txt_IdEmpleado
             // 
@@ -391,24 +421,6 @@
             this.label9.TabIndex = 0;
             this.label9.Text = "Salario";
             // 
-            // tls_btn_Guardar
-            // 
-            this.tls_btn_Guardar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tls_btn_Guardar.Image = global::Proyecto_2_PL.Properties.Resources.bGuardar;
-            this.tls_btn_Guardar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tls_btn_Guardar.Name = "tls_btn_Guardar";
-            this.tls_btn_Guardar.Size = new System.Drawing.Size(31, 31);
-            this.tls_btn_Guardar.Text = "toolStripButton1";
-            // 
-            // tls_btn_Salir
-            // 
-            this.tls_btn_Salir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tls_btn_Salir.Image = global::Proyecto_2_PL.Properties.Resources.bSalir;
-            this.tls_btn_Salir.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tls_btn_Salir.Name = "tls_btn_Salir";
-            this.tls_btn_Salir.Size = new System.Drawing.Size(31, 31);
-            this.tls_btn_Salir.Text = "toolStripButton2";
-            // 
             // frm_Modificar_Empleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -422,6 +434,7 @@
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frm_Modificar_Empleados";
+            this.Load += new System.EventHandler(this.frm_Modificar_Empleados_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -450,13 +463,9 @@
         private System.Windows.Forms.TextBox txt_Apellidos;
         private System.Windows.Forms.TextBox txt_Edad;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_Direccion;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox txt_Cedula;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
@@ -465,10 +474,14 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cb_Estado;
+        private System.Windows.Forms.ComboBox cb_TipoEmpleado;
+        private System.Windows.Forms.ComboBox cb_IdAerolinea;
         private System.Windows.Forms.TextBox txt_IdEmpleado;
         private System.Windows.Forms.TextBox txt_Salario;
+        private System.Windows.Forms.MaskedTextBox mb_Celular;
+        private System.Windows.Forms.MaskedTextBox mb_Cedula;
+        private System.Windows.Forms.MaskedTextBox mb_TelReferencia;
+        private System.Windows.Forms.MaskedTextBox mb_TelCasa;
     }
 }

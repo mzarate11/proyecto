@@ -12,9 +12,9 @@ namespace Proyecto_2_DAL.Catalogos_y_Mantenimientos
         private string _sNombre, _sApellidos, _sDireccion;
         private int _iIdTipoEmpleado, _iIdAerolinea, _iCedula, _iTelCasa, _iTelRef, _iCelular;
         private double _dSalario;
-        private short _uIdEmpleado;
+        private ushort _uIdEmpleado;
         private byte _bEdad;
-        private char _cIdEstado;
+        private char _cIdEstado , _cBandera;
 
         #region Constructores 
 
@@ -148,7 +148,7 @@ namespace Proyecto_2_DAL.Catalogos_y_Mantenimientos
             }
         }
 
-        public short uIdEmpleado
+        public ushort uIdEmpleado
         {
             get
             {
@@ -184,6 +184,19 @@ namespace Proyecto_2_DAL.Catalogos_y_Mantenimientos
             set
             {
                 _cIdEstado = value;
+            }
+        }
+
+        public char cBandera
+        {
+            get
+            {
+                return _cBandera;
+            }
+
+            set
+            {
+                _cBandera = value;
             }
         }
         #endregion` 

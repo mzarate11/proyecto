@@ -29,23 +29,23 @@
         private void InitializeComponent()
         {
             this.MenuVentana = new System.Windows.Forms.ToolStrip();
+            this.tls_btn_Refrescar = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.tls_btn_Nuevo = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.tls_btn_Modificar = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.tls_btn_Eliminar = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel4 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel5 = new System.Windows.Forms.ToolStripLabel();
             this.tls_txt_Filtro = new System.Windows.Forms.ToolStripTextBox();
+            this.tls_btn_Salir = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel6 = new System.Windows.Forms.ToolStripLabel();
             this.dgv_Empleados = new System.Windows.Forms.DataGridView();
-            this.tls_btn_Refrescar = new System.Windows.Forms.ToolStripButton();
-            this.tls_btn_Nuevo = new System.Windows.Forms.ToolStripButton();
-            this.tls_btn_Modificar = new System.Windows.Forms.ToolStripButton();
-            this.tls_btn_Eliminar = new System.Windows.Forms.ToolStripButton();
-            this.tls_btn_Salir = new System.Windows.Forms.ToolStripButton();
             this.MenuVentana.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Empleados)).BeginInit();
             this.SuspendLayout();
@@ -84,6 +84,16 @@
             this.MenuVentana.TabIndex = 4;
             this.MenuVentana.Text = "toolStrip1";
             // 
+            // tls_btn_Refrescar
+            // 
+            this.tls_btn_Refrescar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tls_btn_Refrescar.Image = global::Proyecto_2_PL.Properties.Resources.refrescar;
+            this.tls_btn_Refrescar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tls_btn_Refrescar.Name = "tls_btn_Refrescar";
+            this.tls_btn_Refrescar.Size = new System.Drawing.Size(34, 31);
+            this.tls_btn_Refrescar.Text = "toolStripButton1";
+            this.tls_btn_Refrescar.Click += new System.EventHandler(this.tls_btn_Refrescar_Click);
+            // 
             // toolStripLabel1
             // 
             this.toolStripLabel1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -95,6 +105,16 @@
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 34);
+            // 
+            // tls_btn_Nuevo
+            // 
+            this.tls_btn_Nuevo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tls_btn_Nuevo.Image = global::Proyecto_2_PL.Properties.Resources.bNuevo;
+            this.tls_btn_Nuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tls_btn_Nuevo.Name = "tls_btn_Nuevo";
+            this.tls_btn_Nuevo.Size = new System.Drawing.Size(34, 31);
+            this.tls_btn_Nuevo.Text = "toolStripButton2";
+            this.tls_btn_Nuevo.Click += new System.EventHandler(this.tls_btn_Nuevo_Click);
             // 
             // toolStripLabel2
             // 
@@ -109,6 +129,16 @@
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 34);
             // 
+            // tls_btn_Modificar
+            // 
+            this.tls_btn_Modificar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tls_btn_Modificar.Image = global::Proyecto_2_PL.Properties.Resources.modificar;
+            this.tls_btn_Modificar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tls_btn_Modificar.Name = "tls_btn_Modificar";
+            this.tls_btn_Modificar.Size = new System.Drawing.Size(34, 31);
+            this.tls_btn_Modificar.Text = "toolStripButton3";
+            this.tls_btn_Modificar.Click += new System.EventHandler(this.tls_btn_Modificar_Click);
+            // 
             // toolStripLabel3
             // 
             this.toolStripLabel3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -120,6 +150,16 @@
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 34);
+            // 
+            // tls_btn_Eliminar
+            // 
+            this.tls_btn_Eliminar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tls_btn_Eliminar.Image = global::Proyecto_2_PL.Properties.Resources.eliminar;
+            this.tls_btn_Eliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tls_btn_Eliminar.Name = "tls_btn_Eliminar";
+            this.tls_btn_Eliminar.Size = new System.Drawing.Size(34, 31);
+            this.tls_btn_Eliminar.Text = "toolStripButton4";
+            this.tls_btn_Eliminar.Click += new System.EventHandler(this.tls_btn_Eliminar_Click);
             // 
             // toolStripLabel4
             // 
@@ -146,60 +186,6 @@
             this.tls_txt_Filtro.Size = new System.Drawing.Size(100, 34);
             this.tls_txt_Filtro.TextChanged += new System.EventHandler(this.tls_txt_Filtro_TextChanged);
             // 
-            // toolStripLabel6
-            // 
-            this.toolStripLabel6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripLabel6.Name = "toolStripLabel6";
-            this.toolStripLabel6.Size = new System.Drawing.Size(33, 31);
-            this.toolStripLabel6.Text = "Salir";
-            // 
-            // dgv_Empleados
-            // 
-            this.dgv_Empleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_Empleados.Location = new System.Drawing.Point(-2, 33);
-            this.dgv_Empleados.Name = "dgv_Empleados";
-            this.dgv_Empleados.Size = new System.Drawing.Size(840, 362);
-            this.dgv_Empleados.TabIndex = 6;
-            // 
-            // tls_btn_Refrescar
-            // 
-            this.tls_btn_Refrescar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tls_btn_Refrescar.Image = global::Proyecto_2_PL.Properties.Resources.refrescar;
-            this.tls_btn_Refrescar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tls_btn_Refrescar.Name = "tls_btn_Refrescar";
-            this.tls_btn_Refrescar.Size = new System.Drawing.Size(34, 31);
-            this.tls_btn_Refrescar.Text = "toolStripButton1";
-            this.tls_btn_Refrescar.Click += new System.EventHandler(this.tls_btn_Refrescar_Click);
-            // 
-            // tls_btn_Nuevo
-            // 
-            this.tls_btn_Nuevo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tls_btn_Nuevo.Image = global::Proyecto_2_PL.Properties.Resources.bNuevo;
-            this.tls_btn_Nuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tls_btn_Nuevo.Name = "tls_btn_Nuevo";
-            this.tls_btn_Nuevo.Size = new System.Drawing.Size(34, 31);
-            this.tls_btn_Nuevo.Text = "toolStripButton2";
-            this.tls_btn_Nuevo.Click += new System.EventHandler(this.tls_btn_Nuevo_Click);
-            // 
-            // tls_btn_Modificar
-            // 
-            this.tls_btn_Modificar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tls_btn_Modificar.Image = global::Proyecto_2_PL.Properties.Resources.modificar;
-            this.tls_btn_Modificar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tls_btn_Modificar.Name = "tls_btn_Modificar";
-            this.tls_btn_Modificar.Size = new System.Drawing.Size(34, 31);
-            this.tls_btn_Modificar.Text = "toolStripButton3";
-            // 
-            // tls_btn_Eliminar
-            // 
-            this.tls_btn_Eliminar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tls_btn_Eliminar.Image = global::Proyecto_2_PL.Properties.Resources.eliminar;
-            this.tls_btn_Eliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tls_btn_Eliminar.Name = "tls_btn_Eliminar";
-            this.tls_btn_Eliminar.Size = new System.Drawing.Size(34, 31);
-            this.tls_btn_Eliminar.Text = "toolStripButton4";
-            this.tls_btn_Eliminar.Click += new System.EventHandler(this.tls_btn_Eliminar_Click);
-            // 
             // tls_btn_Salir
             // 
             this.tls_btn_Salir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -210,6 +196,27 @@
             this.tls_btn_Salir.Size = new System.Drawing.Size(34, 31);
             this.tls_btn_Salir.Text = "toolStripButton5";
             this.tls_btn_Salir.Click += new System.EventHandler(this.tls_btn_Salir_Click);
+            // 
+            // toolStripLabel6
+            // 
+            this.toolStripLabel6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripLabel6.Name = "toolStripLabel6";
+            this.toolStripLabel6.Size = new System.Drawing.Size(33, 31);
+            this.toolStripLabel6.Text = "Salir";
+            // 
+            // dgv_Empleados
+            // 
+            this.dgv_Empleados.AllowUserToAddRows = false;
+            this.dgv_Empleados.AllowUserToDeleteRows = false;
+            this.dgv_Empleados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgv_Empleados.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgv_Empleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Empleados.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgv_Empleados.Location = new System.Drawing.Point(-2, 33);
+            this.dgv_Empleados.MultiSelect = false;
+            this.dgv_Empleados.Name = "dgv_Empleados";
+            this.dgv_Empleados.Size = new System.Drawing.Size(840, 362);
+            this.dgv_Empleados.TabIndex = 6;
             // 
             // frm_Empleados
             // 
