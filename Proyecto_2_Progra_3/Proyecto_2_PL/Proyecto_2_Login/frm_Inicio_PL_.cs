@@ -36,7 +36,7 @@ namespace Proyecto_2_PL.Proyecto_2_Login
                         break;
 
                     case 30:
-                        lbl_InicioSistema.Text = "Proyecto ...";
+                        lbl_Titulo.Text = "Proyecto ...";
                         break;
 
                     case 60:

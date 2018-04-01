@@ -153,6 +153,16 @@ namespace Proyecto_2_PL.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap fondo_vuelos {
+            get {
+                object obj = ResourceManager.GetObject("fondo vuelos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fondo2 {
             get {
                 object obj = ResourceManager.GetObject("fondo2", resourceCulture);
@@ -196,6 +206,16 @@ namespace Proyecto_2_PL.Properties {
         internal static System.Drawing.Bitmap fondomenu {
             get {
                 object obj = ResourceManager.GetObject("fondomenu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fundo {
+            get {
+                object obj = ResourceManager.GetObject("fundo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

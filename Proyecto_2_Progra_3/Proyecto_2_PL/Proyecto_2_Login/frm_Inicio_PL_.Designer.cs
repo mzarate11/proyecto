@@ -40,17 +40,18 @@
             this.lbl_Titulo.AutoSize = true;
             this.lbl_Titulo.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F);
-            this.lbl_Titulo.Location = new System.Drawing.Point(178, 59);
+            this.lbl_Titulo.Location = new System.Drawing.Point(257, 35);
             this.lbl_Titulo.Name = "lbl_Titulo";
-            this.lbl_Titulo.Size = new System.Drawing.Size(543, 82);
+            this.lbl_Titulo.Size = new System.Drawing.Size(451, 69);
             this.lbl_Titulo.TabIndex = 0;
             this.lbl_Titulo.Text = "Programación 3";
             // 
             // pgb_BarraEstado
             // 
-            this.pgb_BarraEstado.Location = new System.Drawing.Point(75, 537);
+            this.pgb_BarraEstado.Location = new System.Drawing.Point(67, 430);
+            this.pgb_BarraEstado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pgb_BarraEstado.Name = "pgb_BarraEstado";
-            this.pgb_BarraEstado.Size = new System.Drawing.Size(458, 35);
+            this.pgb_BarraEstado.Size = new System.Drawing.Size(407, 28);
             this.pgb_BarraEstado.TabIndex = 1;
             // 
             // lbl_InicioSistema
@@ -59,9 +60,9 @@
             this.lbl_InicioSistema.BackColor = System.Drawing.Color.Transparent;
             this.lbl_InicioSistema.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.lbl_InicioSistema.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbl_InicioSistema.Location = new System.Drawing.Point(539, 539);
+            this.lbl_InicioSistema.Location = new System.Drawing.Point(479, 431);
             this.lbl_InicioSistema.Name = "lbl_InicioSistema";
-            this.lbl_InicioSistema.Size = new System.Drawing.Size(241, 33);
+            this.lbl_InicioSistema.Size = new System.Drawing.Size(199, 29);
             this.lbl_InicioSistema.TabIndex = 2;
             this.lbl_InicioSistema.Text = "Inicio del sistema";
             // 
@@ -71,14 +72,16 @@
             // 
             // frm_Inicio_PL
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Proyecto_2_PL.Properties.Resources.inicio;
-            this.ClientSize = new System.Drawing.Size(1196, 655);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(968, 500);
             this.Controls.Add(this.lbl_InicioSistema);
             this.Controls.Add(this.pgb_BarraEstado);
             this.Controls.Add(this.lbl_Titulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frm_Inicio_PL";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_Inicio_PL";

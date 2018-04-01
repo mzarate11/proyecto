@@ -84,5 +84,19 @@ namespace Proyecto_2_BLL.Catagolos_Mantinimiento_BLL
             }
         }
 
+        #region  Tabla Insertar Categorias Vuelos
+        public void Insertar_Estados(ref string sMsjError, ref Proyecto_2_DAL.Catalogos_y_Mantenimientos.cls_T_CategoriasVuelos_DAL Obj_EstaCatego_DAL)
+        {
+
+        }
+        #endregion
+
+        #region  Tabla Modificar Categorias Vuelos
+        public void Modificar_Estados(ref string sMsjError, ref Proyecto_2_DAL.Catalogos_y_Mantenimientos.cls_T_CategoriasVuelos_DAL Obj_EstaCatego_DAL)
+        {
+
+        }
+        #endregion
+
     } // fin
 }

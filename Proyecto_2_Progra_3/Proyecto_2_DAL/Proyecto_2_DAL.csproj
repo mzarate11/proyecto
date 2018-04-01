@@ -47,6 +47,8 @@
     <Compile Include="Catalogos y Mantenimientos\cls_Estados_DAL.cs" />
     <Compile Include="Catalogos y Mantenimientos\cls_Paises_DAL.cs" />
     <Compile Include="Catalogos y Mantenimientos\cls_TipoAviones_DAL.cs" />
+    <Compile Include="Catalogos y Mantenimientos\cls_T_CategoriasVuelos_DAL.cs" />
+    <Compile Include="Catalogos y Mantenimientos\cls_T_Usuarios_DAL.cs" />
     <Compile Include="Catalogos y Mantenimientos\cls_Vuelos_DAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
