@@ -39,7 +39,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
 
             if (sMsjError == string.Empty)
             {
-               dgv_Destinos.DataSource = null;
+                dgv_Destinos.DataSource = null;
                 dgv_Destinos.DataSource = dtEstados;
 
             }
@@ -98,7 +98,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
         private void tls_btn_Modificar_Click(object sender, EventArgs e)
         {
             frm_Modificar_Destinos ModificarDestinos = new frm_Modificar_Destinos();
-            if(dgv_Destinos.RowCount>0)
+            if (dgv_Destinos.RowCount > 0)
             {
                 ObjDestinos_DAL = new cls_Destinos_DAL();
 
@@ -143,6 +143,11 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
             ModificarDestinos.ShowDialog();
 
             tls_txt_Filtro.Text = string.Empty;
+            CargarDatos();
+        }
+
+        private void tls_txt_Filtro_TextChanged(object sender, EventArgs e)
+        {
             CargarDatos();
         }
     }

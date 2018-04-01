@@ -49,10 +49,11 @@
             // cmboxEstado
             // 
             this.cmboxEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmboxEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmboxEstado.FormattingEnabled = true;
             this.cmboxEstado.Location = new System.Drawing.Point(552, 157);
             this.cmboxEstado.Name = "cmboxEstado";
-            this.cmboxEstado.Size = new System.Drawing.Size(161, 21);
+            this.cmboxEstado.Size = new System.Drawing.Size(161, 24);
             this.cmboxEstado.TabIndex = 25;
             // 
             // label4
@@ -69,10 +70,11 @@
             // txtCodigoArea
             // 
             this.txtCodigoArea.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCodigoArea.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodigoArea.Location = new System.Drawing.Point(552, 123);
             this.txtCodigoArea.MaxLength = 5;
             this.txtCodigoArea.Name = "txtCodigoArea";
-            this.txtCodigoArea.Size = new System.Drawing.Size(161, 20);
+            this.txtCodigoArea.Size = new System.Drawing.Size(161, 22);
             this.txtCodigoArea.TabIndex = 23;
             // 
             // txtCodigoISO
@@ -137,7 +139,7 @@
             this.toolStripLabel2});
             this.toolStrip1.Location = new System.Drawing.Point(9, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(251, 39);
+            this.toolStrip1.Size = new System.Drawing.Size(220, 39);
             this.toolStrip1.TabIndex = 26;
             this.toolStrip1.Text = "toolStrip1";
             // 

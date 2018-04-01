@@ -22,7 +22,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
         public cls_Paises_DAL Obj_Paises_DAL;
         public void CargarDatos()
         {
-            if(Obj_Paises_DAL!=null)
+            if (Obj_Paises_DAL != null)
             {
                 #region Estados
                 cls_Estados_BLL ObjEstados = new cls_Estados_BLL();
@@ -33,7 +33,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 cmboxEstado.DisplayMember = DT.Columns[0].ToString();
                 #endregion
 
-                if (Obj_Paises_DAL.cBandera=='I')
+                if (Obj_Paises_DAL.cBandera == 'I')
                 {
                     txtNombrePais.Clear();
                     txtCodigoISO.Clear();
@@ -68,20 +68,66 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            cls_Paises_BLL Obj_Paises_BLL = new cls_Paises_BLL();
-            string sMsjError = string.Empty;
-
-            Obj_Paises_DAL.sNombrePais = txtNombrePais.Text;
-            Obj_Paises_DAL.sCodigoISOPais = txtCodigoISO.Text;
-            Obj_Paises_DAL.sCodigoAreaPais = txtCodigoArea.Text;
-
-            if(Obj_Paises_DAL.cBandera == 'I')
+            if ((txtNombrePais.Text != string.Empty) || (txtCodigoArea.Text != string.Empty) || (txtCodigoISO.Text != string.Empty))
             {
-                Obj_Paises_BLL.Insertar_Paises(ref sMsjError, ref Obj_Paises_DAL);
+                cls_Paises_BLL Obj_Paises_BLL = new cls_Paises_BLL();
+                string sMsjError = string.Empty;
+
+                Obj_Paises_DAL.sNombrePais = txtNombrePais.Text;
+                Obj_Paises_DAL.sCodigoISOPais = txtCodigoISO.Text;
+                Obj_Paises_DAL.sCodigoAreaPais = txtCodigoArea.Text;
+                MessageBox.Show("Dato: " + cmboxEstado.SelectedItem.ToString());
+
+                if (Obj_Paises_DAL.cBandera == 'I')
+                {
+                    Obj_Paises_BLL.Insertar_Paises(ref sMsjError, ref Obj_Paises_DAL);
+                }
+                else
+                {
+                    Obj_Paises_BLL.Modificar_Paises(ref sMsjError, ref Obj_Paises_DAL);
+                }
             }
             else
             {
-                Obj_Paises_BLL.Modificar_Paises(ref sMsjError, ref Obj_Paises_DAL);
+                MessageBox.Show("Se ecnuentran cajas de texto vacías, favor revisar", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void txtNombrePais_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((char.IsLetter(e.KeyChar)) || (e.KeyChar == Convert.ToChar(Keys.Back)))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtCodigoISO_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((char.IsLetter(e.KeyChar)) || (e.KeyChar == Convert.ToChar(Keys.Back)))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtCodigoArea_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (((e.KeyChar == '+') && (txtCodigoArea.TextLength == 0)) ||
+                (char.IsNumber(e.KeyChar)) ||
+                (e.KeyChar == Convert.ToChar(Keys.Back)))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
             }
         }
     }

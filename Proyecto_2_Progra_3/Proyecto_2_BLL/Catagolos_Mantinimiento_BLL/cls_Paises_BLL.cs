@@ -38,7 +38,7 @@ namespace Proyecto_2_BLL.Catagolos_Mantinimiento_BLL
             cls_BaseDatos_DAL ObjDAL = new cls_BaseDatos_DAL();
             ObjBLL.TablaParametros(ref ObjDAL);
             ObjDAL.DT_Parametros.Rows.Add("@NombrePais", 3, sFiltro);
-            ObjDAL.sNombreTabla = "Filtro_Paises";
+            ObjDAL.sNombreTabla = "Filtro Paises";
             ObjDAL.sSentencia = ConfigurationManager.AppSettings["Filtrar Paises"].ToString().Trim();
             ObjBLL.Ejec_DataAdapter(ref ObjDAL);
 
