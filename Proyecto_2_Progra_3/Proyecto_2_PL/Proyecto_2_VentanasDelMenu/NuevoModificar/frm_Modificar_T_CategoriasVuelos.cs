@@ -21,63 +21,6 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             InitializeComponent();
         }
 
-        #region Boton salir
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-
-            this.Close();
-
-        }
-        #endregion
-
-        #region Validar Descripcion
-        private void tb_DescCategoria_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back)
-            {
-                e.Handled = true;
-
-                MessageBox.Show("Este campo solo permite letras", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            }
-            else
-            {
-                e.Handled = false;
-            }
-        }
-        #endregion
-
-        #region Validar ID Categoria
-        private void tb_IdCategoria_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            MessageBox.Show("Este Campo no es editable", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            e.Handled = true;
-        }
-        #endregion
-
-        #region Boton Guardar
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-            if (Obj_ManteCategorias_DAL.cBandAX == 'I')
-            {
-
-            }
-            else
-            {
-
-            }
-        }
-        #endregion
-
-        #region no aplica
-        private void frm_Modificar_T_CategoriasVuelos_Load(object sender, EventArgs e)
-        {
-
-          //  CargarDatos();
-
-        }
-        #endregion  
-
         #region CargarDatos
         private void CargarDatos()
         {
@@ -121,9 +64,55 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
 
         #endregion
 
+        #region Load
         private void frm_Modificar_T_CategoriasVuelos_Load_1(object sender, EventArgs e)
         {
             CargarDatos();
         }
+        #endregion
+
+        #region Boton Salir
+        private void btnSalir_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        #endregion
+
+        #region Boton Guardar
+        private void btnGuardar_Click_1(object sender, EventArgs e)
+        {
+            if (Obj_ManteCategorias_DAL.cBandAX == 'I')
+            {
+
+            }
+            else
+            {
+
+            }
+        }
+        #endregion
+
+        #region Validaciones Caja de texto
+        private void tb_IdCategoria_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            MessageBox.Show("Este Campo no es editable", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            e.Handled = true;
+        }
+
+        private void tb_DescCategoria_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back)
+            {
+                e.Handled = true;
+
+                MessageBox.Show("Este campo solo permite letras", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            else
+            {
+                e.Handled = false;
+            }
+        }
+        #endregion
     }
 }

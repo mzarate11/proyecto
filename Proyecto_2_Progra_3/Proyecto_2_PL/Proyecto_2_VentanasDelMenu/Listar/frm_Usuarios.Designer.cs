@@ -79,10 +79,10 @@
             this.btn_Salir,
             this.toolStripLabel6});
             this.MenuVentana.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
-            this.MenuVentana.Location = new System.Drawing.Point(13, 9);
+            this.MenuVentana.Location = new System.Drawing.Point(12, 7);
             this.MenuVentana.Name = "MenuVentana";
             this.MenuVentana.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
-            this.MenuVentana.Size = new System.Drawing.Size(1223, 43);
+            this.MenuVentana.Size = new System.Drawing.Size(1087, 34);
             this.MenuVentana.TabIndex = 5;
             this.MenuVentana.Text = "toolStrip1";
             this.MenuVentana.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.MenuVentana_ItemClicked);
@@ -95,11 +95,12 @@
             this.btn_Refrescar.Name = "btn_Refrescar";
             this.btn_Refrescar.Size = new System.Drawing.Size(28, 28);
             this.btn_Refrescar.Text = "toolStripButton1";
+            this.btn_Refrescar.Click += new System.EventHandler(this.btn_Refrescar_Click);
             // 
             // toolStripLabel1
             // 
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(83, 25);
+            this.toolStripLabel1.Size = new System.Drawing.Size(70, 20);
             this.toolStripLabel1.Text = "Refrescar";
             // 
             // toolStripSeparator1
@@ -115,11 +116,12 @@
             this.bnt_Nuevo.Name = "bnt_Nuevo";
             this.bnt_Nuevo.Size = new System.Drawing.Size(28, 28);
             this.bnt_Nuevo.Text = "toolStripButton2";
+            this.bnt_Nuevo.Click += new System.EventHandler(this.bnt_Nuevo_Click);
             // 
             // toolStripLabel2
             // 
             this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(64, 25);
+            this.toolStripLabel2.Size = new System.Drawing.Size(52, 20);
             this.toolStripLabel2.Text = "Nuevo";
             // 
             // toolStripSeparator2
@@ -135,11 +137,12 @@
             this.btn_Modificar.Name = "btn_Modificar";
             this.btn_Modificar.Size = new System.Drawing.Size(28, 28);
             this.btn_Modificar.Text = "toolStripButton3";
+            this.btn_Modificar.Click += new System.EventHandler(this.btn_Modificar_Click);
             // 
             // toolStripLabel3
             // 
             this.toolStripLabel3.Name = "toolStripLabel3";
-            this.toolStripLabel3.Size = new System.Drawing.Size(87, 25);
+            this.toolStripLabel3.Size = new System.Drawing.Size(73, 20);
             this.toolStripLabel3.Text = "Modificar";
             // 
             // toolStripSeparator3
@@ -160,7 +163,7 @@
             // toolStripLabel4
             // 
             this.toolStripLabel4.Name = "toolStripLabel4";
-            this.toolStripLabel4.Size = new System.Drawing.Size(74, 25);
+            this.toolStripLabel4.Size = new System.Drawing.Size(63, 20);
             this.toolStripLabel4.Text = "Eliminar";
             // 
             // toolStripSeparator4
@@ -171,13 +174,13 @@
             // toolStripLabel5
             // 
             this.toolStripLabel5.Name = "toolStripLabel5";
-            this.toolStripLabel5.Size = new System.Drawing.Size(56, 25);
+            this.toolStripLabel5.Size = new System.Drawing.Size(46, 20);
             this.toolStripLabel5.Text = "Filtro:";
             // 
             // txtFiltro
             // 
             this.txtFiltro.Name = "txtFiltro";
-            this.txtFiltro.Size = new System.Drawing.Size(148, 31);
+            this.txtFiltro.Size = new System.Drawing.Size(132, 27);
             this.txtFiltro.TextChanged += new System.EventHandler(this.txtFiltro_TextChanged);
             // 
             // btn_Salir
@@ -194,7 +197,7 @@
             // toolStripLabel6
             // 
             this.toolStripLabel6.Name = "toolStripLabel6";
-            this.toolStripLabel6.Size = new System.Drawing.Size(45, 25);
+            this.toolStripLabel6.Size = new System.Drawing.Size(38, 20);
             this.toolStripLabel6.Text = "Salir";
             // 
             // dgv_Usuarios
@@ -205,24 +208,25 @@
             this.dgv_Usuarios.AllowUserToResizeRows = false;
             this.dgv_Usuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Usuarios.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgv_Usuarios.Location = new System.Drawing.Point(13, 57);
-            this.dgv_Usuarios.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dgv_Usuarios.Location = new System.Drawing.Point(12, 46);
+            this.dgv_Usuarios.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgv_Usuarios.MultiSelect = false;
             this.dgv_Usuarios.Name = "dgv_Usuarios";
             this.dgv_Usuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_Usuarios.Size = new System.Drawing.Size(1223, 570);
+            this.dgv_Usuarios.Size = new System.Drawing.Size(1087, 456);
             this.dgv_Usuarios.TabIndex = 6;
+            this.dgv_Usuarios.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_Usuarios_RowHeaderMouseDoubleClick);
             // 
             // frm_Usuarios
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(1249, 641);
+            this.ClientSize = new System.Drawing.Size(1110, 513);
             this.Controls.Add(this.MenuVentana);
             this.Controls.Add(this.dgv_Usuarios);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frm_Usuarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_Usuarios";

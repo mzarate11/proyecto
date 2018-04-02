@@ -200,6 +200,7 @@
             this.txt_NombreDestino.Name = "txt_NombreDestino";
             this.txt_NombreDestino.Size = new System.Drawing.Size(162, 26);
             this.txt_NombreDestino.TabIndex = 31;
+            this.txt_NombreDestino.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_NombreDestino_KeyPress);
             // 
             // label1
             // 
@@ -220,6 +221,7 @@
             this.txt_IdDestino.Name = "txt_IdDestino";
             this.txt_IdDestino.Size = new System.Drawing.Size(162, 26);
             this.txt_IdDestino.TabIndex = 41;
+            this.txt_IdDestino.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_IdDestino_KeyPress);
             // 
             // label6
             // 

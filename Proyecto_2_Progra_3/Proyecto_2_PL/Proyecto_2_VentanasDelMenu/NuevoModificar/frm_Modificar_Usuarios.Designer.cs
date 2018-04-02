@@ -81,6 +81,7 @@
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(36, 36);
             this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click_1);
             // 
             // toolStripLabel1
             // 
@@ -103,6 +104,7 @@
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(36, 36);
             this.btnSalir.Text = "Salir";
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // toolStripLabel2
             // 
@@ -140,6 +142,7 @@
             this.txt_Password.Name = "txt_Password";
             this.txt_Password.Size = new System.Drawing.Size(331, 22);
             this.txt_Password.TabIndex = 54;
+            this.txt_Password.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Password_KeyPress_1);
             // 
             // txt_Username
             // 
@@ -150,6 +153,7 @@
             this.txt_Username.Name = "txt_Username";
             this.txt_Username.Size = new System.Drawing.Size(165, 22);
             this.txt_Username.TabIndex = 53;
+            this.txt_Username.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Username_KeyPress_1);
             // 
             // lb_IdEmpleado
             // 

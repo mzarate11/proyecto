@@ -114,9 +114,13 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             }
         }
 
-        private void txt_NombreDestino_KeyPress(object sender, KeyPressEventArgs e)
+
+        private void txt_IdDestino_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((char.IsLetter(e.KeyChar)) || (e.KeyChar == Convert.ToChar(Keys.Back)))
+            if ((e.KeyChar == '-' && !txt_IdDestino.Text.Contains("-")) ||
+                (char.IsLetter(e.KeyChar)) ||
+                (char.IsNumber(e.KeyChar)) ||
+               (e.KeyChar == Convert.ToChar(Keys.Back)))
             {
                 e.Handled = false;
             }
@@ -126,12 +130,9 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             }
         }
 
-        private void txt_IdDestino_KeyPress(object sender, KeyPressEventArgs e)
+        private void txt_NombreDestino_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((e.KeyChar == '-' && !txt_IdDestino.Text.Contains("-")) ||
-                (char.IsLetter(e.KeyChar)) ||
-                (char.IsNumber(e.KeyChar)) ||
-               (e.KeyChar == Convert.ToChar(Keys.Back)))
+            if ((char.IsLetter(e.KeyChar)) || (e.KeyChar == Convert.ToChar(Keys.Back)))
             {
                 e.Handled = false;
             }

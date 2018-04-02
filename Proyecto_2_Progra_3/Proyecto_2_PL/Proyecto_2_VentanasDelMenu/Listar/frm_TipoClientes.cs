@@ -8,11 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Proyecto_2_BLL.Catagolos_Mantinimiento_BLL;
+using Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar;
+using Proyecto_2_DAL.Catalogos_y_Mantenimientos;
 
 namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
 {
     public partial class frm_TipoClientes : Form
     {
+        #region GLOBAL
+        cls_TiposClientes_DAL ObjTiposClientesDAL;
+        #endregion
+
         public frm_TipoClientes()
         {
             InitializeComponent();
@@ -101,6 +107,68 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
 
         private void txtFiltro_TextChanged_1(object sender, EventArgs e)
         {
+            CargarDatos();
+        }
+
+        private void btn_Modificar_Click(object sender, EventArgs e)
+        {
+            ObjTiposClientesDAL = new cls_TiposClientes_DAL();
+            frm_Modificar_TipoClientes PantTiposClientes = new frm_Modificar_TipoClientes();
+            if (Dgv_View.RowCount > 0)
+            {
+                ObjTiposClientesDAL.CBandAX = 'U';
+                ObjTiposClientesDAL.IIdTipoCliente = Convert.ToInt32(Dgv_View.SelectedRows[0].Cells[0].Value.ToString().Trim());
+                ObjTiposClientesDAL.STipoCliente = Dgv_View.SelectedRows[0].Cells[1].Value.ToString().Trim();
+                ObjTiposClientesDAL.SDescripcion = Dgv_View.SelectedRows[0].Cells[2].Value.ToString().Trim();
+                ObjTiposClientesDAL.CIdEstado = Convert.ToChar(Dgv_View.SelectedRows[0].Cells[3].Value.ToString().Trim());
+
+                PantTiposClientes.Obj_DAL_TiposClientes = ObjTiposClientesDAL;
+                PantTiposClientes.ShowDialog();
+
+                txtFiltro.Text = string.Empty;
+                CargarDatos();
+            }
+            else
+            {
+
+                MessageBox.Show("No se pueden realizar la acción, debido a que no existen datos por modificar", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void bnt_Nuevo_Click(object sender, EventArgs e)
+        {
+            ObjTiposClientesDAL = new cls_TiposClientes_DAL();
+            frm_Modificar_TipoClientes PantTiposClientes = new frm_Modificar_TipoClientes();
+
+            ObjTiposClientesDAL.CBandAX = 'I';
+
+            ObjTiposClientesDAL.IIdTipoCliente = 0;
+            ObjTiposClientesDAL.SDescripcion = string.Empty;
+            ObjTiposClientesDAL.STipoCliente = string.Empty;
+            ObjTiposClientesDAL.CIdEstado = ' ';
+
+            PantTiposClientes.Obj_DAL_TiposClientes = ObjTiposClientesDAL;
+            PantTiposClientes.ShowDialog();
+
+
+            txtFiltro.Text = string.Empty;
+            CargarDatos();
+
+        }
+
+        private void Dgv_View_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            ObjTiposClientesDAL = new cls_TiposClientes_DAL();
+            frm_Modificar_TipoClientes PantTiposClientes = new frm_Modificar_TipoClientes();
+            ObjTiposClientesDAL.CBandAX = 'U';
+            ObjTiposClientesDAL.IIdTipoCliente = Convert.ToInt32(Dgv_View.SelectedRows[0].Cells[0].Value.ToString().Trim());
+            ObjTiposClientesDAL.STipoCliente = Dgv_View.SelectedRows[0].Cells[1].Value.ToString().Trim();
+            ObjTiposClientesDAL.SDescripcion = Dgv_View.SelectedRows[0].Cells[2].Value.ToString().Trim();
+            ObjTiposClientesDAL.CIdEstado = Convert.ToChar(Dgv_View.SelectedRows[0].Cells[3].Value.ToString().Trim());
+
+            PantTiposClientes.Obj_DAL_TiposClientes = ObjTiposClientesDAL;
+
+            txtFiltro.Text = string.Empty;
             CargarDatos();
         }
     }

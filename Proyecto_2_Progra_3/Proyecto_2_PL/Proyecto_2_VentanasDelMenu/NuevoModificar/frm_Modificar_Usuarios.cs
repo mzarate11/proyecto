@@ -23,18 +23,10 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             InitializeComponent();
         }
 
-        #region validacion Usuario
-        private void txt_Username_KeyPress(object sender, KeyPressEventArgs e)
+        #region Load
+        private void frm_Modificar_Usuarios_Load(object sender, EventArgs e)
         {
-            if (char.IsLetter(e.KeyChar) || (e.KeyChar == (char)Keys.Back))
-            {
-                e.Handled = true;
-
-            }
-            else
-            {
-                e.Handled = false;
-            }
+            CargarDatos();
         }
         #endregion
 
@@ -86,8 +78,42 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
 
         #endregion
 
-        #region Validacion Password
-        private void txt_Password_KeyPress(object sender, KeyPressEventArgs e)
+        #region Boton Guardar
+        private void btnGuardar_Click_1(object sender, EventArgs e)
+        {
+            if (Obj_Usuarios_Dal.cBandAX == 'I')
+            {
+
+            }
+            else
+            {
+
+            }
+        }
+        #endregion
+
+        #region Boton salir
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        #endregion
+
+        #region Validaciones de los texbox
+        private void txt_Username_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) || (e.KeyChar == (char)Keys.Back))
+            {
+                e.Handled = true;
+
+            }
+            else
+            {
+                e.Handled = false;
+            }
+        }
+
+        private void txt_Password_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             if (char.IsLetter(e.KeyChar) || (e.KeyChar == (char)Keys.Back) || (char.IsNumber(e.KeyChar)))
             {
@@ -101,37 +127,6 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
         }
 
         #endregion
-
-        #region Boton salir
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-        #endregion
-
-        #region Boton Guardar
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-            if (Obj_Usuarios_Dal.cBandAX == 'I')
-            {
-
-            }
-            else
-            {
-
-            }
-
-        }
-
-        private void frm_Modificar_Usuarios_Load(object sender, EventArgs e)
-        {
-            CargarDatos();
-        }
-
-        #endregion
-
-        
-
 
     } /// fin
 

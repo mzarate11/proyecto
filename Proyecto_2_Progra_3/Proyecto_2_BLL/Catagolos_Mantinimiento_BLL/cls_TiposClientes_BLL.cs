@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Configuration;
 using Proyecto_2_DAL.BaseDatos_DAL;
+using Proyecto_2_DAL.Catalogos_y_Mantenimientos;
 
 namespace Proyecto_2_BLL.Catagolos_Mantinimiento_BLL
 {
@@ -77,6 +78,15 @@ namespace Proyecto_2_BLL.Catagolos_Mantinimiento_BLL
             {
                 sMsjError = Obj_DAL.sMsgError;
             }
+        }
+
+        public void Insertar_TipoCliente(ref string sMsjError, ref cls_TiposClientes_DAL Obj_TiposClientes_DAL)
+        {
+
+        }
+        public void Modificar_TipoCliente(ref string sMsjError, ref cls_TiposClientes_DAL Obj_TiposClientes_DAL)
+        {
+
         }
     }
     }
