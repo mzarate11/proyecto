@@ -113,7 +113,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
         private void bnt_Nuevo_Click(object sender, EventArgs e)
         {
             ObjTipoEmpleadosDAL = new cls_TipoEmpleados_DAL();
-           frm_Modificar_TipoEmpleado PantTipoEmpleado = new frm_Modificar_TipoEmpleado();
+            frm_Modificar_TipoEmpleado PantTipoEmpleado = new frm_Modificar_TipoEmpleado();
 
             ObjTipoEmpleadosDAL.CBandAX = 'I';
             ObjTipoEmpleadosDAL.ITipoEmpleado = 0;

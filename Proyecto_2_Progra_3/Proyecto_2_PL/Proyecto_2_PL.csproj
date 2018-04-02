@@ -203,6 +203,18 @@
     <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Modificar_Paises.Designer.cs">
       <DependentUpon>frm_Modificar_Paises.cs</DependentUpon>
     </Compile>
+    <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Modificar_TipoClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Modificar_TipoClientes.Designer.cs">
+      <DependentUpon>frm_Modificar_TipoClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Modificar_TipoEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Modificar_TipoEmpleado.Designer.cs">
+      <DependentUpon>frm_Modificar_TipoEmpleado.cs</DependentUpon>
+    </Compile>
     <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Modificar_T_CategoriasVuelos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -293,6 +305,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Modificar_Paises.resx">
       <DependentUpon>frm_Modificar_Paises.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Modificar_TipoClientes.resx">
+      <DependentUpon>frm_Modificar_TipoClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Modificar_TipoEmpleado.resx">
+      <DependentUpon>frm_Modificar_TipoEmpleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Modificar_T_CategoriasVuelos.resx">
       <DependentUpon>frm_Modificar_T_CategoriasVuelos.cs</DependentUpon>
