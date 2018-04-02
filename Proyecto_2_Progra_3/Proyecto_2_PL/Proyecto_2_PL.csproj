@@ -203,17 +203,17 @@
     <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Modificar_Paises.Designer.cs">
       <DependentUpon>frm_Modificar_Paises.cs</DependentUpon>
     </Compile>
-    <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Modificar_TipoClientes.cs">
+    <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Modificar_T_CategoriasVuelos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Modificar_TipoClientes.Designer.cs">
-      <DependentUpon>frm_Modificar_TipoClientes.cs</DependentUpon>
+    <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Modificar_T_CategoriasVuelos.Designer.cs">
+      <DependentUpon>frm_Modificar_T_CategoriasVuelos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Modificar_TipoEmpleado.cs">
+    <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Modificar_Usuarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Modificar_TipoEmpleado.Designer.cs">
-      <DependentUpon>frm_Modificar_TipoEmpleado.cs</DependentUpon>
+    <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Modificar_Usuarios.Designer.cs">
+      <DependentUpon>frm_Modificar_Usuarios.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -294,11 +294,11 @@
     <EmbeddedResource Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Modificar_Paises.resx">
       <DependentUpon>frm_Modificar_Paises.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Modificar_TipoClientes.resx">
-      <DependentUpon>frm_Modificar_TipoClientes.cs</DependentUpon>
+    <EmbeddedResource Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Modificar_T_CategoriasVuelos.resx">
+      <DependentUpon>frm_Modificar_T_CategoriasVuelos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Modificar_TipoEmpleado.resx">
-      <DependentUpon>frm_Modificar_TipoEmpleado.cs</DependentUpon>
+    <EmbeddedResource Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Modificar_Usuarios.resx">
+      <DependentUpon>frm_Modificar_Usuarios.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -405,6 +405,12 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fundo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo vuelos.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -96,7 +96,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
             }
             else
             {
-                MessageBox.Show("No hay registros para eliminar","Info",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                MessageBox.Show("No hay registros para eliminar", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -123,7 +123,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
             else
             {
                 MessageBox.Show("No se pueden realizar la acción, debido a que no existen datos por modificar", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+            }
         }
 
         private void tls_btn_Nuevo_Click(object sender, EventArgs e)

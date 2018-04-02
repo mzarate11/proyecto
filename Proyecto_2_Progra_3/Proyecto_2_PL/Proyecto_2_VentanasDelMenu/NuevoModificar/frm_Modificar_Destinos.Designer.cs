@@ -62,7 +62,7 @@
             this.toolStripLabel2});
             this.toolStrip1.Location = new System.Drawing.Point(9, 9);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(251, 39);
+            this.toolStrip1.Size = new System.Drawing.Size(220, 39);
             this.toolStrip1.TabIndex = 21;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -112,10 +112,11 @@
             // cmboxAerolinea
             // 
             this.cmboxAerolinea.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmboxAerolinea.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmboxAerolinea.FormattingEnabled = true;
             this.cmboxAerolinea.Location = new System.Drawing.Point(206, 128);
             this.cmboxAerolinea.Name = "cmboxAerolinea";
-            this.cmboxAerolinea.Size = new System.Drawing.Size(161, 21);
+            this.cmboxAerolinea.Size = new System.Drawing.Size(161, 28);
             this.cmboxAerolinea.TabIndex = 39;
             // 
             // label5
@@ -132,10 +133,11 @@
             // cmboxEstado
             // 
             this.cmboxEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmboxEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmboxEstado.FormattingEnabled = true;
             this.cmboxEstado.Location = new System.Drawing.Point(206, 290);
             this.cmboxEstado.Name = "cmboxEstado";
-            this.cmboxEstado.Size = new System.Drawing.Size(161, 21);
+            this.cmboxEstado.Size = new System.Drawing.Size(161, 28);
             this.cmboxEstado.TabIndex = 37;
             // 
             // label3
@@ -152,10 +154,11 @@
             // cmboxPaisLlegada
             // 
             this.cmboxPaisLlegada.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmboxPaisLlegada.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmboxPaisLlegada.FormattingEnabled = true;
             this.cmboxPaisLlegada.Location = new System.Drawing.Point(206, 250);
             this.cmboxPaisLlegada.Name = "cmboxPaisLlegada";
-            this.cmboxPaisLlegada.Size = new System.Drawing.Size(161, 21);
+            this.cmboxPaisLlegada.Size = new System.Drawing.Size(161, 28);
             this.cmboxPaisLlegada.TabIndex = 35;
             // 
             // label2
@@ -172,10 +175,11 @@
             // cmboxPaisSalida
             // 
             this.cmboxPaisSalida.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmboxPaisSalida.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmboxPaisSalida.FormattingEnabled = true;
             this.cmboxPaisSalida.Location = new System.Drawing.Point(206, 207);
             this.cmboxPaisSalida.Name = "cmboxPaisSalida";
-            this.cmboxPaisSalida.Size = new System.Drawing.Size(161, 21);
+            this.cmboxPaisSalida.Size = new System.Drawing.Size(161, 28);
             this.cmboxPaisSalida.TabIndex = 33;
             // 
             // label4

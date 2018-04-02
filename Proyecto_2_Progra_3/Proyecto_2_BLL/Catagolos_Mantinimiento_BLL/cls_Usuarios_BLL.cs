@@ -77,5 +77,21 @@ namespace Proyecto_2_BLL.Catagolos_Mantinimiento_BLL
                 sMsjError = Obj_DAL.sMsgError;
             }
         }
+
+
+        #region  Tabla Insertar Usuarios
+        public void Insertar_Usuarios(ref string sMsjError, ref Proyecto_2_DAL.Catalogos_y_Mantenimientos.cls_T_Usuarios_DAL Obj_Usuarios_DAL)
+        {
+
+        }
+        #endregion
+
+        #region  Tabla Modificar Usuarios
+        public void Modificar_Usuarios(ref string sMsjError, ref Proyecto_2_DAL.Catalogos_y_Mantenimientos.cls_T_Usuarios_DAL Obj_Usuarios_DAL)
+        {
+
+        }
+        #endregion
+
     }
 }

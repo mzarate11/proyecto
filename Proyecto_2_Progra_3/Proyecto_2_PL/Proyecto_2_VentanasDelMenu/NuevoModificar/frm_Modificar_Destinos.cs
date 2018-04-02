@@ -22,17 +22,27 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
 
         public void CargarDatos()
         {
-            if(Obj_Destinos_DAL!=null)
+            if (Obj_Destinos_DAL != null)
             {
                 string sMsjError = string.Empty;
+                #region Aerolineas
+                cls_Aerolineas_BLL ObjAerolinea = new cls_Aerolineas_BLL();
+                DataTable DTA = new DataTable();
+                DTA = ObjAerolinea.ListarAerolineas(ref sMsjError);
+                cmboxAerolinea.DataSource = DTA;
+                cmboxAerolinea.DisplayMember = DTA.Columns[0].ToString();
+                #endregion
+
                 #region Paises
                 cls_Paises_BLL ObjPaises = new cls_Paises_BLL();
                 DataTable DTP = new DataTable();
-                DTP=ObjPaises.ListarPaises(ref sMsjError);
+                DataTable DTP1 = new DataTable();
+                DTP = ObjPaises.ListarPaises(ref sMsjError);
+                DTP1 = ObjPaises.ListarPaises(ref sMsjError);
                 cmboxPaisLlegada.DataSource = DTP;
-                cmboxPaisSalida.DataSource = DTP;
-                cmboxPaisSalida.DisplayMember = DTP.Columns[1].ToString();
-                cmboxPaisLlegada.DisplayMember = DTP.Columns[1].ToString();
+                cmboxPaisSalida.DataSource = DTP1;
+                cmboxPaisSalida.DisplayMember = DTP1.Columns[0].ToString();
+                cmboxPaisLlegada.DisplayMember = DTP.Columns[0].ToString();
                 #endregion
 
                 #region Estados
@@ -50,7 +60,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 }
                 else
                 {
-                    txt_IdDestino.Text= Obj_Destinos_DAL.sIdDestino;
+                    txt_IdDestino.Text = Obj_Destinos_DAL.sIdDestino;
                     cmboxAerolinea.Text = Obj_Destinos_DAL.bIdAerolinea.ToString();
                     txt_NombreDestino.Text = Obj_Destinos_DAL.sNomDestino;
                     cmboxPaisSalida.Text = Obj_Destinos_DAL.bPaisSalida.ToString();
@@ -81,19 +91,53 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            cls_Destinos_BLL ObjDestinos_BLL = new cls_Destinos_BLL();
-            string sMsjError = string.Empty;
-
-            Obj_Destinos_DAL.sIdDestino = txt_IdDestino.Text;
-            Obj_Destinos_DAL.sNomDestino = txt_NombreDestino.Text;
-
-            if(Obj_Destinos_DAL.cBandera=='I')
+            if ((txt_IdDestino.Text != string.Empty) || (txt_NombreDestino.Text != string.Empty))
             {
-                ObjDestinos_BLL.Insertar_Destinos(ref sMsjError, ref Obj_Destinos_DAL);
+                cls_Destinos_BLL ObjDestinos_BLL = new cls_Destinos_BLL();
+                string sMsjError = string.Empty;
+
+                Obj_Destinos_DAL.sIdDestino = txt_IdDestino.Text;
+                Obj_Destinos_DAL.sNomDestino = txt_NombreDestino.Text;
+
+                if (Obj_Destinos_DAL.cBandera == 'I')
+                {
+                    ObjDestinos_BLL.Insertar_Destinos(ref sMsjError, ref Obj_Destinos_DAL);
+                }
+                else
+                {
+                    ObjDestinos_BLL.Modificar_Destinos(ref sMsjError, ref Obj_Destinos_DAL);
+                }
             }
             else
             {
-                ObjDestinos_BLL.Modificar_Destinos(ref sMsjError, ref Obj_Destinos_DAL);
+                MessageBox.Show("Se ecnuentran cajas de texto vacías, favor revisar", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void txt_NombreDestino_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((char.IsLetter(e.KeyChar)) || (e.KeyChar == Convert.ToChar(Keys.Back)))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_IdDestino_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar == '-' && !txt_IdDestino.Text.Contains("-")) ||
+                (char.IsLetter(e.KeyChar)) ||
+                (char.IsNumber(e.KeyChar)) ||
+               (e.KeyChar == Convert.ToChar(Keys.Back)))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
             }
         }
     }
