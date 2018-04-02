@@ -121,6 +121,7 @@
             this.cmb_IDEstado.Name = "cmb_IDEstado";
             this.cmb_IDEstado.Size = new System.Drawing.Size(121, 21);
             this.cmb_IDEstado.TabIndex = 4;
+            this.cmb_IDEstado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmb_IDEstado_KeyPress);
             // 
             // lbl_IDTipoCliente
             // 

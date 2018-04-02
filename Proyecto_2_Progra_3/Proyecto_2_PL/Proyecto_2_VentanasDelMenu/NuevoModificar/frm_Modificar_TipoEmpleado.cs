@@ -101,7 +101,14 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
 
         private void txt_IDTipoEmpleado_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            if (char.IsNumber(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
         }
     }
 }

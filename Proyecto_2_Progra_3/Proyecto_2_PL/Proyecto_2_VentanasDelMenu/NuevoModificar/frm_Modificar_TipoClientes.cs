@@ -90,7 +90,14 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
 
         private void txt_IDTipoCliente_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            if (char.IsNumber(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
         }
 
         private void txt_descripcion_KeyPress(object sender, KeyPressEventArgs e)
@@ -114,6 +121,18 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             else
             {
                 e.Handled = false;
+            }
+        }
+
+        private void cmb_IDEstado_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsNumber(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
             }
         }
     }

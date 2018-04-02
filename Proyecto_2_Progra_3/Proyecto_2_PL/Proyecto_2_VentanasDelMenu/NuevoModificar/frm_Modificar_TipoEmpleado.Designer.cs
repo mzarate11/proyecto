@@ -45,6 +45,7 @@
             // txt_IDTipoEmpleado
             // 
             this.txt_IDTipoEmpleado.Location = new System.Drawing.Point(122, 56);
+            this.txt_IDTipoEmpleado.MaxLength = 10;
             this.txt_IDTipoEmpleado.Name = "txt_IDTipoEmpleado";
             this.txt_IDTipoEmpleado.Size = new System.Drawing.Size(100, 20);
             this.txt_IDTipoEmpleado.TabIndex = 0;
@@ -53,6 +54,7 @@
             // txt_desc
             // 
             this.txt_desc.Location = new System.Drawing.Point(122, 165);
+            this.txt_desc.MaxLength = 150;
             this.txt_desc.Name = "txt_desc";
             this.txt_desc.Size = new System.Drawing.Size(100, 20);
             this.txt_desc.TabIndex = 1;
@@ -62,6 +64,7 @@
             // 
             this.cmb_IDEstado.FormattingEnabled = true;
             this.cmb_IDEstado.Location = new System.Drawing.Point(361, 116);
+            this.cmb_IDEstado.MaxLength = 10;
             this.cmb_IDEstado.Name = "cmb_IDEstado";
             this.cmb_IDEstado.Size = new System.Drawing.Size(121, 21);
             this.cmb_IDEstado.TabIndex = 2;
