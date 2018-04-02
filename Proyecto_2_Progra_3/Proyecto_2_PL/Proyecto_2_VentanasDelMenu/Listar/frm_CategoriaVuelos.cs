@@ -101,8 +101,25 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
             }
         }
 
+    
+        #region Boton Nuevo
+        private void btnNuevo_Click_1(object sender, EventArgs e)
+        {
+            Obj_CategoriasVuelos_DAL = new cls_T_CategoriasVuelos_DAL();
+
+            NuevoModificar.frm_Modificar_T_CategoriasVuelos PantCategoriaVuelo = new NuevoModificar.frm_Modificar_T_CategoriasVuelos();
+
+            Obj_CategoriasVuelos_DAL.cBandAX = 'I';
+            PantCategoriaVuelo.Obj_ManteCategorias_DAL = Obj_CategoriasVuelos_DAL;
+            PantCategoriaVuelo.ShowDialog();
+
+            txtFiltro.Text = string.Empty;
+            CargarDatos();
+        }
+        #endregion
+
         #region Boton Modificar
-        private void btnModificar_Click(object sender, EventArgs e)
+        private void btnModificar_Click_1(object sender, EventArgs e)
         {
             Obj_CategoriasVuelos_DAL = new cls_T_CategoriasVuelos_DAL();
 
@@ -120,25 +137,8 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
         }
         #endregion
 
-        #region Boton Nuevo
-
-        private void btnNuevo_Click(object sender, EventArgs e)
-        {
-            Obj_CategoriasVuelos_DAL = new cls_T_CategoriasVuelos_DAL();
-
-            NuevoModificar.frm_Modificar_T_CategoriasVuelos PantCategoriaVuelo = new NuevoModificar.frm_Modificar_T_CategoriasVuelos();
-
-            Obj_CategoriasVuelos_DAL.cBandAX = 'I';
-            PantCategoriaVuelo.Obj_ManteCategorias_DAL = Obj_CategoriasVuelos_DAL;
-            PantCategoriaVuelo.ShowDialog();
-
-            txtFiltro.Text = string.Empty;
-            CargarDatos();
-        }
-        #endregion
-
         #region dgv_Estado doble Click
-        private void dgv_CategoriasVuelos_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void dgv_CategoriasVuelos_RowHeaderMouseDoubleClick_1(object sender, DataGridViewCellMouseEventArgs e)
         {
             Obj_CategoriasVuelos_DAL = new cls_T_CategoriasVuelos_DAL();
 

@@ -50,6 +50,7 @@
             this.tb_DescCategoria.Name = "tb_DescCategoria";
             this.tb_DescCategoria.Size = new System.Drawing.Size(427, 22);
             this.tb_DescCategoria.TabIndex = 57;
+            this.tb_DescCategoria.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_DescCategoria_KeyPress_1);
             // 
             // tb_IdCategoria
             // 
@@ -58,6 +59,7 @@
             this.tb_IdCategoria.Name = "tb_IdCategoria";
             this.tb_IdCategoria.Size = new System.Drawing.Size(128, 22);
             this.tb_IdCategoria.TabIndex = 56;
+            this.tb_IdCategoria.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_IdCategoria_KeyPress_1);
             // 
             // toolStrip1
             // 
@@ -85,6 +87,7 @@
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(36, 36);
             this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click_1);
             // 
             // toolStripLabel1
             // 
@@ -107,6 +110,7 @@
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(36, 36);
             this.btnSalir.Text = "Salir";
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click_1);
             // 
             // toolStripLabel2
             // 
