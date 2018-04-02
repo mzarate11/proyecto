@@ -126,5 +126,10 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             }
             
         }
+
+        private void tls_btn_Guardar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
