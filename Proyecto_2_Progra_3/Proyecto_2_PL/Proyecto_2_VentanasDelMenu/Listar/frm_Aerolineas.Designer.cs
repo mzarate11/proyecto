@@ -115,6 +115,7 @@
             this.bnt_Nuevo.Name = "bnt_Nuevo";
             this.bnt_Nuevo.Size = new System.Drawing.Size(28, 28);
             this.bnt_Nuevo.Text = "toolStripButton2";
+            this.bnt_Nuevo.Click += new System.EventHandler(this.bnt_Nuevo_Click);
             // 
             // toolStripLabel2
             // 
@@ -135,6 +136,7 @@
             this.btn_Modificar.Name = "btn_Modificar";
             this.btn_Modificar.Size = new System.Drawing.Size(28, 28);
             this.btn_Modificar.Text = "toolStripButton3";
+            this.btn_Modificar.Click += new System.EventHandler(this.btn_Modificar_Click);
             // 
             // toolStripLabel3
             // 

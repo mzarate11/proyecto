@@ -167,6 +167,18 @@
     <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\fmr_ModificarNuevo_Vuelos.Designer.cs">
       <DependentUpon>fmr_ModificarNuevo_Vuelos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_ModificarAerolineas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_ModificarAerolineas.Designer.cs">
+      <DependentUpon>frm_ModificarAerolineas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_ModificarAviones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_ModificarAviones.Designer.cs">
+      <DependentUpon>frm_ModificarAviones.cs</DependentUpon>
+    </Compile>
     <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_ModificarClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -275,6 +287,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Proyecto_2_VentanasDelMenu\NuevoModificar\fmr_ModificarNuevo_Vuelos.resx">
       <DependentUpon>fmr_ModificarNuevo_Vuelos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_ModificarAerolineas.resx">
+      <DependentUpon>frm_ModificarAerolineas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_ModificarAviones.resx">
+      <DependentUpon>frm_ModificarAviones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_ModificarClientes.resx">
       <DependentUpon>frm_ModificarClientes.cs</DependentUpon>
@@ -411,6 +429,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\fondo vuelos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Aerolineas1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\aerolineas2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\avion_960_720.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Aviones1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Aviation.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

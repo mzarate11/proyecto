@@ -7,6 +7,7 @@ using System.Configuration;
 using System.Data;
 using Proyecto_2_BLL;
 using Proyecto_2_DAL.BaseDatos_DAL;
+using Proyecto_2_DAL.Catalogos_y_Mantenimientos;
 
 namespace Proyecto_2_BLL.Catagolos_Mantinimiento_BLL
 {
@@ -77,6 +78,16 @@ namespace Proyecto_2_BLL.Catagolos_Mantinimiento_BLL
             {
                 sMsjError = Obj_DAL.sMsgError;
             }
+        }
+
+        public void Insertar_Aerolineas(ref string sMsjError, ref cls_Aerolineas_DAL objDAL_Aerolineas)
+        {
+
+        }
+
+        public void Modificar_Aerolineas(ref string sMsjError, ref cls_Aerolineas_DAL objDAL_Aerolineas)
+        {
+
         }
     }
 }

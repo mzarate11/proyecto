@@ -41,6 +41,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseDatos_DAL\cls_BaseDatos_DAL.cs" />
+    <Compile Include="Catalogos y Mantenimientos\cls_Aerolineas_DAL.cs" />
+    <Compile Include="Catalogos y Mantenimientos\cls_Aviones_DAL.cs" />
     <Compile Include="Catalogos y Mantenimientos\cls_Clientes_DAL.cs" />
     <Compile Include="Catalogos y Mantenimientos\cls_Destinos_DAL.cs" />
     <Compile Include="Catalogos y Mantenimientos\cls_Empleados_DAL.cs" />

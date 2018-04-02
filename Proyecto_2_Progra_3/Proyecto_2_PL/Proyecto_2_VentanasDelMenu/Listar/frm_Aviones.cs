@@ -8,11 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Proyecto_2_BLL.Catagolos_Mantinimiento_BLL;
+using Proyecto_2_DAL.Catalogos_y_Mantenimientos;
+using Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar;
 
 namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
 {
     public partial class frm_Aviones : Form
     {
+        cls_Aviones_DAL objDal_Aviones = new cls_Aviones_DAL();
         public frm_Aviones()
         {
             InitializeComponent();
@@ -94,6 +97,35 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
             {
                 MessageBox.Show("No hay registros para eliminar");
             }
+        }
+
+        private void btn_Modificar_Click(object sender, EventArgs e)
+        {
+            objDal_Aviones = new cls_Aviones_DAL();
+            objDal_Aviones.cBandera = 'U';
+            objDal_Aviones.sIdAvion = dgv_Aviones.SelectedRows[0].Cells[0].Value.ToString().Trim();
+            objDal_Aviones.sNomAvion = dgv_Aviones.SelectedRows[0].Cells[1].Value.ToString().Trim();
+            objDal_Aviones.sDescAvion = dgv_Aviones.SelectedRows[0].Cells[2].Value.ToString().Trim();
+            objDal_Aviones.iIdAerolinea = Convert.ToInt32(dgv_Aviones.SelectedRows[0].Cells[3].Value.ToString().Trim());
+            objDal_Aviones.sIdTipoAvion = dgv_Aviones.SelectedRows[0].Cells[4].Value.ToString().Trim();
+            objDal_Aviones.cIdEstado = Convert.ToChar(dgv_Aviones.SelectedRows[0].Cells[5].ToString().Trim());
+            frm_ModificarAviones Pantalla = new frm_ModificarAviones();
+            Pantalla.ShowDialog();
+
+            txtFiltro.Text = string.Empty;
+            CargarDatos();
+        }
+
+        private void bnt_Nuevo_Click(object sender, EventArgs e)
+        {
+            frm_ModificarAviones Pantalla = new frm_ModificarAviones();
+            objDal_Aviones = new cls_Aviones_DAL();
+            objDal_Aviones.cBandera = 'I';
+            Pantalla.objDal_Aviones = objDal_Aviones;
+            Pantalla.ShowDialog();
+
+            txtFiltro.Text = string.Empty;
+            CargarDatos();
         }
     }
 }
