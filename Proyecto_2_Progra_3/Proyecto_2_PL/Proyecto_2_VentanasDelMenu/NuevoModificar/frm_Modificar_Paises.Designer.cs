@@ -76,6 +76,7 @@
             this.txtCodigoArea.Name = "txtCodigoArea";
             this.txtCodigoArea.Size = new System.Drawing.Size(161, 22);
             this.txtCodigoArea.TabIndex = 23;
+            this.txtCodigoArea.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigoArea_KeyPress);
             // 
             // txtCodigoISO
             // 
@@ -85,6 +86,7 @@
             this.txtCodigoISO.Name = "txtCodigoISO";
             this.txtCodigoISO.Size = new System.Drawing.Size(161, 20);
             this.txtCodigoISO.TabIndex = 22;
+            this.txtCodigoISO.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigoISO_KeyPress);
             // 
             // txtNombrePais
             // 
@@ -93,6 +95,7 @@
             this.txtNombrePais.Name = "txtNombrePais";
             this.txtNombrePais.Size = new System.Drawing.Size(161, 20);
             this.txtNombrePais.TabIndex = 21;
+            this.txtNombrePais.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombrePais_KeyPress);
             // 
             // label3
             // 
