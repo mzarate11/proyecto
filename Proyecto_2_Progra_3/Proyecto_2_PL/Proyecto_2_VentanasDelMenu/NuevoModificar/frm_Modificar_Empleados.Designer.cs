@@ -93,6 +93,7 @@
             this.tls_btn_Guardar.Name = "tls_btn_Guardar";
             this.tls_btn_Guardar.Size = new System.Drawing.Size(31, 31);
             this.tls_btn_Guardar.Text = "toolStripButton1";
+            this.tls_btn_Guardar.Click += new System.EventHandler(this.tls_btn_Guardar_Click);
             // 
             // toolStripLabel1
             // 
