@@ -129,7 +129,67 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
 
         private void tls_btn_Guardar_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txt_Nombre.Text) || string.IsNullOrEmpty(txt_Apellidos.Text) || string.IsNullOrEmpty(txt_Edad.Text) ||
+                string.IsNullOrEmpty(txt_Direccion.Text) || string.IsNullOrEmpty(mb_Cedula.Text) || string.IsNullOrEmpty(mb_Celular.Text) ||
+                string.IsNullOrEmpty(mb_TelCasa.Text) || string.IsNullOrEmpty(mb_TelReferencia.Text)|| string.IsNullOrEmpty(txt_IdEmpleado.Text) ||
+                string.IsNullOrEmpty(txt_Salario.Text))
+            {
+                MessageBox.Show("Debe completar todos los datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
 
+            }
+
+        }
+
+        private void txt_Edad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsNumber(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_Direccion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txt_Direccion.Text) && e.KeyChar == (char)Keys.Space)
+            {
+                e.Handled = true;
+
+            }
+            else
+            {
+                e.Handled = false;
+            }
+        }
+
+        private void txt_IdEmpleado_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsNumber(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_Salario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsNumber(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
         }
     }
 }

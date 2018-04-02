@@ -43,7 +43,6 @@
             this.txt_Apellidos = new System.Windows.Forms.TextBox();
             this.txt_Edad = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.mb_Cedula = new System.Windows.Forms.MaskedTextBox();
             this.mb_TelReferencia = new System.Windows.Forms.MaskedTextBox();
             this.mb_TelCasa = new System.Windows.Forms.MaskedTextBox();
             this.mb_Celular = new System.Windows.Forms.MaskedTextBox();
@@ -63,6 +62,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.mb_Cedula = new System.Windows.Forms.MaskedTextBox();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -192,9 +192,11 @@
             // 
             this.txt_Edad.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Edad.Location = new System.Drawing.Point(661, 22);
+            this.txt_Edad.MaxLength = 2;
             this.txt_Edad.Name = "txt_Edad";
             this.txt_Edad.Size = new System.Drawing.Size(40, 25);
             this.txt_Edad.TabIndex = 7;
+            this.txt_Edad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Edad_KeyPress);
             // 
             // groupBox1
             // 
@@ -220,16 +222,6 @@
             this.groupBox1.Size = new System.Drawing.Size(800, 161);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
-            // 
-            // mb_Cedula
-            // 
-            this.mb_Cedula.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mb_Cedula.Location = new System.Drawing.Point(99, 58);
-            this.mb_Cedula.Mask = "0-0000-0000";
-            this.mb_Cedula.Name = "mb_Cedula";
-            this.mb_Cedula.Size = new System.Drawing.Size(88, 25);
-            this.mb_Cedula.TabIndex = 20;
-            this.mb_Cedula.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // mb_TelReferencia
             // 
@@ -309,6 +301,7 @@
             this.txt_Direccion.Name = "txt_Direccion";
             this.txt_Direccion.Size = new System.Drawing.Size(310, 53);
             this.txt_Direccion.TabIndex = 8;
+            this.txt_Direccion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Direccion_KeyPress);
             // 
             // groupBox2
             // 
@@ -360,9 +353,11 @@
             // 
             this.txt_IdEmpleado.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_IdEmpleado.Location = new System.Drawing.Point(133, 48);
+            this.txt_IdEmpleado.MaxLength = 6;
             this.txt_IdEmpleado.Name = "txt_IdEmpleado";
             this.txt_IdEmpleado.Size = new System.Drawing.Size(143, 25);
             this.txt_IdEmpleado.TabIndex = 18;
+            this.txt_IdEmpleado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_IdEmpleado_KeyPress);
             // 
             // txt_Salario
             // 
@@ -371,6 +366,7 @@
             this.txt_Salario.Name = "txt_Salario";
             this.txt_Salario.Size = new System.Drawing.Size(153, 25);
             this.txt_Salario.TabIndex = 17;
+            this.txt_Salario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Salario_KeyPress);
             // 
             // label13
             // 
@@ -421,6 +417,16 @@
             this.label9.Size = new System.Drawing.Size(48, 17);
             this.label9.TabIndex = 0;
             this.label9.Text = "Salario";
+            // 
+            // mb_Cedula
+            // 
+            this.mb_Cedula.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mb_Cedula.Location = new System.Drawing.Point(99, 58);
+            this.mb_Cedula.Mask = "0-0000-0000";
+            this.mb_Cedula.Name = "mb_Cedula";
+            this.mb_Cedula.Size = new System.Drawing.Size(88, 25);
+            this.mb_Cedula.TabIndex = 20;
+            this.mb_Cedula.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // frm_Modificar_Empleados
             // 
@@ -481,8 +487,8 @@
         private System.Windows.Forms.TextBox txt_IdEmpleado;
         private System.Windows.Forms.TextBox txt_Salario;
         private System.Windows.Forms.MaskedTextBox mb_Celular;
-        private System.Windows.Forms.MaskedTextBox mb_Cedula;
         private System.Windows.Forms.MaskedTextBox mb_TelReferencia;
         private System.Windows.Forms.MaskedTextBox mb_TelCasa;
+        private System.Windows.Forms.MaskedTextBox mb_Cedula;
     }
 }
