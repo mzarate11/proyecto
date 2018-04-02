@@ -35,25 +35,49 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             cls_BaseDatos_DAL objDAL_BaseDatos = new cls_BaseDatos_DAL();
             if (objDal_Aviones != null)
             {
+                #region Combo Estados
+                cls_Estados_BLL ObjBLLEstados = new cls_Estados_BLL();
+                string sMsjError = string.Empty;
+                DataTable DTE = new DataTable();
+                DTE = ObjBLLEstados.Listar_Estados(ref sMsjError);
+                cmb_IdEstado.DataSource = DTE;
+                cmb_IdEstado.DisplayMember = DTE.Columns[0].ToString();
+                #endregion
+
+                #region Combo Aero
+                cls_Aerolineas_BLL ObjAero = new cls_Aerolineas_BLL();
+                DataTable DTA = new DataTable();
+                DTA = ObjAero.ListarAerolineas(ref sMsjError);
+                cmb_IdAerolinea.DataSource = DTA;
+                cmb_IdAerolinea.DisplayMember = DTA.Columns[0].ToString();
+                #endregion
+                
+                #region Combo TipoA
+                cls_TiposA_BLL ObjTiposA = new cls_TiposA_BLL();
+                DataTable DTTA = new DataTable();
+                DTTA = ObjTiposA.ListarTiposA(ref sMsjError);
+                cmb_IdTipoAvion.DataSource = DTTA;
+                cmb_IdTipoAvion.DisplayMember = DTTA.Columns[0].ToString();
+                #endregion
+
                 if (objDal_Aviones.cBandera == 'I')
                 {
                     txt_IdAvion.Clear();
                     txt_DescAvion.Clear();
                     txt_NomAvion.Clear();
-                    cmb_IdAerolinea.DisplayMember = objDAL_BaseDatos.DT_Parametros.Columns[3].ToString();
-                    cmb_IdTipoAvion.DisplayMember = objDAL_BaseDatos.DT_Parametros.Columns[4].ToString();
-                    cmb_IdEstado.DisplayMember = objDAL_BaseDatos.DT_Parametros.Columns[5].ToString();
                     txt_IdAvion.Enabled = true;
+                    
+
+                   
                 }
                 else
                 {
                     txt_DescAvion.Text = objDal_Aviones.sDescAvion;
                     txt_IdAvion.Text = objDal_Aviones.sIdAvion;
                     txt_NomAvion.Text = objDal_Aviones.sNomAvion;
-                    cmb_IdAerolinea.DisplayMember = objDAL_BaseDatos.DT_Parametros.Columns[3].ToString();
-                    cmb_IdTipoAvion.DisplayMember = objDAL_BaseDatos.DT_Parametros.Columns[4].ToString();
-                    cmb_IdEstado.DisplayMember = objDAL_BaseDatos.DT_Parametros.Columns[5].ToString();
-                    txt_IdAvion.Enabled = false;
+                    
+
+                    
                 }
             }
             else

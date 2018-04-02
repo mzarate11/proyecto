@@ -30,19 +30,28 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             cls_BaseDatos_DAL objDAL_BaseDatos = new cls_BaseDatos_DAL();
             if (objDAL_Aerolinea != null)
             {
+                #region Combo Estados
+                cls_Estados_BLL ObjBLLEstados = new cls_Estados_BLL();
+                string sMsjError = string.Empty;
+                DataTable DTE = new DataTable();
+                DTE = ObjBLLEstados.Listar_Estados(ref sMsjError);
+                cmb_IdEstado.DataSource = DTE;
+                cmb_IdEstado.DisplayMember = DTE.Columns[0].ToString();
+                #endregion
+
                 if (objDAL_Aerolinea.cBandera == 'I')
                 {
                     txt_IdAerolinea.Clear();
                     txt_IdAerolinea.Enabled = true;
                     txt_NombreAerolinea.Clear();
-                    cmb_IdEstado.DataSource = objDAL_BaseDatos.DT_Parametros.Columns[2].ToString();
+                   
                 }
                 else
                 {
                     txt_IdAerolinea.Text = objDAL_Aerolinea.iIdAerolinea.ToString().Trim();
                     txt_IdAerolinea.Enabled = false;
                     txt_NombreAerolinea.Text = objDAL_Aerolinea.sNombreAerolinea.ToString().Trim();
-                    cmb_IdEstado.DataSource = objDAL_BaseDatos.DT_Parametros.Columns[2].ToString();
+                    
                 }
             }
             else
