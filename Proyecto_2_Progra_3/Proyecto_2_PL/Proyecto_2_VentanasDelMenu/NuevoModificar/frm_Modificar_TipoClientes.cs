@@ -61,7 +61,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
         {
             cls_TiposClientes_BLL obj_TiposClientes_BLL = new cls_TiposClientes_BLL();
             string sMsjError = string.Empty;
-            Obj_DAL_TiposClientes.CIdEstado = Convert.ToChar(cmb_IDEstado.Text.Trim());
+            Obj_DAL_TiposClientes.CIdEstado = Convert.ToChar(cmb_IDEstado.SelectedValue.ToString().Trim());
             Obj_DAL_TiposClientes.IIdTipoCliente = Convert.ToInt32(txt_IDTipoCliente.Text.Trim());
             Obj_DAL_TiposClientes.STipoCliente = txt_TipoCliente.Text.Trim();
             Obj_DAL_TiposClientes.SDescripcion = txt_descripcion.Text.Trim();

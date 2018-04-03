@@ -112,26 +112,34 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
 
         private void btn_Modificar_Click(object sender, EventArgs e)
         {
-            ObjTiposClientesDAL = new cls_TiposClientes_DAL();
-            frm_Modificar_TipoClientes PantTiposClientes = new frm_Modificar_TipoClientes();
-            if (Dgv_View.RowCount > 1)
+            if (Dgv_View.RowCount == 0)
             {
-                ObjTiposClientesDAL.CBandAX = 'U';
-                ObjTiposClientesDAL.IIdTipoCliente = Convert.ToInt32(Dgv_View.SelectedRows[0].Cells[0].Value.ToString().Trim());
-                ObjTiposClientesDAL.STipoCliente = Dgv_View.SelectedRows[0].Cells[1].Value.ToString().Trim();
-                ObjTiposClientesDAL.SDescripcion = Dgv_View.SelectedRows[0].Cells[2].Value.ToString().Trim();
-                ObjTiposClientesDAL.CIdEstado = Convert.ToChar(Dgv_View.SelectedRows[0].Cells[3].Value.ToString().Trim());
-
-                PantTiposClientes.Obj_DAL_TiposClientes = ObjTiposClientesDAL;
-                PantTiposClientes.ShowDialog();
-
-                txtFiltro.Text = string.Empty;
-                CargarDatos();
+                MessageBox.Show("NO tiene Datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
+                ObjTiposClientesDAL = new cls_TiposClientes_DAL();
+                frm_Modificar_TipoClientes PantTiposClientes = new frm_Modificar_TipoClientes();
+                if (Dgv_View.RowCount > 1)
+                {
+                    ObjTiposClientesDAL.CBandAX = 'U';
+                    ObjTiposClientesDAL.IIdTipoCliente = Convert.ToInt32(Dgv_View.SelectedRows[0].Cells[0].Value.ToString().Trim());
+                    ObjTiposClientesDAL.STipoCliente = Dgv_View.SelectedRows[0].Cells[1].Value.ToString().Trim();
+                    ObjTiposClientesDAL.SDescripcion = Dgv_View.SelectedRows[0].Cells[2].Value.ToString().Trim();
+                    ObjTiposClientesDAL.CIdEstado = Convert.ToChar(Dgv_View.SelectedRows[0].Cells[3].Value.ToString().Trim());
 
-                MessageBox.Show("No se pueden realizar la acción, debido a que no existen datos por modificar", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    PantTiposClientes.Obj_DAL_TiposClientes = ObjTiposClientesDAL;
+
+                    PantTiposClientes.ShowDialog();
+
+                    txtFiltro.Text = string.Empty;
+                    CargarDatos();
+                }
+                else
+                {
+
+                    MessageBox.Show("No se pueden realizar la acción, debido a que no existen datos por modificar", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
 
@@ -148,8 +156,9 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
             ObjTiposClientesDAL.CIdEstado = ' ';
 
             PantTiposClientes.Obj_DAL_TiposClientes = ObjTiposClientesDAL;
+            this.Hide();
             PantTiposClientes.ShowDialog();
-
+            this.Show();
 
             txtFiltro.Text = string.Empty;
             CargarDatos();

@@ -29,7 +29,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             DTE = ObjBLLEstados.Listar_Estados(ref sMsjError);
 
 
-            DTE.Rows.Add("0", "-- SELECCIONE UN ESTADO --");
+            DTE.Rows.Add("0", "SELECCIONE UN ESTADO");
 
 
             cmb_ID_Estado.DataSource = DTE;
@@ -43,7 +43,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             DataTable DTTC = new DataTable();
             DTTC = ObjBLLTipoC.ListarTiposClientes(ref sMsjError1);
 
-            DTTC.Rows.Add("0","-- SELECCIONE UN ID CLIENTE --");
+            DTTC.Rows.Add("0","SELECCIONE UN ID CLIENTE");
 
             cmb_ID_Tipo_Cliente.DataSource = DTTC;
             cmb_ID_Tipo_Cliente.DisplayMember = DTTC.Columns[1].ToString();
