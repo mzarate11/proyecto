@@ -256,6 +256,7 @@
             this.Controls.Add(this.toolStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frm_Modificar_Destinos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_Modificar_Destinos";
             this.Load += new System.EventHandler(this.frm_Modificar_Destinos_Load);
             this.toolStrip1.ResumeLayout(false);
