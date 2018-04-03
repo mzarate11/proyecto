@@ -91,7 +91,7 @@ namespace Proyecto_2_BLL.Catagolos_Mantinimiento_BLL
 
             Obj_BLL.TablaParametros(ref Obj_DAL);
             Obj_DAL.DT_Parametros.Rows.Add("@Id_Estado", 2, Obj_Estados_DAL.cIdEstado.ToString().Trim());
-            Obj_DAL.DT_Parametros.Rows.Add("@Descripcion", 2, Obj_Estados_DAL.sDescripcion.ToString().Trim());
+            Obj_DAL.DT_Parametros.Rows.Add("@Descripcion", 3, Obj_Estados_DAL.sDescripcion.ToString().Trim());
 
             Obj_DAL.sSentencia = ConfigurationManager.AppSettings["Insertar_Estados"].ToString().Trim();
             Obj_BLL.Ejec_NonQuery(ref Obj_DAL);
