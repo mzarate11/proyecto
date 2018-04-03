@@ -55,7 +55,7 @@
             this.cmb_IdEstado.FormattingEnabled = true;
             this.cmb_IdEstado.Location = new System.Drawing.Point(483, 291);
             this.cmb_IdEstado.Name = "cmb_IdEstado";
-            this.cmb_IdEstado.Size = new System.Drawing.Size(146, 21);
+            this.cmb_IdEstado.Size = new System.Drawing.Size(193, 21);
             this.cmb_IdEstado.TabIndex = 34;
             // 
             // label9

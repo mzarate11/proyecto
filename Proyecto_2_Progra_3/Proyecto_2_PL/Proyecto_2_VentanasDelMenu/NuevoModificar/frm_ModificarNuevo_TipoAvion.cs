@@ -86,14 +86,31 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
         {
             if (validaciones())
             {
+                Obj_Mant_DAL.sIdTipoAvion = txt_IdTipoAvion.Text;
+                Obj_Mant_DAL.dcapacidadPeso = Convert.ToDouble(txt_CantidadPeso.Text);
+                Obj_Mant_DAL.iCapacidadPasajeros = Convert.ToInt32(txt_CantidadPasajeros.Text);
+                Obj_Mant_DAL.sNombreTipoAvion = txt_NombreAvion.Text;
+                Obj_Mant_DAL.sDescTipoAvion = txt_Descripcion.Text;
+                Obj_Mant_DAL.cIdEstado = Convert.ToChar(cmb_IdEstado.SelectedValue.ToString());
+
                 cls_TiposA_BLL Obj_Mant_BLL = new cls_TiposA_BLL();
                 string sMsjError = string.Empty;
                 if (Obj_Mant_DAL.cbanderaAccion == 'I')
                 {
                     Obj_Mant_BLL.AgregarTipoAviones(ref sMsjError, ref Obj_Mant_DAL);
+                    if(sMsjError == string.Empty)
+                    {
+                        MessageBox.Show("si");
+
+                    }
+                    else
+                    {
+                        MessageBox.Show(sMsjError.ToString());
+                    }
                 }
                 else
                 {
+
                     Obj_Mant_BLL.ModificarTipoAviones(ref sMsjError, ref Obj_Mant_DAL);
                 }
             }
@@ -193,6 +210,22 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
         {
             if (Obj_Mant_DAL != null)
             {
+
+                //acá cargamos los datos de elementos del combobox
+                cls_Estados_BLL ObjBLLEstados = new cls_Estados_BLL();
+                string sMsjError = string.Empty;
+                DataTable DTE = new DataTable();
+                
+
+                DTE = ObjBLLEstados.Listar_Estados(ref sMsjError);
+
+                DTE.Rows.Add("0", "-- SELECCIONES UN ESTADO --");
+
+                cmb_IdEstado.DataSource = DTE;
+                cmb_IdEstado.DisplayMember = DTE.Columns[1].ToString();
+                cmb_IdEstado.ValueMember = DTE.Columns[0].ToString();
+
+                cmb_IdEstado.SelectedValue = "0";
                 if (Obj_Mant_DAL.cbanderaAccion == 'I')
                 {
                     //limpiar cajas de texto
@@ -205,6 +238,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 }
                 else
                 {
+
                     txt_IdTipoAvion.Enabled = false;
                     txt_CantidadPasajeros.Text = Obj_Mant_DAL.iCapacidadPasajeros.ToString().Trim();
                     txt_CantidadPeso.Text = Obj_Mant_DAL.dcapacidadPeso.ToString().Trim();
