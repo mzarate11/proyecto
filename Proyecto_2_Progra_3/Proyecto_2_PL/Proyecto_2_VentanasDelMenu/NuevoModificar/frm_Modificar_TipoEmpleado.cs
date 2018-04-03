@@ -68,6 +68,16 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             if (Obj_DAL_TipoEmpleado.CBandAX == 'I')
             {
                 obj_TipoEmpleado_BLL.Insertar_TipoEmpleado(ref sMsjError, ref Obj_DAL_TipoEmpleado);
+
+                if (sMsjError == string.Empty)
+                {
+
+                    MessageBox.Show("Se modifico el registro exitosamente");
+                }
+                else {
+
+                    MessageBox.Show("Se presento un error");
+                     }
             }
             else
             {
