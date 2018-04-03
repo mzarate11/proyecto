@@ -38,10 +38,13 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 #region Combo Estados
                 cls_Estados_BLL ObjBLLEstados = new cls_Estados_BLL();
                 string sMsjError = string.Empty;
+
                 DataTable DTE = new DataTable();
                 DTE = ObjBLLEstados.Listar_Estados(ref sMsjError);
+
                 cmb_IdEstado.DataSource = DTE;
-                cmb_IdEstado.DisplayMember = DTE.Columns[0].ToString();
+                cmb_IdEstado.DisplayMember = DTE.Columns[1].ToString();
+                cmb_IdEstado.ValueMember = DTE.Columns[0].ToString();
                 #endregion
 
                 #region Combo Aero
@@ -92,12 +95,12 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
         {
             cls_Aviones_BLL objBLL_Aviones = new cls_Aviones_BLL();
             string sMsjError = string.Empty;
-            objDal_Aviones.iIdAerolinea = Convert.ToInt32(cmb_IdAerolinea.SelectedItem.ToString());
-            objDal_Aviones.cIdEstado = Convert.ToChar(cmb_IdEstado.SelectedItem.ToString());
+            objDal_Aviones.iIdAerolinea = Convert.ToInt32(cmb_IdAerolinea.SelectedValue.ToString());
+            objDal_Aviones.cIdEstado = Convert.ToChar(cmb_IdEstado.SelectedValue.ToString());
             objDal_Aviones.sNomAvion = txt_NomAvion.Text;
             objDal_Aviones.sDescAvion = txt_DescAvion.Text;
             objDal_Aviones.sIdAvion = txt_IdAvion.Text;
-            objDal_Aviones.sIdTipoAvion = cmb_IdTipoAvion.SelectedItem.ToString();
+            objDal_Aviones.sIdTipoAvion = cmb_IdTipoAvion.SelectedValue.ToString();
 
             if (objDal_Aviones.cBandera == 'I')
             {
