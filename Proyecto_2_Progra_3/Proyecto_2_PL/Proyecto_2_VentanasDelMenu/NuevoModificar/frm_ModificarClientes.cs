@@ -28,7 +28,8 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             DataTable DTE = new DataTable();
             DTE = ObjBLLEstados.Listar_Estados(ref sMsjError);
             cmb_ID_Estado.DataSource = DTE;
-            cmb_ID_Estado.DisplayMember = DTE.Columns[0].ToString();
+            cmb_ID_Estado.DisplayMember = DTE.Columns[1].ToString();
+            cmb_ID_Estado.ValueMember = DTE.Columns[0].ToString();
             #endregion
 
             #region Combo ID Clientes
@@ -37,7 +38,8 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             DataTable DTTC = new DataTable();
             DTTC = ObjBLLTipoC.ListarTiposClientes(ref sMsjError1);
             cmb_ID_Tipo_Cliente.DataSource = DTTC;
-            cmb_ID_Tipo_Cliente.DisplayMember = DTTC.Columns[0].ToString();
+            cmb_ID_Tipo_Cliente.DisplayMember = DTTC.Columns[1].ToString();
+            cmb_ID_Tipo_Cliente.ValueMember = DTTC.Columns[0].ToString();
             #endregion
 
 
@@ -159,6 +161,14 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            ObjClientes_DAL.sIdCliente = txt_ID_Cliente.Text;
+            ObjClientes_DAL.sCedula = mtxt_Cedula.Text;
+            ObjClientes_DAL.sNombre = txt_Nombre.Text;
+            ObjClientes_DAL.sApellido = txt_Apellidos.Text;
+            ObjClientes_DAL.sTelefono = mtxt_Telefono.Text;
+            ObjClientes_DAL.sIdCliente = cmb_ID_Tipo_Cliente.SelectedValue.ToString();
+            ObjClientes_DAL.cIdEstado = Convert.ToChar(cmb_ID_Estado.SelectedValue.ToString());
+
             if (ObjClientes_DAL.cBandAxn == 'I')
             {
 
