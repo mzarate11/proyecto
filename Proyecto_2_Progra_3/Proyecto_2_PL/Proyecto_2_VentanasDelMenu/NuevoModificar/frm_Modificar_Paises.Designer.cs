@@ -51,7 +51,7 @@
             this.cmboxEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmboxEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmboxEstado.FormattingEnabled = true;
-            this.cmboxEstado.Location = new System.Drawing.Point(552, 157);
+            this.cmboxEstado.Location = new System.Drawing.Point(554, 156);
             this.cmboxEstado.Name = "cmboxEstado";
             this.cmboxEstado.Size = new System.Drawing.Size(161, 24);
             this.cmboxEstado.TabIndex = 25;
@@ -61,7 +61,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(397, 156);
+            this.label4.Location = new System.Drawing.Point(399, 155);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(70, 23);
             this.label4.TabIndex = 24;
@@ -71,7 +71,7 @@
             // 
             this.txtCodigoArea.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCodigoArea.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodigoArea.Location = new System.Drawing.Point(552, 123);
+            this.txtCodigoArea.Location = new System.Drawing.Point(554, 122);
             this.txtCodigoArea.MaxLength = 5;
             this.txtCodigoArea.Name = "txtCodigoArea";
             this.txtCodigoArea.Size = new System.Drawing.Size(161, 22);
@@ -81,7 +81,7 @@
             // txtCodigoISO
             // 
             this.txtCodigoISO.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCodigoISO.Location = new System.Drawing.Point(552, 78);
+            this.txtCodigoISO.Location = new System.Drawing.Point(554, 77);
             this.txtCodigoISO.MaxLength = 4;
             this.txtCodigoISO.Name = "txtCodigoISO";
             this.txtCodigoISO.Size = new System.Drawing.Size(161, 20);
@@ -91,7 +91,7 @@
             // txtNombrePais
             // 
             this.txtNombrePais.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNombrePais.Location = new System.Drawing.Point(552, 42);
+            this.txtNombrePais.Location = new System.Drawing.Point(554, 41);
             this.txtNombrePais.Name = "txtNombrePais";
             this.txtNombrePais.Size = new System.Drawing.Size(161, 20);
             this.txtNombrePais.TabIndex = 21;
@@ -102,7 +102,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(397, 119);
+            this.label3.Location = new System.Drawing.Point(399, 118);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(139, 23);
             this.label3.TabIndex = 20;
@@ -113,7 +113,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(397, 75);
+            this.label2.Location = new System.Drawing.Point(399, 74);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(105, 23);
             this.label2.TabIndex = 19;
@@ -124,7 +124,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(397, 39);
+            this.label1.Location = new System.Drawing.Point(399, 38);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(149, 23);
             this.label1.TabIndex = 18;

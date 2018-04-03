@@ -43,6 +43,7 @@
             this.txt_Apellidos = new System.Windows.Forms.TextBox();
             this.txt_Edad = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.mb_Cedula = new System.Windows.Forms.MaskedTextBox();
             this.mb_TelReferencia = new System.Windows.Forms.MaskedTextBox();
             this.mb_TelCasa = new System.Windows.Forms.MaskedTextBox();
             this.mb_Celular = new System.Windows.Forms.MaskedTextBox();
@@ -62,7 +63,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.mb_Cedula = new System.Windows.Forms.MaskedTextBox();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -222,6 +222,16 @@
             this.groupBox1.Size = new System.Drawing.Size(800, 161);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
+            // 
+            // mb_Cedula
+            // 
+            this.mb_Cedula.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mb_Cedula.Location = new System.Drawing.Point(99, 58);
+            this.mb_Cedula.Mask = "0-0000-0000";
+            this.mb_Cedula.Name = "mb_Cedula";
+            this.mb_Cedula.Size = new System.Drawing.Size(88, 25);
+            this.mb_Cedula.TabIndex = 20;
+            this.mb_Cedula.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // mb_TelReferencia
             // 
@@ -418,16 +428,6 @@
             this.label9.TabIndex = 0;
             this.label9.Text = "Salario";
             // 
-            // mb_Cedula
-            // 
-            this.mb_Cedula.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mb_Cedula.Location = new System.Drawing.Point(99, 58);
-            this.mb_Cedula.Mask = "0-0000-0000";
-            this.mb_Cedula.Name = "mb_Cedula";
-            this.mb_Cedula.Size = new System.Drawing.Size(88, 25);
-            this.mb_Cedula.TabIndex = 20;
-            this.mb_Cedula.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // frm_Modificar_Empleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -441,6 +441,7 @@
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frm_Modificar_Empleados";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frm_Modificar_Empleados_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
