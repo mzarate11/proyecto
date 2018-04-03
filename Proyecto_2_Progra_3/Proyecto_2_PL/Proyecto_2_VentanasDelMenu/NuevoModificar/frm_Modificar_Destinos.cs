@@ -30,7 +30,12 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 DataTable DTA = new DataTable();
                 DTA = ObjAerolinea.ListarAerolineas(ref sMsjError);
                 cmboxAerolinea.DataSource = DTA;
-                cmboxAerolinea.DisplayMember = DTA.Columns[0].ToString();
+                DTA.Rows.Add("0", "Seleccione una aerolinea");
+                cmboxAerolinea.DisplayMember = DTA.Columns[1].ToString();
+                cmboxAerolinea.ValueMember = DTA.Columns[0].ToString();
+                cmboxAerolinea.SelectedValue = "0";
+                
+
                 #endregion
 
                 #region Paises
@@ -41,8 +46,14 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 DTP1 = ObjPaises.ListarPaises(ref sMsjError);
                 cmboxPaisLlegada.DataSource = DTP;
                 cmboxPaisSalida.DataSource = DTP1;
-                cmboxPaisSalida.DisplayMember = DTP1.Columns[0].ToString();
-                cmboxPaisLlegada.DisplayMember = DTP.Columns[0].ToString();
+                DTP.Rows.Add("0", "Seleccione un país");
+                DTP1.Rows.Add("0", "Seleccione un país");
+                cmboxPaisSalida.DisplayMember = DTP1.Columns[1].ToString();
+                cmboxPaisLlegada.DisplayMember = DTP.Columns[1].ToString();
+                cmboxPaisSalida.ValueMember = DTP1.Columns[0].ToString();
+                cmboxPaisLlegada.ValueMember = DTP.Columns[0].ToString();
+                cmboxPaisLlegada.SelectedValue = "0";
+                cmboxPaisSalida.SelectedValue = "0";
                 #endregion
 
                 #region Estados
@@ -50,7 +61,9 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 DataTable DT = new DataTable();
                 DT = ObjEstados.Listar_Estados(ref sMsjError);
                 cmboxEstado.DataSource = DT;
-                cmboxEstado.DisplayMember = DT.Columns[0].ToString();
+                DT.Rows.Add("0", "Seleccione un estado");
+                cmboxEstado.DisplayMember = DT.Columns[1].ToString();
+                cmboxEstado.ValueMember = DT.Columns[0].ToString();
                 #endregion
 
                 if (Obj_Destinos_DAL.cBandera == 'I')
@@ -63,8 +76,8 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                     txt_IdDestino.Text = Obj_Destinos_DAL.sIdDestino;
                     cmboxAerolinea.Text = Obj_Destinos_DAL.bIdAerolinea.ToString();
                     txt_NombreDestino.Text = Obj_Destinos_DAL.sNomDestino;
-                    cmboxPaisSalida.Text = Obj_Destinos_DAL.bPaisSalida.ToString();
-                    cmboxPaisLlegada.Text = Obj_Destinos_DAL.bPaisLlegada.ToString();
+                    cmboxPaisSalida.SelectedValue= Obj_Destinos_DAL.bPaisSalida.ToString();
+                    cmboxPaisLlegada.SelectedValue = Obj_Destinos_DAL.bPaisLlegada.ToString();
                     cmboxEstado.Text = Obj_Destinos_DAL.cIdEstado.ToString();
                 }
 
