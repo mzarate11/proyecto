@@ -38,26 +38,37 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 #region Combo Estados
                 cls_Estados_BLL ObjBLLEstados = new cls_Estados_BLL();
                 string sMsjError = string.Empty;
+
                 DataTable DTE = new DataTable();
                 DTE = ObjBLLEstados.Listar_Estados(ref sMsjError);
+
+                DTE.Rows.Add("0", "-- SELECCIONE UN ESTADO --");
+
                 cmb_IdEstado.DataSource = DTE;
-                cmb_IdEstado.DisplayMember = DTE.Columns[0].ToString();
+                cmb_IdEstado.DisplayMember = DTE.Columns[1].ToString();
+                cmb_IdEstado.ValueMember = DTE.Columns[0].ToString();
+
+                cmb_IdEstado.SelectedValue = "0";
                 #endregion
 
                 #region Combo Aero
                 cls_Aerolineas_BLL ObjAero = new cls_Aerolineas_BLL();
                 DataTable DTA = new DataTable();
                 DTA = ObjAero.ListarAerolineas(ref sMsjError);
+                DTE.Rows.Add("0", "-- SELECCIONE UNA AEROLINEA --");
                 cmb_IdAerolinea.DataSource = DTA;
                 cmb_IdAerolinea.DisplayMember = DTA.Columns[0].ToString();
+                cmb_IdAerolinea.SelectedValue = "0";
                 #endregion
                 
                 #region Combo TipoA
                 cls_TiposA_BLL ObjTiposA = new cls_TiposA_BLL();
                 DataTable DTTA = new DataTable();
                 DTTA = ObjTiposA.ListarTiposA(ref sMsjError);
+                DTE.Rows.Add("0", "-- SELECCIONE UN TIPO DE AVION --");
                 cmb_IdTipoAvion.DataSource = DTTA;
                 cmb_IdTipoAvion.DisplayMember = DTTA.Columns[0].ToString();
+                cmb_IdTipoAvion.SelectedValue = "0";
                 #endregion
 
                 if (objDal_Aviones.cBandera == 'I')
@@ -74,15 +85,11 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 {
                     txt_DescAvion.Text = objDal_Aviones.sDescAvion;
                     txt_IdAvion.Text = objDal_Aviones.sIdAvion;
-                    txt_NomAvion.Text = objDal_Aviones.sNomAvion;
-                    
-
-                    
+                    txt_NomAvion.Text = objDal_Aviones.sNomAvion;                                                      
                 }
             }
             else
             {
-
                 MessageBox.Show("Se presento un capa 8 del programador");
                 Close();
             }
@@ -90,22 +97,32 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
 
         private void tsb_Guardar_Click(object sender, EventArgs e)
         {
-            cls_Aviones_BLL objBLL_Aviones = new cls_Aviones_BLL();
-            string sMsjError = string.Empty;
-            objDal_Aviones.iIdAerolinea = Convert.ToInt32(cmb_IdAerolinea.SelectedItem.ToString());
-            objDal_Aviones.cIdEstado = Convert.ToChar(cmb_IdEstado.SelectedItem.ToString());
-            objDal_Aviones.sNomAvion = txt_NomAvion.Text;
-            objDal_Aviones.sDescAvion = txt_DescAvion.Text;
-            objDal_Aviones.sIdAvion = txt_IdAvion.Text;
-            objDal_Aviones.sIdTipoAvion = cmb_IdTipoAvion.SelectedItem.ToString();
-
-            if (objDal_Aviones.cBandera == 'I')
+            if (cmb_IdEstado.SelectedValue.ToString() != "0" || 
+                cmb_IdAerolinea.SelectedValue.ToString() != "0" || 
+                cmb_IdTipoAvion.SelectedValue.ToString() != "0" ||
+                txt_NomAvion.Text == string.Empty || txt_IdAvion.Text == string.Empty || txt_DescAvion.Text == string.Empty)
             {
-                objBLL_Aviones.Insertar_Aviones(ref sMsjError, ref objDal_Aviones);
+                cls_Aviones_BLL objBLL_Aviones = new cls_Aviones_BLL();
+                string sMsjError = string.Empty;
+                objDal_Aviones.iIdAerolinea = Convert.ToInt32(cmb_IdAerolinea.SelectedValue.ToString());
+                objDal_Aviones.cIdEstado = Convert.ToChar(cmb_IdEstado.SelectedValue.ToString());
+                objDal_Aviones.sNomAvion = txt_NomAvion.Text;
+                objDal_Aviones.sDescAvion = txt_DescAvion.Text;
+                objDal_Aviones.sIdAvion = txt_IdAvion.Text;
+                objDal_Aviones.sIdTipoAvion = cmb_IdTipoAvion.SelectedValue.ToString();
+
+                if (objDal_Aviones.cBandera == 'I')
+                {
+                    objBLL_Aviones.Insertar_Aviones(ref sMsjError, ref objDal_Aviones);
+                }
+                else
+                {
+                    objBLL_Aviones.Modificar_Aviones(ref sMsjError, ref objDal_Aviones);
+                }
             }
             else
             {
-                objBLL_Aviones.Modificar_Aviones(ref sMsjError, ref objDal_Aviones);
+                MessageBox.Show("Todos los cambios son obligatorios", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

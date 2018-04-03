@@ -27,8 +27,14 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             string sMsjError = string.Empty;
             DataTable DTE = new DataTable();
             DTE = ObjBLLEstados.Listar_Estados(ref sMsjError);
+
+
+            DTE.Rows.Add("0", "SELECCIONE UN ESTADO");
+
+
             cmb_ID_Estado.DataSource = DTE;
-            cmb_ID_Estado.DisplayMember = DTE.Columns[0].ToString();
+            cmb_ID_Estado.DisplayMember = DTE.Columns[1].ToString();
+            cmb_ID_Estado.ValueMember = DTE.Columns[0].ToString();
             #endregion
 
             #region Combo ID Clientes
@@ -36,8 +42,12 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             string sMsjError1 = string.Empty;
             DataTable DTTC = new DataTable();
             DTTC = ObjBLLTipoC.ListarTiposClientes(ref sMsjError1);
+
+            DTTC.Rows.Add("0","SELECCIONE UN ID CLIENTE");
+
             cmb_ID_Tipo_Cliente.DataSource = DTTC;
-            cmb_ID_Tipo_Cliente.DisplayMember = DTTC.Columns[0].ToString();
+            cmb_ID_Tipo_Cliente.DisplayMember = DTTC.Columns[1].ToString();
+            cmb_ID_Tipo_Cliente.ValueMember = DTTC.Columns[0].ToString();
             #endregion
 
 
@@ -159,13 +169,29 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (ObjClientes_DAL.cBandAxn == 'I')
+            if ((cmb_ID_Estado.SelectedValue.ToString() != "0") || (cmb_ID_Tipo_Cliente.SelectedValue.ToString() != "0"))
             {
 
+                ObjClientes_DAL.sIdCliente = txt_ID_Cliente.Text;
+                ObjClientes_DAL.sCedula = mtxt_Cedula.Text;
+                ObjClientes_DAL.sNombre = txt_Nombre.Text;
+                ObjClientes_DAL.sApellido = txt_Apellidos.Text;
+                ObjClientes_DAL.sTelefono = mtxt_Telefono.Text;
+                ObjClientes_DAL.sIdCliente = cmb_ID_Tipo_Cliente.SelectedValue.ToString();
+                ObjClientes_DAL.cIdEstado = Convert.ToChar(cmb_ID_Estado.SelectedValue.ToString());
+
+                if (ObjClientes_DAL.cBandAxn == 'I')
+                {
+
+                }
+                else
+                {
+
+                }
             }
             else
             {
-
+                MessageBox.Show("No se puede guardar sin no están todos los datos","ERROR",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
     }

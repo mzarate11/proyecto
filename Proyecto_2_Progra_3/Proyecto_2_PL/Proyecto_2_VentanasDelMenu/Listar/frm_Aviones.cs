@@ -101,19 +101,27 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
 
         private void btn_Modificar_Click(object sender, EventArgs e)
         {
-            objDal_Aviones = new cls_Aviones_DAL();
-            objDal_Aviones.cBandera = 'U';
-            objDal_Aviones.sIdAvion = dgv_Aviones.SelectedRows[0].Cells[0].Value.ToString().Trim();
-            objDal_Aviones.sNomAvion = dgv_Aviones.SelectedRows[0].Cells[1].Value.ToString().Trim();
-            objDal_Aviones.sDescAvion = dgv_Aviones.SelectedRows[0].Cells[2].Value.ToString().Trim();
-            objDal_Aviones.iIdAerolinea = Convert.ToInt32(dgv_Aviones.SelectedRows[0].Cells[3].Value.ToString().Trim());
-            objDal_Aviones.sIdTipoAvion = dgv_Aviones.SelectedRows[0].Cells[4].Value.ToString().Trim();
-            objDal_Aviones.cIdEstado = Convert.ToChar(dgv_Aviones.SelectedRows[0].Cells[5].ToString().Trim());
-            frm_ModificarAviones Pantalla = new frm_ModificarAviones();
-            Pantalla.ShowDialog();
-
-            txtFiltro.Text = string.Empty;
-            CargarDatos();
+            if(dgv_Aviones.RowCount == 0)
+            {
+                MessageBox.Show("No existen datos para modificar", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                objDal_Aviones = new cls_Aviones_DAL();
+                objDal_Aviones.cBandera = 'U';
+                objDal_Aviones.sIdAvion = dgv_Aviones.SelectedRows[0].Cells[0].Value.ToString().Trim();
+                objDal_Aviones.sNomAvion = dgv_Aviones.SelectedRows[0].Cells[1].Value.ToString().Trim();
+                objDal_Aviones.sDescAvion = dgv_Aviones.SelectedRows[0].Cells[2].Value.ToString().Trim();
+                objDal_Aviones.iIdAerolinea = Convert.ToInt32(dgv_Aviones.SelectedRows[0].Cells[3].Value.ToString().Trim());
+                objDal_Aviones.sIdTipoAvion = dgv_Aviones.SelectedRows[0].Cells[4].Value.ToString().Trim();
+                objDal_Aviones.cIdEstado = Convert.ToChar(dgv_Aviones.SelectedRows[0].Cells[5].ToString().Trim());
+                frm_ModificarAviones Pantalla = new frm_ModificarAviones();
+                Hide();
+                Pantalla.ShowDialog();
+                Show();
+                txtFiltro.Text = string.Empty;
+                CargarDatos();
+            }            
         }
 
         private void bnt_Nuevo_Click(object sender, EventArgs e)
@@ -124,6 +132,24 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
             Pantalla.objDal_Aviones = objDal_Aviones;
             Pantalla.ShowDialog();
 
+            txtFiltro.Text = string.Empty;
+            CargarDatos();
+        }
+
+        private void dgv_Aviones_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            objDal_Aviones = new cls_Aviones_DAL();
+            objDal_Aviones.cBandera = 'U';
+            objDal_Aviones.sIdAvion = dgv_Aviones.SelectedRows[0].Cells[0].Value.ToString().Trim();
+            objDal_Aviones.sNomAvion = dgv_Aviones.SelectedRows[0].Cells[1].Value.ToString().Trim();
+            objDal_Aviones.sDescAvion = dgv_Aviones.SelectedRows[0].Cells[2].Value.ToString().Trim();
+            objDal_Aviones.iIdAerolinea = Convert.ToInt32(dgv_Aviones.SelectedRows[0].Cells[3].Value.ToString().Trim());
+            objDal_Aviones.sIdTipoAvion = dgv_Aviones.SelectedRows[0].Cells[4].Value.ToString().Trim();
+            objDal_Aviones.cIdEstado = Convert.ToChar(dgv_Aviones.SelectedRows[0].Cells[5].ToString().Trim());
+            frm_ModificarAviones Pantalla = new frm_ModificarAviones();
+            Hide();
+            Pantalla.ShowDialog();
+            Show();
             txtFiltro.Text = string.Empty;
             CargarDatos();
         }
