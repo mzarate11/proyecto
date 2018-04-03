@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Proyecto_2_DAL.Catalogos_y_Mantenimientos;
+using Proyecto_2_BLL.Catagolos_Mantinimiento_BLL;
 
 namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
 {
@@ -79,12 +80,24 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            Obj_DAL_Estados.cIdEstado = Convert.ToChar(txt_ID_Estados.Text);
-            Obj_DAL_Estados.sDescripcion = txt_Descripcion.Text;
+            string sMsjError = string.Empty;
+            Obj_DAL_Estados.cIdEstado = Convert.ToChar(txt_ID_Estados.Text.Trim());
+            Obj_DAL_Estados.sDescripcion = txt_Descripcion.Text.Trim();
 
             if (Obj_DAL_Estados.cBandAX == 'I')
             {
+                cls_Estados_BLL Obj_Estados_BLL = new cls_Estados_BLL();
 
+                Obj_Estados_BLL.Insertar_Estados(ref sMsjError, ref Obj_DAL_Estados);
+
+                if (sMsjError == string.Empty)
+                {
+                    MessageBox.Show("Insert correcto", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Hubo un error");
+                }
             }
             else
             {
