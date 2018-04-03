@@ -101,16 +101,23 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
 
         private void btn_Modificar_Click(object sender, EventArgs e)
         {
-            objDal_Aerolinea = new cls_Aerolineas_DAL();
-            objDal_Aerolinea.cBandera = 'U';
-            objDal_Aerolinea.iIdAerolinea = Convert.ToInt32(dgv_Aerolineas.SelectedRows[0].Cells[0].Value.ToString().Trim());
-            objDal_Aerolinea.sNombreAerolinea = dgv_Aerolineas.SelectedRows[0].Cells[1].Value.ToString().Trim();
-            objDal_Aerolinea.cIdEstado = Convert.ToChar(dgv_Aerolineas.SelectedRows[0].Cells[3].Value.ToString().Trim());
-            frm_ModificarAerolineas Pantalla = new frm_ModificarAerolineas();
-            Pantalla.ShowDialog();
+            if(dgv_Aerolineas.RowCount == 0)
+            {
+                MessageBox.Show("No existen datos para modificar", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                objDal_Aerolinea = new cls_Aerolineas_DAL();
+                objDal_Aerolinea.cBandera = 'U';
+                objDal_Aerolinea.iIdAerolinea = Convert.ToInt32(dgv_Aerolineas.SelectedRows[0].Cells[0].Value.ToString().Trim());
+                objDal_Aerolinea.sNombreAerolinea = dgv_Aerolineas.SelectedRows[0].Cells[1].Value.ToString().Trim();
+                objDal_Aerolinea.cIdEstado = Convert.ToChar(dgv_Aerolineas.SelectedRows[0].Cells[3].Value.ToString().Trim());
+                frm_ModificarAerolineas Pantalla = new frm_ModificarAerolineas();
+                Pantalla.ShowDialog();
 
-            txtFiltro.Text = string.Empty;
-            CargarDatos();
+                txtFiltro.Text = string.Empty;
+                CargarDatos();
+            }            
         }
 
         private void bnt_Nuevo_Click(object sender, EventArgs e)

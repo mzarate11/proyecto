@@ -22,6 +22,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
 
         private void frm_Modificar_Empleados_Load(object sender, EventArgs e)
         {
+
             CargarDatos();
         }
         public void CargarDatos()

@@ -130,24 +130,30 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
 
         private void btn_Modificar_Click(object sender, EventArgs e)
         {
-            ObjTipoEmpleadosDAL = new cls_TipoEmpleados_DAL();
-            frm_Modificar_TipoEmpleado PantTipoEmpleado = new frm_Modificar_TipoEmpleado();
-            if (dgv_view.RowCount > 0)
-            {
-                ObjTipoEmpleadosDAL.CBandAX = 'U';
-                ObjTipoEmpleadosDAL.ITipoEmpleado = Convert.ToInt32(dgv_view.SelectedRows[0].Cells[0].Value.ToString().Trim());
-                ObjTipoEmpleadosDAL.SDescTipo = dgv_view.SelectedRows[0].Cells[1].Value.ToString().Trim();
-                ObjTipoEmpleadosDAL.CIdEstado = Convert.ToChar(dgv_view.SelectedRows[0].Cells[3].Value.ToString().Trim());
-
-                PantTipoEmpleado.Obj_DAL_TipoEmpleado = ObjTipoEmpleadosDAL;
-                PantTipoEmpleado.ShowDialog();
-
-                txtFiltro.Text = string.Empty;
-                CargarDatos();
+            if (dgv_view.RowCount == 0) {
+                 MessageBox.Show("NO tiene Datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                MessageBox.Show("No se pueden realizar la acción, debido a que no existen datos por modificar", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ObjTipoEmpleadosDAL = new cls_TipoEmpleados_DAL();
+                frm_Modificar_TipoEmpleado PantTipoEmpleado = new frm_Modificar_TipoEmpleado();
+                if (dgv_view.RowCount > 0)
+                {
+                    ObjTipoEmpleadosDAL.CBandAX = 'U';
+                    ObjTipoEmpleadosDAL.ITipoEmpleado = Convert.ToInt32(dgv_view.SelectedRows[0].Cells[0].Value.ToString().Trim());
+                    ObjTipoEmpleadosDAL.SDescTipo = dgv_view.SelectedRows[0].Cells[1].Value.ToString().Trim();
+                    ObjTipoEmpleadosDAL.CIdEstado = Convert.ToChar(dgv_view.SelectedRows[0].Cells[3].Value.ToString().Trim());
+
+                    PantTipoEmpleado.Obj_DAL_TipoEmpleado = ObjTipoEmpleadosDAL;
+                    PantTipoEmpleado.ShowDialog();
+
+                    txtFiltro.Text = string.Empty;
+                    CargarDatos();
+                }
+                else
+                {
+                    MessageBox.Show("No se pueden realizar la acción, debido a que no existen datos por modificar", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
 
