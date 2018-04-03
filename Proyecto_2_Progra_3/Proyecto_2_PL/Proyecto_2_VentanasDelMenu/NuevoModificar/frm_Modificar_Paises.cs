@@ -30,7 +30,10 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 string sMsjError = string.Empty;
                 DT = ObjEstados.Listar_Estados(ref sMsjError);
                 cmboxEstado.DataSource = DT;
-                cmboxEstado.DisplayMember = DT.Columns[0].ToString();
+                DT.Rows.Add("0", "Seleccione un estado");
+                cmboxEstado.DisplayMember = DT.Columns[1].ToString();
+                cmboxEstado.ValueMember = DT.Columns[0].ToString();
+                cmboxEstado.SelectedValue = "0";
                 #endregion
 
                 if (Obj_Paises_DAL.cBandera == 'I')
@@ -44,7 +47,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                     txtNombrePais.Text = Obj_Paises_DAL.sNombrePais;
                     txtCodigoISO.Text = Obj_Paises_DAL.sCodigoISOPais;
                     txtCodigoArea.Text = Obj_Paises_DAL.sCodigoAreaPais;
-                    cmboxEstado.Text = Obj_Paises_DAL.cIdEstado.ToString();
+                    cmboxEstado.SelectedValue = Obj_Paises_DAL.cIdEstado.ToString();
                 }
             }
             else
