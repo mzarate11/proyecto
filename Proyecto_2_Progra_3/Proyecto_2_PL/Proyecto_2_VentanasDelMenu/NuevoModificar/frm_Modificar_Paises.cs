@@ -44,6 +44,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 }
                 else
                 {
+                    txt_IdPais.Text = Obj_Paises_DAL.iIdPais.ToString().Trim();
                     txtNombrePais.Text = Obj_Paises_DAL.sNombrePais;
                     txtCodigoISO.Text = Obj_Paises_DAL.sCodigoISOPais;
                     txtCodigoArea.Text = Obj_Paises_DAL.sCodigoAreaPais;
@@ -79,7 +80,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 Obj_Paises_DAL.sNombrePais = txtNombrePais.Text;
                 Obj_Paises_DAL.sCodigoISOPais = txtCodigoISO.Text;
                 Obj_Paises_DAL.sCodigoAreaPais = txtCodigoArea.Text;
-                MessageBox.Show("Dato: " + cmboxEstado.SelectedItem.ToString());
+                Obj_Paises_DAL.cIdEstado = Convert.ToChar(cmboxEstado.SelectedValue);
 
                 if (Obj_Paises_DAL.cBandera == 'I')
                 {
@@ -92,7 +93,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             }
             else
             {
-                MessageBox.Show("Se ecnuentran cajas de texto vacías, favor revisar", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Se encuentran cajas de texto vacías, favor revisar", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

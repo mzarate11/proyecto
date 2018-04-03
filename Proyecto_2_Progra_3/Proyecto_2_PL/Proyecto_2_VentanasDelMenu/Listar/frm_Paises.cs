@@ -108,6 +108,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
                 ObjPaises_DAL = new cls_Paises_DAL();
 
                 ObjPaises_DAL.cBandera = 'U';
+                ObjPaises_DAL.iIdPais = Convert.ToInt32(dgv_Paises.SelectedRows[0].Cells[0].Value);
                 ObjPaises_DAL.sNombrePais = dgv_Paises.SelectedRows[0].Cells[1].Value.ToString().Trim();
                 ObjPaises_DAL.sCodigoISOPais = dgv_Paises.SelectedRows[0].Cells[2].Value.ToString().Trim();
                 ObjPaises_DAL.sCodigoAreaPais = dgv_Paises.SelectedRows[0].Cells[3].Value.ToString().Trim();
@@ -132,6 +133,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
             frm_Modificar_Paises ModificarPaises = new frm_Modificar_Paises();
 
             ObjPaises_DAL.cBandera = 'I';
+            ObjPaises_DAL.iIdPais = 0;
             ObjPaises_DAL.sNombrePais = string.Empty;
             ObjPaises_DAL.sCodigoISOPais = string.Empty;
             ObjPaises_DAL.sCodigoAreaPais = string.Empty;

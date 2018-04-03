@@ -10,6 +10,7 @@ namespace Proyecto_2_DAL.Catalogos_y_Mantenimientos
     {
         private string _sNombrePais, _sCodigoISOPais, _sCodigoAreaPais;
         private char _cIdEstado, _cBandera;
+        private int _iIdPais;
 
         public string sNombrePais
         {
@@ -73,6 +74,19 @@ namespace Proyecto_2_DAL.Catalogos_y_Mantenimientos
             set
             {
                 _cBandera = value;
+            }
+        }
+
+        public int iIdPais
+        {
+            get
+            {
+                return _iIdPais;
+            }
+
+            set
+            {
+                _iIdPais = value;
             }
         }
     }

@@ -120,6 +120,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 {
                     ObjDestinos_BLL.Modificar_Destinos(ref sMsjError, ref Obj_Destinos_DAL);
                 }
+                txt_IdDestino.Enabled = false;
             }
             else
             {
