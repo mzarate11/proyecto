@@ -109,8 +109,9 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
             frm_Modificar_Estados PantEstados = new frm_Modificar_Estados();
             ObjEstadosDAL.cBandAX = 'I';
             PantEstados.Obj_DAL_Estados = ObjEstadosDAL;
+            this.Hide();
             PantEstados.ShowDialog();
-
+            this.Show();
             txtFiltro.Text = string.Empty;
             CargarDatos();
         }
