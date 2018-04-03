@@ -79,6 +79,9 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            Obj_DAL_Estados.cIdEstado = Convert.ToChar(txt_ID_Estados.Text);
+            Obj_DAL_Estados.sDescripcion = txt_Descripcion.Text;
+
             if (Obj_DAL_Estados.cBandAX == 'I')
             {
 
