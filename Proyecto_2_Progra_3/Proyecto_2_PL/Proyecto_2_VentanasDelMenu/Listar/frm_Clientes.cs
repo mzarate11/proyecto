@@ -117,20 +117,27 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
 
         private void btn_Modificar_Click(object sender, EventArgs e)
         {
-            ObjCLientes_DAL = new cls_Clientes_DAL();
-            frm_ModificarClientes pantClientes = new frm_ModificarClientes();
-            ObjCLientes_DAL.cBandAxn = 'U';
-            ObjCLientes_DAL.sIdCliente = dgv_Clientes.SelectedRows[0].Cells[0].Value.ToString().Trim();
-            ObjCLientes_DAL.sCedula = dgv_Clientes.SelectedRows[0].Cells[1].Value.ToString().Trim();
-            ObjCLientes_DAL.sNombre = dgv_Clientes.SelectedRows[0].Cells[2].Value.ToString().Trim();
-            ObjCLientes_DAL.sApellido = dgv_Clientes.SelectedRows[0].Cells[3].Value.ToString().Trim();
-            ObjCLientes_DAL.sTelefono = dgv_Clientes.SelectedRows[0].Cells[4].Value.ToString().Trim();
+            if (dgv_Clientes.RowCount == 0)
+            {
+                MessageBox.Show("No hay datos a modificar", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+
+                ObjCLientes_DAL = new cls_Clientes_DAL();
+                frm_ModificarClientes pantClientes = new frm_ModificarClientes();
+                ObjCLientes_DAL.cBandAxn = 'U';
+                ObjCLientes_DAL.sIdCliente = dgv_Clientes.SelectedRows[0].Cells[0].Value.ToString().Trim();
+                ObjCLientes_DAL.sCedula = dgv_Clientes.SelectedRows[0].Cells[1].Value.ToString().Trim();
+                ObjCLientes_DAL.sNombre = dgv_Clientes.SelectedRows[0].Cells[2].Value.ToString().Trim();
+                ObjCLientes_DAL.sApellido = dgv_Clientes.SelectedRows[0].Cells[3].Value.ToString().Trim();
+                ObjCLientes_DAL.sTelefono = dgv_Clientes.SelectedRows[0].Cells[4].Value.ToString().Trim();
 
 
 
-            pantClientes.ObjClientes_DAL = ObjCLientes_DAL;
-            pantClientes.ShowDialog();
-
+                pantClientes.ObjClientes_DAL = ObjCLientes_DAL;
+                pantClientes.ShowDialog();
+            }
             txtFiltro.Text = string.Empty;
             CargarDatos();
         }

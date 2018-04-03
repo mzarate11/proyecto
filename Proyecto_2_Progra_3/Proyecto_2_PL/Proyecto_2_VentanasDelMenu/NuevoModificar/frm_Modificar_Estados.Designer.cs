@@ -54,7 +54,7 @@
             this.toolStripLabel2});
             this.toolStrip1.Location = new System.Drawing.Point(9, 9);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(251, 39);
+            this.toolStrip1.Size = new System.Drawing.Size(220, 39);
             this.toolStrip1.TabIndex = 36;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -102,7 +102,7 @@
             // txt_ID_Estados
             // 
             this.txt_ID_Estados.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_ID_Estados.Location = new System.Drawing.Point(339, 114);
+            this.txt_ID_Estados.Location = new System.Drawing.Point(339, 127);
             this.txt_ID_Estados.MaxLength = 1;
             this.txt_ID_Estados.Name = "txt_ID_Estados";
             this.txt_ID_Estados.Size = new System.Drawing.Size(34, 30);
@@ -111,7 +111,7 @@
             // 
             // txt_Descripcion
             // 
-            this.txt_Descripcion.Location = new System.Drawing.Point(339, 184);
+            this.txt_Descripcion.Location = new System.Drawing.Point(339, 201);
             this.txt_Descripcion.Name = "txt_Descripcion";
             this.txt_Descripcion.Size = new System.Drawing.Size(100, 20);
             this.txt_Descripcion.TabIndex = 38;
@@ -121,12 +121,12 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(153, 117);
+            this.label1.Location = new System.Drawing.Point(194, 130);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 25);
+            this.label1.Size = new System.Drawing.Size(90, 23);
             this.label1.TabIndex = 39;
             this.label1.Text = "ID Estado";
             // 
@@ -135,7 +135,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(149, 180);
+            this.label2.Location = new System.Drawing.Point(190, 197);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(96, 23);
             this.label2.TabIndex = 40;
