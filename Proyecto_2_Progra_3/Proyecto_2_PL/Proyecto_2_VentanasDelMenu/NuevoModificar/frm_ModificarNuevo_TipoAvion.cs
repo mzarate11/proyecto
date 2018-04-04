@@ -97,9 +97,6 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 string sMsjError = string.Empty;
                 if (Obj_Mant_DAL.cbanderaAccion == 'I')
                 {
-                    Obj_Mant_DAL.sEstado = cmb_IdEstado.Text;
-                    Obj_Mant_DAL.sNombreTipoAvion = txt_NombreAvion.Text;
-                    Obj_Mant_DAL.sDescTipoAvion = txt_Descripcion.Text;
                     Obj_Mant_BLL.AgregarTipoAviones(ref sMsjError, ref Obj_Mant_DAL);
                     if(sMsjError == string.Empty)
                     {
@@ -230,7 +227,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
 
                 DTE = ObjBLLEstados.Listar_Estados(ref sMsjError);
 
-                DTE.Rows.Add("0", "-- SELECCIONES UN ESTADO --");
+                DTE.Rows.Add("0", "-- SELECCIONE UN ESTADO --");
 
                 cmb_IdEstado.DataSource = DTE;
                 cmb_IdEstado.DisplayMember = DTE.Columns[1].ToString();

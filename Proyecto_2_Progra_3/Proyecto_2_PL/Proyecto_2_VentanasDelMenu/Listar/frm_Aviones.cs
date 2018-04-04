@@ -49,7 +49,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
             DataTable DT = new DataTable();
             if (txtFiltro.Text == string.Empty)
             {
-                DT = objAviones_BLL.ListarAerolineas(ref sMsjError);
+                DT = objAviones_BLL.ListarAvion(ref sMsjError);
             }
             else
             {

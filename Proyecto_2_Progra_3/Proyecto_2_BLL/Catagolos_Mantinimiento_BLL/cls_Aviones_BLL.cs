@@ -13,7 +13,7 @@ namespace Proyecto_2_BLL.Catagolos_Mantinimiento_BLL
 {
     public class cls_Aviones_BLL
     {
-        public DataTable ListarAerolineas(ref string MsjError)
+        public DataTable ListarAvion(ref string MsjError)
         {
             cls_BaseDatos_DAL objDal = new cls_BaseDatos_DAL();
             cls_Bases_BLL objBll = new cls_Bases_BLL();

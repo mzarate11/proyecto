@@ -131,5 +131,27 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
             this.Show();
             CargarDatos();
         }
+
+        private void dgv_Vuelos_DoubleClick(object sender, EventArgs e)
+        {
+            if (dgv_Vuelos.RowCount > 0)
+            {
+
+                Obj_Mant_DAL = new cls_Vuelos_DAL();
+                Obj_Mant_DAL.cbanderaAccion = 'U';
+                Obj_Mant_DAL.sIdVuelo = dgv_Vuelos.SelectedRows[0].Cells[0].Value.ToString().Trim();
+
+                fmr_ModificarNuevo_Vuelos V_Modificar = new fmr_ModificarNuevo_Vuelos();
+                this.Hide();
+                V_Modificar.Obj_Mant_DAL = Obj_Mant_DAL; // pasamos en objeto dal a la otra pantalla
+                V_Modificar.ShowDialog();
+                this.Show();
+                CargarDatos();
+            }
+            else
+            {
+                MessageBox.Show("No se puede realizar la acción, se necesita al menos una fila seleccionada", "Eror datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
