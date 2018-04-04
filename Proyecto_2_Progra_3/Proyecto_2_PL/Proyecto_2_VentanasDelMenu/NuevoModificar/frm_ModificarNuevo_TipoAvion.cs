@@ -90,6 +90,9 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 string sMsjError = string.Empty;
                 if (Obj_Mant_DAL.cbanderaAccion == 'I')
                 {
+                    Obj_Mant_DAL.sEstados = cmb_IdEstado.Text;
+                    Obj_Mant_DAL.sNombreTipoAvion = txt_NombreAvion.Text;
+                    Obj_Mant_DAL.sDescTipoAvion = txt_Descripcion.Text;
                     Obj_Mant_BLL.AgregarTipoAviones(ref sMsjError, ref Obj_Mant_DAL);
                 }
                 else
