@@ -97,13 +97,21 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 string sMsjError = string.Empty;
                 if (Obj_Mant_DAL.cbanderaAccion == 'I')
                 {
-                    Obj_Mant_DAL.sEstados = cmb_IdEstado.Text;
+                    Obj_Mant_DAL.sEstado = cmb_IdEstado.Text;
                     Obj_Mant_DAL.sNombreTipoAvion = txt_NombreAvion.Text;
                     Obj_Mant_DAL.sDescTipoAvion = txt_Descripcion.Text;
                     Obj_Mant_BLL.AgregarTipoAviones(ref sMsjError, ref Obj_Mant_DAL);
                     if(sMsjError == string.Empty)
                     {
-                        MessageBox.Show("si");
+                        MessageBox.Show("Tipo Avión agregado correctamente","Información",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                        cmb_IdEstado.SelectedValue = "0";
+                        txt_IdTipoAvion.Text = string.Empty;
+                        txt_NombreAvion.Text = string.Empty;
+                        txt_Descripcion.Text = string.Empty;
+                        txt_CantidadPasajeros.Text = string.Empty;
+                        txt_CantidadPeso.Text = string.Empty;
+                        txt_IdTipoAvion.SelectAll();
+                        txt_IdTipoAvion.Focus();
 
                     }
                     else
