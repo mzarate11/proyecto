@@ -127,17 +127,24 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
         {
             ObjTipoEmpleadosDAL = new cls_TipoEmpleados_DAL();
             frm_Mostrar_TipoEmpleado PantTipoEmpleado = new frm_Mostrar_TipoEmpleado();
-            ObjTipoEmpleadosDAL.CBandAX = 'U';
-            ObjTipoEmpleadosDAL.ITipoEmpleado = Convert.ToInt32(dgv_view.SelectedRows[0].Cells[0].Value.ToString().Trim());
-            ObjTipoEmpleadosDAL.SDescTipo = dgv_view.SelectedRows[0].Cells[1].Value.ToString().Trim();
-            ObjTipoEmpleadosDAL.CIdEstado = Convert.ToChar(dgv_view.SelectedRows[0].Cells[3].Value.ToString().Trim());
 
-            PantTipoEmpleado.Obj_DAL_TipoEmpleado = ObjTipoEmpleadosDAL;
-            PantTipoEmpleado.ShowDialog();
+            if (dgv_view.RowCount > 0)
+            {
+                ObjTipoEmpleadosDAL.CBandAX = 'U';
+                ObjTipoEmpleadosDAL.ITipoEmpleado = Convert.ToInt32(dgv_view.SelectedRows[0].Cells[0].Value.ToString().Trim());
+                ObjTipoEmpleadosDAL.SDescTipo = dgv_view.SelectedRows[0].Cells[1].Value.ToString().Trim();
+                ObjTipoEmpleadosDAL.CIdEstado = Convert.ToChar(dgv_view.SelectedRows[0].Cells[3].Value.ToString().Trim());
 
-            txtFiltro.Text = string.Empty;
-            CargarDatos();
+                PantTipoEmpleado.Obj_DAL_TipoEmpleado = ObjTipoEmpleadosDAL;
+                PantTipoEmpleado.ShowDialog();
 
+                txtFiltro.Text = string.Empty;
+                CargarDatos();
+            }
+            else
+            {
+                MessageBox.Show("No se pueden realizar la acción, debido a que no existen datos por modificar", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void dgv_view_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)

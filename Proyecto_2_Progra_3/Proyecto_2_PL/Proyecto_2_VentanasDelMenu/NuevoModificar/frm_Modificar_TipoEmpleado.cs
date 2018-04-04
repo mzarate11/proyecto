@@ -72,31 +72,41 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            cls_TiposEmpleados_BLL obj_TipoEmpleado_BLL = new cls_TiposEmpleados_BLL();
-            string sMsjError = string.Empty;
-            Obj_DAL_TipoEmpleado.ITipoEmpleado = Convert.ToInt32(txt_IDTipoEmpleado.Text.Trim());
-            Obj_DAL_TipoEmpleado.SDescTipo = txt_desc.Text.Trim();
-            Obj_DAL_TipoEmpleado.CIdEstado = Convert.ToChar(cmb_IDEstado.Text.Trim());
-
-            if (Obj_DAL_TipoEmpleado.CBandAX == 'I')
+            if (cmb_IDEstado.SelectedValue.ToString() != "0" ||
+               txt_IDTipoEmpleado.Text == string.Empty ||
+               txt_desc.Text == string.Empty )
+                
             {
-                obj_TipoEmpleado_BLL.Insertar_TipoEmpleado(ref sMsjError, ref Obj_DAL_TipoEmpleado);
+                cls_TiposEmpleados_BLL obj_TipoEmpleado_BLL = new cls_TiposEmpleados_BLL();
+                string sMsjError = string.Empty;
+                Obj_DAL_TipoEmpleado.ITipoEmpleado = Convert.ToInt32(txt_IDTipoEmpleado.Text.Trim());
+                Obj_DAL_TipoEmpleado.SDescTipo = txt_desc.Text.Trim();
+                Obj_DAL_TipoEmpleado.CIdEstado = Convert.ToChar(cmb_IDEstado.Text.Trim());
 
-                if (sMsjError == string.Empty)
+                if (Obj_DAL_TipoEmpleado.CBandAX == 'I')
                 {
+                    obj_TipoEmpleado_BLL.Insertar_TipoEmpleado(ref sMsjError, ref Obj_DAL_TipoEmpleado);
 
-                    MessageBox.Show("Se modifico el registro exitosamente");
+                    if (sMsjError == string.Empty)
+                    {
+
+                        MessageBox.Show("Se modifico el registro exitosamente");
+                    }
+                    else {
+
+                        MessageBox.Show("Se presento un error");
+                    }
                 }
-                else {
-
-                    MessageBox.Show("Se presento un error");
-                     }
+                else
+                {
+                    obj_TipoEmpleado_BLL.Modificat_TipoEmpleado(ref sMsjError, ref Obj_DAL_TipoEmpleado);
+                }
             }
             else
             {
-                obj_TipoEmpleado_BLL.Modificat_TipoEmpleado(ref sMsjError, ref Obj_DAL_TipoEmpleado);
+                MessageBox.Show("Todos los cambios son obligatorios", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-        }
+         }
 
         private void txt_desc_KeyPress(object sender, KeyPressEventArgs e)
         {

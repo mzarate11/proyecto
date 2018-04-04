@@ -112,18 +112,25 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
         {
             ObjTiposClientesDAL = new cls_TiposClientes_DAL();
             frm_Mostrar_TiposClientes PantTiposClientes = new frm_Mostrar_TiposClientes();
-            ObjTiposClientesDAL.CBandAX = 'U';
-            ObjTiposClientesDAL.IIdTipoCliente =  Convert.ToInt32( Dgv_View.SelectedRows[0].Cells[0].Value.ToString().Trim());
-            ObjTiposClientesDAL.STipoCliente = Dgv_View.SelectedRows[0].Cells[1].Value.ToString().Trim();
-            ObjTiposClientesDAL.SDescripcion = Dgv_View.SelectedRows[0].Cells[2].Value.ToString().Trim();
-            ObjTiposClientesDAL.CIdEstado = Convert.ToChar(Dgv_View.SelectedRows[0].Cells[3].Value.ToString().Trim());
 
-            PantTiposClientes.OBj_DAL_TiposClientes = ObjTiposClientesDAL;
-            PantTiposClientes.ShowDialog();
+            if (Dgv_View.RowCount > 0)
+            {
+                ObjTiposClientesDAL.CBandAX = 'U';
+                ObjTiposClientesDAL.IIdTipoCliente = Convert.ToInt32(Dgv_View.SelectedRows[0].Cells[0].Value.ToString().Trim());
+                ObjTiposClientesDAL.STipoCliente = Dgv_View.SelectedRows[0].Cells[1].Value.ToString().Trim();
+                ObjTiposClientesDAL.SDescripcion = Dgv_View.SelectedRows[0].Cells[2].Value.ToString().Trim();
+                ObjTiposClientesDAL.CIdEstado = Convert.ToChar(Dgv_View.SelectedRows[0].Cells[3].Value.ToString().Trim());
 
-            txtFiltro.Text = string.Empty;
-            CargarDatos();
+                PantTiposClientes.OBj_DAL_TiposClientes = ObjTiposClientesDAL;
+                PantTiposClientes.ShowDialog();
 
+                txtFiltro.Text = string.Empty;
+                CargarDatos();
+
+            }
+            else {
+                MessageBox.Show("No se pueden realizar la acción, debido a que no existen datos por modificar", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void txtFiltro_Click(object sender, EventArgs e)
