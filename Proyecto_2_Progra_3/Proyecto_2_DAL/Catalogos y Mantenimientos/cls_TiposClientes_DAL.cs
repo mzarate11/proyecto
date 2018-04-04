@@ -54,6 +54,18 @@ namespace Proyecto_2_DAL.Catalogos_y_Mantenimientos
                 _sDescripcion = value;
             }
         }
+        public int IIdTipoCliente
+        {
+            get
+            {
+                return _iIdTipoCliente;
+            }
+
+            set
+            {
+                _iIdTipoCliente = value;
+            }
+        }
 
         public string STipoCliente
         {
@@ -65,19 +77,6 @@ namespace Proyecto_2_DAL.Catalogos_y_Mantenimientos
             set
             {
                 _sTipoCliente = value;
-            }
-        }
-
-        public int IIdTipoCliente
-        {
-            get
-            {
-                return _iIdTipoCliente;
-            }
-
-            set
-            {
-                _iIdTipoCliente = value;
             }
         }
         #endregion

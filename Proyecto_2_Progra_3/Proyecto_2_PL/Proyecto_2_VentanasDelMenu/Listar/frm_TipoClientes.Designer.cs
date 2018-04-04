@@ -188,6 +188,7 @@
             // 
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(100, 23);
+            this.txtFiltro.Click += new System.EventHandler(this.txtFiltro_Click);
             this.txtFiltro.TextChanged += new System.EventHandler(this.txtFiltro_TextChanged_1);
             // 
             // btn_Salir

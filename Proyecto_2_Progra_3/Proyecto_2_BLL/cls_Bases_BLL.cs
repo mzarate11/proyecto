@@ -51,7 +51,7 @@ namespace Proyecto_2_BLL
             try
             {
                 cls_Bases_BLL Obj_BLL = new cls_Bases_BLL();
-                ObjDAL.sCadena = ConfigurationManager.ConnectionStrings["CONEXION_SQL"].ToString().Trim();
+                ObjDAL.sCadena = ConfigurationManager.ConnectionStrings["William"].ToString().Trim();
                 //ObjDAL.sCadena = Obj_BLL.Encriptar(ConfigurationManager.ConnectionStrings["CONEXION SQL"].ToString().Trim());
                 //ObjDAL.sCadena = Obj_BLL.Desencriptar(ObjDAL.sCadena);
                 ObjDAL.sql_Conexion = new SqlConnection(ObjDAL.sCadena);

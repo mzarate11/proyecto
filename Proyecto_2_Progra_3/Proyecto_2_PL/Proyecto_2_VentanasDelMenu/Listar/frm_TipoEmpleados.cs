@@ -8,14 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Proyecto_2_BLL.Catagolos_Mantinimiento_BLL;
-using Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar;
+using Proyecto_2_PL.Proyecto_2_VentanasDelMenu.Modificar;
 using Proyecto_2_DAL.Catalogos_y_Mantenimientos;
 
 namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
 {
     public partial class frm_TipoEmpleados : Form
     {
-
         #region
         cls_TipoEmpleados_DAL ObjTipoEmpleadosDAL;
         #endregion
@@ -113,12 +112,8 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
         private void bnt_Nuevo_Click(object sender, EventArgs e)
         {
             ObjTipoEmpleadosDAL = new cls_TipoEmpleados_DAL();
-            frm_Modificar_TipoEmpleado PantTipoEmpleado = new frm_Modificar_TipoEmpleado();
-
+            frm_Mostrar_TipoEmpleado PantTipoEmpleado = new frm_Mostrar_TipoEmpleado();
             ObjTipoEmpleadosDAL.CBandAX = 'I';
-            ObjTipoEmpleadosDAL.ITipoEmpleado = 0;
-            ObjTipoEmpleadosDAL.SDescTipo = string.Empty;
-            ObjTipoEmpleadosDAL.CIdEstado = ' ';
 
             PantTipoEmpleado.Obj_DAL_TipoEmpleado = ObjTipoEmpleadosDAL;
             PantTipoEmpleado.ShowDialog();
@@ -130,40 +125,25 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
 
         private void btn_Modificar_Click(object sender, EventArgs e)
         {
-            if (dgv_view.RowCount == 0) {
-                 MessageBox.Show("NO tiene Datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                ObjTipoEmpleadosDAL = new cls_TipoEmpleados_DAL();
-                frm_Modificar_TipoEmpleado PantTipoEmpleado = new frm_Modificar_TipoEmpleado();
-                if (dgv_view.RowCount > 0)
-                {
-                    ObjTipoEmpleadosDAL.CBandAX = 'U';
-                    ObjTipoEmpleadosDAL.ITipoEmpleado = Convert.ToInt32(dgv_view.SelectedRows[0].Cells[0].Value.ToString().Trim());
-                    ObjTipoEmpleadosDAL.SDescTipo = dgv_view.SelectedRows[0].Cells[1].Value.ToString().Trim();
-                    ObjTipoEmpleadosDAL.CIdEstado = Convert.ToChar(dgv_view.SelectedRows[0].Cells[3].Value.ToString().Trim());
+            ObjTipoEmpleadosDAL = new cls_TipoEmpleados_DAL();
+            frm_Mostrar_TipoEmpleado PantTipoEmpleado = new frm_Mostrar_TipoEmpleado();
+            ObjTipoEmpleadosDAL.CBandAX = 'U';
+            ObjTipoEmpleadosDAL.ITipoEmpleado = Convert.ToInt32(dgv_view.SelectedRows[0].Cells[0].Value.ToString().Trim());
+            ObjTipoEmpleadosDAL.SDescTipo = dgv_view.SelectedRows[0].Cells[1].Value.ToString().Trim();
+            ObjTipoEmpleadosDAL.CIdEstado = Convert.ToChar(dgv_view.SelectedRows[0].Cells[3].Value.ToString().Trim());
 
-                    PantTipoEmpleado.Obj_DAL_TipoEmpleado = ObjTipoEmpleadosDAL;
+            PantTipoEmpleado.Obj_DAL_TipoEmpleado = ObjTipoEmpleadosDAL;
+            PantTipoEmpleado.ShowDialog();
 
-                    this.Hide();
-                    PantTipoEmpleado.ShowDialog();
-                    this.Show();
+            txtFiltro.Text = string.Empty;
+            CargarDatos();
 
-                    txtFiltro.Text = string.Empty;
-                    CargarDatos();
-                }
-                else
-                {
-                    MessageBox.Show("No se pueden realizar la acción, debido a que no existen datos por modificar", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
         }
 
         private void dgv_view_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             ObjTipoEmpleadosDAL = new cls_TipoEmpleados_DAL();
-            frm_Modificar_TipoEmpleado Pant_tipoEmpleados = new frm_Modificar_TipoEmpleado();
+            frm_Mostrar_TipoEmpleado Pant_tipoEmpleados = new frm_Mostrar_TipoEmpleado();
             ObjTipoEmpleadosDAL.CBandAX = 'U';
             ObjTipoEmpleadosDAL.ITipoEmpleado = Convert.ToInt32(dgv_view.SelectedRows[0].Cells[0].Value.ToString().Trim());
             ObjTipoEmpleadosDAL.SDescTipo = dgv_view.SelectedRows[0].Cells[1].Value.ToString().Trim();
