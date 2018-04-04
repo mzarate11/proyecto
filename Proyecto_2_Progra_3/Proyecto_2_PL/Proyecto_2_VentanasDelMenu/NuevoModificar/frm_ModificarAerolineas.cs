@@ -28,6 +28,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
         private void CargarDatos()
         {
             cls_BaseDatos_DAL objDAL_BaseDatos = new cls_BaseDatos_DAL();
+
             if (objDAL_Aerolinea != null)
             {
                 #region Combo Estados

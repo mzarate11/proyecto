@@ -113,8 +113,10 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
                 objDal_Aerolinea.sNombreAerolinea = dgv_Aerolineas.SelectedRows[0].Cells[1].Value.ToString().Trim();
                 objDal_Aerolinea.cIdEstado = Convert.ToChar(dgv_Aerolineas.SelectedRows[0].Cells[3].Value.ToString().Trim());
                 frm_ModificarAerolineas Pantalla = new frm_ModificarAerolineas();
+                Pantalla.objDAL_Aerolinea = objDal_Aerolinea;
+                Hide();
                 Pantalla.ShowDialog();
-
+                Show();
                 txtFiltro.Text = string.Empty;
                 CargarDatos();
             }            
@@ -139,9 +141,10 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
             objDal_Aerolinea.cBandera = 'U';
             objDal_Aerolinea.iIdAerolinea = Convert.ToInt32(dgv_Aerolineas.SelectedRows[0].Cells[0].Value.ToString().Trim());
             objDal_Aerolinea.sNombreAerolinea = dgv_Aerolineas.SelectedRows[0].Cells[1].Value.ToString().Trim();
-            objDal_Aerolinea.cIdEstado = Convert.ToChar(dgv_Aerolineas.SelectedRows[0].Cells[3].Value.ToString().Trim());
+            objDal_Aerolinea.cIdEstado = Convert.ToChar(dgv_Aerolineas.SelectedRows[0].Cells[2].Value.ToString().Trim());
             frm_ModificarAerolineas Pantalla = new frm_ModificarAerolineas();
             Hide();
+            Pantalla.objDAL_Aerolinea = objDal_Aerolinea;
             Pantalla.ShowDialog();
             Show();
             txtFiltro.Text = string.Empty;
