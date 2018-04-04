@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Configuration;
 using System.Data;
 using Proyecto_2_DAL.BaseDatos_DAL;
+using Proyecto_2_DAL.Catalogos_y_Mantenimientos;
 
 namespace Proyecto_2_BLL.Catagolos_Mantinimiento_BLL
 {
@@ -72,6 +73,16 @@ namespace Proyecto_2_BLL.Catagolos_Mantinimiento_BLL
             {
                 sMsjError = Obj_DAL.sMsgError;
             }
+        }
+
+        public void Insertar_Destinos(ref string sMsjError,ref cls_Destinos_DAL ObjDestinos_DAL)
+        {
+
+        }
+
+        public void Modificar_Destinos(ref string sMsjError,ref cls_Destinos_DAL ObjDestinos_DAL)
+        {
+
         }
     }
 }

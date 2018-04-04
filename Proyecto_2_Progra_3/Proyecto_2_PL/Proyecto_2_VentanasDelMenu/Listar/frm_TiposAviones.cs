@@ -7,19 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Proyecto_2_DAL;
+using Proyecto_2_DAL.Catalogos_y_Mantenimientos;
 using Proyecto_2_BLL.Catagolos_Mantinimiento_BLL;
+using Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar;
 
 namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
 {
     public partial class frm_TiposAviones : Form
     {
+        cls_TipoAviones_DAL Obj_Mant_DAL;
+
         public frm_TiposAviones()
         {
             InitializeComponent();
         }
-
-
 
         private void CargarDatosEstados()
         {
@@ -97,6 +98,46 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
             {
                 MessageBox.Show("No hay registros para eliminar");
             }
+        }
+
+        private void btn_Modificar_Click(object sender, EventArgs e)
+        {
+
+            if(dgv_TiposA.RowCount > 0)
+            {
+                Obj_Mant_DAL = new cls_TipoAviones_DAL();
+                Obj_Mant_DAL.cbanderaAccion = 'U';
+                Obj_Mant_DAL.sIdTipoAvion = dgv_TiposA.SelectedRows[0].Cells[0].Value.ToString().Trim();
+                Obj_Mant_DAL.sNombreTipoAvion = dgv_TiposA.SelectedRows[0].Cells[1].Value.ToString().Trim();
+                Obj_Mant_DAL.sDescTipoAvion = dgv_TiposA.SelectedRows[0].Cells[2].Value.ToString().Trim();
+                Obj_Mant_DAL.iCapacidadPasajeros = Convert.ToInt16(dgv_TiposA.SelectedRows[0].Cells[3].Value.ToString().Trim());
+                Obj_Mant_DAL.dcapacidadPeso = Convert.ToDouble(dgv_TiposA.SelectedRows[0].Cells[4].Value.ToString().Trim());
+
+                frm_ModificarNuevo_TipoAvion V_Modificar = new frm_ModificarNuevo_TipoAvion();
+                this.Hide();
+                V_Modificar.Obj_Mant_DAL = Obj_Mant_DAL; // pasamos en objeto dal a la otra pantalla
+                V_Modificar.ShowDialog();
+                this.Show();
+                CargarDatosEstados();
+            }
+            else
+            {
+                MessageBox.Show("No se puede realizar la acción, se necesita al menos una fila seleccionada", "Eror datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            
+        }
+
+        private void bnt_Nuevo_Click(object sender, EventArgs e)
+        {
+            Obj_Mant_DAL = new cls_TipoAviones_DAL();
+            Obj_Mant_DAL.cbanderaAccion = 'I';
+            this.Hide();
+            frm_ModificarNuevo_TipoAvion V_Modificar = new frm_ModificarNuevo_TipoAvion();
+            V_Modificar.Obj_Mant_DAL = Obj_Mant_DAL; // pasamos en objeto dal a la otra pantalla
+            V_Modificar.ShowDialog();
+            this.Show();
+            CargarDatosEstados();
         }
     }
 }

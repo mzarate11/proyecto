@@ -8,11 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Proyecto_2_BLL.Catagolos_Mantinimiento_BLL;
+using Proyecto_2_DAL.Catalogos_y_Mantenimientos;
 
 namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
 {
     public partial class frm_CategoriaVuelos : Form
     {
+        #region Instacia Categoria Vuelos
+        cls_T_CategoriasVuelos_DAL Obj_CategoriasVuelos_DAL;
+        #endregion
+
         public frm_CategoriaVuelos()
         {
             InitializeComponent();
@@ -95,5 +100,61 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
                 MessageBox.Show("No hay registros para eliminar");
             }
         }
+
+    
+        #region Boton Nuevo
+        private void btnNuevo_Click_1(object sender, EventArgs e)
+        {
+            Obj_CategoriasVuelos_DAL = new cls_T_CategoriasVuelos_DAL();
+
+            NuevoModificar.frm_Modificar_T_CategoriasVuelos PantCategoriaVuelo = new NuevoModificar.frm_Modificar_T_CategoriasVuelos();
+
+            Obj_CategoriasVuelos_DAL.cBandAX = 'I';
+            PantCategoriaVuelo.Obj_ManteCategorias_DAL = Obj_CategoriasVuelos_DAL;
+            PantCategoriaVuelo.ShowDialog();
+
+            txtFiltro.Text = string.Empty;
+            CargarDatos();
+        }
+        #endregion
+
+        #region Boton Modificar
+        private void btnModificar_Click_1(object sender, EventArgs e)
+        {
+            Obj_CategoriasVuelos_DAL = new cls_T_CategoriasVuelos_DAL();
+
+            NuevoModificar.frm_Modificar_T_CategoriasVuelos PantCategoriaVuelo = new NuevoModificar.frm_Modificar_T_CategoriasVuelos();
+
+            Obj_CategoriasVuelos_DAL.cBandAX = 'U';
+            Obj_CategoriasVuelos_DAL.iIdCategoria = Convert.ToChar(dgv_CategoriasVuelos.SelectedRows[0].Cells[0].Value.ToString().Trim());
+            Obj_CategoriasVuelos_DAL.sDescCategoria = dgv_CategoriasVuelos.SelectedRows[0].Cells[1].Value.ToString().Trim();
+            Obj_CategoriasVuelos_DAL.cIdEstado = Convert.ToChar(dgv_CategoriasVuelos.SelectedRows[0].Cells[2].Value.ToString().Trim());
+            PantCategoriaVuelo.Obj_ManteCategorias_DAL = Obj_CategoriasVuelos_DAL;
+            PantCategoriaVuelo.ShowDialog();
+
+            txtFiltro.Text = string.Empty;
+            CargarDatos();
+        }
+        #endregion
+
+        #region dgv_Estado doble Click
+        private void dgv_CategoriasVuelos_RowHeaderMouseDoubleClick_1(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            Obj_CategoriasVuelos_DAL = new cls_T_CategoriasVuelos_DAL();
+
+            NuevoModificar.frm_Modificar_T_CategoriasVuelos PantCategoriaVuelo = new NuevoModificar.frm_Modificar_T_CategoriasVuelos();
+
+            Obj_CategoriasVuelos_DAL.cBandAX = 'U';
+            Obj_CategoriasVuelos_DAL.iIdCategoria = Convert.ToChar(dgv_CategoriasVuelos.SelectedRows[0].Cells[0].Value.ToString().Trim());
+            Obj_CategoriasVuelos_DAL.sDescCategoria = dgv_CategoriasVuelos.SelectedRows[0].Cells[1].Value.ToString().Trim();
+            Obj_CategoriasVuelos_DAL.cIdEstado = Convert.ToChar(dgv_CategoriasVuelos.SelectedRows[0].Cells[2].Value.ToString().Trim());
+            PantCategoriaVuelo.Obj_ManteCategorias_DAL = Obj_CategoriasVuelos_DAL;
+            PantCategoriaVuelo.ShowDialog();
+
+            txtFiltro.Text = string.Empty;
+            CargarDatos();
+        }
+        #endregion
+
     }
 }

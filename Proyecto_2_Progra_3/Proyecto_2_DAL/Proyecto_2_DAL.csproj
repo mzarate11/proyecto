@@ -41,9 +41,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseDatos_DAL\cls_BaseDatos_DAL.cs" />
+    <Compile Include="Catalogos y Mantenimientos\cls_Aerolineas_DAL.cs" />
+    <Compile Include="Catalogos y Mantenimientos\cls_Aviones_DAL.cs" />
+    <Compile Include="Catalogos y Mantenimientos\cls_Clientes_DAL.cs" />
+    <Compile Include="Catalogos y Mantenimientos\cls_Destinos_DAL.cs" />
+    <Compile Include="Catalogos y Mantenimientos\cls_Empleados_DAL.cs" />
     <Compile Include="Catalogos y Mantenimientos\cls_Estados_DAL.cs" />
+    <Compile Include="Catalogos y Mantenimientos\cls_Paises_DAL.cs" />
+    <Compile Include="Catalogos y Mantenimientos\cls_TipoAviones_DAL.cs" />
     <Compile Include="Catalogos y Mantenimientos\cls_TipoEmpleados_DAL.cs" />
     <Compile Include="Catalogos y Mantenimientos\cls_TiposClientes_DAL.cs" />
+    <Compile Include="Catalogos y Mantenimientos\cls_T_CategoriasVuelos_DAL.cs" />
+    <Compile Include="Catalogos y Mantenimientos\cls_T_Usuarios_DAL.cs" />
+    <Compile Include="Catalogos y Mantenimientos\cls_Vuelos_DAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

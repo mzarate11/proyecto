@@ -8,11 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Proyecto_2_BLL.Catagolos_Mantinimiento_BLL;
+using Proyecto_2_DAL.Catalogos_y_Mantenimientos;
 
 namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
 {
     public partial class frm_Usuarios : Form
     {
+        #region Instacia Usuarios
+        cls_T_Usuarios_DAL Obj_Usuarios_DAL;
+        #endregion
         public frm_Usuarios()
         {
             InitializeComponent();
@@ -95,5 +99,63 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
                 MessageBox.Show("No hay registros para eliminar");
             }
         }
+
+        #region boton Refrescar
+        private void btn_Refrescar_Click(object sender, EventArgs e)
+        {
+            CargarDatos();
+        }
+        #endregion
+
+        #region Boton Nuevo
+        private void bnt_Nuevo_Click(object sender, EventArgs e)
+        {
+            Obj_Usuarios_DAL = new cls_T_Usuarios_DAL();
+            NuevoModificar.frm_Modificar_Usuarios PantEstados = new NuevoModificar.frm_Modificar_Usuarios();
+            Obj_Usuarios_DAL.cBandAX = 'I';
+            PantEstados.Obj_Usuarios_Dal = Obj_Usuarios_DAL;
+            PantEstados.ShowDialog();
+
+            txtFiltro.Text = string.Empty;
+            CargarDatos();
+        }
+        #endregion
+
+        #region Boton Modificar
+        private void btn_Modificar_Click(object sender, EventArgs e)
+        {
+            Obj_Usuarios_DAL = new cls_T_Usuarios_DAL();
+            NuevoModificar.frm_Modificar_Usuarios PantEstados = new NuevoModificar.frm_Modificar_Usuarios();
+            Obj_Usuarios_DAL.cBandAX = 'U';
+            Obj_Usuarios_DAL.sUsername = dgv_Usuarios.SelectedRows[0].Cells[0].Value.ToString().Trim();
+            Obj_Usuarios_DAL.sPassword = dgv_Usuarios.SelectedRows[0].Cells[1].Value.ToString().Trim();
+            Obj_Usuarios_DAL.sIdEmpleado = dgv_Usuarios.SelectedRows[0].Cells[2].Value.ToString().Trim();
+            Obj_Usuarios_DAL.cIdEstado = Convert.ToChar(dgv_Usuarios.SelectedRows[0].Cells[3].Value.ToString().Trim());
+            PantEstados.Obj_Usuarios_Dal = Obj_Usuarios_DAL;
+            PantEstados.ShowDialog();
+
+            txtFiltro.Text = string.Empty;
+            CargarDatos();
+        }
+        #endregion
+
+        #region Doble click
+        private void dgv_Usuarios_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            Obj_Usuarios_DAL = new cls_T_Usuarios_DAL();
+            NuevoModificar.frm_Modificar_Usuarios PantEstados = new NuevoModificar.frm_Modificar_Usuarios();
+            Obj_Usuarios_DAL.cBandAX = 'U';
+            Obj_Usuarios_DAL.sUsername = dgv_Usuarios.SelectedRows[0].Cells[0].Value.ToString().Trim();
+            Obj_Usuarios_DAL.sPassword = dgv_Usuarios.SelectedRows[0].Cells[1].Value.ToString().Trim();
+            Obj_Usuarios_DAL.sIdEmpleado = dgv_Usuarios.SelectedRows[0].Cells[2].Value.ToString().Trim();
+            Obj_Usuarios_DAL.cIdEstado = Convert.ToChar(dgv_Usuarios.SelectedRows[0].Cells[3].Value.ToString().Trim());
+            PantEstados.Obj_Usuarios_Dal = Obj_Usuarios_DAL;
+            PantEstados.ShowDialog();
+
+            txtFiltro.Text = string.Empty;
+            CargarDatos();
+        }
+        #endregion
+
     }
 }

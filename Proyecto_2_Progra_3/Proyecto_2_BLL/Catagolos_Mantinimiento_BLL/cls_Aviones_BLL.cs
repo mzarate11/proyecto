@@ -7,6 +7,7 @@ using System.Configuration;
 using System.Data;
 using Proyecto_2_BLL;
 using Proyecto_2_DAL.BaseDatos_DAL;
+using Proyecto_2_DAL.Catalogos_y_Mantenimientos;
 
 namespace Proyecto_2_BLL.Catagolos_Mantinimiento_BLL
 {
@@ -78,5 +79,16 @@ namespace Proyecto_2_BLL.Catagolos_Mantinimiento_BLL
                 sMsjError = Obj_DAL.sMsgError;
             }
         }
+
+        public void Insertar_Aviones(ref string sMsjError, ref cls_Aviones_DAL objDAL_Aviones)
+        {
+
+        }
+
+        public void Modificar_Aviones(ref string sMsjError, ref cls_Aviones_DAL objDAL_Aviones)
+        {
+
+        }
+
     }
 }

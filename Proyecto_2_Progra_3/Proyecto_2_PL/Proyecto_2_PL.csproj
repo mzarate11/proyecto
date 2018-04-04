@@ -12,6 +12,21 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -34,7 +49,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -48,11 +65,11 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Proyecto_2_Login\frm_Inicio_PL.cs">
+    <Compile Include="Proyecto_2_Login\frm_Inicio_PL_.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Proyecto_2_Login\frm_Inicio_PL.Designer.cs">
-      <DependentUpon>frm_Inicio_PL.cs</DependentUpon>
+    <Compile Include="Proyecto_2_Login\frm_Inicio_PL_.Designer.cs">
+      <DependentUpon>frm_Inicio_PL_.cs</DependentUpon>
     </Compile>
     <Compile Include="Proyecto_2_Login\frm_Login_PL.cs">
       <SubType>Form</SubType>
@@ -144,11 +161,83 @@
     <Compile Include="Proyecto_2_VentanasDelMenu\Listar\frm_Vuelos.Designer.cs">
       <DependentUpon>frm_Vuelos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Proyecto_2_VentanasDelMenu\Modificar\frm_Mostrar_Estados.cs">
+    <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\fmr_ModificarNuevo_Vuelos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Proyecto_2_VentanasDelMenu\Modificar\frm_Mostrar_Estados.Designer.cs">
-      <DependentUpon>frm_Mostrar_Estados.cs</DependentUpon>
+    <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\fmr_ModificarNuevo_Vuelos.Designer.cs">
+      <DependentUpon>fmr_ModificarNuevo_Vuelos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_ModificarAerolineas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_ModificarAerolineas.Designer.cs">
+      <DependentUpon>frm_ModificarAerolineas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_ModificarAviones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_ModificarAviones.Designer.cs">
+      <DependentUpon>frm_ModificarAviones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_ModificarClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_ModificarClientes.Designer.cs">
+      <DependentUpon>frm_ModificarClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_ModificarNuevo_TipoAvion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_ModificarNuevo_TipoAvion.Designer.cs">
+      <DependentUpon>frm_ModificarNuevo_TipoAvion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Modificar_Destinos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Modificar_Destinos.Designer.cs">
+      <DependentUpon>frm_Modificar_Destinos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Modificar_Empleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Modificar_Empleados.Designer.cs">
+      <DependentUpon>frm_Modificar_Empleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Modificar_Estados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Modificar_Estados.Designer.cs">
+      <DependentUpon>frm_Modificar_Estados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Modificar_Paises.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Modificar_Paises.Designer.cs">
+      <DependentUpon>frm_Modificar_Paises.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Modificar_TipoClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Modificar_TipoClientes.Designer.cs">
+      <DependentUpon>frm_Modificar_TipoClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Modificar_TipoEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Modificar_TipoEmpleado.Designer.cs">
+      <DependentUpon>frm_Modificar_TipoEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Modificar_T_CategoriasVuelos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Modificar_T_CategoriasVuelos.Designer.cs">
+      <DependentUpon>frm_Modificar_T_CategoriasVuelos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Modificar_Usuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Modificar_Usuarios.Designer.cs">
+      <DependentUpon>frm_Modificar_Usuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Proyecto_2_VentanasDelMenu\Modificar\frm_Mostrar_TipoEmpleado.cs">
       <SubType>Form</SubType>
@@ -172,8 +261,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Proyecto_2_Login\frm_Inicio_PL.resx">
-      <DependentUpon>frm_Inicio_PL.cs</DependentUpon>
+    <EmbeddedResource Include="Proyecto_2_Login\frm_Inicio_PL_.resx">
+      <DependentUpon>frm_Inicio_PL_.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Proyecto_2_Login\frm_Login_PL.resx">
       <DependentUpon>frm_Login_PL.cs</DependentUpon>
@@ -220,8 +309,44 @@
     <EmbeddedResource Include="Proyecto_2_VentanasDelMenu\Listar\frm_Vuelos.resx">
       <DependentUpon>frm_Vuelos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Proyecto_2_VentanasDelMenu\Modificar\frm_Mostrar_Estados.resx">
-      <DependentUpon>frm_Mostrar_Estados.cs</DependentUpon>
+    <EmbeddedResource Include="Proyecto_2_VentanasDelMenu\NuevoModificar\fmr_ModificarNuevo_Vuelos.resx">
+      <DependentUpon>fmr_ModificarNuevo_Vuelos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_ModificarAerolineas.resx">
+      <DependentUpon>frm_ModificarAerolineas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_ModificarAviones.resx">
+      <DependentUpon>frm_ModificarAviones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_ModificarClientes.resx">
+      <DependentUpon>frm_ModificarClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_ModificarNuevo_TipoAvion.resx">
+      <DependentUpon>frm_ModificarNuevo_TipoAvion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Modificar_Destinos.resx">
+      <DependentUpon>frm_Modificar_Destinos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Modificar_Empleados.resx">
+      <DependentUpon>frm_Modificar_Empleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Modificar_Estados.resx">
+      <DependentUpon>frm_Modificar_Estados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Modificar_Paises.resx">
+      <DependentUpon>frm_Modificar_Paises.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Modificar_TipoClientes.resx">
+      <DependentUpon>frm_Modificar_TipoClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Modificar_TipoEmpleado.resx">
+      <DependentUpon>frm_Modificar_TipoEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Modificar_T_CategoriasVuelos.resx">
+      <DependentUpon>frm_Modificar_T_CategoriasVuelos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Modificar_Usuarios.resx">
+      <DependentUpon>frm_Modificar_Usuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Proyecto_2_VentanasDelMenu\Modificar\frm_Mostrar_TipoEmpleado.resx">
       <DependentUpon>frm_Mostrar_TipoEmpleado.cs</DependentUpon>
@@ -302,7 +427,60 @@
   <ItemGroup>
     <None Include="Resources\inicio.jpg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\tipoAviones.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vuelos.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\aerolineas.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clientes.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bNuevo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bSalir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bGuardar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fundo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo vuelos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Aerolineas1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\aerolineas2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\avion_960_720.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Aviones1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Aviation.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

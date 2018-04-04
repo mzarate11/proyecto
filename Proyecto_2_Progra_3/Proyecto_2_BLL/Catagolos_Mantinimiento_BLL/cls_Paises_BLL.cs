@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Configuration;
 using System.Data;
 using Proyecto_2_DAL.BaseDatos_DAL;
+using Proyecto_2_DAL.Catalogos_y_Mantenimientos;
 
 namespace Proyecto_2_BLL.Catagolos_Mantinimiento_BLL
 {
@@ -37,7 +38,7 @@ namespace Proyecto_2_BLL.Catagolos_Mantinimiento_BLL
             cls_BaseDatos_DAL ObjDAL = new cls_BaseDatos_DAL();
             ObjBLL.TablaParametros(ref ObjDAL);
             ObjDAL.DT_Parametros.Rows.Add("@NombrePais", 3, sFiltro);
-            ObjDAL.sNombreTabla = "Filtro_Paises";
+            ObjDAL.sNombreTabla = "Filtro Paises";
             ObjDAL.sSentencia = ConfigurationManager.AppSettings["Filtrar Paises"].ToString().Trim();
             ObjBLL.Ejec_DataAdapter(ref ObjDAL);
 
@@ -72,6 +73,38 @@ namespace Proyecto_2_BLL.Catagolos_Mantinimiento_BLL
             {
                 sMsjError = Obj_DAL.sMsgError;
             }
+        }
+
+        public void Insertar_Paises(ref string sMsjError, ref cls_Paises_DAL ObjPaises_DAL)
+        {
+            cls_BaseDatos_DAL Obj_DAL = new cls_BaseDatos_DAL();
+            cls_Bases_BLL Obj_BLL = new cls_Bases_BLL();
+
+
+            Obj_BLL.TablaParametros(ref Obj_DAL);
+            Obj_DAL.DT_Parametros.Rows.Add("@NombrePais", 3, ObjPaises_DAL.sNombrePais.ToString().Trim());
+            Obj_DAL.DT_Parametros.Rows.Add("@CodigoISOPais", 2, ObjPaises_DAL.sCodigoISOPais.ToString().Trim());
+            Obj_DAL.DT_Parametros.Rows.Add("@CodigoAreaPais", 2, ObjPaises_DAL.sCodigoAreaPais.ToString().Trim());
+            Obj_DAL.DT_Parametros.Rows.Add("@IdEstado", 2, ObjPaises_DAL.cIdEstado.ToString().Trim());
+
+            Obj_DAL.sSentencia = ConfigurationManager.AppSettings["Insertar_Paises"].ToString().Trim();
+            Obj_BLL.Ejec_NonQuery(ref Obj_DAL);
+
+            if (Obj_DAL.sMsgError == string.Empty)
+            {
+                sMsjError = string.Empty;
+                ObjPaises_DAL.cBandera = 'U';
+            }
+            else
+            {
+                sMsjError = Obj_DAL.sMsgError;
+                ObjPaises_DAL.cBandera = 'I';
+            }
+        }
+
+        public void Modificar_Paises(ref string sMsjError,ref cls_Paises_DAL ObjPaises_DAL)
+        {
+
         }
     }
 }

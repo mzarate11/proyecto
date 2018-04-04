@@ -8,11 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Proyecto_2_BLL.Catagolos_Mantinimiento_BLL;
+using Proyecto_2_DAL.Catalogos_y_Mantenimientos;
+using Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar;
 
 namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
 {
     public partial class frm_Aerolineas : Form
     {
+        cls_Aerolineas_DAL objDal_Aerolinea = new cls_Aerolineas_DAL();
+
         public frm_Aerolineas()
         {
             InitializeComponent();
@@ -93,6 +97,55 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
             {
                 MessageBox.Show("No hay registros para eliminar");
             }
+        }
+
+        private void btn_Modificar_Click(object sender, EventArgs e)
+        {
+            if(dgv_Aerolineas.RowCount == 0)
+            {
+                MessageBox.Show("No existen datos para modificar", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                objDal_Aerolinea = new cls_Aerolineas_DAL();
+                objDal_Aerolinea.cBandera = 'U';
+                objDal_Aerolinea.iIdAerolinea = Convert.ToInt32(dgv_Aerolineas.SelectedRows[0].Cells[0].Value.ToString().Trim());
+                objDal_Aerolinea.sNombreAerolinea = dgv_Aerolineas.SelectedRows[0].Cells[1].Value.ToString().Trim();
+                objDal_Aerolinea.cIdEstado = Convert.ToChar(dgv_Aerolineas.SelectedRows[0].Cells[3].Value.ToString().Trim());
+                frm_ModificarAerolineas Pantalla = new frm_ModificarAerolineas();
+                Pantalla.ShowDialog();
+
+                txtFiltro.Text = string.Empty;
+                CargarDatos();
+            }            
+        }
+
+        private void bnt_Nuevo_Click(object sender, EventArgs e)
+        {
+            frm_ModificarAerolineas Pantalla = new frm_ModificarAerolineas();
+            objDal_Aerolinea = new cls_Aerolineas_DAL();
+            objDal_Aerolinea.cBandera = 'I';
+            Pantalla.objDAL_Aerolinea = objDal_Aerolinea;
+            Hide();
+            Pantalla.ShowDialog();
+            Show();
+            txtFiltro.Text = string.Empty;
+            CargarDatos();
+        }
+
+        private void dgv_Aerolineas_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            objDal_Aerolinea = new cls_Aerolineas_DAL();
+            objDal_Aerolinea.cBandera = 'U';
+            objDal_Aerolinea.iIdAerolinea = Convert.ToInt32(dgv_Aerolineas.SelectedRows[0].Cells[0].Value.ToString().Trim());
+            objDal_Aerolinea.sNombreAerolinea = dgv_Aerolineas.SelectedRows[0].Cells[1].Value.ToString().Trim();
+            objDal_Aerolinea.cIdEstado = Convert.ToChar(dgv_Aerolineas.SelectedRows[0].Cells[3].Value.ToString().Trim());
+            frm_ModificarAerolineas Pantalla = new frm_ModificarAerolineas();
+            Hide();
+            Pantalla.ShowDialog();
+            Show();
+            txtFiltro.Text = string.Empty;
+            CargarDatos();
         }
     }
     
