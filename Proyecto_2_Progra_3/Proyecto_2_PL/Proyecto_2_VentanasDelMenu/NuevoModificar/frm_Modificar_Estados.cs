@@ -92,11 +92,11 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
 
                 if (sMsjError == string.Empty)
                 {
-                    MessageBox.Show("Insert correcto", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("La Base de Datos ha sido Actualizada", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Hubo un error");
+                    MessageBox.Show("Hubo un error al ingresar los datos a la base de datos:" + "[" + sMsjError + "]","ERROR",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 }
             }
             else
