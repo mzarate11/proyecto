@@ -73,8 +73,8 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             if (cmb_IDEstado.SelectedValue.ToString() != "0" ||
-               txt_IDTipoEmpleado.Text == string.Empty ||
-               txt_desc.Text == string.Empty )
+               txt_IDTipoEmpleado.Text != string.Empty ||
+               txt_desc.Text != string.Empty )
                 
             {
                 cls_TiposEmpleados_BLL obj_TipoEmpleado_BLL = new cls_TiposEmpleados_BLL();

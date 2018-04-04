@@ -26,15 +26,16 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             cls_TiposClientes_DAL Obj_Tipo_clientes_DAL = new cls_TiposClientes_DAL();
             if (Obj_DAL_TiposClientes != null)
             {
-                cls_TiposClientes_BLL Obj_Tipo_Clientes_BLL = new cls_TiposClientes_BLL();
+                
                 string sMsjError = string.Empty;
 
+                cls_TiposClientes_BLL Obj_Tipo_Clientes_BLL = new cls_TiposClientes_BLL();
                 DataTable DTE = new DataTable();
                 DTE = Obj_Tipo_Clientes_BLL.ListarTiposClientes(ref sMsjError);
 
+                cmb_IDEstado.DataSource = DTE;
                 DTE.Rows.Add("0", "--SELECCIONE UN ESTADO--");
 
-                cmb_IDEstado.DataSource = DTE;
                 cmb_IDEstado.DisplayMember = DTE.Columns[1].ToString();
                 cmb_IDEstado.ValueMember = DTE.Columns[0].ToString();
 
@@ -71,36 +72,39 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            if (cmb_IDEstado.SelectedValue.ToString() != "0" || 
-                txt_IDTipoCliente.Text == string.Empty ||
-                txt_descripcion.Text == string.Empty ||
-                txt_TipoCliente.Text == string.Empty)
             {
 
                 cls_TiposClientes_BLL obj_TiposClientes_BLL = new cls_TiposClientes_BLL();
-                string sMsjError = string.Empty;
-                Obj_DAL_TiposClientes.CIdEstado = Convert.ToChar(cmb_IDEstado.SelectedValue.ToString().Trim());
-                Obj_DAL_TiposClientes.IIdTipoCliente = Convert.ToInt32(txt_IDTipoCliente.Text.Trim());
-                Obj_DAL_TiposClientes.STipoCliente = txt_TipoCliente.Text.Trim();
-                Obj_DAL_TiposClientes.SDescripcion = txt_descripcion.Text.Trim();
 
-                if (Obj_DAL_TiposClientes.CBandAX == 'I')
+                if (cmb_IDEstado.SelectedValue.ToString() != "0" ||
+                    txt_IDTipoCliente.Text != string.Empty ||
+                    txt_descripcion.Text != string.Empty ||
+                    txt_TipoCliente.Text != string.Empty)
                 {
-                    obj_TiposClientes_BLL.Insertar_TipoCliente(ref sMsjError, ref Obj_DAL_TiposClientes);
+                    string sMsjError = string.Empty;
+                    Obj_DAL_TiposClientes.CIdEstado = Convert.ToChar(cmb_IDEstado.SelectedValue.ToString().Trim());
+                    Obj_DAL_TiposClientes.IIdTipoCliente = Convert.ToInt32(txt_IDTipoCliente.Text.Trim());
+                    Obj_DAL_TiposClientes.STipoCliente = txt_TipoCliente.Text.Trim();
+                    Obj_DAL_TiposClientes.SDescripcion = txt_descripcion.Text.Trim();
+
+                    if (Obj_DAL_TiposClientes.CBandAX == 'I')
+                    {
+                        obj_TiposClientes_BLL.Insertar_TipoCliente(ref sMsjError, ref Obj_DAL_TiposClientes);
+
+                    }
+                    else
+                    {
+                        obj_TiposClientes_BLL.Modificar_TipoCliente(ref sMsjError, ref Obj_DAL_TiposClientes);
+                    }
+                }
+                else {
+
+                    MessageBox.Show("Todos los cambios son obligatorios", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
-                else
-                {
-                    obj_TiposClientes_BLL.Modificar_TipoCliente(ref sMsjError, ref Obj_DAL_TiposClientes);
-                }
-            }
-            else {
 
-                MessageBox.Show("Todos los cambios son obligatorios", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
-
-      
         }
 
         private void frm_Modificar_TipoClientes_Load(object sender, EventArgs e)
