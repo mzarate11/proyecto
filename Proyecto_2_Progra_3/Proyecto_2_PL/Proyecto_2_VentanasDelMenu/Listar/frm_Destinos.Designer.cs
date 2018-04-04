@@ -79,9 +79,9 @@
             this.tls_btn_Salir,
             this.toolStripLabel6});
             this.MenuVentana.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
-            this.MenuVentana.Location = new System.Drawing.Point(8, 15);
+            this.MenuVentana.Location = new System.Drawing.Point(2, 3);
             this.MenuVentana.Name = "MenuVentana";
-            this.MenuVentana.Size = new System.Drawing.Size(815, 28);
+            this.MenuVentana.Size = new System.Drawing.Size(810, 29);
             this.MenuVentana.TabIndex = 5;
             this.MenuVentana.Text = "toolStrip1";
             // 
@@ -203,11 +203,11 @@
             this.dgv_Destinos.AllowUserToDeleteRows = false;
             this.dgv_Destinos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Destinos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgv_Destinos.Location = new System.Drawing.Point(9, 46);
+            this.dgv_Destinos.Location = new System.Drawing.Point(-3, 31);
             this.dgv_Destinos.MultiSelect = false;
             this.dgv_Destinos.Name = "dgv_Destinos";
             this.dgv_Destinos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_Destinos.Size = new System.Drawing.Size(815, 380);
+            this.dgv_Destinos.Size = new System.Drawing.Size(815, 387);
             this.dgv_Destinos.TabIndex = 6;
             // 
             // frm_Destinos
@@ -215,7 +215,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(833, 417);
+            this.ClientSize = new System.Drawing.Size(813, 418);
             this.Controls.Add(this.dgv_Destinos);
             this.Controls.Add(this.MenuVentana);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

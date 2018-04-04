@@ -87,7 +87,7 @@ namespace Proyecto_2_BLL.Catagolos_Mantinimiento_BLL
             Obj_DAL.DT_Parametros.Rows.Add("@CodigoAreaPais", 2, ObjPaises_DAL.sCodigoAreaPais.ToString().Trim());
             Obj_DAL.DT_Parametros.Rows.Add("@IdEstado", 2, ObjPaises_DAL.cIdEstado.ToString().Trim());
 
-            Obj_DAL.sSentencia = ConfigurationManager.AppSettings["Insertar_Paises"].ToString().Trim();
+            Obj_DAL.sSentencia = ConfigurationManager.AppSettings["Insertar Paises"].ToString().Trim();
             Obj_BLL.Ejec_NonQuery(ref Obj_DAL);
 
             if (Obj_DAL.sMsgError == string.Empty)

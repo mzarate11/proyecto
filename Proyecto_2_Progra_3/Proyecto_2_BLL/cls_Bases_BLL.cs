@@ -45,7 +45,6 @@ namespace Proyecto_2_BLL
             }
         }
 
-
         public void TraerConexion(ref cls_BaseDatos_DAL ObjDAL)
         {
             try

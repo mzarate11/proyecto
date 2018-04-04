@@ -62,7 +62,7 @@ namespace Proyecto_2_BLL.Catagolos_Mantinimiento_BLL
             Obj_BLL.TablaParametros(ref Obj_DAL);
             Obj_DAL.DT_Parametros.Rows.Add("@Id_Destino", 3, sFiltro);
 
-            Obj_DAL.sSentencia = ConfigurationManager.AppSettings["Eliminar_Destinos"].ToString().Trim();
+            Obj_DAL.sSentencia = ConfigurationManager.AppSettings["Eliminar Destinos"].ToString().Trim();
             Obj_BLL.Ejec_NonQuery(ref Obj_DAL);
 
             if (Obj_DAL.sMsgError == string.Empty)
@@ -77,6 +77,30 @@ namespace Proyecto_2_BLL.Catagolos_Mantinimiento_BLL
 
         public void Insertar_Destinos(ref string sMsjError,ref cls_Destinos_DAL ObjDestinos_DAL)
         {
+            cls_BaseDatos_DAL Obj_DAL = new cls_BaseDatos_DAL();
+            cls_Bases_BLL Obj_BLL = new cls_Bases_BLL();
+
+            Obj_BLL.TablaParametros(ref Obj_DAL);
+            Obj_DAL.DT_Parametros.Rows.Add("@IdDestino", 3, ObjDestinos_DAL.sIdDestino);
+            Obj_DAL.DT_Parametros.Rows.Add("@IdAerolinea",1,ObjDestinos_DAL.bIdAerolinea);
+            Obj_DAL.DT_Parametros.Rows.Add("@NomDestino", 3, ObjDestinos_DAL.sNomDestino);
+            Obj_DAL.DT_Parametros.Rows.Add("@PaisSalida",1,ObjDestinos_DAL.bPaisSalida);
+            Obj_DAL.DT_Parametros.Rows.Add("@PaisLlegada", 1, ObjDestinos_DAL.bPaisLlegada);
+            Obj_DAL.DT_Parametros.Rows.Add("@IdEstado",2,ObjDestinos_DAL.cIdEstado);
+
+            Obj_DAL.sSentencia = ConfigurationManager.AppSettings["Insertar Destinos"].ToString().Trim();
+            Obj_BLL.Ejec_NonQuery(ref Obj_DAL);
+
+            if (Obj_DAL.sMsgError == string.Empty)
+            {
+                sMsjError = string.Empty;
+                ObjDestinos_DAL.cBandera = 'U';
+            }
+            else
+            {
+                sMsjError = Obj_DAL.sMsgError;
+                ObjDestinos_DAL.cBandera = 'I';
+            }
 
         }
 

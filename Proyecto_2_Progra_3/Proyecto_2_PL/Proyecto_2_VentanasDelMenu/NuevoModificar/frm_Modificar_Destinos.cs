@@ -19,6 +19,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             InitializeComponent();
         }
         public cls_Destinos_DAL Obj_Destinos_DAL;
+        frm_Destinos Destinos = new frm_Destinos();
 
         public void CargarDatos()
         {
@@ -64,6 +65,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 DT.Rows.Add("0", "Seleccione un estado");
                 cmboxEstado.DisplayMember = DT.Columns[1].ToString();
                 cmboxEstado.ValueMember = DT.Columns[0].ToString();
+                cmboxEstado.SelectedValue = "0";
                 #endregion
 
                 if (Obj_Destinos_DAL.cBandera == 'I')
@@ -74,11 +76,11 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 else
                 {
                     txt_IdDestino.Text = Obj_Destinos_DAL.sIdDestino;
-                    cmboxAerolinea.Text = Obj_Destinos_DAL.bIdAerolinea.ToString();
+                    cmboxAerolinea.SelectedValue = Obj_Destinos_DAL.bIdAerolinea.ToString();
                     txt_NombreDestino.Text = Obj_Destinos_DAL.sNomDestino;
                     cmboxPaisSalida.SelectedValue= Obj_Destinos_DAL.bPaisSalida.ToString();
                     cmboxPaisLlegada.SelectedValue = Obj_Destinos_DAL.bPaisLlegada.ToString();
-                    cmboxEstado.Text = Obj_Destinos_DAL.cIdEstado.ToString();
+                    cmboxEstado.SelectedValue = Obj_Destinos_DAL.cIdEstado.ToString();
                 }
 
             }
@@ -110,11 +112,26 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 string sMsjError = string.Empty;
 
                 Obj_Destinos_DAL.sIdDestino = txt_IdDestino.Text;
+                Obj_Destinos_DAL.bIdAerolinea = Convert.ToByte(cmboxAerolinea.SelectedValue);
                 Obj_Destinos_DAL.sNomDestino = txt_NombreDestino.Text;
+                Obj_Destinos_DAL.bPaisSalida = Convert.ToByte(cmboxPaisSalida.SelectedValue);
+                Obj_Destinos_DAL.bPaisLlegada = Convert.ToByte(cmboxPaisLlegada.SelectedValue);
+                Obj_Destinos_DAL.cIdEstado = Convert.ToChar(cmboxEstado.SelectedValue);
 
                 if (Obj_Destinos_DAL.cBandera == 'I')
                 {
                     ObjDestinos_BLL.Insertar_Destinos(ref sMsjError, ref Obj_Destinos_DAL);
+
+                    if (sMsjError == string.Empty)
+                    {
+                        MessageBox.Show("Se han insertado correctamente los datos", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Close();
+                        Destinos.ShowDialog();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Hubo un error al insertar los datos","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
