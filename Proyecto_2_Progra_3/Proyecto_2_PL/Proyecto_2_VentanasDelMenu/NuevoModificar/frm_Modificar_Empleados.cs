@@ -33,25 +33,33 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 #region Estados
                 cls_Estados_BLL ObjEstados = new cls_Estados_BLL();
                 DataTable DT_Estados = new DataTable();
+
                 DT_Estados = ObjEstados.Listar_Estados(ref M_Error);
+                
                 cb_Estado.DataSource = DT_Estados;
-                cb_Estado.DisplayMember = DT_Estados.Columns[0].ToString();
+                DT_Estados.Rows.Add("0", "-- Seleccione un valor --");
+                cb_Estado.DisplayMember = DT_Estados.Columns[1].ToString();
+                cb_Estado.ValueMember = DT_Estados.Columns[0].ToString();
                 #endregion
 
                 #region ID Tipo Empleado
                 cls_TiposEmpleados_BLL ObjTipoEmpleados = new cls_TiposEmpleados_BLL();
                 DataTable DT_TipoEmpleados = new DataTable();
                 DT_TipoEmpleados = ObjTipoEmpleados.ListarTiposEmpleados(ref M_Error);
+                DT_TipoEmpleados.Rows.Add("0", "-- Seleccione un valor --");
                 cb_TipoEmpleado.DataSource = DT_TipoEmpleados;
-                cb_TipoEmpleado.DisplayMember = DT_TipoEmpleados.Columns[0].ToString();
+                cb_TipoEmpleado.DisplayMember = DT_TipoEmpleados.Columns[1].ToString();
+                cb_TipoEmpleado.ValueMember = DT_TipoEmpleados.Columns[0].ToString();
                 #endregion
 
                 #region ID Aerolinea
                 cls_Aerolineas_BLL ObjAerolinea = new cls_Aerolineas_BLL();
                 DataTable DT_Aerolinea = new DataTable();
                 DT_Aerolinea = ObjAerolinea.ListarAerolineas(ref M_Error);
+                DT_Aerolinea.Rows.Add("0", "-- Seleccione un valor --");
                 cb_IdAerolinea.DataSource = DT_Aerolinea;
-                cb_IdAerolinea.DisplayMember = DT_Aerolinea.Columns[0].ToString();
+                cb_IdAerolinea.DisplayMember = DT_Aerolinea.Columns[1].ToString();
+                cb_IdAerolinea.ValueMember = DT_Aerolinea.Columns[0].ToString();
                 #endregion
 
                 if (Obj_Empleados_DAL.cBandera == 'I')

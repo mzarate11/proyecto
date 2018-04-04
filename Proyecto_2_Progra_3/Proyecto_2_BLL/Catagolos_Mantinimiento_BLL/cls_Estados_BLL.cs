@@ -99,12 +99,12 @@ namespace Proyecto_2_BLL.Catagolos_Mantinimiento_BLL
             if (Obj_DAL.sMsgError == string.Empty)
             {
                 sMsjError = string.Empty;
-                Obj_Estados_DAL.cIdEstado = 'U';
+                Obj_Estados_DAL.cBandAX = 'U';
             }
             else
             {
                 sMsjError = Obj_DAL.sMsgError;
-                Obj_Estados_DAL.cIdEstado = 'I';
+                Obj_Estados_DAL.cBandAX = 'I';
             }
         }
         public void Modificar_Estados(ref string sMsjError, ref cls_Estados_DAL Obj_Estados_DAL)

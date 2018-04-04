@@ -171,22 +171,24 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
         {
             if ((cmb_ID_Estado.SelectedValue.ToString() != "0") || (cmb_ID_Tipo_Cliente.SelectedValue.ToString() != "0"))
             {
-
+                string sMsjError = string.Empty;
+                cls_Clientes_BLL ObjClientes_BLL = new cls_Clientes_BLL();
                 ObjClientes_DAL.sIdCliente = txt_ID_Cliente.Text;
                 ObjClientes_DAL.sCedula = mtxt_Cedula.Text;
                 ObjClientes_DAL.sNombre = txt_Nombre.Text;
                 ObjClientes_DAL.sApellido = txt_Apellidos.Text;
                 ObjClientes_DAL.sTelefono = mtxt_Telefono.Text;
-                ObjClientes_DAL.sIdCliente = cmb_ID_Tipo_Cliente.SelectedValue.ToString();
+                ObjClientes_DAL.sIdTipoCliente = cmb_ID_Tipo_Cliente.SelectedValue.ToString();
                 ObjClientes_DAL.cIdEstado = Convert.ToChar(cmb_ID_Estado.SelectedValue.ToString());
 
                 if (ObjClientes_DAL.cBandAxn == 'I')
                 {
-
+                    ObjClientes_BLL.Insertar_Clientes(ref sMsjError, ref ObjClientes_DAL);
+                    MessageBox.Show("La Base de Datos ha sido actualizada","INFO",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 }
                 else
                 {
-
+                    MessageBox.Show("Hubo un Error y los Datos no han sido agregados:" + " [ " + sMsjError + " ] ","ERROR",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 }
             }
             else
