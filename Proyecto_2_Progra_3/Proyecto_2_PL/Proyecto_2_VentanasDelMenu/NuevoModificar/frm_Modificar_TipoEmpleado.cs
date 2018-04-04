@@ -25,23 +25,36 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
         {
             if (Obj_DAL_TipoEmpleado != null)
             {
+                cls_TiposEmpleados_BLL Obj_Tipos_Empleados_BLL = new cls_TiposEmpleados_BLL();
+                string sMsjError = string.Empty;
+
+                DataTable DTE = new DataTable();
+                DTE = Obj_Tipos_Empleados_BLL.ListarTiposEmpleados(ref sMsjError);
+
+
+                DTE.Rows.Add("0", "--SELECCIONE UN ESTADO--");
+
+                cmb_IDEstado.DataSource = DTE;
+                cmb_IDEstado.DisplayMember = DTE.Columns[1].ToString();
+                cmb_IDEstado.ValueMember = DTE.Columns[0].ToString();
+
+                cmb_IDEstado.SelectedValue = "0";
+
                 if (Obj_DAL_TipoEmpleado.CBandAX == 'I')
                 {
                     txt_IDTipoEmpleado.Text = string.Empty;
                     txt_IDTipoEmpleado.Enabled = true;
                     txt_desc.Text = string.Empty;
-                    txt_desc.Enabled = true;
                     cmb_IDEstado.DataSource = null;
-                    cmb_IDEstado.Enabled = true;
+                    
                 }
                 else
                 {
                     txt_IDTipoEmpleado.Text = Obj_DAL_TipoEmpleado.ITipoEmpleado.ToString().Trim();
                     txt_IDTipoEmpleado.Enabled = false;
                     txt_desc.Text = Obj_DAL_TipoEmpleado.SDescTipo.ToString().Trim();
-                    txt_desc.Enabled = false;
                     cmb_IDEstado.Text = Obj_DAL_TipoEmpleado.SDescTipo.ToString().Trim();
-                    cmb_IDEstado.Enabled = false;
+                    
                 }
             }
             else

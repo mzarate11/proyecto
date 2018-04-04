@@ -117,10 +117,11 @@
             // cmb_IDEstado
             // 
             this.cmb_IDEstado.FormattingEnabled = true;
-            this.cmb_IDEstado.Location = new System.Drawing.Point(424, 217);
+            this.cmb_IDEstado.Location = new System.Drawing.Point(415, 216);
             this.cmb_IDEstado.Name = "cmb_IDEstado";
             this.cmb_IDEstado.Size = new System.Drawing.Size(121, 21);
             this.cmb_IDEstado.TabIndex = 4;
+            
             this.cmb_IDEstado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmb_IDEstado_KeyPress);
             // 
             // lbl_IDTipoCliente
