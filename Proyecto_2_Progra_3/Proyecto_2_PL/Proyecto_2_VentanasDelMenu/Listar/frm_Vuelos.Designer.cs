@@ -212,6 +212,7 @@
             this.dgv_Vuelos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_Vuelos.Size = new System.Drawing.Size(815, 370);
             this.dgv_Vuelos.TabIndex = 3;
+            this.dgv_Vuelos.DoubleClick += new System.EventHandler(this.dgv_Vuelos_DoubleClick);
             // 
             // frm_Vuelos
             // 

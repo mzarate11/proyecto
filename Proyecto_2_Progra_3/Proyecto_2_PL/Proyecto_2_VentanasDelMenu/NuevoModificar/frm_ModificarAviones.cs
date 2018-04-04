@@ -76,10 +76,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                     txt_IdAvion.Clear();
                     txt_DescAvion.Clear();
                     txt_NomAvion.Clear();
-                    txt_IdAvion.Enabled = true;
-                    
-
-                   
+                    txt_IdAvion.Enabled = true;                
                 }
                 else
                 {

@@ -64,7 +64,7 @@
             this.toolStripLabel2});
             this.toolStrip1.Location = new System.Drawing.Point(9, 9);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(251, 39);
+            this.toolStrip1.Size = new System.Drawing.Size(220, 39);
             this.toolStrip1.TabIndex = 36;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -114,7 +114,7 @@
             this.cmb_IdEstado.FormattingEnabled = true;
             this.cmb_IdEstado.Location = new System.Drawing.Point(152, 238);
             this.cmb_IdEstado.Name = "cmb_IdEstado";
-            this.cmb_IdEstado.Size = new System.Drawing.Size(125, 21);
+            this.cmb_IdEstado.Size = new System.Drawing.Size(219, 21);
             this.cmb_IdEstado.TabIndex = 38;
             // 
             // comb_IdEstado
@@ -124,9 +124,9 @@
             this.comb_IdEstado.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comb_IdEstado.Location = new System.Drawing.Point(12, 234);
             this.comb_IdEstado.Name = "comb_IdEstado";
-            this.comb_IdEstado.Size = new System.Drawing.Size(87, 23);
+            this.comb_IdEstado.Size = new System.Drawing.Size(62, 23);
             this.comb_IdEstado.TabIndex = 37;
-            this.comb_IdEstado.Text = "Id Estado";
+            this.comb_IdEstado.Text = "Estado";
             // 
             // txt_IdVuelo
             // 
@@ -154,7 +154,7 @@
             this.cmb_IdDestino.FormattingEnabled = true;
             this.cmb_IdDestino.Location = new System.Drawing.Point(152, 115);
             this.cmb_IdDestino.Name = "cmb_IdDestino";
-            this.cmb_IdDestino.Size = new System.Drawing.Size(125, 21);
+            this.cmb_IdDestino.Size = new System.Drawing.Size(219, 21);
             this.cmb_IdDestino.TabIndex = 42;
             // 
             // label1
@@ -164,16 +164,16 @@
             this.label1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(13, 113);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 23);
+            this.label1.Size = new System.Drawing.Size(67, 23);
             this.label1.TabIndex = 41;
-            this.label1.Text = "Id Destino";
+            this.label1.Text = "Destino";
             // 
             // cmb_IdAerolinea
             // 
             this.cmb_IdAerolinea.FormattingEnabled = true;
             this.cmb_IdAerolinea.Location = new System.Drawing.Point(152, 154);
             this.cmb_IdAerolinea.Name = "cmb_IdAerolinea";
-            this.cmb_IdAerolinea.Size = new System.Drawing.Size(125, 21);
+            this.cmb_IdAerolinea.Size = new System.Drawing.Size(219, 21);
             this.cmb_IdAerolinea.TabIndex = 44;
             // 
             // label2
@@ -183,16 +183,16 @@
             this.label2.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(12, 150);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(106, 23);
+            this.label2.Size = new System.Drawing.Size(81, 23);
             this.label2.TabIndex = 43;
-            this.label2.Text = "Id Aerolinea";
+            this.label2.Text = "Aerolinea";
             // 
             // cmb_IdAvion
             // 
             this.cmb_IdAvion.FormattingEnabled = true;
             this.cmb_IdAvion.Location = new System.Drawing.Point(152, 190);
             this.cmb_IdAvion.Name = "cmb_IdAvion";
-            this.cmb_IdAvion.Size = new System.Drawing.Size(125, 21);
+            this.cmb_IdAvion.Size = new System.Drawing.Size(219, 21);
             this.cmb_IdAvion.TabIndex = 46;
             // 
             // label3
@@ -202,16 +202,16 @@
             this.label3.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(12, 190);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 23);
+            this.label3.Size = new System.Drawing.Size(50, 23);
             this.label3.TabIndex = 45;
-            this.label3.Text = "Id Avión";
+            this.label3.Text = "Avión";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label4.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(346, 176);
+            this.label4.Location = new System.Drawing.Point(456, 174);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(120, 23);
             this.label4.TabIndex = 47;
@@ -222,7 +222,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label5.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(346, 90);
+            this.label5.Location = new System.Drawing.Point(456, 88);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(153, 23);
             this.label5.TabIndex = 50;
@@ -230,14 +230,14 @@
             // 
             // time_HoraSalida
             // 
-            this.time_HoraSalida.Location = new System.Drawing.Point(346, 131);
+            this.time_HoraSalida.Location = new System.Drawing.Point(456, 129);
             this.time_HoraSalida.Name = "time_HoraSalida";
             this.time_HoraSalida.Size = new System.Drawing.Size(153, 20);
             this.time_HoraSalida.TabIndex = 53;
             // 
             // time_HoraLlegada
             // 
-            this.time_HoraLlegada.Location = new System.Drawing.Point(346, 211);
+            this.time_HoraLlegada.Location = new System.Drawing.Point(456, 209);
             this.time_HoraLlegada.Name = "time_HoraLlegada";
             this.time_HoraLlegada.Size = new System.Drawing.Size(153, 20);
             this.time_HoraLlegada.TabIndex = 54;

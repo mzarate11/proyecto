@@ -64,6 +64,7 @@
             this.dgv_TiposA.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_TiposA.Size = new System.Drawing.Size(815, 370);
             this.dgv_TiposA.TabIndex = 1;
+            this.dgv_TiposA.DoubleClick += new System.EventHandler(this.dgv_TiposA_DoubleClick);
             // 
             // MenuVentana
             // 

@@ -139,5 +139,30 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
             this.Show();
             CargarDatosEstados();
         }
+
+        private void dgv_TiposA_DoubleClick(object sender, EventArgs e)
+        {
+            if (dgv_TiposA.RowCount > 0)
+            {
+                Obj_Mant_DAL = new cls_TipoAviones_DAL();
+                Obj_Mant_DAL.cbanderaAccion = 'U';
+                Obj_Mant_DAL.sIdTipoAvion = dgv_TiposA.SelectedRows[0].Cells[0].Value.ToString().Trim();
+                Obj_Mant_DAL.sNombreTipoAvion = dgv_TiposA.SelectedRows[0].Cells[1].Value.ToString().Trim();
+                Obj_Mant_DAL.sDescTipoAvion = dgv_TiposA.SelectedRows[0].Cells[2].Value.ToString().Trim();
+                Obj_Mant_DAL.iCapacidadPasajeros = Convert.ToInt16(dgv_TiposA.SelectedRows[0].Cells[3].Value.ToString().Trim());
+                Obj_Mant_DAL.dcapacidadPeso = Convert.ToDouble(dgv_TiposA.SelectedRows[0].Cells[4].Value.ToString().Trim());
+
+                frm_ModificarNuevo_TipoAvion V_Modificar = new frm_ModificarNuevo_TipoAvion();
+                this.Hide();
+                V_Modificar.Obj_Mant_DAL = Obj_Mant_DAL; // pasamos en objeto dal a la otra pantalla
+                V_Modificar.ShowDialog();
+                this.Show();
+                CargarDatosEstados();
+            }
+            else
+            {
+                MessageBox.Show("No se puede realizar la acción, se necesita al menos una fila seleccionada", "Eror datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

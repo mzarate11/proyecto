@@ -66,35 +66,43 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
 
         private void tsb_Guardar_Click(object sender, EventArgs e)
         {
-            cls_Aerolineas_BLL objBLL_Aerolineas = new cls_Aerolineas_BLL();
-            string sMsjError = string.Empty;
-            objDAL_Aerolinea.iIdAerolinea = Convert.ToInt32(txt_IdAerolinea.Text);
-            objDAL_Aerolinea.cIdEstado = Convert.ToChar(cmb_IdEstado.SelectedItem.ToString());
-            objDAL_Aerolinea.sNombreAerolinea = txt_NombreAerolinea.Text;
-
-            if (objDAL_Aerolinea.cBandera == 'I')
+            if (cmb_IdEstado.SelectedValue.ToString() == "0" ||
+                txt_IdAerolinea.Text == string.Empty || txt_NombreAerolinea.Text == string.Empty)
             {
-                objBLL_Aerolineas.Insertar_Aerolineas(ref sMsjError, ref objDAL_Aerolinea);
-                if (sMsjError == string.Empty)
+                cls_Aerolineas_BLL objBLL_Aerolineas = new cls_Aerolineas_BLL();
+                string sMsjError = string.Empty;
+                objDAL_Aerolinea.iIdAerolinea = Convert.ToInt32(txt_IdAerolinea.Text);
+                objDAL_Aerolinea.cIdEstado = Convert.ToChar(cmb_IdEstado.SelectedValue.ToString());
+                objDAL_Aerolinea.sNombreAerolinea = txt_NombreAerolinea.Text;
+
+                if (objDAL_Aerolinea.cBandera == 'I')
                 {
-                    MessageBox.Show("Se guardó el nuevo registro exitosamente");
+                    objBLL_Aerolineas.Insertar_Aerolineas(ref sMsjError, ref objDAL_Aerolinea);
+                    if (sMsjError == string.Empty)
+                    {
+                        MessageBox.Show("Se guardó el nuevo registro exitosamente");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Se presentó un error");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Se presentó un error");
+                    objBLL_Aerolineas.Modificar_Aerolineas(ref sMsjError, ref objDAL_Aerolinea);
+                    if (sMsjError == string.Empty)
+                    {
+                        MessageBox.Show("Se modificó el nuevo registro exitosamente");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Se presentó un error");
+                    }
                 }
             }
             else
             {
-                objBLL_Aerolineas.Modificar_Aerolineas(ref sMsjError, ref objDAL_Aerolinea);
-                if (sMsjError == string.Empty)
-                {
-                    MessageBox.Show("Se modificó el nuevo registro exitosamente");
-                }
-                else
-                {
-                    MessageBox.Show("Se presentó un error");
-                }
+                MessageBox.Show("Todos los cambios son obligatorios", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
