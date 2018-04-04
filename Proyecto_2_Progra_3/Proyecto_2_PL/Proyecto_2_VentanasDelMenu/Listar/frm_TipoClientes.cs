@@ -145,6 +145,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
             ObjTiposClientesDAL.CBandAX = 'I';
 
             PantTiposClientes.Obj_DAL_TiposClientes = ObjTiposClientesDAL;
+            Hide();
             PantTiposClientes.ShowDialog();
 
 

@@ -116,6 +116,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
             ObjTipoEmpleadosDAL.CBandAX = 'I';
 
             PantTipoEmpleado.Obj_DAL_TipoEmpleado = ObjTipoEmpleadosDAL;
+            Hide();
             PantTipoEmpleado.ShowDialog();
 
 
