@@ -35,8 +35,10 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 string sMsjError = string.Empty;
                 DataTable DTE = new DataTable();
                 DTE = ObjBLLEstados.Listar_Estados(ref sMsjError);
+                DTE.Rows.Add("0", "-- SELECCIONE UN ESTADO");
                 cmb_IdEstado.DataSource = DTE;
                 cmb_IdEstado.DisplayMember = DTE.Columns[0].ToString();
+                cmb_IdEstado.SelectedValue = "0";
                 #endregion
 
                 if (objDAL_Aerolinea.cBandera == 'I')
@@ -73,10 +75,26 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             if (objDAL_Aerolinea.cBandera == 'I')
             {
                 objBLL_Aerolineas.Insertar_Aerolineas(ref sMsjError, ref objDAL_Aerolinea);
+                if (sMsjError == string.Empty)
+                {
+                    MessageBox.Show("Se guardó el nuevo registro exitosamente");
+                }
+                else
+                {
+                    MessageBox.Show("Se presentó un error");
+                }
             }
             else
             {
                 objBLL_Aerolineas.Modificar_Aerolineas(ref sMsjError, ref objDAL_Aerolinea);
+                if (sMsjError == string.Empty)
+                {
+                    MessageBox.Show("Se modificó el nuevo registro exitosamente");
+                }
+                else
+                {
+                    MessageBox.Show("Se presentó un error");
+                }
             }
         }
 

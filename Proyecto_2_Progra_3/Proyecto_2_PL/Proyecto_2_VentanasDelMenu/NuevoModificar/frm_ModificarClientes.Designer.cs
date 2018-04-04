@@ -64,7 +64,7 @@
             this.toolStripLabel2});
             this.toolStrip1.Location = new System.Drawing.Point(9, 9);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(251, 39);
+            this.toolStrip1.Size = new System.Drawing.Size(220, 39);
             this.toolStrip1.TabIndex = 37;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -112,23 +112,23 @@
             // cmb_ID_Tipo_Cliente
             // 
             this.cmb_ID_Tipo_Cliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_ID_Tipo_Cliente.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_ID_Tipo_Cliente.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_ID_Tipo_Cliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.cmb_ID_Tipo_Cliente.FormattingEnabled = true;
-            this.cmb_ID_Tipo_Cliente.Location = new System.Drawing.Point(614, 168);
+            this.cmb_ID_Tipo_Cliente.Location = new System.Drawing.Point(574, 161);
             this.cmb_ID_Tipo_Cliente.Name = "cmb_ID_Tipo_Cliente";
-            this.cmb_ID_Tipo_Cliente.Size = new System.Drawing.Size(35, 31);
+            this.cmb_ID_Tipo_Cliente.Size = new System.Drawing.Size(194, 24);
             this.cmb_ID_Tipo_Cliente.TabIndex = 38;
             // 
             // cmb_ID_Estado
             // 
             this.cmb_ID_Estado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_ID_Estado.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_ID_Estado.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_ID_Estado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.cmb_ID_Estado.FormattingEnabled = true;
-            this.cmb_ID_Estado.Location = new System.Drawing.Point(614, 261);
+            this.cmb_ID_Estado.Location = new System.Drawing.Point(574, 264);
             this.cmb_ID_Estado.Name = "cmb_ID_Estado";
-            this.cmb_ID_Estado.Size = new System.Drawing.Size(35, 31);
+            this.cmb_ID_Estado.Size = new System.Drawing.Size(194, 24);
             this.cmb_ID_Estado.TabIndex = 39;
             // 
             // mtxt_Cedula

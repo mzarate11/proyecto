@@ -82,7 +82,27 @@ namespace Proyecto_2_BLL.Catagolos_Mantinimiento_BLL
 
         public void Insertar_TipoCliente(ref string sMsjError, ref cls_TiposClientes_DAL Obj_TiposClientes_DAL)
         {
+            cls_BaseDatos_DAL Obj_DAL = new cls_BaseDatos_DAL();
+            cls_Bases_BLL Obj_BLL = new cls_Bases_BLL();
 
+            Obj_BLL.TablaParametros(ref Obj_DAL);
+            Obj_DAL.DT_Parametros.Rows.Add("@Id_TipoCliente", 1, Obj_TiposClientes_DAL.CIdEstado.ToString().Trim());
+            //hacer esto con todas las variables excepto con las identity 
+
+            Obj_DAL.sSentencia = ConfigurationManager.AppSettings["Insertar_TiposClientes"].ToString().Trim();
+            Obj_BLL.Ejec_NonQuery(ref Obj_DAL);
+
+            if (Obj_DAL.sMsgError == string.Empty)
+            {
+                sMsjError = string.Empty;
+
+                Obj_TiposClientes_DAL.CBandAX = 'U';
+            }
+            else
+            {
+                sMsjError = Obj_DAL.sMsgError;
+                Obj_TiposClientes_DAL.CBandAX = 'I';
+            }
         }
         public void Modificar_TipoCliente(ref string sMsjError, ref cls_TiposClientes_DAL Obj_TiposClientes_DAL)
         {

@@ -30,7 +30,10 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 string sMsjError = string.Empty;
                 DT = ObjEstados.Listar_Estados(ref sMsjError);
                 cmboxEstado.DataSource = DT;
-                cmboxEstado.DisplayMember = DT.Columns[0].ToString();
+                DT.Rows.Add("0", "Seleccione un estado");
+                cmboxEstado.DisplayMember = DT.Columns[1].ToString();
+                cmboxEstado.ValueMember = DT.Columns[0].ToString();
+                cmboxEstado.SelectedValue = "0";
                 #endregion
 
                 if (Obj_Paises_DAL.cBandera == 'I')
@@ -41,10 +44,11 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 }
                 else
                 {
+                    txt_IdPais.Text = Obj_Paises_DAL.iIdPais.ToString().Trim();
                     txtNombrePais.Text = Obj_Paises_DAL.sNombrePais;
                     txtCodigoISO.Text = Obj_Paises_DAL.sCodigoISOPais;
                     txtCodigoArea.Text = Obj_Paises_DAL.sCodigoAreaPais;
-                    cmboxEstado.Text = Obj_Paises_DAL.cIdEstado.ToString();
+                    cmboxEstado.SelectedValue = Obj_Paises_DAL.cIdEstado.ToString();
                 }
             }
             else
@@ -76,7 +80,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 Obj_Paises_DAL.sNombrePais = txtNombrePais.Text;
                 Obj_Paises_DAL.sCodigoISOPais = txtCodigoISO.Text;
                 Obj_Paises_DAL.sCodigoAreaPais = txtCodigoArea.Text;
-                MessageBox.Show("Dato: " + cmboxEstado.SelectedItem.ToString());
+                Obj_Paises_DAL.cIdEstado = Convert.ToChar(cmboxEstado.SelectedValue);
 
                 if (Obj_Paises_DAL.cBandera == 'I')
                 {
@@ -89,7 +93,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             }
             else
             {
-                MessageBox.Show("Se ecnuentran cajas de texto vacías, favor revisar", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Se encuentran cajas de texto vacías, favor revisar", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

@@ -62,7 +62,7 @@
             this.toolStripLabel2});
             this.toolStrip1.Location = new System.Drawing.Point(9, 9);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(220, 39);
+            this.toolStrip1.Size = new System.Drawing.Size(251, 39);
             this.toolStrip1.TabIndex = 21;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -116,7 +116,7 @@
             this.cmboxAerolinea.FormattingEnabled = true;
             this.cmboxAerolinea.Location = new System.Drawing.Point(206, 128);
             this.cmboxAerolinea.Name = "cmboxAerolinea";
-            this.cmboxAerolinea.Size = new System.Drawing.Size(161, 28);
+            this.cmboxAerolinea.Size = new System.Drawing.Size(215, 28);
             this.cmboxAerolinea.TabIndex = 39;
             // 
             // label5
@@ -137,7 +137,7 @@
             this.cmboxEstado.FormattingEnabled = true;
             this.cmboxEstado.Location = new System.Drawing.Point(206, 290);
             this.cmboxEstado.Name = "cmboxEstado";
-            this.cmboxEstado.Size = new System.Drawing.Size(161, 28);
+            this.cmboxEstado.Size = new System.Drawing.Size(215, 28);
             this.cmboxEstado.TabIndex = 37;
             // 
             // label3
@@ -158,7 +158,7 @@
             this.cmboxPaisLlegada.FormattingEnabled = true;
             this.cmboxPaisLlegada.Location = new System.Drawing.Point(206, 250);
             this.cmboxPaisLlegada.Name = "cmboxPaisLlegada";
-            this.cmboxPaisLlegada.Size = new System.Drawing.Size(161, 28);
+            this.cmboxPaisLlegada.Size = new System.Drawing.Size(215, 28);
             this.cmboxPaisLlegada.TabIndex = 35;
             // 
             // label2
@@ -179,7 +179,7 @@
             this.cmboxPaisSalida.FormattingEnabled = true;
             this.cmboxPaisSalida.Location = new System.Drawing.Point(206, 207);
             this.cmboxPaisSalida.Name = "cmboxPaisSalida";
-            this.cmboxPaisSalida.Size = new System.Drawing.Size(161, 28);
+            this.cmboxPaisSalida.Size = new System.Drawing.Size(215, 28);
             this.cmboxPaisSalida.TabIndex = 33;
             // 
             // label4
@@ -198,7 +198,7 @@
             this.txt_NombreDestino.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_NombreDestino.Location = new System.Drawing.Point(205, 167);
             this.txt_NombreDestino.Name = "txt_NombreDestino";
-            this.txt_NombreDestino.Size = new System.Drawing.Size(162, 26);
+            this.txt_NombreDestino.Size = new System.Drawing.Size(216, 26);
             this.txt_NombreDestino.TabIndex = 31;
             this.txt_NombreDestino.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_NombreDestino_KeyPress);
             // 
@@ -219,7 +219,7 @@
             this.txt_IdDestino.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_IdDestino.Location = new System.Drawing.Point(205, 90);
             this.txt_IdDestino.Name = "txt_IdDestino";
-            this.txt_IdDestino.Size = new System.Drawing.Size(162, 26);
+            this.txt_IdDestino.Size = new System.Drawing.Size(216, 26);
             this.txt_IdDestino.TabIndex = 41;
             this.txt_IdDestino.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_IdDestino_KeyPress);
             // 
@@ -256,6 +256,7 @@
             this.Controls.Add(this.toolStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frm_Modificar_Destinos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_Modificar_Destinos";
             this.Load += new System.EventHandler(this.frm_Modificar_Destinos_Load);
             this.toolStrip1.ResumeLayout(false);

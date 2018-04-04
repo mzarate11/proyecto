@@ -9,7 +9,7 @@ namespace Proyecto_2_DAL.Catalogos_y_Mantenimientos
     public class cls_TipoAviones_DAL
     {
         int _iCapacidadPasajeros;
-        string _sNombreTipoAvion, _sDescTipoAvion, _sIdTipoAvion, _sEstados;
+        string _sNombreTipoAvion, _sDescTipoAvion, _sIdTipoAvion, _sEstado;
         double _dcapacidadPeso;
         char _cbanderaAccion, _cIdEstado;
         char[] _cEstados;
@@ -118,16 +118,16 @@ namespace Proyecto_2_DAL.Catalogos_y_Mantenimientos
             }
         }
 
-        public string sEstados
+        public string sEstado
         {
             get
             {
-                return _sEstados;
+                return _sEstado;
             }
 
             set
             {
-                _sEstados = value;
+                _sEstado = value;
             }
         }
     }
