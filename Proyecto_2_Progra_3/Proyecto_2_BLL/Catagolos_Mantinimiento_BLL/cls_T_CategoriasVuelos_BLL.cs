@@ -85,9 +85,28 @@ namespace Proyecto_2_BLL.Catagolos_Mantinimiento_BLL
         }
 
         #region  Tabla Insertar Categorias Vuelos
-        public void Insertar_Estados(ref string sMsjError, ref Proyecto_2_DAL.Catalogos_y_Mantenimientos.cls_T_CategoriasVuelos_DAL Obj_EstaCatego_DAL)
+        public void Insertar_CategoriaVuelos(ref string sMsjError, ref Proyecto_2_DAL.Catalogos_y_Mantenimientos.cls_T_CategoriasVuelos_DAL Obj_ManteCategorias_DAL)
         {
+            cls_BaseDatos_DAL Obj_DAL = new cls_BaseDatos_DAL();
+            cls_Bases_BLL Obj_BLL = new cls_Bases_BLL();
 
+            Obj_BLL.TablaParametros(ref Obj_DAL);
+            Obj_DAL.DT_Parametros.Rows.Add("@DescCategoria", 3, Obj_ManteCategorias_DAL.sDescCategoria.ToString().Trim());
+            Obj_DAL.DT_Parametros.Rows.Add("@IdEstado", 2, Obj_ManteCategorias_DAL.sDescCategoria.ToString().Trim());
+
+            Obj_DAL.sSentencia = ConfigurationManager.AppSettings["Insertar_CategoriasVuelos"].ToString().Trim();
+            Obj_BLL.Ejec_NonQuery(ref Obj_DAL);
+
+            if (Obj_DAL.sMsgError == string.Empty)
+            {
+                sMsjError = string.Empty;
+                Obj_ManteCategorias_DAL.cBandAX = Convert.ToChar("U");
+            }
+            else
+            {
+                sMsjError = Obj_DAL.sMsgError;
+                Obj_ManteCategorias_DAL.cBandAX = Convert.ToChar("I");
+            }
         }
         #endregion
 

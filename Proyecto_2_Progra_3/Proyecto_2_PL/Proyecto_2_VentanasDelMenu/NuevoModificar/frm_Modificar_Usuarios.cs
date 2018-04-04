@@ -26,6 +26,31 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
         #region Load
         private void frm_Modificar_Usuarios_Load(object sender, EventArgs e)
         {
+            txt_Username.Enabled = false;
+            string sMsjError = string.Empty;
+            cls_Estados_BLL objCateVuelo = new cls_Estados_BLL();
+            cls_Empleados_BLL objUsuario = new  cls_Empleados_BLL();
+
+            DataTable DTUe = new DataTable();
+            DataTable DTUEm = new DataTable();
+
+            DTUe = objCateVuelo.Listar_Estados(ref sMsjError);
+            DTUEm = objUsuario.Listar_Empleados(ref sMsjError);
+
+            DTUe.Rows.Add("0", "--- Selecione un Estado ---");
+            DTUEm.Rows.Add("0", "--- Selecione un Estado ---");
+
+            cmb_IdEstado.DataSource = DTUe;
+            cmb_IdEmpleado.DataSource = DTUEm;
+
+            cmb_IdEmpleado.DisplayMember = DTUe.Columns[1].ToString();
+            cmb_IdEmpleado.ValueMember = DTUe.Columns[0].ToString();
+
+            cmb_IdEstado.DisplayMember = DTUe.Columns[1].ToString();
+            cmb_IdEstado.ValueMember = DTUe.Columns[0].ToString();
+
+            cmb_IdEmpleado.SelectedValue = "0";
+            cmb_IdEstado.SelectedValue = "0";
             CargarDatos();
         }
         #endregion
@@ -81,9 +106,26 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
         #region Boton Guardar
         private void btnGuardar_Click_1(object sender, EventArgs e)
         {
+            string sMsjError = string.Empty;
+            Obj_Usuarios_Dal.sUsername = txt_Username.Text;
+            Obj_Usuarios_Dal.sPassword = txt_Password.Text;
+            Obj_Usuarios_Dal.sIdEmpleado =Convert.ToString( cmb_IdEmpleado.SelectedValue);
+
+            Obj_Usuarios_Dal.cIdEstado= Convert.ToChar(cmb_IdEstado.SelectedValue);
             if (Obj_Usuarios_Dal.cBandAX == 'I')
             {
+                cls_Usuarios_BLL Obj_ManteniUsuarios_BLL = new  cls_Usuarios_BLL();
 
+                Obj_ManteniUsuarios_BLL.Insertar_Usuarios(ref sMsjError, ref Obj_Usuarios_Dal);
+
+                if (sMsjError == string.Empty)
+                {
+                    MessageBox.Show("La Base de Datos ha sido Actualizada", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Hubo un error al ingresar los datos a la base de datos:" + "[" + sMsjError + "]", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {

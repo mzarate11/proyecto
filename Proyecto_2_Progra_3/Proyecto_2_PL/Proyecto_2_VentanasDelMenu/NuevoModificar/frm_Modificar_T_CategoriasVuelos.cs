@@ -67,6 +67,20 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
         #region Load
         private void frm_Modificar_T_CategoriasVuelos_Load_1(object sender, EventArgs e)
         {
+            string sMsjError = string.Empty;
+            cls_Estados_BLL objCateVuelo = new cls_Estados_BLL();
+
+            DataTable DTcv = new DataTable();
+
+            DTcv = objCateVuelo.Listar_Estados(ref sMsjError);
+
+            DTcv.Rows.Add("0", "--- Selecione un Estado ---");
+            cmb_IdEstado.DataSource = DTcv;
+
+            cmb_IdEstado.DisplayMember = DTcv.Columns[1].ToString();
+            cmb_IdEstado.ValueMember = DTcv.Columns[0].ToString();
+
+            cmb_IdEstado.SelectedValue = "0";
             CargarDatos();
         }
         #endregion
@@ -81,9 +95,23 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
         #region Boton Guardar
         private void btnGuardar_Click_1(object sender, EventArgs e)
         {
+            string sMsjError = string.Empty;
+            Obj_ManteCategorias_DAL.sDescCategoria = tb_DescCategoria.Text;
+            Obj_ManteCategorias_DAL.cIdEstado = Convert.ToChar(cmb_IdEstado.SelectedValue);
             if (Obj_ManteCategorias_DAL.cBandAX == 'I')
             {
+                cls_T_CategoriasVuelos_BLL Obj_CategoriaVuelos_BLL = new  cls_T_CategoriasVuelos_BLL();
 
+                Obj_CategoriaVuelos_BLL.Insertar_CategoriaVuelos(ref sMsjError, ref Obj_ManteCategorias_DAL);
+
+                if (sMsjError == string.Empty)
+                {
+                    MessageBox.Show("La Base de Datos ha sido Actualizada", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Hubo un error al ingresar los datos a la base de datos:" + "[" + sMsjError + "]", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
