@@ -239,18 +239,6 @@
     <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Modificar_Usuarios.Designer.cs">
       <DependentUpon>frm_Modificar_Usuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="Proyecto_2_VentanasDelMenu\Modificar\frm_Mostrar_TipoEmpleado.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Proyecto_2_VentanasDelMenu\Modificar\frm_Mostrar_TipoEmpleado.Designer.cs">
-      <DependentUpon>frm_Mostrar_TipoEmpleado.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Proyecto_2_VentanasDelMenu\Modificar\frm_Mostrar_TiposClientes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Proyecto_2_VentanasDelMenu\Modificar\frm_Mostrar_TiposClientes.Designer.cs">
-      <DependentUpon>frm_Mostrar_TiposClientes.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -347,12 +335,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Modificar_Usuarios.resx">
       <DependentUpon>frm_Modificar_Usuarios.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Proyecto_2_VentanasDelMenu\Modificar\frm_Mostrar_TipoEmpleado.resx">
-      <DependentUpon>frm_Mostrar_TipoEmpleado.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Proyecto_2_VentanasDelMenu\Modificar\frm_Mostrar_TiposClientes.resx">
-      <DependentUpon>frm_Mostrar_TiposClientes.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

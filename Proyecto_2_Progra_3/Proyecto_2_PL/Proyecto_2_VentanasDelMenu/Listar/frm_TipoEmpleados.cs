@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Proyecto_2_BLL.Catagolos_Mantinimiento_BLL;
-using Proyecto_2_PL.Proyecto_2_VentanasDelMenu.Modificar;
+using Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar;
 using Proyecto_2_DAL.Catalogos_y_Mantenimientos;
 
 namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
@@ -112,7 +112,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
         private void bnt_Nuevo_Click(object sender, EventArgs e)
         {
             ObjTipoEmpleadosDAL = new cls_TipoEmpleados_DAL();
-            frm_Mostrar_TipoEmpleado PantTipoEmpleado = new frm_Mostrar_TipoEmpleado();
+            frm_Modificar_TipoEmpleado PantTipoEmpleado = new frm_Modificar_TipoEmpleado();
             ObjTipoEmpleadosDAL.CBandAX = 'I';
 
             PantTipoEmpleado.Obj_DAL_TipoEmpleado = ObjTipoEmpleadosDAL;
@@ -126,7 +126,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
         private void btn_Modificar_Click(object sender, EventArgs e)
         {
             ObjTipoEmpleadosDAL = new cls_TipoEmpleados_DAL();
-            frm_Mostrar_TipoEmpleado PantTipoEmpleado = new frm_Mostrar_TipoEmpleado();
+            frm_Modificar_TipoEmpleado PantTipoEmpleado = new frm_Modificar_TipoEmpleado();
 
             if (dgv_view.RowCount > 0)
             {
@@ -150,13 +150,13 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
         private void dgv_view_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             ObjTipoEmpleadosDAL = new cls_TipoEmpleados_DAL();
-            frm_Mostrar_TipoEmpleado Pant_tipoEmpleados = new frm_Mostrar_TipoEmpleado();
+            frm_Modificar_TipoEmpleado PantTipoEmpleado = new frm_Modificar_TipoEmpleado();
             ObjTipoEmpleadosDAL.CBandAX = 'U';
             ObjTipoEmpleadosDAL.ITipoEmpleado = Convert.ToInt32(dgv_view.SelectedRows[0].Cells[0].Value.ToString().Trim());
             ObjTipoEmpleadosDAL.SDescTipo = dgv_view.SelectedRows[0].Cells[1].Value.ToString().Trim();
             ObjTipoEmpleadosDAL.CIdEstado = Convert.ToChar(dgv_view.SelectedRows[0].Cells[2].Value.ToString().Trim());
 
-            Pant_tipoEmpleados.Obj_DAL_TipoEmpleado = ObjTipoEmpleadosDAL;
+            PantTipoEmpleado.Obj_DAL_TipoEmpleado = ObjTipoEmpleadosDAL;
 
             txtFiltro.Text = string.Empty;
             CargarDatos();

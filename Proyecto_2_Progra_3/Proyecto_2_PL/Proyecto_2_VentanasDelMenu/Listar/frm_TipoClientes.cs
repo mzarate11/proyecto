@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Proyecto_2_BLL.Catagolos_Mantinimiento_BLL;
-using Proyecto_2_PL.Proyecto_2_VentanasDelMenu.Modificar;
+using Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar;
 using Proyecto_2_DAL.Catalogos_y_Mantenimientos;
 
 
@@ -111,9 +111,9 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
         private void btn_Modificar_Click(object sender, EventArgs e)
         {
             ObjTiposClientesDAL = new cls_TiposClientes_DAL();
-            frm_Mostrar_TiposClientes PantTiposClientes = new frm_Mostrar_TiposClientes();
+            frm_Modificar_TipoClientes PantTiposClientes = new frm_Modificar_TipoClientes();
 
-            if (Dgv_View.RowCount > 0)
+            if (Dgv_View.RowCount > 1)
             {
                 ObjTiposClientesDAL.CBandAX = 'U';
                 ObjTiposClientesDAL.IIdTipoCliente = Convert.ToInt32(Dgv_View.SelectedRows[0].Cells[0].Value.ToString().Trim());
@@ -121,7 +121,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
                 ObjTiposClientesDAL.SDescripcion = Dgv_View.SelectedRows[0].Cells[2].Value.ToString().Trim();
                 ObjTiposClientesDAL.CIdEstado = Convert.ToChar(Dgv_View.SelectedRows[0].Cells[3].Value.ToString().Trim());
 
-                PantTiposClientes.OBj_DAL_TiposClientes = ObjTiposClientesDAL;
+                PantTiposClientes.Obj_DAL_TiposClientes = ObjTiposClientesDAL;
                 PantTiposClientes.ShowDialog();
 
                 txtFiltro.Text = string.Empty;
@@ -141,10 +141,10 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
         private void bnt_Nuevo_Click(object sender, EventArgs e)
         {
             ObjTiposClientesDAL = new cls_TiposClientes_DAL();
-            frm_Mostrar_TiposClientes PantTiposClientes = new frm_Mostrar_TiposClientes();
+            frm_Modificar_TipoClientes PantTiposClientes = new frm_Modificar_TipoClientes(); 
             ObjTiposClientesDAL.CBandAX = 'I';
 
-            PantTiposClientes.OBj_DAL_TiposClientes = ObjTiposClientesDAL;
+            PantTiposClientes.Obj_DAL_TiposClientes = ObjTiposClientesDAL;
             PantTiposClientes.ShowDialog();
 
 
@@ -156,14 +156,14 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
         private void Dgv_View_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             ObjTiposClientesDAL = new cls_TiposClientes_DAL();
-            frm_Mostrar_TiposClientes PantTiposClientes = new frm_Mostrar_TiposClientes();
+            frm_Modificar_TipoClientes PantTiposClientes = new frm_Modificar_TipoClientes();
             ObjTiposClientesDAL.CBandAX = 'U';
             ObjTiposClientesDAL.IIdTipoCliente = Convert.ToInt32(Dgv_View.SelectedRows[0].Cells[0].Value.ToString().Trim());
             ObjTiposClientesDAL.STipoCliente = Dgv_View.SelectedRows[0].Cells[1].Value.ToString().Trim();
             ObjTiposClientesDAL.SDescripcion = Dgv_View.SelectedRows[0].Cells[2].Value.ToString().Trim();
             ObjTiposClientesDAL.CIdEstado = Convert.ToChar(Dgv_View.SelectedRows[0].Cells[3].Value.ToString().Trim());
 
-            PantTiposClientes.OBj_DAL_TiposClientes = ObjTiposClientesDAL;
+            PantTiposClientes.Obj_DAL_TiposClientes = ObjTiposClientesDAL;
 
             txtFiltro.Text = string.Empty;
             CargarDatos();
