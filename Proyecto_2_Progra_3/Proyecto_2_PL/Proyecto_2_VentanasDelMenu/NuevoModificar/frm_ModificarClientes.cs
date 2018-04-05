@@ -121,7 +121,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
 
         private void mtxt_Cedula_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((mtxt_Cedula.SelectionStart == 0) && (e.KeyChar == '0'))
+            if ((mtxt_Cedula.SelectionStart == '0') && (e.KeyChar == '0'))
             {
                 e.Handled = true;
                 MessageBox.Show("La cédula no puede iniciar con 0", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);

@@ -106,6 +106,28 @@ namespace Proyecto_2_BLL.Catagolos_Mantinimiento_BLL
 
         public void Modificar_Paises(ref string sMsjError,ref cls_Paises_DAL ObjPaises_DAL)
         {
+            cls_BaseDatos_DAL Obj_DAL = new cls_BaseDatos_DAL();
+            cls_Bases_BLL Obj_BLL = new cls_Bases_BLL();
+
+
+            Obj_BLL.TablaParametros(ref Obj_DAL);
+            Obj_DAL.DT_Parametros.Rows.Add("@IdPais", 1, ObjPaises_DAL.iIdPais.ToString().Trim());
+            Obj_DAL.DT_Parametros.Rows.Add("@NombrePais", 3, ObjPaises_DAL.sNombrePais.ToString().Trim());
+            Obj_DAL.DT_Parametros.Rows.Add("@CodigoISOPais", 2, ObjPaises_DAL.sCodigoISOPais.ToString().Trim());
+            Obj_DAL.DT_Parametros.Rows.Add("@CodigoAreaPais", 2, ObjPaises_DAL.sCodigoAreaPais.ToString().Trim());
+            Obj_DAL.DT_Parametros.Rows.Add("@IdEstado", 2, ObjPaises_DAL.cIdEstado.ToString().Trim());
+
+            Obj_DAL.sSentencia = ConfigurationManager.AppSettings["Modificar Paises"].ToString().Trim();
+            Obj_BLL.Ejec_NonQuery(ref Obj_DAL);
+
+            if (Obj_DAL.sMsgError == string.Empty)
+            {
+                sMsjError = string.Empty;
+            }
+            else
+            {
+                sMsjError = Obj_DAL.sMsgError;
+            }
 
         }
     }
