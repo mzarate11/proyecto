@@ -28,19 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_ModificarAerolineas));
             this.lbl_IdAerolinea = new System.Windows.Forms.Label();
             this.lbl_NombreAerolinea = new System.Windows.Forms.Label();
             this.lbl_IdEstado = new System.Windows.Forms.Label();
             this.txt_IdAerolinea = new System.Windows.Forms.TextBox();
             this.txt_NombreAerolinea = new System.Windows.Forms.TextBox();
             this.cmb_IdEstado = new System.Windows.Forms.ComboBox();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.tsb_Guardar = new System.Windows.Forms.ToolStripButton();
-            this.tsl_Guardar = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsb_Salir = new System.Windows.Forms.ToolStripButton();
-            this.tsl_Salir = new System.Windows.Forms.ToolStripLabel();
-            this.toolStrip1.SuspendLayout();
+            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
+            this.btn_Guardar = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.btn_Salir = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbl_IdAerolinea
@@ -75,92 +76,99 @@
             // 
             // txt_IdAerolinea
             // 
-            this.txt_IdAerolinea.Font = new System.Drawing.Font("Candara", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_IdAerolinea.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.txt_IdAerolinea.Location = new System.Drawing.Point(526, 123);
             this.txt_IdAerolinea.Name = "txt_IdAerolinea";
-            this.txt_IdAerolinea.Size = new System.Drawing.Size(254, 44);
+            this.txt_IdAerolinea.Size = new System.Drawing.Size(254, 30);
             this.txt_IdAerolinea.TabIndex = 3;
             this.txt_IdAerolinea.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_IdAerolinea_KeyPress);
             // 
             // txt_NombreAerolinea
             // 
-            this.txt_NombreAerolinea.Font = new System.Drawing.Font("Candara", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_NombreAerolinea.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.txt_NombreAerolinea.Location = new System.Drawing.Point(526, 273);
             this.txt_NombreAerolinea.Name = "txt_NombreAerolinea";
-            this.txt_NombreAerolinea.Size = new System.Drawing.Size(254, 44);
+            this.txt_NombreAerolinea.Size = new System.Drawing.Size(254, 30);
             this.txt_NombreAerolinea.TabIndex = 4;
             this.txt_NombreAerolinea.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_NombreAerolinea_KeyPress);
             // 
             // cmb_IdEstado
             // 
-            this.cmb_IdEstado.Font = new System.Drawing.Font("Candara", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_IdEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.cmb_IdEstado.FormattingEnabled = true;
             this.cmb_IdEstado.Location = new System.Drawing.Point(526, 428);
             this.cmb_IdEstado.Name = "cmb_IdEstado";
-            this.cmb_IdEstado.Size = new System.Drawing.Size(254, 45);
+            this.cmb_IdEstado.Size = new System.Drawing.Size(254, 33);
             this.cmb_IdEstado.TabIndex = 5;
             this.cmb_IdEstado.Text = "Elegir opcion";
             this.cmb_IdEstado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmb_IdEstado_KeyPress);
             // 
-            // toolStrip1
+            // toolStrip2
             // 
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsb_Guardar,
-            this.tsl_Guardar,
-            this.toolStripSeparator1,
-            this.tsb_Salir,
-            this.tsl_Salir});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(946, 31);
-            this.toolStrip1.TabIndex = 6;
-            this.toolStrip1.Text = "toolStrip1";
+            this.toolStrip2.BackColor = System.Drawing.Color.White;
+            this.toolStrip2.Dock = System.Windows.Forms.DockStyle.None;
+            this.toolStrip2.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btn_Guardar,
+            this.toolStripLabel1,
+            this.toolStripSeparator2,
+            this.btn_Salir,
+            this.toolStripLabel2});
+            this.toolStrip2.Location = new System.Drawing.Point(9, 9);
+            this.toolStrip2.Name = "toolStrip2";
+            this.toolStrip2.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
+            this.toolStrip2.Size = new System.Drawing.Size(282, 41);
+            this.toolStrip2.TabIndex = 37;
+            this.toolStrip2.Text = "toolStrip2";
             // 
-            // tsb_Guardar
+            // btn_Guardar
             // 
-            this.tsb_Guardar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsb_Guardar.Image = global::Proyecto_2_PL.Properties.Resources.bGuardar;
-            this.tsb_Guardar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsb_Guardar.Name = "tsb_Guardar";
-            this.tsb_Guardar.Size = new System.Drawing.Size(28, 28);
-            this.tsb_Guardar.Text = "Guardar";
-            this.tsb_Guardar.Click += new System.EventHandler(this.tsb_Guardar_Click);
+            this.btn_Guardar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btn_Guardar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Guardar.Image")));
+            this.btn_Guardar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btn_Guardar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_Guardar.Name = "btn_Guardar";
+            this.btn_Guardar.Size = new System.Drawing.Size(36, 38);
+            this.btn_Guardar.Text = "Guardar";
+            this.btn_Guardar.Click += new System.EventHandler(this.btn_Guardar_Click);
             // 
-            // tsl_Guardar
+            // toolStripLabel1
             // 
-            this.tsl_Guardar.Name = "tsl_Guardar";
-            this.tsl_Guardar.Size = new System.Drawing.Size(75, 28);
-            this.tsl_Guardar.Text = "Guardar";
+            this.toolStripLabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(120, 38);
+            this.toolStripLabel1.Text = "Guardar";
             // 
-            // toolStripSeparator1
+            // toolStripSeparator2
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 31);
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 41);
             // 
-            // tsb_Salir
+            // btn_Salir
             // 
-            this.tsb_Salir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsb_Salir.Image = global::Proyecto_2_PL.Properties.Resources.bSalir;
-            this.tsb_Salir.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsb_Salir.Name = "tsb_Salir";
-            this.tsb_Salir.Size = new System.Drawing.Size(28, 28);
-            this.tsb_Salir.Text = "Salir";
-            this.tsb_Salir.Click += new System.EventHandler(this.tsb_Salir_Click);
+            this.btn_Salir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btn_Salir.Image = ((System.Drawing.Image)(resources.GetObject("btn_Salir.Image")));
+            this.btn_Salir.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btn_Salir.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_Salir.Name = "btn_Salir";
+            this.btn_Salir.Size = new System.Drawing.Size(36, 38);
+            this.btn_Salir.Text = "Salir";
+            this.btn_Salir.Click += new System.EventHandler(this.btn_Salir_Click);
             // 
-            // tsl_Salir
+            // toolStripLabel2
             // 
-            this.tsl_Salir.Name = "tsl_Salir";
-            this.tsl_Salir.Size = new System.Drawing.Size(45, 28);
-            this.tsl_Salir.Text = "Salir";
+            this.toolStripLabel2.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(71, 38);
+            this.toolStripLabel2.Text = "Salir";
             // 
             // frm_ModificarAerolineas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Proyecto_2_PL.Properties.Resources.avion_960_720;
-            this.ClientSize = new System.Drawing.Size(946, 633);
-            this.Controls.Add(this.toolStrip1);
+            this.BackgroundImage = global::Proyecto_2_PL.Properties.Resources.Aviation;
+            this.ClientSize = new System.Drawing.Size(963, 635);
+            this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.cmb_IdEstado);
             this.Controls.Add(this.txt_NombreAerolinea);
             this.Controls.Add(this.txt_IdAerolinea);
@@ -171,8 +179,8 @@
             this.Name = "frm_ModificarAerolineas";
             this.Text = "frm_ModificarAerolineas";
             this.Load += new System.EventHandler(this.frm_ModificarAerolineas_Load);
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
+            this.toolStrip2.ResumeLayout(false);
+            this.toolStrip2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -186,11 +194,11 @@
         private System.Windows.Forms.TextBox txt_IdAerolinea;
         private System.Windows.Forms.TextBox txt_NombreAerolinea;
         private System.Windows.Forms.ComboBox cmb_IdEstado;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton tsb_Guardar;
-        private System.Windows.Forms.ToolStripLabel tsl_Guardar;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripButton tsb_Salir;
-        private System.Windows.Forms.ToolStripLabel tsl_Salir;
+        private System.Windows.Forms.ToolStrip toolStrip2;
+        private System.Windows.Forms.ToolStripButton btn_Guardar;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripButton btn_Salir;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
     }
 }

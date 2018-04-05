@@ -108,8 +108,9 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
             frm_ModificarClientes pantCLientes = new frm_ModificarClientes();
             ObjCLientes_DAL.cBandAxn = 'I';
             pantCLientes.ObjClientes_DAL = ObjCLientes_DAL;
+            this.Hide();
             pantCLientes.ShowDialog();
-
+            this.Show();
             txtFiltro.Text = string.Empty;
             CargarDatos();
 

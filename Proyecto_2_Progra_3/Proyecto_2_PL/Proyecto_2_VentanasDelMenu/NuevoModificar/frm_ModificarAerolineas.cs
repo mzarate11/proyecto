@@ -28,6 +28,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
         private void CargarDatos()
         {
             cls_BaseDatos_DAL objDAL_BaseDatos = new cls_BaseDatos_DAL();
+
             if (objDAL_Aerolinea != null)
             {
                 #region Combo Estados
@@ -37,7 +38,8 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 DTE = ObjBLLEstados.Listar_Estados(ref sMsjError);
                 DTE.Rows.Add("0", "-- SELECCIONE UN ESTADO");
                 cmb_IdEstado.DataSource = DTE;
-                cmb_IdEstado.DisplayMember = DTE.Columns[0].ToString();
+                cmb_IdEstado.DisplayMember = DTE.Columns[1].ToString();
+                cmb_IdEstado.ValueMember = DTE.Columns[0].ToString();
                 cmb_IdEstado.SelectedValue = "0";
                 #endregion
 
@@ -64,10 +66,44 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             }
         }
 
-        private void tsb_Guardar_Click(object sender, EventArgs e)
+        private void txt_IdAerolinea_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (cmb_IdEstado.SelectedValue.ToString() == "0" ||
-                txt_IdAerolinea.Text == string.Empty || txt_NombreAerolinea.Text == string.Empty)
+            if (char.IsNumber(e.KeyChar) || e.KeyChar == (char)(Keys.Back))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                MessageBox.Show("Este espacio es solo para ingresar numeros", "Informacion",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                e.Handled = true;
+            }
+        }
+
+        private void txt_NombreAerolinea_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) || e.KeyChar == (char)(Keys.Back))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                MessageBox.Show("Este espacio es solo para ingresar numeros", "Informacion",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                e.Handled = true;
+            }
+        }
+
+        private void cmb_IdEstado_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+
+        }
+
+        private void btn_Guardar_Click(object sender, EventArgs e)
+        {
+            if (cmb_IdEstado.SelectedValue.ToString() != "0" ||
+                txt_IdAerolinea.Text != string.Empty || txt_NombreAerolinea.Text != string.Empty)
             {
                 cls_Aerolineas_BLL objBLL_Aerolineas = new cls_Aerolineas_BLL();
                 string sMsjError = string.Empty;
@@ -106,43 +142,9 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             }
         }
 
-        private void tsb_Salir_Click(object sender, EventArgs e)
+        private void btn_Salir_Click(object sender, EventArgs e)
         {
             Close();
-        }
-
-        private void txt_IdAerolinea_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (char.IsNumber(e.KeyChar) || e.KeyChar == (char)(Keys.Back))
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                MessageBox.Show("Este espacio es solo para ingresar numeros", "Informacion",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                e.Handled = true;
-            }
-        }
-
-        private void txt_NombreAerolinea_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (char.IsLetter(e.KeyChar) || e.KeyChar == (char)(Keys.Back))
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                MessageBox.Show("Este espacio es solo para ingresar numeros", "Informacion",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                e.Handled = true;
-            }
-        }
-
-        private void cmb_IdEstado_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = true;
-
         }
     }
 }
