@@ -112,7 +112,7 @@ namespace Proyecto_2_BLL.Catagolos_Mantinimiento_BLL
             cls_Bases_BLL Obj_BLL = new cls_Bases_BLL();
 
             Obj_BLL.TablaParametros(ref Obj_DAL);
-            //Obj_DAL.DT_Parametros.Rows.Add("@IdAerolinea", 1, objDAL_Aerolineas.iIdAerolinea.ToString().Trim());
+            Obj_DAL.DT_Parametros.Rows.Add("@IdAerolinea", 1, objDAL_Aerolineas.iIdAerolinea.ToString().Trim());
             Obj_DAL.DT_Parametros.Rows.Add("@NombreAerolinea", 3, objDAL_Aerolineas.sNombreAerolinea.ToString().Trim());
             Obj_DAL.DT_Parametros.Rows.Add("@IdEstado", 2, objDAL_Aerolineas.cIdEstado.ToString().Trim());
 

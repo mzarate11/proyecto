@@ -127,12 +127,10 @@ namespace Proyecto_2_BLL.Catagolos_Mantinimiento_BLL
             if (Obj_DAL.sMsgError == string.Empty)
             {
                 sMsjError = string.Empty;
-                objDAL_Aviones.cBandera = 'U';
             }
             else
             {
                 sMsjError = Obj_DAL.sMsgError;
-                objDAL_Aviones.cBandera = 'I';
             }
         }
 

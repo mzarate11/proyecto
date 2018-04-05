@@ -120,6 +120,7 @@
             // 
             this.txt_IdAvion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.txt_IdAvion.Location = new System.Drawing.Point(217, 131);
+            this.txt_IdAvion.MaxLength = 20;
             this.txt_IdAvion.Name = "txt_IdAvion";
             this.txt_IdAvion.Size = new System.Drawing.Size(265, 30);
             this.txt_IdAvion.TabIndex = 6;
@@ -129,6 +130,7 @@
             // 
             this.txt_DescAvion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.txt_DescAvion.Location = new System.Drawing.Point(338, 519);
+            this.txt_DescAvion.MaxLength = 20;
             this.txt_DescAvion.Name = "txt_DescAvion";
             this.txt_DescAvion.Size = new System.Drawing.Size(265, 30);
             this.txt_DescAvion.TabIndex = 7;
@@ -138,6 +140,7 @@
             // 
             this.txt_NomAvion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.txt_NomAvion.Location = new System.Drawing.Point(301, 331);
+            this.txt_NomAvion.MaxLength = 20;
             this.txt_NomAvion.Name = "txt_NomAvion";
             this.txt_NomAvion.Size = new System.Drawing.Size(265, 30);
             this.txt_NomAvion.TabIndex = 8;
