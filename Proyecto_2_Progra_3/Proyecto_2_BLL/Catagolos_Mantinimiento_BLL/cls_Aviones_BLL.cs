@@ -86,11 +86,11 @@ namespace Proyecto_2_BLL.Catagolos_Mantinimiento_BLL
             cls_Bases_BLL Obj_BLL = new cls_Bases_BLL();
 
             Obj_BLL.TablaParametros(ref Obj_DAL);
-            Obj_DAL.DT_Parametros.Rows.Add("@IdAvion", 3, objDAL_Aviones.cIdEstado.ToString().Trim());
-            Obj_DAL.DT_Parametros.Rows.Add("@NomAvion", 3, objDAL_Aviones.cIdEstado.ToString().Trim());
-            Obj_DAL.DT_Parametros.Rows.Add("@DescAvion", 3, objDAL_Aviones.cIdEstado.ToString().Trim());
-            Obj_DAL.DT_Parametros.Rows.Add("@IdAerolinea", 1, objDAL_Aviones.cIdEstado.ToString().Trim());
-            Obj_DAL.DT_Parametros.Rows.Add("@IdTipoAvion", 3, objDAL_Aviones.cIdEstado.ToString().Trim());
+            Obj_DAL.DT_Parametros.Rows.Add("@IdAvion", 3, objDAL_Aviones.sIdAvion.ToString().Trim());
+            Obj_DAL.DT_Parametros.Rows.Add("@NomAvion", 3, objDAL_Aviones.sNomAvion.ToString().Trim());
+            Obj_DAL.DT_Parametros.Rows.Add("@DescAvion", 3, objDAL_Aviones.sDescAvion.ToString().Trim());
+            Obj_DAL.DT_Parametros.Rows.Add("@IdAerolinea", 1, objDAL_Aviones.iIdAerolinea.ToString().Trim());
+            Obj_DAL.DT_Parametros.Rows.Add("@IdTipoAvion", 3, objDAL_Aviones.sIdTipoAvion.ToString().Trim());
             Obj_DAL.DT_Parametros.Rows.Add("@IdEstado", 2, objDAL_Aviones.cIdEstado.ToString().Trim());
 
             Obj_DAL.sSentencia = ConfigurationManager.AppSettings["Insertar_Aviones"].ToString().Trim();

@@ -117,6 +117,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                     if (sMsjError == string.Empty)
                     {
                         MessageBox.Show("Se guardó el nuevo registro exitosamente");
+                        objDAL_Aerolinea.cBandera = 'U';
                     }
                     else
                     {
@@ -129,6 +130,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                     if (sMsjError == string.Empty)
                     {
                         MessageBox.Show("Se modificó el nuevo registro exitosamente");
+                        objDAL_Aerolinea.cBandera = 'U';
                     }
                     else
                     {
