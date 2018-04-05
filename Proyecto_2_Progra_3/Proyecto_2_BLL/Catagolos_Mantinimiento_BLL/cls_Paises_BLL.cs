@@ -88,17 +88,19 @@ namespace Proyecto_2_BLL.Catagolos_Mantinimiento_BLL
             Obj_DAL.DT_Parametros.Rows.Add("@IdEstado", 2, ObjPaises_DAL.cIdEstado.ToString().Trim());
 
             Obj_DAL.sSentencia = ConfigurationManager.AppSettings["Insertar Paises"].ToString().Trim();
-            Obj_BLL.Ejec_NonQuery(ref Obj_DAL);
+            Obj_BLL.Ejec_Scalar(ref Obj_DAL);
 
             if (Obj_DAL.sMsgError == string.Empty)
             {
                 sMsjError = string.Empty;
-                ObjPaises_DAL.cBandera = 'U';
+                ObjPaises_DAL.iIdPais = Obj_DAL.iValorScalar;
+                ObjPaises_DAL.cBandera = 'I';
             }
             else
             {
                 sMsjError = Obj_DAL.sMsgError;
-                ObjPaises_DAL.cBandera = 'I';
+                ObjPaises_DAL.cBandera = 'U';
+                ObjPaises_DAL.iIdPais = -1;
             }
         }
 
