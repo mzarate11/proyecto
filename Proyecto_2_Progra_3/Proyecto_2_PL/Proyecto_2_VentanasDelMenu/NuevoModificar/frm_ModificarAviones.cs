@@ -52,8 +52,8 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 DTA = ObjAero.ListarAerolineas(ref sMsjError);
                 DTA.Rows.Add("0", "-- SELECCIONE UNA AEROLINEA --");
                 cmb_IdAerolinea.DataSource = DTA;
-                cmb_IdAerolinea.DisplayMember = DTA.Columns[0].ToString();
-                cmb_IdAerolinea.ValueMember = DTA.Columns[1].ToString();
+                cmb_IdAerolinea.DisplayMember = DTA.Columns[1].ToString();
+                cmb_IdAerolinea.ValueMember = DTA.Columns[0].ToString();
                 cmb_IdAerolinea.SelectedValue = "0";
                 #endregion
                 
@@ -63,8 +63,8 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 DTTA = ObjTiposA.ListarTiposA(ref sMsjError);
                 DTTA.Rows.Add("0", "-- SELECCIONE UN TIPO DE AVION --");
                 cmb_IdTipoAvion.DataSource = DTTA;
-                cmb_IdTipoAvion.DisplayMember = DTTA.Columns[0].ToString();
-                cmb_IdTipoAvion.ValueMember = DTTA.Columns[5].ToString();
+                cmb_IdTipoAvion.DisplayMember = DTTA.Columns[1].ToString();
+                cmb_IdTipoAvion.ValueMember = DTTA.Columns[0].ToString();
                 cmb_IdTipoAvion.SelectedValue = "0";
                 #endregion
 
@@ -79,7 +79,10 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 {
                     txt_DescAvion.Text = objDal_Aviones.sDescAvion;
                     txt_IdAvion.Text = objDal_Aviones.sIdAvion;
-                    txt_NomAvion.Text = objDal_Aviones.sNomAvion;                                                      
+                    txt_NomAvion.Text = objDal_Aviones.sNomAvion;
+                    cmb_IdAerolinea.Text = objDal_Aviones.iIdAerolinea.ToString();
+                    cmb_IdEstado.Text = objDal_Aviones.cIdEstado.ToString();
+                    cmb_IdTipoAvion.Text = objDal_Aviones.sIdTipoAvion.ToString();                                                     
                 }
             }
             else
@@ -155,21 +158,39 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 txt_NomAvion.Text != string.Empty || txt_IdAvion.Text != string.Empty || txt_DescAvion.Text != string.Empty)
             {
                 cls_Aviones_BLL objBLL_Aviones = new cls_Aviones_BLL();
-                string sMsjError = string.Empty;
-                objDal_Aviones.iIdAerolinea = Convert.ToInt32(cmb_IdAerolinea.SelectedValue.ToString());
-                objDal_Aviones.cIdEstado = Convert.ToChar(cmb_IdEstado.SelectedValue.ToString());
+                string sMsjError = string.Empty;                
                 objDal_Aviones.sNomAvion = txt_NomAvion.Text;
                 objDal_Aviones.sDescAvion = txt_DescAvion.Text;
                 objDal_Aviones.sIdAvion = txt_IdAvion.Text;
                 objDal_Aviones.sIdTipoAvion = cmb_IdTipoAvion.SelectedValue.ToString();
+                objDal_Aviones.iIdAerolinea = Convert.ToInt32(cmb_IdAerolinea.SelectedValue.ToString().Trim());
+                objDal_Aviones.cIdEstado = Convert.ToChar(cmb_IdEstado.SelectedValue.ToString());
 
                 if (objDal_Aviones.cBandera == 'I')
                 {
                     objBLL_Aviones.Insertar_Aviones(ref sMsjError, ref objDal_Aviones);
+                    if (sMsjError == string.Empty)
+                    {
+                        MessageBox.Show("Se guardó el nuevo registro exitosamente");
+                        objDal_Aviones.cBandera = 'U';
+                    }
+                    else
+                    {
+                        MessageBox.Show("Se presentó un error al tratar de guardar el registro");
+                    }
                 }
                 else
                 {
                     objBLL_Aviones.Modificar_Aviones(ref sMsjError, ref objDal_Aviones);
+                    if (sMsjError == string.Empty)
+                    {
+                        MessageBox.Show("Se modificó el nuevo registro exitosamente");
+                        objDal_Aviones.cBandera = 'U';
+                    }
+                    else
+                    {
+                        MessageBox.Show("Se presentó un error al tratar de modificar el registro");
+                    }
                 }
             }
             else

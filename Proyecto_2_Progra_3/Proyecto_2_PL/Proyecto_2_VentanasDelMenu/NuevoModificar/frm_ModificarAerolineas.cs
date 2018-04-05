@@ -121,7 +121,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                     }
                     else
                     {
-                        MessageBox.Show("Se presentó un error");
+                        MessageBox.Show("Se presentó un error al tratar de guardar el registro");
                     }
                 }
                 else
@@ -134,7 +134,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                     }
                     else
                     {
-                        MessageBox.Show("Se presentó un error");
+                        MessageBox.Show("Se presentó un error al tratar de modificar el registro");
                     }
                 }
             }
