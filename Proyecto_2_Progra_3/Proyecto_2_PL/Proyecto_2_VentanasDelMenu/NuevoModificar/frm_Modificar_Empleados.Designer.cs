@@ -70,7 +70,7 @@
             // 
             // toolStrip1
             // 
-            this.toolStrip1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.toolStrip1.BackColor = System.Drawing.Color.LightBlue;
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(27, 27);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tls_btn_Guardar,
@@ -436,6 +436,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = global::Proyecto_2_PL.Properties.Resources.fondoLogin2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(840, 452);
             this.Controls.Add(this.groupBox2);
