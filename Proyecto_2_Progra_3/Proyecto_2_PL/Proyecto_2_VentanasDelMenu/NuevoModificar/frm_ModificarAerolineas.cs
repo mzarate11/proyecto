@@ -42,18 +42,18 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 cmb_IdEstado.ValueMember = DTE.Columns[0].ToString();
                 cmb_IdEstado.SelectedValue = "0";
                 #endregion
-
+                txt_IdAerolinea.Enabled = false;
                 if (objDAL_Aerolinea.cBandera == 'I')
                 {
                     txt_IdAerolinea.Clear();
-                    txt_IdAerolinea.Enabled = true;
+                    //txt_IdAerolinea.Enabled = true;
                     txt_NombreAerolinea.Clear();
                    
                 }
                 else
                 {
                     txt_IdAerolinea.Text = objDAL_Aerolinea.iIdAerolinea.ToString().Trim();
-                    txt_IdAerolinea.Enabled = false;
+                    //txt_IdAerolinea.Enabled = false;
                     txt_NombreAerolinea.Text = objDAL_Aerolinea.sNombreAerolinea.ToString().Trim();
                     
                 }
@@ -107,7 +107,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             {
                 cls_Aerolineas_BLL objBLL_Aerolineas = new cls_Aerolineas_BLL();
                 string sMsjError = string.Empty;
-                objDAL_Aerolinea.iIdAerolinea = Convert.ToInt32(txt_IdAerolinea.Text);
+                //objDAL_Aerolinea.iIdAerolinea = Convert.ToInt32(txt_IdAerolinea.Text);
                 objDAL_Aerolinea.cIdEstado = Convert.ToChar(cmb_IdEstado.SelectedValue.ToString());
                 objDAL_Aerolinea.sNombreAerolinea = txt_NombreAerolinea.Text;
 
