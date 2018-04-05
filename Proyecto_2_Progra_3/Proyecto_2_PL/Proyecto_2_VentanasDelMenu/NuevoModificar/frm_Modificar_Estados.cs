@@ -110,7 +110,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
 
                 if (sMsjError == string.Empty)
                 {
-                    MessageBox.Show("La Base de Datos ha sido Actualizada", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("La Base de Datos ha sido Actualizada1", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
