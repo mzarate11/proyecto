@@ -35,6 +35,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             cmb_ID_Estado.DataSource = DTE;
             cmb_ID_Estado.DisplayMember = DTE.Columns[1].ToString();
             cmb_ID_Estado.ValueMember = DTE.Columns[0].ToString();
+            cmb_ID_Estado.SelectedValue = "0";
             #endregion
 
             #region Combo ID Clientes
@@ -43,11 +44,12 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             DataTable DTTC = new DataTable();
             DTTC = ObjBLLTipoC.ListarTiposClientes(ref sMsjError1);
 
-            DTTC.Rows.Add("0","SELECCIONE UN ID CLIENTE");
+            DTTC.Rows.Add("0", "SELECCIONE UN ID CLIENTE");
 
             cmb_ID_Tipo_Cliente.DataSource = DTTC;
             cmb_ID_Tipo_Cliente.DisplayMember = DTTC.Columns[1].ToString();
             cmb_ID_Tipo_Cliente.ValueMember = DTTC.Columns[0].ToString();
+            cmb_ID_Tipo_Cliente.SelectedValue = "0";
             #endregion
 
 
