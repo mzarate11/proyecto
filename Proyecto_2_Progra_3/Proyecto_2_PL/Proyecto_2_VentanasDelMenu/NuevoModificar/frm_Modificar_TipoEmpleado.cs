@@ -28,15 +28,15 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 cls_TiposEmpleados_BLL Obj_Tipos_Empleados_BLL = new cls_TiposEmpleados_BLL();
                 string sMsjError = string.Empty;
 
-                DataTable DTE = new DataTable();
-                DTE = Obj_Tipos_Empleados_BLL.ListarTiposEmpleados(ref sMsjError);
+                DataTable DTLE = new DataTable();
+                DTLE= Obj_Tipos_Empleados_BLL.ListarTiposEmpleados(ref sMsjError);
 
 
-                DTE.Rows.Add("0", "--SELECCIONE UN ESTADO--");
+                DTLE.Rows.Add("0", "--SELECCIONE UN ESTADO--");
 
-                cmb_IDEstado.DataSource = DTE;
-                cmb_IDEstado.DisplayMember = DTE.Columns[1].ToString();
-                cmb_IDEstado.ValueMember = DTE.Columns[0].ToString();
+                cmb_IDEstado.DataSource = DTLE;
+                cmb_IDEstado.DisplayMember = DTLE.Columns[1].ToString();
+                cmb_IDEstado.ValueMember = DTLE.Columns[0].ToString();
 
                 cmb_IDEstado.SelectedValue = "0";
 
