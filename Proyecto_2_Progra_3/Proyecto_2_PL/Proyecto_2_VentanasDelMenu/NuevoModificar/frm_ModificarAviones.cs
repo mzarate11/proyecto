@@ -53,7 +53,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 DTA.Rows.Add("0", "-- SELECCIONE UNA AEROLINEA --");
                 cmb_IdAerolinea.DataSource = DTA;
                 cmb_IdAerolinea.DisplayMember = DTA.Columns[0].ToString();
-                cmb_IdAerolinea.ValueMember = DTA.Columns[0].ToString();
+                cmb_IdAerolinea.ValueMember = DTA.Columns[1].ToString();
                 cmb_IdAerolinea.SelectedValue = "0";
                 #endregion
                 
@@ -63,8 +63,8 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 DTTA = ObjTiposA.ListarTiposA(ref sMsjError);
                 DTTA.Rows.Add("0", "-- SELECCIONE UN TIPO DE AVION --");
                 cmb_IdTipoAvion.DataSource = DTTA;
-                cmb_IdTipoAvion.DisplayMember = DTTA.Columns[5].ToString();
-                cmb_IdTipoAvion.ValueMember = DTTA.Columns[0].ToString();
+                cmb_IdTipoAvion.DisplayMember = DTTA.Columns[0].ToString();
+                cmb_IdTipoAvion.ValueMember = DTTA.Columns[5].ToString();
                 cmb_IdTipoAvion.SelectedValue = "0";
                 #endregion
 
