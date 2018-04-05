@@ -99,9 +99,23 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                     MessageBox.Show("Hubo un error al ingresar los datos a la base de datos:" + "[" + sMsjError + "]","ERROR",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 }
             }
-            else
+            else if ((Obj_DAL_Estados.cIdEstado == 'U')||(Obj_DAL_Estados != null))
             {
+                cls_Estados_BLL Obj_Estados_BLL = new cls_Estados_BLL();
 
+                Obj_DAL_Estados.cIdEstado = Convert.ToChar(txt_ID_Estados.Text);
+                Obj_DAL_Estados.sDescripcion = txt_Descripcion.Text;
+
+                Obj_Estados_BLL.Modificar_Estados(ref sMsjError, ref Obj_DAL_Estados);
+
+                if (sMsjError == string.Empty)
+                {
+                    MessageBox.Show("La Base de Datos ha sido Actualizada", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Hubo un error al ingresar los datos a la base de datos:" + "[" + sMsjError + "]", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
     }
