@@ -72,10 +72,10 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-             if (cmb_IDEstado.SelectedValue.ToString() != "0" ||
-                    txt_IDTipoCliente.Text != string.Empty ||
+             if (txt_IDTipoCliente.Text != string.Empty ||
                     txt_descripcion.Text != string.Empty ||
-                    txt_TipoCliente.Text != string.Empty)
+                    txt_TipoCliente.Text != string.Empty || 
+                    cmb_IDEstado.SelectedValue.ToString() != "0" )
                 {
                     cls_TiposClientes_BLL obj_TiposClientes_BLL = new cls_TiposClientes_BLL();
                     string sMsjError = string.Empty;
@@ -111,7 +111,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 }
                 }
                 else
-            {
+                {
 
                     MessageBox.Show("Todos los cambios son obligatorios", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
