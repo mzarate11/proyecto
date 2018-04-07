@@ -24,17 +24,17 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
         private void CargarDatos()
         {
 
-            cls_Paises_BLL Obj_Estados_BLL = new cls_Paises_BLL();
+            cls_Paises_BLL ObjPaises_BLL = new cls_Paises_BLL();
             string sMsjError = string.Empty;
             DataTable dtEstados = new DataTable();
 
             if (tls_txt_Filtro.Text == string.Empty)
             {
-                dtEstados = Obj_Estados_BLL.ListarPaises(ref sMsjError);
+                dtEstados = ObjPaises_BLL.ListarPaises(ref sMsjError);
             }
             else
             {
-                dtEstados = Obj_Estados_BLL.FiltrarPaises(ref sMsjError, tls_txt_Filtro.Text.Trim());
+                dtEstados = ObjPaises_BLL.FiltrarPaises(ref sMsjError, tls_txt_Filtro.Text.Trim());
             }
 
             if (sMsjError == string.Empty)
@@ -57,7 +57,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
 
         private void tls_btn_Refrescar_Click(object sender, EventArgs e)
         {
-            dgv_Paises = null;
+            dgv_Paises.DataSource = null;
             CargarDatos();
         }
 
