@@ -72,7 +72,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if ((txtNombrePais.Text != string.Empty) || (txtCodigoArea.Text != string.Empty) || (txtCodigoISO.Text != string.Empty))
+            if ((cmboxEstado.SelectedValue.ToString()!="0")&&(txtNombrePais.Text != string.Empty)&&(txtCodigoArea.Text != string.Empty)&&(txtCodigoISO.Text != string.Empty))
             {
                 cls_Paises_BLL Obj_Paises_BLL = new cls_Paises_BLL();
                 string sMsjError = string.Empty;
@@ -101,7 +101,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             }
             else
             {
-                MessageBox.Show("Se encuentran cajas de texto vacías, favor revisar", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Se encuentran cajas de texto vacías o ningún estado ha sido seleccionado, favor revisar", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

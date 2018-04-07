@@ -107,7 +107,8 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if ((txt_IdDestino.Text != string.Empty) || (txt_NombreDestino.Text != string.Empty) || (cmboxAerolinea.SelectedValue.ToString() != "0"))
+            if ((cmboxAerolinea.SelectedValue.ToString() != "0")&&(cmboxPaisLlegada.SelectedValue.ToString()!="0")&&(cmboxPaisSalida.SelectedValue.ToString()!="0")&&
+                (cmboxEstado.SelectedValue.ToString()!="0")&&(txt_IdDestino.Text != string.Empty) && (txt_NombreDestino.Text != string.Empty))
             {
                 cls_Destinos_BLL ObjDestinos_BLL = new cls_Destinos_BLL();
                 string sMsjError = string.Empty;
@@ -122,17 +123,6 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 if (Obj_Destinos_DAL.cBandera == 'I')
                 {
                     ObjDestinos_BLL.Insertar_Destinos(ref sMsjError, ref Obj_Destinos_DAL);
-
-                    //if (sMsjError == string.Empty)
-                    //{
-                    //    MessageBox.Show("Se han insertado correctamente los datos", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    //    Close();
-                    //    Destinos.ShowDialog();
-                    //}
-                    //else
-                    //{
-                    //    MessageBox.Show("Hubo un error al insertar los datos","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
-                    //}
                     txt_IdDestino.Enabled = false;
                 }
                 else
@@ -143,14 +133,13 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 {
 
                     MessageBox.Show("Se han ingresado los datos correctamente", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    txt_IdDestino.Text= Obj_Destinos_DAL.cIdEstado.ToString();
+                    txt_IdDestino.Text= Obj_Destinos_DAL.sIdDestino.ToString();
                     Obj_Destinos_DAL.cBandera = 'U';
                 }
-                txt_IdDestino.Enabled = false;
             }
             else
             {
-                MessageBox.Show("Se encuentran cajas de texto u opciones vacías, favor revisar", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Se encuentran cajas de texto vacías u opciones sin elegir, favor revisar", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
