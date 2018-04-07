@@ -163,7 +163,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
 
         private void txt_NombreDestino_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((char.IsLetter(e.KeyChar)) || (e.KeyChar == Convert.ToChar(Keys.Back)))
+            if ((char.IsLetter(e.KeyChar)) || (e.KeyChar == Convert.ToChar(Keys.Back))||(e.KeyChar == Convert.ToChar(Keys.Space)))
             {
                 e.Handled = false;
             }
