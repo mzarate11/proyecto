@@ -77,6 +77,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 cls_Paises_BLL Obj_Paises_BLL = new cls_Paises_BLL();
                 string sMsjError = string.Empty;
 
+                Obj_Paises_DAL.iIdPais = Convert.ToInt32(txt_IdPais.Text);
                 Obj_Paises_DAL.sNombrePais = txtNombrePais.Text;
                 Obj_Paises_DAL.sCodigoISOPais = txtCodigoISO.Text;
                 Obj_Paises_DAL.sCodigoAreaPais = txtCodigoArea.Text;
@@ -90,6 +91,13 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 {
                     Obj_Paises_BLL.Modificar_Paises(ref sMsjError, ref Obj_Paises_DAL);
                 }
+                if(sMsjError == string.Empty)
+                {
+                    
+                    MessageBox.Show("Se han ingresado los datos correctamente", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txt_IdPais.Text = Obj_Paises_DAL.iIdPais.ToString();
+                    Obj_Paises_DAL.cBandera = 'U';
+                }
             }
             else
             {
@@ -99,7 +107,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
 
         private void txtNombrePais_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((char.IsLetter(e.KeyChar)) || (e.KeyChar == Convert.ToChar(Keys.Back)))
+            if ((char.IsLetter(e.KeyChar)) || (e.KeyChar == Convert.ToChar(Keys.Back))||(e.KeyChar== Convert.ToChar(Keys.Space)))
             {
                 e.Handled = false;
             }

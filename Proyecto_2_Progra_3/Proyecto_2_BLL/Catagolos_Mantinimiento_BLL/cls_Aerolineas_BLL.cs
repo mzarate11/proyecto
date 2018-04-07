@@ -86,28 +86,47 @@ namespace Proyecto_2_BLL.Catagolos_Mantinimiento_BLL
             cls_Bases_BLL Obj_BLL = new cls_Bases_BLL();
 
             Obj_BLL.TablaParametros(ref Obj_DAL);
-            Obj_DAL.DT_Parametros.Rows.Add("@IdAerolinea", 1, objDAL_Aerolineas.cIdEstado.ToString().Trim());
-            Obj_DAL.DT_Parametros.Rows.Add("@NombreAerolinea", 3, objDAL_Aerolineas.cIdEstado.ToString().Trim());
+            Obj_DAL.DT_Parametros.Rows.Add("@NombreAerolinea", 3, objDAL_Aerolineas.sNombreAerolinea.ToString().Trim());
             Obj_DAL.DT_Parametros.Rows.Add("@IdEstado", 2, objDAL_Aerolineas.cIdEstado.ToString().Trim());
 
             Obj_DAL.sSentencia = ConfigurationManager.AppSettings["Insertar_Aerolineas"].ToString().Trim();
-            Obj_BLL.Ejec_NonQuery(ref Obj_DAL);
+            Obj_BLL.Ejec_Scalar(ref Obj_DAL);
 
-            if (Obj_DAL.sMsgError == string.Empty)
+            if(Obj_DAL.sMsgError == string.Empty)
             {
                 sMsjError = string.Empty;
-                objDAL_Aerolineas.cBandera = 'U';
+                objDAL_Aerolineas.iIdAerolinea = Obj_DAL.iValorScalar;
+                objDAL_Aerolineas.cBandera = 'I';
             }
             else
             {
                 sMsjError = Obj_DAL.sMsgError;
-                objDAL_Aerolineas.cBandera = 'I';
-            }
+                objDAL_Aerolineas.cBandera = 'U';
+                objDAL_Aerolineas.iIdAerolinea = -1;
+            }            
         }
 
         public void Modificar_Aerolineas(ref string sMsjError, ref cls_Aerolineas_DAL objDAL_Aerolineas)
         {
+            cls_BaseDatos_DAL Obj_DAL = new cls_BaseDatos_DAL();
+            cls_Bases_BLL Obj_BLL = new cls_Bases_BLL();
 
+            Obj_BLL.TablaParametros(ref Obj_DAL);
+            Obj_DAL.DT_Parametros.Rows.Add("@IdAerolinea", 1, objDAL_Aerolineas.iIdAerolinea.ToString().Trim());
+            Obj_DAL.DT_Parametros.Rows.Add("@NombreAerolinea", 3, objDAL_Aerolineas.sNombreAerolinea.ToString().Trim());
+            Obj_DAL.DT_Parametros.Rows.Add("@IdEstado", 2, objDAL_Aerolineas.cIdEstado.ToString().Trim());
+
+            Obj_DAL.sSentencia = ConfigurationManager.AppSettings["Modificar_Aerolineas"].ToString().Trim();
+            Obj_BLL.Ejec_NonQuery(ref Obj_DAL);
+
+            if (Obj_DAL.sMsgError == string.Empty)
+            {
+                sMsjError = string.Empty;                
+            }
+            else
+            {
+                sMsjError = Obj_DAL.sMsgError;                
+            }
         }
     }
 }
