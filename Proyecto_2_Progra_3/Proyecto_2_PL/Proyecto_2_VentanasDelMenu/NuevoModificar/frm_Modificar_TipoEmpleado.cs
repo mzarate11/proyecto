@@ -39,21 +39,22 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 cmb_IDEstado.ValueMember = DTLE.Columns[0].ToString();
 
                 cmb_IDEstado.SelectedValue = "0";
+                txt_IDTipoEmpleado.Enabled = false;
 
                 if (Obj_DAL_TipoEmpleado.CBandAX == 'I')
                 {
                     txt_IDTipoEmpleado.Text = string.Empty;
-                    txt_IDTipoEmpleado.Enabled = true;
+                   // txt_IDTipoEmpleado.Enabled = true;
                     txt_desc.Text = string.Empty;
-                    cmb_IDEstado.DataSource = null;
+                  //  cmb_IDEstado.DataSource = null;
                     
                 }
                 else
                 {
                     txt_IDTipoEmpleado.Text = Obj_DAL_TipoEmpleado.ITipoEmpleado.ToString().Trim();
-                    txt_IDTipoEmpleado.Enabled = false;
+                   // txt_IDTipoEmpleado.Enabled = false;
                     txt_desc.Text = Obj_DAL_TipoEmpleado.SDescTipo.ToString().Trim();
-                    cmb_IDEstado.Text = Obj_DAL_TipoEmpleado.SDescTipo.ToString().Trim();
+                    //cmb_IDEstado.Text = Obj_DAL_TipoEmpleado.SDescTipo.ToString().Trim();
                     
                 }
             }
