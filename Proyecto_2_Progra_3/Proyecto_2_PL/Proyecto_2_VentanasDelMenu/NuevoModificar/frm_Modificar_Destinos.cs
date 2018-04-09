@@ -76,6 +76,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 else
                 {
                     txt_IdDestino.Text = Obj_Destinos_DAL.sIdDestino;
+                    txt_IdDestino.Enabled = false;
                     cmboxAerolinea.SelectedValue = Obj_Destinos_DAL.bIdAerolinea.ToString();
                     txt_NombreDestino.Text = Obj_Destinos_DAL.sNomDestino;
                     cmboxPaisSalida.SelectedValue= Obj_Destinos_DAL.bPaisSalida.ToString();
@@ -106,7 +107,8 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if ((txt_IdDestino.Text != string.Empty) || (txt_NombreDestino.Text != string.Empty))
+            if ((cmboxAerolinea.SelectedValue.ToString() != "0")&&(cmboxPaisLlegada.SelectedValue.ToString()!="0")&&(cmboxPaisSalida.SelectedValue.ToString()!="0")&&
+                (cmboxEstado.SelectedValue.ToString()!="0")&&(txt_IdDestino.Text != string.Empty) && (txt_NombreDestino.Text != string.Empty))
             {
                 cls_Destinos_BLL ObjDestinos_BLL = new cls_Destinos_BLL();
                 string sMsjError = string.Empty;
@@ -121,27 +123,23 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 if (Obj_Destinos_DAL.cBandera == 'I')
                 {
                     ObjDestinos_BLL.Insertar_Destinos(ref sMsjError, ref Obj_Destinos_DAL);
-
-                    if (sMsjError == string.Empty)
-                    {
-                        MessageBox.Show("Se han insertado correctamente los datos", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        Close();
-                        Destinos.ShowDialog();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Hubo un error al insertar los datos","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
-                    }
+                    txt_IdDestino.Enabled = false;
                 }
                 else
                 {
                     ObjDestinos_BLL.Modificar_Destinos(ref sMsjError, ref Obj_Destinos_DAL);
                 }
-                txt_IdDestino.Enabled = false;
+                if(sMsjError == string.Empty)
+                {
+
+                    MessageBox.Show("Se han ingresado los datos correctamente", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txt_IdDestino.Text= Obj_Destinos_DAL.sIdDestino.ToString();
+                    Obj_Destinos_DAL.cBandera = 'U';
+                }
             }
             else
             {
-                MessageBox.Show("Se ecnuentran cajas de texto vacías, favor revisar", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Se encuentran cajas de texto vacías u opciones sin elegir, favor revisar", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -163,7 +161,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
 
         private void txt_NombreDestino_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((char.IsLetter(e.KeyChar)) || (e.KeyChar == Convert.ToChar(Keys.Back)))
+            if ((char.IsLetter(e.KeyChar)) || (e.KeyChar == Convert.ToChar(Keys.Back))||(e.KeyChar == Convert.ToChar(Keys.Space)))
             {
                 e.Handled = false;
             }

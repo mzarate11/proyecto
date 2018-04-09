@@ -11,7 +11,7 @@ namespace Proyecto_2_DAL.Catalogos_y_Mantenimientos
         private string _sIdAvion;
         private string _sNomAvion;
         private string _sDescAvion;
-        private int _iIdAerolinea;
+        private Int32 _iIdAerolinea;
         private string _sIdTipoAvion;
         private char _cIdEstado, _cBandera;
 
@@ -55,19 +55,6 @@ namespace Proyecto_2_DAL.Catalogos_y_Mantenimientos
             }
         }
 
-        public int iIdAerolinea
-        {
-            get
-            {
-                return _iIdAerolinea;
-            }
-
-            set
-            {
-                _iIdAerolinea = value;
-            }
-        }
-
         public string sIdTipoAvion
         {
             get
@@ -104,6 +91,19 @@ namespace Proyecto_2_DAL.Catalogos_y_Mantenimientos
             set
             {
                 _cBandera = value;
+            }
+        }
+
+        public int iIdAerolinea
+        {
+            get
+            {
+                return _iIdAerolinea;
+            }
+
+            set
+            {
+                _iIdAerolinea = value;
             }
         }
         #endregion

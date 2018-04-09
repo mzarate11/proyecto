@@ -229,19 +229,63 @@ namespace Proyecto_2_BLL
         {
             try
             {
+                TraerConexion(ref ObjDAL);
+                if (ObjDAL.sql_Conexion != null)
+                {
+                    AbrirConexion(ref ObjDAL);
+
+                    ObjDAL.Sql_CMD = new SqlCommand(ObjDAL.sSentencia, ObjDAL.sql_Conexion);
+
+                    ObjDAL.Sql_CMD.CommandType = CommandType.StoredProcedure;
+
+
+                    if (ObjDAL.DT_Parametros != null)
+                    {
+                        SqlDbType sqlDataType = SqlDbType.VarChar;
+                        foreach (DataRow dr in ObjDAL.DT_Parametros.Rows)
+                        {
+                            switch (dr["Tipo de Dato"].ToString())
+                            {
+                                case "1":
+                                    sqlDataType = SqlDbType.Int;
+                                    break;
+
+                                case "2":
+                                    sqlDataType = SqlDbType.Char;
+                                    break;
+
+                                case "3":
+                                    sqlDataType = SqlDbType.VarChar;
+                                    break;
+
+                                case "4":
+                                    sqlDataType = SqlDbType.DateTime;
+                                    break;
+
+                                case "5":
+                                    sqlDataType = SqlDbType.Decimal;
+                                    break;
+                                default:
+                                    break;
+                            }
+                            ObjDAL.Sql_CMD.Parameters.Add(dr["Nombre"].ToString(), sqlDataType).Value = dr["Valor"].ToString();
+                        }
+                    }
+ 
+                    ObjDAL.iValorScalar = Convert.ToInt32(ObjDAL.Sql_CMD.ExecuteScalar());
+                }
+
                 ObjDAL.sMsgError = string.Empty;
             }
-            
+
             catch (SqlException e)
             {
                 ObjDAL.sMsgError = e.Message;
             }
+
             finally
             {
-                if (ObjDAL.sql_Conexion != null)
-                {
-                    CerrarConexion(ref ObjDAL);
-                }
+                CerrarConexion(ref ObjDAL);
             }
 
         }

@@ -78,6 +78,7 @@
             // 
             this.txt_IdAerolinea.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.txt_IdAerolinea.Location = new System.Drawing.Point(526, 123);
+            this.txt_IdAerolinea.MaxLength = 20;
             this.txt_IdAerolinea.Name = "txt_IdAerolinea";
             this.txt_IdAerolinea.Size = new System.Drawing.Size(254, 30);
             this.txt_IdAerolinea.TabIndex = 3;
@@ -87,6 +88,7 @@
             // 
             this.txt_NombreAerolinea.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.txt_NombreAerolinea.Location = new System.Drawing.Point(526, 273);
+            this.txt_NombreAerolinea.MaxLength = 20;
             this.txt_NombreAerolinea.Name = "txt_NombreAerolinea";
             this.txt_NombreAerolinea.Size = new System.Drawing.Size(254, 30);
             this.txt_NombreAerolinea.TabIndex = 4;

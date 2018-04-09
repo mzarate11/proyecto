@@ -35,6 +35,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             cmb_ID_Estado.DataSource = DTE;
             cmb_ID_Estado.DisplayMember = DTE.Columns[1].ToString();
             cmb_ID_Estado.ValueMember = DTE.Columns[0].ToString();
+            cmb_ID_Estado.SelectedValue = "0";
             #endregion
 
             #region Combo ID Clientes
@@ -43,11 +44,12 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             DataTable DTTC = new DataTable();
             DTTC = ObjBLLTipoC.ListarTiposClientes(ref sMsjError1);
 
-            DTTC.Rows.Add("0","SELECCIONE UN ID CLIENTE");
+            DTTC.Rows.Add("0", "SELECCIONE UN ID CLIENTE");
 
             cmb_ID_Tipo_Cliente.DataSource = DTTC;
             cmb_ID_Tipo_Cliente.DisplayMember = DTTC.Columns[1].ToString();
             cmb_ID_Tipo_Cliente.ValueMember = DTTC.Columns[0].ToString();
+            cmb_ID_Tipo_Cliente.SelectedValue = "0";
             #endregion
 
 
@@ -119,7 +121,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
 
         private void mtxt_Cedula_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((mtxt_Cedula.SelectionStart == 0) && (e.KeyChar == '0'))
+            if ((mtxt_Cedula.SelectionStart == '0') && (e.KeyChar == '0'))
             {
                 e.Handled = true;
                 MessageBox.Show("La cédula no puede iniciar con 0", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -141,7 +143,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
 
         private void mtxt_Telefono_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((mtxt_Telefono.SelectionStart == 0) && mtxt_Telefono.Text == "0")
+            if ((e.KeyChar == '0') && mtxt_Telefono.Text == "")
             {
                 MessageBox.Show("El teléfono no puede iniciar con 0", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
 

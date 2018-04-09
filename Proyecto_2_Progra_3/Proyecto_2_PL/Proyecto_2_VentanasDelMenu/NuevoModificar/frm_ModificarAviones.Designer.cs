@@ -66,7 +66,7 @@
             this.lbl_NombreAvion.AutoSize = true;
             this.lbl_NombreAvion.BackColor = System.Drawing.Color.Silver;
             this.lbl_NombreAvion.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold);
-            this.lbl_NombreAvion.Location = new System.Drawing.Point(44, 441);
+            this.lbl_NombreAvion.Location = new System.Drawing.Point(44, 325);
             this.lbl_NombreAvion.Name = "lbl_NombreAvion";
             this.lbl_NombreAvion.Size = new System.Drawing.Size(230, 36);
             this.lbl_NombreAvion.TabIndex = 1;
@@ -77,7 +77,7 @@
             this.lbl_DescAvion.AutoSize = true;
             this.lbl_DescAvion.BackColor = System.Drawing.Color.Silver;
             this.lbl_DescAvion.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold);
-            this.lbl_DescAvion.Location = new System.Drawing.Point(44, 733);
+            this.lbl_DescAvion.Location = new System.Drawing.Point(44, 513);
             this.lbl_DescAvion.Name = "lbl_DescAvion";
             this.lbl_DescAvion.Size = new System.Drawing.Size(274, 36);
             this.lbl_DescAvion.TabIndex = 2;
@@ -88,7 +88,7 @@
             this.lbl_IdAerolinea.AutoSize = true;
             this.lbl_IdAerolinea.BackColor = System.Drawing.Color.Silver;
             this.lbl_IdAerolinea.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold);
-            this.lbl_IdAerolinea.Location = new System.Drawing.Point(810, 441);
+            this.lbl_IdAerolinea.Location = new System.Drawing.Point(636, 326);
             this.lbl_IdAerolinea.Name = "lbl_IdAerolinea";
             this.lbl_IdAerolinea.Size = new System.Drawing.Size(164, 36);
             this.lbl_IdAerolinea.TabIndex = 3;
@@ -99,7 +99,7 @@
             this.lbl_IdTipoAvion.AutoSize = true;
             this.lbl_IdTipoAvion.BackColor = System.Drawing.Color.Silver;
             this.lbl_IdTipoAvion.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold);
-            this.lbl_IdTipoAvion.Location = new System.Drawing.Point(810, 126);
+            this.lbl_IdTipoAvion.Location = new System.Drawing.Point(636, 126);
             this.lbl_IdTipoAvion.Name = "lbl_IdTipoAvion";
             this.lbl_IdTipoAvion.Size = new System.Drawing.Size(213, 36);
             this.lbl_IdTipoAvion.TabIndex = 4;
@@ -110,7 +110,7 @@
             this.lbl_IdEstado.AutoSize = true;
             this.lbl_IdEstado.BackColor = System.Drawing.Color.Silver;
             this.lbl_IdEstado.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold);
-            this.lbl_IdEstado.Location = new System.Drawing.Point(810, 733);
+            this.lbl_IdEstado.Location = new System.Drawing.Point(671, 519);
             this.lbl_IdEstado.Name = "lbl_IdEstado";
             this.lbl_IdEstado.Size = new System.Drawing.Size(129, 36);
             this.lbl_IdEstado.TabIndex = 5;
@@ -119,7 +119,8 @@
             // txt_IdAvion
             // 
             this.txt_IdAvion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.txt_IdAvion.Location = new System.Drawing.Point(345, 131);
+            this.txt_IdAvion.Location = new System.Drawing.Point(217, 131);
+            this.txt_IdAvion.MaxLength = 20;
             this.txt_IdAvion.Name = "txt_IdAvion";
             this.txt_IdAvion.Size = new System.Drawing.Size(265, 30);
             this.txt_IdAvion.TabIndex = 6;
@@ -128,7 +129,8 @@
             // txt_DescAvion
             // 
             this.txt_DescAvion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.txt_DescAvion.Location = new System.Drawing.Point(345, 738);
+            this.txt_DescAvion.Location = new System.Drawing.Point(338, 519);
+            this.txt_DescAvion.MaxLength = 20;
             this.txt_DescAvion.Name = "txt_DescAvion";
             this.txt_DescAvion.Size = new System.Drawing.Size(265, 30);
             this.txt_DescAvion.TabIndex = 7;
@@ -137,7 +139,8 @@
             // txt_NomAvion
             // 
             this.txt_NomAvion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.txt_NomAvion.Location = new System.Drawing.Point(345, 446);
+            this.txt_NomAvion.Location = new System.Drawing.Point(301, 331);
+            this.txt_NomAvion.MaxLength = 20;
             this.txt_NomAvion.Name = "txt_NomAvion";
             this.txt_NomAvion.Size = new System.Drawing.Size(265, 30);
             this.txt_NomAvion.TabIndex = 8;
@@ -147,7 +150,7 @@
             // 
             this.cmb_IdAerolinea.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.cmb_IdAerolinea.FormattingEnabled = true;
-            this.cmb_IdAerolinea.Location = new System.Drawing.Point(1099, 446);
+            this.cmb_IdAerolinea.Location = new System.Drawing.Point(901, 331);
             this.cmb_IdAerolinea.Name = "cmb_IdAerolinea";
             this.cmb_IdAerolinea.Size = new System.Drawing.Size(265, 33);
             this.cmb_IdAerolinea.TabIndex = 9;
@@ -158,7 +161,7 @@
             // 
             this.cmb_IdEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.cmb_IdEstado.FormattingEnabled = true;
-            this.cmb_IdEstado.Location = new System.Drawing.Point(1099, 738);
+            this.cmb_IdEstado.Location = new System.Drawing.Point(901, 516);
             this.cmb_IdEstado.Name = "cmb_IdEstado";
             this.cmb_IdEstado.Size = new System.Drawing.Size(265, 33);
             this.cmb_IdEstado.TabIndex = 10;
@@ -169,7 +172,7 @@
             // 
             this.cmb_IdTipoAvion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.cmb_IdTipoAvion.FormattingEnabled = true;
-            this.cmb_IdTipoAvion.Location = new System.Drawing.Point(1099, 131);
+            this.cmb_IdTipoAvion.Location = new System.Drawing.Point(901, 131);
             this.cmb_IdTipoAvion.Name = "cmb_IdTipoAvion";
             this.cmb_IdTipoAvion.Size = new System.Drawing.Size(265, 33);
             this.cmb_IdTipoAvion.TabIndex = 11;

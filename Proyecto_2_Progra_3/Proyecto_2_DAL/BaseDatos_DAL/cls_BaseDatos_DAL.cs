@@ -18,6 +18,7 @@ namespace Proyecto_2_DAL.BaseDatos_DAL
         private DataSet _DataSet;
         private DataTable _DT_Parametros;
         private SqlCommand sql_CMD;
+        private int _iValorScalar;
 
         #region Variables
         public string sCadena
@@ -136,6 +137,19 @@ namespace Proyecto_2_DAL.BaseDatos_DAL
             set
             {
                 sql_CMD = value;
+            }
+        }
+
+        public int iValorScalar
+        {
+            get
+            {
+                return _iValorScalar;
+            }
+
+            set
+            {
+                _iValorScalar = value;
             }
         }
 

@@ -24,17 +24,17 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
         private void CargarDatos()
         {
 
-            cls_Destinos_BLL Obj_Estados_BLL = new cls_Destinos_BLL();
+            cls_Destinos_BLL ObjDestinos_BLL = new cls_Destinos_BLL();
             string sMsjError = string.Empty;
             DataTable dtEstados = new DataTable();
 
             if (tls_txt_Filtro.Text == string.Empty)
             {
-                dtEstados = Obj_Estados_BLL.ListarDestinos(ref sMsjError);
+                dtEstados = ObjDestinos_BLL.ListarDestinos(ref sMsjError);
             }
             else
             {
-                dtEstados = Obj_Estados_BLL.FiltrarDestinos(ref sMsjError, tls_txt_Filtro.Text.Trim());
+                dtEstados = ObjDestinos_BLL.FiltrarDestinos(ref sMsjError, tls_txt_Filtro.Text.Trim());
             }
 
             if (sMsjError == string.Empty)
@@ -62,7 +62,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
 
         private void tls_btn_Refrescar_Click(object sender, EventArgs e)
         {
-            dgv_Destinos = null;
+            dgv_Destinos.DataSource = null;
             CargarDatos();
         }
 

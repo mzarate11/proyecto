@@ -72,11 +72,12 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if ((txtNombrePais.Text != string.Empty) || (txtCodigoArea.Text != string.Empty) || (txtCodigoISO.Text != string.Empty))
+            if ((cmboxEstado.SelectedValue.ToString()!="0")&&(txtNombrePais.Text != string.Empty)&&(txtCodigoArea.Text != string.Empty)&&(txtCodigoISO.Text != string.Empty))
             {
                 cls_Paises_BLL Obj_Paises_BLL = new cls_Paises_BLL();
                 string sMsjError = string.Empty;
 
+                Obj_Paises_DAL.iIdPais = Convert.ToInt32(txt_IdPais.Text);
                 Obj_Paises_DAL.sNombrePais = txtNombrePais.Text;
                 Obj_Paises_DAL.sCodigoISOPais = txtCodigoISO.Text;
                 Obj_Paises_DAL.sCodigoAreaPais = txtCodigoArea.Text;
@@ -90,16 +91,23 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 {
                     Obj_Paises_BLL.Modificar_Paises(ref sMsjError, ref Obj_Paises_DAL);
                 }
+                if(sMsjError == string.Empty)
+                {
+                    
+                    MessageBox.Show("Se han ingresado los datos correctamente", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txt_IdPais.Text = Obj_Paises_DAL.iIdPais.ToString();
+                    Obj_Paises_DAL.cBandera = 'U';
+                }
             }
             else
             {
-                MessageBox.Show("Se encuentran cajas de texto vacías, favor revisar", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Se encuentran cajas de texto vacías o ningún estado ha sido seleccionado, favor revisar", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
         private void txtNombrePais_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((char.IsLetter(e.KeyChar)) || (e.KeyChar == Convert.ToChar(Keys.Back)))
+            if ((char.IsLetter(e.KeyChar)) || (e.KeyChar == Convert.ToChar(Keys.Back))||(e.KeyChar== Convert.ToChar(Keys.Space)))
             {
                 e.Handled = false;
             }
