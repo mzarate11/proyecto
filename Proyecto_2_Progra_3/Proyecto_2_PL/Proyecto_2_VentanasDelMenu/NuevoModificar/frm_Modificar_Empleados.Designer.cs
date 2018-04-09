@@ -43,10 +43,6 @@
             this.txt_Apellidos = new System.Windows.Forms.TextBox();
             this.txt_Edad = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.mb_Cedula = new System.Windows.Forms.MaskedTextBox();
-            this.mb_TelReferencia = new System.Windows.Forms.MaskedTextBox();
-            this.mb_TelCasa = new System.Windows.Forms.MaskedTextBox();
-            this.mb_Celular = new System.Windows.Forms.MaskedTextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -63,6 +59,10 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.txt_Cedula = new System.Windows.Forms.TextBox();
+            this.txt_Celular = new System.Windows.Forms.TextBox();
+            this.txt_TelCasa = new System.Windows.Forms.TextBox();
+            this.txt_TelRef = new System.Windows.Forms.TextBox();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -201,10 +201,10 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Controls.Add(this.mb_Cedula);
-            this.groupBox1.Controls.Add(this.mb_TelReferencia);
-            this.groupBox1.Controls.Add(this.mb_TelCasa);
-            this.groupBox1.Controls.Add(this.mb_Celular);
+            this.groupBox1.Controls.Add(this.txt_TelRef);
+            this.groupBox1.Controls.Add(this.txt_TelCasa);
+            this.groupBox1.Controls.Add(this.txt_Celular);
+            this.groupBox1.Controls.Add(this.txt_Cedula);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
@@ -222,46 +222,6 @@
             this.groupBox1.Size = new System.Drawing.Size(800, 161);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
-            // 
-            // mb_Cedula
-            // 
-            this.mb_Cedula.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mb_Cedula.Location = new System.Drawing.Point(99, 58);
-            this.mb_Cedula.Mask = "0-0000-0000";
-            this.mb_Cedula.Name = "mb_Cedula";
-            this.mb_Cedula.Size = new System.Drawing.Size(88, 25);
-            this.mb_Cedula.TabIndex = 20;
-            this.mb_Cedula.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // mb_TelReferencia
-            // 
-            this.mb_TelReferencia.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mb_TelReferencia.Location = new System.Drawing.Point(170, 91);
-            this.mb_TelReferencia.Mask = "0000-0000";
-            this.mb_TelReferencia.Name = "mb_TelReferencia";
-            this.mb_TelReferencia.Size = new System.Drawing.Size(100, 25);
-            this.mb_TelReferencia.TabIndex = 19;
-            this.mb_TelReferencia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // mb_TelCasa
-            // 
-            this.mb_TelCasa.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mb_TelCasa.Location = new System.Drawing.Point(524, 58);
-            this.mb_TelCasa.Mask = "0000-0000";
-            this.mb_TelCasa.Name = "mb_TelCasa";
-            this.mb_TelCasa.Size = new System.Drawing.Size(100, 25);
-            this.mb_TelCasa.TabIndex = 18;
-            this.mb_TelCasa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // mb_Celular
-            // 
-            this.mb_Celular.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mb_Celular.Location = new System.Drawing.Point(304, 58);
-            this.mb_Celular.Mask = "0000-0000";
-            this.mb_Celular.Name = "mb_Celular";
-            this.mb_Celular.Size = new System.Drawing.Size(100, 25);
-            this.mb_Celular.TabIndex = 17;
-            this.mb_Celular.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label8
             // 
@@ -376,6 +336,7 @@
             // 
             this.txt_Salario.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Salario.Location = new System.Drawing.Point(123, 17);
+            this.txt_Salario.MaxLength = 7;
             this.txt_Salario.Name = "txt_Salario";
             this.txt_Salario.Size = new System.Drawing.Size(153, 25);
             this.txt_Salario.TabIndex = 17;
@@ -430,6 +391,46 @@
             this.label9.Size = new System.Drawing.Size(48, 17);
             this.label9.TabIndex = 0;
             this.label9.Text = "Salario";
+            // 
+            // txt_Cedula
+            // 
+            this.txt_Cedula.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Cedula.Location = new System.Drawing.Point(99, 61);
+            this.txt_Cedula.MaxLength = 9;
+            this.txt_Cedula.Name = "txt_Cedula";
+            this.txt_Cedula.Size = new System.Drawing.Size(105, 25);
+            this.txt_Cedula.TabIndex = 16;
+            this.txt_Cedula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Cedula_KeyPress);
+            // 
+            // txt_Celular
+            // 
+            this.txt_Celular.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Celular.Location = new System.Drawing.Point(315, 61);
+            this.txt_Celular.MaxLength = 8;
+            this.txt_Celular.Name = "txt_Celular";
+            this.txt_Celular.Size = new System.Drawing.Size(105, 25);
+            this.txt_Celular.TabIndex = 17;
+            this.txt_Celular.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Celular_KeyPress);
+            // 
+            // txt_TelCasa
+            // 
+            this.txt_TelCasa.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_TelCasa.Location = new System.Drawing.Point(524, 61);
+            this.txt_TelCasa.MaxLength = 8;
+            this.txt_TelCasa.Name = "txt_TelCasa";
+            this.txt_TelCasa.Size = new System.Drawing.Size(128, 25);
+            this.txt_TelCasa.TabIndex = 18;
+            this.txt_TelCasa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_TelCasa_KeyPress);
+            // 
+            // txt_TelRef
+            // 
+            this.txt_TelRef.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_TelRef.Location = new System.Drawing.Point(170, 97);
+            this.txt_TelRef.MaxLength = 8;
+            this.txt_TelRef.Name = "txt_TelRef";
+            this.txt_TelRef.Size = new System.Drawing.Size(105, 25);
+            this.txt_TelRef.TabIndex = 19;
+            this.txt_TelRef.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_TelRef_KeyPress);
             // 
             // frm_Modificar_Empleados
             // 
@@ -491,9 +492,9 @@
         private System.Windows.Forms.ComboBox cb_IdAerolinea;
         private System.Windows.Forms.TextBox txt_IdEmpleado;
         private System.Windows.Forms.TextBox txt_Salario;
-        private System.Windows.Forms.MaskedTextBox mb_Celular;
-        private System.Windows.Forms.MaskedTextBox mb_TelReferencia;
-        private System.Windows.Forms.MaskedTextBox mb_TelCasa;
-        private System.Windows.Forms.MaskedTextBox mb_Cedula;
+        private System.Windows.Forms.TextBox txt_TelRef;
+        private System.Windows.Forms.TextBox txt_TelCasa;
+        private System.Windows.Forms.TextBox txt_Celular;
+        private System.Windows.Forms.TextBox txt_Cedula;
     }
 }
