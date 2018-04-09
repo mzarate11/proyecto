@@ -63,6 +63,16 @@ namespace Proyecto_2_PL.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _58d22ea12007b {
+            get {
+                object obj = ResourceManager.GetObject("58d22ea12007b", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap aerolineas {
             get {
                 object obj = ResourceManager.GetObject("aerolineas", resourceCulture);

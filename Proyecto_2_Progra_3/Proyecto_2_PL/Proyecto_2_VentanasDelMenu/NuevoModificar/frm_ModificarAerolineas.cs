@@ -36,7 +36,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 string sMsjError = string.Empty;
                 DataTable DTE = new DataTable();
                 DTE = ObjBLLEstados.Listar_Estados(ref sMsjError);
-                DTE.Rows.Add("0", "-- SELECCIONE UN ESTADO");
+                DTE.Rows.Add("0", "--Seleccione una opcion--");
                 cmb_IdEstado.DataSource = DTE;
                 cmb_IdEstado.DisplayMember = DTE.Columns[1].ToString();
                 cmb_IdEstado.ValueMember = DTE.Columns[0].ToString();
@@ -55,7 +55,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                     txt_IdAerolinea.Text = objDAL_Aerolinea.iIdAerolinea.ToString().Trim();
                     //txt_IdAerolinea.Enabled = false;
                     txt_NombreAerolinea.Text = objDAL_Aerolinea.sNombreAerolinea.ToString().Trim();
-                    
+                    cmb_IdEstado.SelectedValue = objDAL_Aerolinea.cIdEstado.ToString().Trim();
                 }
             }
             else

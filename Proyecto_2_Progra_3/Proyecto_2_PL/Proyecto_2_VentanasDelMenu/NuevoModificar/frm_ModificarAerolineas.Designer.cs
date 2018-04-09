@@ -48,9 +48,10 @@
             // 
             this.lbl_IdAerolinea.AutoSize = true;
             this.lbl_IdAerolinea.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold);
-            this.lbl_IdAerolinea.Location = new System.Drawing.Point(111, 126);
+            this.lbl_IdAerolinea.Location = new System.Drawing.Point(74, 82);
+            this.lbl_IdAerolinea.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_IdAerolinea.Name = "lbl_IdAerolinea";
-            this.lbl_IdAerolinea.Size = new System.Drawing.Size(164, 36);
+            this.lbl_IdAerolinea.Size = new System.Drawing.Size(108, 23);
             this.lbl_IdAerolinea.TabIndex = 0;
             this.lbl_IdAerolinea.Text = "Id Aerolinea";
             // 
@@ -58,9 +59,10 @@
             // 
             this.lbl_NombreAerolinea.AutoSize = true;
             this.lbl_NombreAerolinea.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold);
-            this.lbl_NombreAerolinea.Location = new System.Drawing.Point(111, 276);
+            this.lbl_NombreAerolinea.Location = new System.Drawing.Point(74, 179);
+            this.lbl_NombreAerolinea.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_NombreAerolinea.Name = "lbl_NombreAerolinea";
-            this.lbl_NombreAerolinea.Size = new System.Drawing.Size(278, 36);
+            this.lbl_NombreAerolinea.Size = new System.Drawing.Size(185, 23);
             this.lbl_NombreAerolinea.TabIndex = 1;
             this.lbl_NombreAerolinea.Text = "Nombre de Aerolinea";
             // 
@@ -68,29 +70,32 @@
             // 
             this.lbl_IdEstado.AutoSize = true;
             this.lbl_IdEstado.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold);
-            this.lbl_IdEstado.Location = new System.Drawing.Point(111, 431);
+            this.lbl_IdEstado.Location = new System.Drawing.Point(74, 280);
+            this.lbl_IdEstado.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_IdEstado.Name = "lbl_IdEstado";
-            this.lbl_IdEstado.Size = new System.Drawing.Size(129, 36);
+            this.lbl_IdEstado.Size = new System.Drawing.Size(84, 23);
             this.lbl_IdEstado.TabIndex = 2;
             this.lbl_IdEstado.Text = "Id Estado";
             // 
             // txt_IdAerolinea
             // 
             this.txt_IdAerolinea.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.txt_IdAerolinea.Location = new System.Drawing.Point(526, 123);
+            this.txt_IdAerolinea.Location = new System.Drawing.Point(351, 80);
+            this.txt_IdAerolinea.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txt_IdAerolinea.MaxLength = 20;
             this.txt_IdAerolinea.Name = "txt_IdAerolinea";
-            this.txt_IdAerolinea.Size = new System.Drawing.Size(254, 30);
+            this.txt_IdAerolinea.Size = new System.Drawing.Size(178, 22);
             this.txt_IdAerolinea.TabIndex = 3;
             this.txt_IdAerolinea.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_IdAerolinea_KeyPress);
             // 
             // txt_NombreAerolinea
             // 
             this.txt_NombreAerolinea.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.txt_NombreAerolinea.Location = new System.Drawing.Point(526, 273);
+            this.txt_NombreAerolinea.Location = new System.Drawing.Point(351, 177);
+            this.txt_NombreAerolinea.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txt_NombreAerolinea.MaxLength = 20;
             this.txt_NombreAerolinea.Name = "txt_NombreAerolinea";
-            this.txt_NombreAerolinea.Size = new System.Drawing.Size(254, 30);
+            this.txt_NombreAerolinea.Size = new System.Drawing.Size(178, 22);
             this.txt_NombreAerolinea.TabIndex = 4;
             this.txt_NombreAerolinea.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_NombreAerolinea_KeyPress);
             // 
@@ -98,11 +103,12 @@
             // 
             this.cmb_IdEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.cmb_IdEstado.FormattingEnabled = true;
-            this.cmb_IdEstado.Location = new System.Drawing.Point(526, 428);
+            this.cmb_IdEstado.Location = new System.Drawing.Point(351, 278);
+            this.cmb_IdEstado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmb_IdEstado.Name = "cmb_IdEstado";
-            this.cmb_IdEstado.Size = new System.Drawing.Size(254, 33);
+            this.cmb_IdEstado.Size = new System.Drawing.Size(178, 24);
             this.cmb_IdEstado.TabIndex = 5;
-            this.cmb_IdEstado.Text = "Elegir opcion";
+            this.cmb_IdEstado.Text = "--Seleccione una opcion--";
             this.cmb_IdEstado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmb_IdEstado_KeyPress);
             // 
             // toolStrip2
@@ -116,10 +122,9 @@
             this.toolStripSeparator2,
             this.btn_Salir,
             this.toolStripLabel2});
-            this.toolStrip2.Location = new System.Drawing.Point(9, 9);
+            this.toolStrip2.Location = new System.Drawing.Point(6, 6);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
-            this.toolStrip2.Size = new System.Drawing.Size(282, 41);
+            this.toolStrip2.Size = new System.Drawing.Size(220, 39);
             this.toolStrip2.TabIndex = 37;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -130,7 +135,7 @@
             this.btn_Guardar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btn_Guardar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btn_Guardar.Name = "btn_Guardar";
-            this.btn_Guardar.Size = new System.Drawing.Size(36, 38);
+            this.btn_Guardar.Size = new System.Drawing.Size(36, 36);
             this.btn_Guardar.Text = "Guardar";
             this.btn_Guardar.Click += new System.EventHandler(this.btn_Guardar_Click);
             // 
@@ -138,13 +143,13 @@
             // 
             this.toolStripLabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(120, 38);
+            this.toolStripLabel1.Size = new System.Drawing.Size(81, 36);
             this.toolStripLabel1.Text = "Guardar";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 41);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 39);
             // 
             // btn_Salir
             // 
@@ -153,7 +158,7 @@
             this.btn_Salir.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btn_Salir.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btn_Salir.Name = "btn_Salir";
-            this.btn_Salir.Size = new System.Drawing.Size(36, 38);
+            this.btn_Salir.Size = new System.Drawing.Size(36, 36);
             this.btn_Salir.Text = "Salir";
             this.btn_Salir.Click += new System.EventHandler(this.btn_Salir_Click);
             // 
@@ -161,15 +166,15 @@
             // 
             this.toolStripLabel2.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(71, 38);
+            this.toolStripLabel2.Size = new System.Drawing.Size(49, 36);
             this.toolStripLabel2.Text = "Salir";
             // 
             // frm_ModificarAerolineas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Proyecto_2_PL.Properties.Resources.Aviation;
-            this.ClientSize = new System.Drawing.Size(963, 635);
+            this.ClientSize = new System.Drawing.Size(642, 413);
             this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.cmb_IdEstado);
             this.Controls.Add(this.txt_NombreAerolinea);
@@ -178,7 +183,9 @@
             this.Controls.Add(this.lbl_NombreAerolinea);
             this.Controls.Add(this.lbl_IdAerolinea);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frm_ModificarAerolineas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_ModificarAerolineas";
             this.Load += new System.EventHandler(this.frm_ModificarAerolineas_Load);
             this.toolStrip2.ResumeLayout(false);
