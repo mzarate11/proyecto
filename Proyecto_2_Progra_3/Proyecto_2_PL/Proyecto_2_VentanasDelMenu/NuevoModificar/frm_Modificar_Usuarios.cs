@@ -28,14 +28,14 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
         {
             txt_Username.Enabled = false;
             string sMsjError = string.Empty;
-            cls_Estados_BLL objCateVuelo = new cls_Estados_BLL();
-            cls_Empleados_BLL objUsuario = new  cls_Empleados_BLL();
+            cls_Estados_BLL obj_Estado_BLL = new cls_Estados_BLL();
+            cls_Empleados_BLL obj_Empleado_BLL = new  cls_Empleados_BLL();
 
             DataTable DTUe = new DataTable();
             DataTable DTUEm = new DataTable();
 
-            DTUe = objCateVuelo.Listar_Estados(ref sMsjError);
-            DTUEm = objUsuario.Listar_Empleados(ref sMsjError);
+            DTUe = obj_Estado_BLL.Listar_Estados(ref sMsjError);
+            DTUEm = obj_Empleado_BLL.Listar_Empleados(ref sMsjError);
 
             DTUe.Rows.Add("0", "--- Selecione un Estado ---");
             DTUEm.Rows.Add("0", "--- Selecione un Estado ---");
@@ -43,13 +43,13 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             cmb_IdEstado.DataSource = DTUe;
             cmb_IdEmpleado.DataSource = DTUEm;
 
-            cmb_IdEmpleado.DisplayMember = DTUe.Columns[1].ToString();
-            cmb_IdEmpleado.ValueMember = DTUe.Columns[0].ToString();
-
             cmb_IdEstado.DisplayMember = DTUe.Columns[1].ToString();
             cmb_IdEstado.ValueMember = DTUe.Columns[0].ToString();
 
-            cmb_IdEmpleado.SelectedValue = "0";
+            cmb_IdEstado.DisplayMember = DTUEm.Columns[1].ToString();
+            //cmb_IdEstado.ValueMember = DTUEm.Columns[0].ToString();
+
+            //cmb_IdEmpleado.SelectedValue = "0";
             cmb_IdEstado.SelectedValue = "0";
             CargarDatos();
         }
@@ -146,12 +146,13 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
         {
             if (char.IsLetter(e.KeyChar) || (e.KeyChar == (char)Keys.Back))
             {
-                e.Handled = true;
+                e.Handled = false;
 
             }
             else
             {
-                e.Handled = false;
+                e.Handled = true;
+                MessageBox.Show("Solamente se permiten letras","Informacion",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
         }
 
@@ -159,12 +160,13 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
         {
             if (char.IsLetter(e.KeyChar) || (e.KeyChar == (char)Keys.Back) || (char.IsNumber(e.KeyChar)))
             {
-                e.Handled = true;
+                e.Handled = false;
 
             }
             else
             {
-                e.Handled = false;
+                e.Handled = true;
+                MessageBox.Show("Solamente se permiten letras o numeros", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
