@@ -32,33 +32,30 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 cls_TiposClientes_BLL Obj_Tipo_Clientes_BLL = new cls_TiposClientes_BLL();
                 DataTable DTE = new DataTable();
                 DTE = Obj_Tipo_Clientes_BLL.ListarTiposClientes(ref sMsjError);
-
-                cmb_IDEstado.DataSource = DTE;
                 DTE.Rows.Add("0", "--SELECCIONE UN ESTADO--");
-
+                cmb_IDEstado.DataSource = DTE;
                 cmb_IDEstado.DisplayMember = DTE.Columns[1].ToString();
                 cmb_IDEstado.ValueMember = DTE.Columns[0].ToString();
+                 cmb_IDEstado.SelectedValue = "0";
 
-
-                cmb_IDEstado.SelectedValue = "0";
-
+                txt_IDTipoCliente.Enabled = false;
 
                 if (Obj_DAL_TiposClientes.CBandAX == 'I')
                 {
                     txt_IDTipoCliente.Text = string.Empty;
-                    txt_IDTipoCliente.Enabled = true;
+                    //txt_IDTipoCliente.Enabled = true;
                     txt_TipoCliente.Text = string.Empty;
                     txt_descripcion.Text = string.Empty;
-                    cmb_IDEstado.DataSource = null;
+                    //cmb_IDEstado.DataSource = null;
                    
                 }
                 else
                 {
                     txt_IDTipoCliente.Text = Obj_DAL_TiposClientes.IIdTipoCliente.ToString().Trim();
-                    txt_IDTipoCliente.Enabled = false;
+                    //txt_IDTipoCliente.Enabled = false;
                     txt_TipoCliente.Text = Obj_DAL_TiposClientes.STipoCliente.ToString().Trim();
                     txt_descripcion.Text = Obj_DAL_TiposClientes.SDescripcion.ToString().Trim();
-                    cmb_IDEstado.Text = Obj_DAL_TiposClientes.CIdEstado.ToString().Trim();
+                   // cmb_IDEstado.Text = Obj_DAL_TiposClientes.CIdEstado.ToString().Trim();
                   
                 }
 
