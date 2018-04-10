@@ -162,7 +162,6 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                     if (sMsjError == string.Empty)
                     {
                         MessageBox.Show("La Base de Datos ha sido actualizada", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        txt_ID_Cliente.Enabled = false; //no se si dejarlo o no...
                     }
                     else
                     {

@@ -107,7 +107,7 @@
             this.txt_ID_Estados.Name = "txt_ID_Estados";
             this.txt_ID_Estados.Size = new System.Drawing.Size(34, 30);
             this.txt_ID_Estados.TabIndex = 37;
-            this.txt_ID_Estados.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.txt_ID_Estados.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_ID_Estados_KeyPress);
             // 
             // txt_Descripcion
             // 
@@ -115,7 +115,7 @@
             this.txt_Descripcion.Name = "txt_Descripcion";
             this.txt_Descripcion.Size = new System.Drawing.Size(100, 20);
             this.txt_Descripcion.TabIndex = 38;
-            this.txt_Descripcion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
+            this.txt_Descripcion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Descripcion_KeyPress);
             // 
             // label1
             // 
