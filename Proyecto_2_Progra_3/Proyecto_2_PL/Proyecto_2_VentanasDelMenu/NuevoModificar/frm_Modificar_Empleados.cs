@@ -70,10 +70,10 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                     txt_Edad.Clear();
                     txt_IdEmpleado.Clear();
                     txt_Salario.Clear();
-                    mb_Cedula.Clear();
-                    mb_Celular.Clear();
-                    mb_TelCasa.Clear();
-                    mb_TelReferencia.Clear();
+                    txt_Cedula.Clear();
+                    txt_Celular.Clear();
+                    txt_TelCasa.Clear();
+                    txt_TelRef.Clear();
                 }
                 else
                 {
@@ -83,10 +83,10 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                     txt_Edad.Text = Obj_Empleados_DAL.bEdad.ToString().Trim();
                     txt_IdEmpleado.Text = Obj_Empleados_DAL.iIdTipoEmpleado.ToString().Trim();
                     txt_Salario.Text = Obj_Empleados_DAL.dSalario.ToString().Trim();
-                    mb_Cedula.Text = Obj_Empleados_DAL.iCedula.ToString().Trim();
-                    mb_Celular.Text = Obj_Empleados_DAL.iCelular.ToString().Trim();
-                    mb_TelCasa.Text = Obj_Empleados_DAL.iTelCasa.ToString().Trim();
-                    mb_TelReferencia.Text = Obj_Empleados_DAL.iTelRef.ToString().Trim();
+                    txt_Cedula.Text = Obj_Empleados_DAL.iCedula.ToString().Trim();
+                    txt_Celular.Text = Obj_Empleados_DAL.iCelular.ToString().Trim();
+                    txt_TelCasa.Text = Obj_Empleados_DAL.iTelCasa.ToString().Trim();
+                    txt_TelRef.Text = Obj_Empleados_DAL.iTelRef.ToString().Trim();
                     
                 }         
             }
@@ -139,24 +139,75 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
         private void tls_btn_Guardar_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txt_Nombre.Text) || string.IsNullOrEmpty(txt_Apellidos.Text) || string.IsNullOrEmpty(txt_Edad.Text) ||
-                string.IsNullOrEmpty(txt_Direccion.Text) || string.IsNullOrEmpty(mb_Cedula.Text) || string.IsNullOrEmpty(mb_Celular.Text) ||
-                string.IsNullOrEmpty(mb_TelCasa.Text) || string.IsNullOrEmpty(mb_TelReferencia.Text)|| string.IsNullOrEmpty(txt_IdEmpleado.Text) ||
+                string.IsNullOrEmpty(txt_Direccion.Text) || string.IsNullOrEmpty(txt_Cedula.Text) || string.IsNullOrEmpty(txt_Celular.Text) ||
+                string.IsNullOrEmpty(txt_TelCasa.Text) || string.IsNullOrEmpty(txt_TelRef.Text)|| string.IsNullOrEmpty(txt_IdEmpleado.Text) ||
                 string.IsNullOrEmpty(txt_Salario.Text))
             {
                 MessageBox.Show("Debe completar todos los datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
+                cls_Empleados_BLL Obj_Empleados_BLL = new cls_Empleados_BLL();
 
+                string M_Error = string.Empty;
+
+                Obj_Empleados_DAL.sNombre = txt_Nombre.Text;
+                Obj_Empleados_DAL.sApellidos = txt_Apellidos.Text;
+                Obj_Empleados_DAL.bEdad = Convert.ToByte(txt_Edad.Text);
+                Obj_Empleados_DAL.sDireccion = txt_Direccion.Text;
+                Obj_Empleados_DAL.iCedula = Convert.ToInt32(txt_Cedula.Text);
+                Obj_Empleados_DAL.iCelular = Convert.ToInt32(txt_Celular.Text);
+                Obj_Empleados_DAL.iTelCasa = Convert.ToInt32(txt_TelCasa.Text);
+                Obj_Empleados_DAL.iTelRef = Convert.ToInt32(txt_TelRef.Text);
+                Obj_Empleados_DAL.uIdEmpleado = Convert.ToUInt16(txt_IdEmpleado.Text);
+                Obj_Empleados_DAL.dSalario = Convert.ToDouble(txt_Salario.Text);
+                Obj_Empleados_DAL.cIdEstado = Convert.ToChar(cb_Estado.SelectedValue.ToString());
+                Obj_Empleados_DAL.iIdTipoEmpleado = Convert.ToInt32(cb_TipoEmpleado.SelectedValue.ToString());
+                Obj_Empleados_DAL.iIdAerolinea = Convert.ToInt32(cb_IdAerolinea.SelectedValue.ToString());
+
+                if (Obj_Empleados_DAL.cBandera == 'I')
+                {
+                    Obj_Empleados_BLL.Insertar_Estados(ref M_Error, ref Obj_Empleados_DAL);
+                    if (M_Error == string.Empty)
+                    {
+                        Obj_Empleados_DAL.cBandera = 'U';
+                        MessageBox.Show("Se ha ingresado un nuevo Empleado");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Se ha presentado un error al guardar");
+                    }
+
+                }
+                else
+                {
+                    Obj_Empleados_BLL.Modificar_Estados(ref M_Error, ref Obj_Empleados_DAL);
+                    if (M_Error == string.Empty)
+                    {
+                        MessageBox.Show("Se ha realizado el cambio exitosamente");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Se ha presentado un error al guardar");
+                    }
+                }
             }
 
         }
 
         private void txt_Edad_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (char.IsNumber(e.KeyChar))
+            if (char.IsNumber(e.KeyChar) || e.KeyChar == (char)Keys.Back)
             {
-                e.Handled = false;
+                if (string.IsNullOrEmpty(txt_Edad.Text) && e.KeyChar == '0')
+                {
+                    e.Handled = true;
+                }
+                else
+                {
+                    e.Handled = false;
+
+                }
             }
             else
             {
@@ -179,9 +230,9 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
 
         private void txt_IdEmpleado_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (char.IsNumber(e.KeyChar))
+            if (char.IsNumber(e.KeyChar) || e.KeyChar == (char)Keys.Back)
             {
-                e.Handled = false;
+               e.Handled = true;
             }
             else
             {
@@ -191,9 +242,97 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
 
         private void txt_Salario_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (char.IsNumber(e.KeyChar))
+            if (char.IsNumber(e.KeyChar) || e.KeyChar == (char)Keys.Back)
             {
-                e.Handled = false;
+                if (string.IsNullOrEmpty(txt_Salario.Text) && e.KeyChar == '0')
+                {
+                    e.Handled = true;
+                }
+                else
+                {
+                    e.Handled = false;
+
+                }
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_TelCasa_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsNumber(e.KeyChar) || e.KeyChar ==(char)Keys.Back )
+            {
+               if (string.IsNullOrEmpty(txt_TelCasa.Text) && e.KeyChar == '0')
+                {
+                    e.Handled = true;
+                }
+                else
+                {
+                    e.Handled = false;
+
+                }
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_Celular_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsNumber(e.KeyChar) || e.KeyChar == (char)Keys.Back)
+            {
+                if (string.IsNullOrEmpty(txt_Celular.Text) && e.KeyChar == '0')
+                {
+                    e.Handled = true;
+                }
+                else
+                {
+                    e.Handled = false;
+
+                }
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_Cedula_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsNumber(e.KeyChar) || e.KeyChar == (char)Keys.Back)
+            {
+                if (string.IsNullOrEmpty(txt_Cedula.Text) && e.KeyChar == '0')
+                {
+                    e.Handled = true;
+                }
+                else
+                {
+                    e.Handled = false;
+
+                }
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_TelRef_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsNumber(e.KeyChar) || e.KeyChar == (char)Keys.Back)
+            {
+                if (string.IsNullOrEmpty(txt_TelRef.Text) && e.KeyChar == '0')
+                {
+                    e.Handled = true;
+                }
+                else
+                {
+                    e.Handled = false;
+
+                }
             }
             else
             {

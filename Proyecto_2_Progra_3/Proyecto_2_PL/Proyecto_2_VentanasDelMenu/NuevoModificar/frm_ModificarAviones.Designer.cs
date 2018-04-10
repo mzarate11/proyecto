@@ -55,9 +55,10 @@
             this.lbl_IdAvion.AutoSize = true;
             this.lbl_IdAvion.BackColor = System.Drawing.Color.Silver;
             this.lbl_IdAvion.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold);
-            this.lbl_IdAvion.Location = new System.Drawing.Point(44, 126);
+            this.lbl_IdAvion.Location = new System.Drawing.Point(51, 259);
+            this.lbl_IdAvion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_IdAvion.Name = "lbl_IdAvion";
-            this.lbl_IdAvion.Size = new System.Drawing.Size(116, 36);
+            this.lbl_IdAvion.Size = new System.Drawing.Size(76, 23);
             this.lbl_IdAvion.TabIndex = 0;
             this.lbl_IdAvion.Text = "Id Avion";
             // 
@@ -66,9 +67,10 @@
             this.lbl_NombreAvion.AutoSize = true;
             this.lbl_NombreAvion.BackColor = System.Drawing.Color.Silver;
             this.lbl_NombreAvion.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold);
-            this.lbl_NombreAvion.Location = new System.Drawing.Point(44, 325);
+            this.lbl_NombreAvion.Location = new System.Drawing.Point(39, 388);
+            this.lbl_NombreAvion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_NombreAvion.Name = "lbl_NombreAvion";
-            this.lbl_NombreAvion.Size = new System.Drawing.Size(230, 36);
+            this.lbl_NombreAvion.Size = new System.Drawing.Size(153, 23);
             this.lbl_NombreAvion.TabIndex = 1;
             this.lbl_NombreAvion.Text = "Nombre de Avion";
             // 
@@ -77,9 +79,10 @@
             this.lbl_DescAvion.AutoSize = true;
             this.lbl_DescAvion.BackColor = System.Drawing.Color.Silver;
             this.lbl_DescAvion.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold);
-            this.lbl_DescAvion.Location = new System.Drawing.Point(44, 513);
+            this.lbl_DescAvion.Location = new System.Drawing.Point(39, 514);
+            this.lbl_DescAvion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_DescAvion.Name = "lbl_DescAvion";
-            this.lbl_DescAvion.Size = new System.Drawing.Size(274, 36);
+            this.lbl_DescAvion.Size = new System.Drawing.Size(180, 23);
             this.lbl_DescAvion.TabIndex = 2;
             this.lbl_DescAvion.Text = "Descripcion de Avion";
             // 
@@ -88,9 +91,10 @@
             this.lbl_IdAerolinea.AutoSize = true;
             this.lbl_IdAerolinea.BackColor = System.Drawing.Color.Silver;
             this.lbl_IdAerolinea.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold);
-            this.lbl_IdAerolinea.Location = new System.Drawing.Point(636, 326);
+            this.lbl_IdAerolinea.Location = new System.Drawing.Point(593, 388);
+            this.lbl_IdAerolinea.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_IdAerolinea.Name = "lbl_IdAerolinea";
-            this.lbl_IdAerolinea.Size = new System.Drawing.Size(164, 36);
+            this.lbl_IdAerolinea.Size = new System.Drawing.Size(108, 23);
             this.lbl_IdAerolinea.TabIndex = 3;
             this.lbl_IdAerolinea.Text = "Id Aerolinea";
             // 
@@ -99,9 +103,10 @@
             this.lbl_IdTipoAvion.AutoSize = true;
             this.lbl_IdTipoAvion.BackColor = System.Drawing.Color.Silver;
             this.lbl_IdTipoAvion.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold);
-            this.lbl_IdTipoAvion.Location = new System.Drawing.Point(636, 126);
+            this.lbl_IdTipoAvion.Location = new System.Drawing.Point(593, 260);
+            this.lbl_IdTipoAvion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_IdTipoAvion.Name = "lbl_IdTipoAvion";
-            this.lbl_IdTipoAvion.Size = new System.Drawing.Size(213, 36);
+            this.lbl_IdTipoAvion.Size = new System.Drawing.Size(141, 23);
             this.lbl_IdTipoAvion.TabIndex = 4;
             this.lbl_IdTipoAvion.Text = "Id Tipo de Avion";
             // 
@@ -110,39 +115,43 @@
             this.lbl_IdEstado.AutoSize = true;
             this.lbl_IdEstado.BackColor = System.Drawing.Color.Silver;
             this.lbl_IdEstado.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold);
-            this.lbl_IdEstado.Location = new System.Drawing.Point(671, 519);
+            this.lbl_IdEstado.Location = new System.Drawing.Point(593, 514);
+            this.lbl_IdEstado.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_IdEstado.Name = "lbl_IdEstado";
-            this.lbl_IdEstado.Size = new System.Drawing.Size(129, 36);
+            this.lbl_IdEstado.Size = new System.Drawing.Size(84, 23);
             this.lbl_IdEstado.TabIndex = 5;
             this.lbl_IdEstado.Text = "Id Estado";
             // 
             // txt_IdAvion
             // 
             this.txt_IdAvion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.txt_IdAvion.Location = new System.Drawing.Point(217, 131);
-            this.txt_IdAvion.MaxLength = 20;
+            this.txt_IdAvion.Location = new System.Drawing.Point(235, 262);
+            this.txt_IdAvion.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_IdAvion.MaxLength = 12;
             this.txt_IdAvion.Name = "txt_IdAvion";
-            this.txt_IdAvion.Size = new System.Drawing.Size(265, 30);
+            this.txt_IdAvion.Size = new System.Drawing.Size(178, 22);
             this.txt_IdAvion.TabIndex = 6;
             this.txt_IdAvion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_IdAvion_KeyPress);
             // 
             // txt_DescAvion
             // 
             this.txt_DescAvion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.txt_DescAvion.Location = new System.Drawing.Point(338, 519);
+            this.txt_DescAvion.Location = new System.Drawing.Point(235, 516);
+            this.txt_DescAvion.Margin = new System.Windows.Forms.Padding(2);
             this.txt_DescAvion.MaxLength = 20;
             this.txt_DescAvion.Name = "txt_DescAvion";
-            this.txt_DescAvion.Size = new System.Drawing.Size(265, 30);
+            this.txt_DescAvion.Size = new System.Drawing.Size(178, 22);
             this.txt_DescAvion.TabIndex = 7;
             this.txt_DescAvion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_DescAvion_KeyPress);
             // 
             // txt_NomAvion
             // 
             this.txt_NomAvion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.txt_NomAvion.Location = new System.Drawing.Point(301, 331);
+            this.txt_NomAvion.Location = new System.Drawing.Point(235, 390);
+            this.txt_NomAvion.Margin = new System.Windows.Forms.Padding(2);
             this.txt_NomAvion.MaxLength = 20;
             this.txt_NomAvion.Name = "txt_NomAvion";
-            this.txt_NomAvion.Size = new System.Drawing.Size(265, 30);
+            this.txt_NomAvion.Size = new System.Drawing.Size(178, 22);
             this.txt_NomAvion.TabIndex = 8;
             this.txt_NomAvion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_NomAvion_KeyPress);
             // 
@@ -150,33 +159,36 @@
             // 
             this.cmb_IdAerolinea.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.cmb_IdAerolinea.FormattingEnabled = true;
-            this.cmb_IdAerolinea.Location = new System.Drawing.Point(901, 331);
+            this.cmb_IdAerolinea.Location = new System.Drawing.Point(807, 390);
+            this.cmb_IdAerolinea.Margin = new System.Windows.Forms.Padding(2);
             this.cmb_IdAerolinea.Name = "cmb_IdAerolinea";
-            this.cmb_IdAerolinea.Size = new System.Drawing.Size(265, 33);
+            this.cmb_IdAerolinea.Size = new System.Drawing.Size(178, 24);
             this.cmb_IdAerolinea.TabIndex = 9;
-            this.cmb_IdAerolinea.Text = "Elegir opcion";
+            this.cmb_IdAerolinea.Text = "--Seleccione una opcion--";
             this.cmb_IdAerolinea.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmb_IdAerolinea_KeyPress);
             // 
             // cmb_IdEstado
             // 
             this.cmb_IdEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.cmb_IdEstado.FormattingEnabled = true;
-            this.cmb_IdEstado.Location = new System.Drawing.Point(901, 516);
+            this.cmb_IdEstado.Location = new System.Drawing.Point(807, 516);
+            this.cmb_IdEstado.Margin = new System.Windows.Forms.Padding(2);
             this.cmb_IdEstado.Name = "cmb_IdEstado";
-            this.cmb_IdEstado.Size = new System.Drawing.Size(265, 33);
+            this.cmb_IdEstado.Size = new System.Drawing.Size(178, 24);
             this.cmb_IdEstado.TabIndex = 10;
-            this.cmb_IdEstado.Text = "Elegir opcion";
+            this.cmb_IdEstado.Text = "--Seleccione una opcion--";
             this.cmb_IdEstado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmb_IdEstado_KeyPress);
             // 
             // cmb_IdTipoAvion
             // 
             this.cmb_IdTipoAvion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.cmb_IdTipoAvion.FormattingEnabled = true;
-            this.cmb_IdTipoAvion.Location = new System.Drawing.Point(901, 131);
+            this.cmb_IdTipoAvion.Location = new System.Drawing.Point(807, 262);
+            this.cmb_IdTipoAvion.Margin = new System.Windows.Forms.Padding(2);
             this.cmb_IdTipoAvion.Name = "cmb_IdTipoAvion";
-            this.cmb_IdTipoAvion.Size = new System.Drawing.Size(265, 33);
+            this.cmb_IdTipoAvion.Size = new System.Drawing.Size(178, 24);
             this.cmb_IdTipoAvion.TabIndex = 11;
-            this.cmb_IdTipoAvion.Text = "Elegir opcion";
+            this.cmb_IdTipoAvion.Text = "--Seleccione una opcion--";
             this.cmb_IdTipoAvion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmb_IdTipoAvion_KeyPress);
             // 
             // toolStrip2
@@ -190,10 +202,9 @@
             this.toolStripSeparator2,
             this.btn_Salir,
             this.toolStripLabel2});
-            this.toolStrip2.Location = new System.Drawing.Point(9, 9);
+            this.toolStrip2.Location = new System.Drawing.Point(6, 6);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
-            this.toolStrip2.Size = new System.Drawing.Size(282, 41);
+            this.toolStrip2.Size = new System.Drawing.Size(220, 39);
             this.toolStrip2.TabIndex = 38;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -204,7 +215,7 @@
             this.btn_Guardar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btn_Guardar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btn_Guardar.Name = "btn_Guardar";
-            this.btn_Guardar.Size = new System.Drawing.Size(36, 38);
+            this.btn_Guardar.Size = new System.Drawing.Size(36, 36);
             this.btn_Guardar.Text = "Guardar";
             this.btn_Guardar.Click += new System.EventHandler(this.btn_Guardar_Click);
             // 
@@ -212,13 +223,13 @@
             // 
             this.toolStripLabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(120, 38);
+            this.toolStripLabel1.Size = new System.Drawing.Size(81, 36);
             this.toolStripLabel1.Text = "Guardar";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 41);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 39);
             // 
             // btn_Salir
             // 
@@ -227,7 +238,7 @@
             this.btn_Salir.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btn_Salir.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btn_Salir.Name = "btn_Salir";
-            this.btn_Salir.Size = new System.Drawing.Size(36, 38);
+            this.btn_Salir.Size = new System.Drawing.Size(36, 36);
             this.btn_Salir.Text = "Salir";
             this.btn_Salir.Click += new System.EventHandler(this.btn_Salir_Click);
             // 
@@ -235,15 +246,15 @@
             // 
             this.toolStripLabel2.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(71, 38);
+            this.toolStripLabel2.Size = new System.Drawing.Size(49, 36);
             this.toolStripLabel2.Text = "Salir";
             // 
             // frm_ModificarAviones
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Proyecto_2_PL.Properties.Resources.delta_nose2_01;
-            this.ClientSize = new System.Drawing.Size(1442, 999);
+            this.BackgroundImage = global::Proyecto_2_PL.Properties.Resources._58d22ea12007b;
+            this.ClientSize = new System.Drawing.Size(1086, 677);
             this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.cmb_IdTipoAvion);
             this.Controls.Add(this.cmb_IdEstado);
@@ -258,7 +269,9 @@
             this.Controls.Add(this.lbl_NombreAvion);
             this.Controls.Add(this.lbl_IdAvion);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frm_ModificarAviones";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_ModificarAviones";
             this.Load += new System.EventHandler(this.frm_ModificarAviones_Load);
             this.toolStrip2.ResumeLayout(false);

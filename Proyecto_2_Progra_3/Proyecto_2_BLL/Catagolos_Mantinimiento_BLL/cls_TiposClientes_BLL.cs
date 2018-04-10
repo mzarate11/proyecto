@@ -88,29 +88,52 @@ namespace Proyecto_2_BLL.Catagolos_Mantinimiento_BLL
                 cls_Bases_BLL Obj_BLL = new cls_Bases_BLL();
 
                 Obj_BLL.TablaParametros(ref Obj_DAL);
-                Obj_DAL.DT_Parametros.Rows.Add("@IdTipoCliente", 3, Obj_TiposClientes_DAL.IIdTipoCliente.ToString().Trim());
                 Obj_DAL.DT_Parametros.Rows.Add("@TipoCliente", 3, Obj_TiposClientes_DAL.STipoCliente.ToString().Trim());
                 Obj_DAL.DT_Parametros.Rows.Add("@Descripcion", 3, Obj_TiposClientes_DAL.SDescripcion.ToString().Trim());
                 Obj_DAL.DT_Parametros.Rows.Add("@IdEstado", 2, Obj_TiposClientes_DAL.CIdEstado.ToString().Trim());
                 
 
-                Obj_DAL.sSentencia = ConfigurationManager.AppSettings["sp_Insertar_TiposClientes"].ToString().Trim();
-                Obj_BLL.Ejec_NonQuery(ref Obj_DAL);
+                Obj_DAL.sSentencia = ConfigurationManager.AppSettings["Insertar_TiposClientes"].ToString().Trim();
+                Obj_BLL.Ejec_Scalar(ref Obj_DAL);
 
                 if (Obj_DAL.sMsgError == string.Empty)
                 {
                     sMsjError = string.Empty;
-                    Obj_TiposClientes_DAL.CBandAX = 'U';
+                    Obj_TiposClientes_DAL.IIdTipoCliente = Obj_DAL.iValorScalar;
+                    Obj_TiposClientes_DAL.CBandAX = 'I';
                 }
                 else
                 {
                     sMsjError = Obj_DAL.sMsgError;
-                    Obj_TiposClientes_DAL.CBandAX = 'I';
+                    Obj_TiposClientes_DAL.IIdTipoCliente = -1;
+                    Obj_TiposClientes_DAL.CBandAX = 'U';
                 }
             }
         }
         public void Modificar_TipoCliente(ref string sMsjError, ref cls_TiposClientes_DAL Obj_TiposClientes_DAL)
         {
+            cls_BaseDatos_DAL Obj_DAL = new cls_BaseDatos_DAL();
+            cls_Bases_BLL Obj_BLL = new cls_Bases_BLL();
+
+
+            Obj_BLL.TablaParametros(ref Obj_DAL);
+            Obj_DAL.DT_Parametros.Rows.Add("@IdTipoCliente", 3, Obj_TiposClientes_DAL.IIdTipoCliente.ToString().Trim());
+            Obj_DAL.DT_Parametros.Rows.Add("@TipoCliente", 3, Obj_TiposClientes_DAL.STipoCliente.ToString().Trim());
+            Obj_DAL.DT_Parametros.Rows.Add("@Descripcion", 3, Obj_TiposClientes_DAL.SDescripcion.ToString().Trim());
+            Obj_DAL.DT_Parametros.Rows.Add("@IdEstado", 2, Obj_TiposClientes_DAL.CIdEstado.ToString().Trim());
+
+            Obj_DAL.sSentencia = ConfigurationManager.AppSettings["Modificar_TiposClientes"].ToString().Trim();
+            Obj_BLL.Ejec_NonQuery(ref Obj_DAL);
+
+            if (Obj_DAL.sMsgError == string.Empty)
+            {
+                sMsjError = string.Empty;
+            }
+            else
+            {
+                sMsjError = Obj_DAL.sMsgError;
+
+            }
 
         }
     }

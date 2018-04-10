@@ -110,9 +110,32 @@ namespace Proyecto_2_BLL.Catagolos_Mantinimiento_BLL
         #region  Tabla Modificar Usuarios
         public void Modificar_Usuarios(ref string sMsjError, ref Proyecto_2_DAL.Catalogos_y_Mantenimientos.cls_T_Usuarios_DAL Obj_Usuarios_DAL)
         {
+            cls_BaseDatos_DAL Obj_DAL = new cls_BaseDatos_DAL();
+            cls_Bases_BLL Obj_BLL = new cls_Bases_BLL();
 
+
+            Obj_BLL.TablaParametros(ref Obj_DAL);
+            Obj_DAL.DT_Parametros.Rows.Add("@Username", 3, Obj_Usuarios_DAL.sUsername.ToString().Trim());
+            Obj_DAL.DT_Parametros.Rows.Add("@Password", 3, Obj_Usuarios_DAL.sPassword.ToString().Trim());
+            Obj_DAL.DT_Parametros.Rows.Add("@IdEmpleado", 3, Obj_Usuarios_DAL.sIdEmpleado.ToString().Trim());
+            Obj_DAL.DT_Parametros.Rows.Add("@IdEstado", 2, Obj_Usuarios_DAL.cIdEstado.ToString().Trim());
+
+            Obj_DAL.sSentencia = ConfigurationManager.AppSettings["sp_modificar_Usuarios"].ToString().Trim();
+            Obj_BLL.Ejec_NonQuery(ref Obj_DAL);
+
+            if (Obj_DAL.sMsgError == string.Empty)
+            {
+                sMsjError = string.Empty;
+            }
+            else
+            {
+                sMsjError = Obj_DAL.sMsgError;
+
+            }
         }
         #endregion
+
+
 
     }
 }

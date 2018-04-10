@@ -25,11 +25,11 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
         {
             if (Obj_DAL_TipoEmpleado != null)
             {
-                cls_TiposEmpleados_BLL Obj_Tipos_Empleados_BLL = new cls_TiposEmpleados_BLL();
+                cls_Estados_BLL ObjBLLEstados = new cls_Estados_BLL();
                 string sMsjError = string.Empty;
 
                 DataTable DTLE = new DataTable();
-                DTLE= Obj_Tipos_Empleados_BLL.ListarTiposEmpleados(ref sMsjError);
+                DTLE= ObjBLLEstados.Listar_Estados(ref sMsjError);
 
 
                 DTLE.Rows.Add("0", "--SELECCIONE UN ESTADO--");
@@ -39,21 +39,22 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 cmb_IDEstado.ValueMember = DTLE.Columns[0].ToString();
 
                 cmb_IDEstado.SelectedValue = "0";
+                txt_IDTipoEmpleado.Enabled = false;
 
                 if (Obj_DAL_TipoEmpleado.CBandAX == 'I')
                 {
                     txt_IDTipoEmpleado.Text = string.Empty;
-                    txt_IDTipoEmpleado.Enabled = true;
+                   // txt_IDTipoEmpleado.Enabled = true;
                     txt_desc.Text = string.Empty;
-                    cmb_IDEstado.DataSource = null;
+                  //  cmb_IDEstado.DataSource = null;
                     
                 }
                 else
                 {
                     txt_IDTipoEmpleado.Text = Obj_DAL_TipoEmpleado.ITipoEmpleado.ToString().Trim();
-                    txt_IDTipoEmpleado.Enabled = false;
+                   // txt_IDTipoEmpleado.Enabled = false;
                     txt_desc.Text = Obj_DAL_TipoEmpleado.SDescTipo.ToString().Trim();
-                    cmb_IDEstado.Text = Obj_DAL_TipoEmpleado.SDescTipo.ToString().Trim();
+                    //cmb_IDEstado.Text = Obj_DAL_TipoEmpleado.SDescTipo.ToString().Trim();
                     
                 }
             }
@@ -79,9 +80,9 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             {
                 cls_TiposEmpleados_BLL obj_TipoEmpleado_BLL = new cls_TiposEmpleados_BLL();
                 string sMsjError = string.Empty;
-                Obj_DAL_TipoEmpleado.ITipoEmpleado = Convert.ToInt32(txt_IDTipoEmpleado.Text.Trim());
+                //Obj_DAL_TipoEmpleado.ITipoEmpleado = Convert.ToInt32(txt_IDTipoEmpleado.Text.Trim());
                 Obj_DAL_TipoEmpleado.SDescTipo = txt_desc.Text.Trim();
-                Obj_DAL_TipoEmpleado.CIdEstado = Convert.ToChar(cmb_IDEstado.Text.Trim());
+                Obj_DAL_TipoEmpleado.CIdEstado = Convert.ToChar(cmb_IDEstado.SelectedValue.ToString().Trim());
 
                 if (Obj_DAL_TipoEmpleado.CBandAX == 'I')
                 {
@@ -122,12 +123,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
 
         private void cmb_IDEstado_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((char.IsNumber(e.KeyChar)) || (char.IsPunctuation(e.KeyChar)) || (char.IsSeparator(e.KeyChar)) || (char.IsSymbol(e.KeyChar)))
-            {
-                e.Handled = true;
-            }
-            else
-            {
+            { 
                 e.Handled = false;
             }
         }
@@ -142,6 +138,11 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             {
                 e.Handled = true;
             }
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

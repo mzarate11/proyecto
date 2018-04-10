@@ -24,16 +24,16 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
 
         private void CargarDatos()
         {
-            cls_Usuarios_BLL objAviones_BLL = new cls_Usuarios_BLL();
+            cls_Usuarios_BLL obj_User_BLL = new cls_Usuarios_BLL();
             string sMsjError = string.Empty;
             DataTable DT = new DataTable();
             if (txtFiltro.Text == string.Empty)
             {
-                DT = objAviones_BLL.ListarUsuarios(ref sMsjError);
+                DT = obj_User_BLL.ListarUsuarios(ref sMsjError);
             }
             else
             {
-                DT = objAviones_BLL.FiltrarUsuarios(ref sMsjError, txtFiltro.Text.Trim());
+                DT = obj_User_BLL.FiltrarUsuarios(ref sMsjError, txtFiltro.Text.Trim());
             }
 
             if (sMsjError == string.Empty)

@@ -134,7 +134,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
                 ObjTipoEmpleadosDAL.CBandAX = 'U';
                 ObjTipoEmpleadosDAL.ITipoEmpleado = Convert.ToInt32(dgv_view.SelectedRows[0].Cells[0].Value.ToString().Trim());
                 ObjTipoEmpleadosDAL.SDescTipo = dgv_view.SelectedRows[0].Cells[1].Value.ToString().Trim();
-                ObjTipoEmpleadosDAL.CIdEstado = Convert.ToChar(dgv_view.SelectedRows[0].Cells[3].Value.ToString().Trim());
+                ObjTipoEmpleadosDAL.CIdEstado = Convert.ToChar(dgv_view.SelectedRows[0].Cells[2].Value.ToString().Trim());
 
                 PantTipoEmpleado.Obj_DAL_TipoEmpleado = ObjTipoEmpleadosDAL;
                 PantTipoEmpleado.ShowDialog();
