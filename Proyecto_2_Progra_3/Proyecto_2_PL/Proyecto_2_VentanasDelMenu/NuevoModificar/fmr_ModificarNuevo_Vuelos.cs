@@ -117,22 +117,27 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                     if (sMsjError == string.Empty)
                     {
                         MessageBox.Show("Vuelo agregado correctamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        cmb_IdEstado.SelectedValue = "0";
-                        cmb_IdAerolinea.SelectedValue = "0";
-                        cmb_IdAvion.SelectedValue = "0";
-                        cmb_IdDestino.SelectedValue = "0";
-                        txt_IdVuelo.SelectAll();
-                        txt_IdVuelo.Focus();
+                        labelAccion.Text = "Modificar";
+
+                    }
+                    else
+                    {
+                        MessageBox.Show(sMsjError.ToString());
+                        labelAccion.Text = "Guardar";
+                    }
+                }
+                else
+                {
+                    Obj_Mant_BLL.ModificarVuelos(ref sMsjError, ref Obj_Mant_DAL);
+                    if (sMsjError == string.Empty)
+                    {
+                        MessageBox.Show("Vuelo Modificado correctamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     }
                     else
                     {
                         MessageBox.Show(sMsjError.ToString());
                     }
-                }
-                else
-                {
-                    Obj_Mant_BLL.ModificarVuelos(ref sMsjError, ref Obj_Mant_DAL);
                 }
             }
             else
