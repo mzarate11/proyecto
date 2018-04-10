@@ -38,6 +38,15 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             txt_IdVuelo.SelectAll();
             txt_IdVuelo.Focus();
 
+            if(Obj_Mant_DAL.cbanderaAccion == 'I')
+            {
+                labelAccion.Text = "Guardar";
+            }
+            else
+            {
+                labelAccion.Text = "Modificar";
+            }
+
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -95,7 +104,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 Obj_Mant_DAL.sIdVuelo = txt_IdVuelo.Text;
                 Obj_Mant_DAL.sIdDestino = cmb_IdDestino.SelectedValue.ToString();
                 Obj_Mant_DAL.sIdAvion = cmb_IdAvion.SelectedValue.ToString();
-                Obj_Mant_DAL.iIdAerolinea = Convert.ToInt32(cmb_IdAerolinea.SelectedValue.ToString());
+                Obj_Mant_DAL.iIdAerolinea = Convert.ToInt16(cmb_IdAerolinea.SelectedValue.ToString());
                 Obj_Mant_DAL.cIdEstado = Convert.ToChar(cmb_IdEstado.SelectedValue.ToString());
                 Obj_Mant_DAL.dtFechaHoraSalida = time_HoraSalida.Value;
                 Obj_Mant_DAL.dtFechaHoraLLegada = time_HoraLlegada.Value;
