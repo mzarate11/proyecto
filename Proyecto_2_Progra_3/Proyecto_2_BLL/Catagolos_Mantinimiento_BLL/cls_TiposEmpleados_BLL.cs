@@ -92,7 +92,7 @@ namespace Proyecto_2_BLL.Catagolos_Mantinimiento_BLL
                 
 
 
-                Obj_DAL.sSentencia = ConfigurationManager.AppSettings["sp_Insertar_TiposEmpleados"].ToString().Trim();
+                Obj_DAL.sSentencia = ConfigurationManager.AppSettings["Insertar_TiposEmpleados"].ToString().Trim();
                 Obj_BLL.Ejec_NonQuery(ref Obj_DAL);
 
                 if (Obj_DAL.sMsgError == string.Empty)
@@ -120,7 +120,7 @@ namespace Proyecto_2_BLL.Catagolos_Mantinimiento_BLL
             Obj_DAL.DT_Parametros.Rows.Add("@DescTipo", 3, Obj_TiposEmpleados_DAL.SDescTipo.ToString().Trim());
             Obj_DAL.DT_Parametros.Rows.Add("@IdEstado", 2, Obj_TiposEmpleados_DAL.CIdEstado.ToString().Trim());
 
-            Obj_DAL.sSentencia = ConfigurationManager.AppSettings["sp_modificar_TiposEmpleados"].ToString().Trim();
+            Obj_DAL.sSentencia = ConfigurationManager.AppSettings["Modificar_TiposEmpleados"].ToString().Trim();
             Obj_BLL.Ejec_NonQuery(ref Obj_DAL);
 
             if (Obj_DAL.sMsgError == string.Empty)
