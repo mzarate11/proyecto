@@ -80,13 +80,14 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            cls_Estados_BLL Obj_Estados_BLL = new cls_Estados_BLL();
             string sMsjError = string.Empty;
             Obj_DAL_Estados.cIdEstado = Convert.ToChar(txt_ID_Estados.Text.Trim());
             Obj_DAL_Estados.sDescripcion = txt_Descripcion.Text.Trim();
 
             if (Obj_DAL_Estados.cBandAX == 'I')
             {
-                cls_Estados_BLL Obj_Estados_BLL = new cls_Estados_BLL();
+                
 
                 Obj_Estados_BLL.Insertar_Estados(ref sMsjError, ref Obj_DAL_Estados);
 
@@ -101,11 +102,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             }
             else if ((Obj_DAL_Estados.cIdEstado == 'U')||(Obj_DAL_Estados != null))
             {
-                cls_Estados_BLL Obj_Estados_BLL = new cls_Estados_BLL();
-
-                Obj_DAL_Estados.cIdEstado = Convert.ToChar(txt_ID_Estados.Text);
-                Obj_DAL_Estados.sDescripcion = txt_Descripcion.Text;
-
+                
                 Obj_Estados_BLL.Modificar_Estados(ref sMsjError, ref Obj_DAL_Estados);
 
                 if (sMsjError == string.Empty)

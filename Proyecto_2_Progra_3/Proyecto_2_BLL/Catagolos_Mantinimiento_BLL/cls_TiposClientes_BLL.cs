@@ -93,7 +93,7 @@ namespace Proyecto_2_BLL.Catagolos_Mantinimiento_BLL
                 Obj_DAL.DT_Parametros.Rows.Add("@IdEstado", 2, Obj_TiposClientes_DAL.CIdEstado.ToString().Trim());
                 
 
-                Obj_DAL.sSentencia = ConfigurationManager.AppSettings["sp_Insertar_TiposClientes"].ToString().Trim();
+                Obj_DAL.sSentencia = ConfigurationManager.AppSettings["Insertar_TiposClientes"].ToString().Trim();
                 Obj_BLL.Ejec_Scalar(ref Obj_DAL);
 
                 if (Obj_DAL.sMsgError == string.Empty)
@@ -117,12 +117,12 @@ namespace Proyecto_2_BLL.Catagolos_Mantinimiento_BLL
 
 
             Obj_BLL.TablaParametros(ref Obj_DAL);
-            Obj_DAL.DT_Parametros.Rows.Add("@IdTipoCliente", 3, Obj_TiposClientes_DAL.STipoCliente.ToString().Trim());
+            Obj_DAL.DT_Parametros.Rows.Add("@IdTipoCliente", 3, Obj_TiposClientes_DAL.IIdTipoCliente.ToString().Trim());
             Obj_DAL.DT_Parametros.Rows.Add("@TipoCliente", 3, Obj_TiposClientes_DAL.STipoCliente.ToString().Trim());
             Obj_DAL.DT_Parametros.Rows.Add("@Descripcion", 3, Obj_TiposClientes_DAL.SDescripcion.ToString().Trim());
             Obj_DAL.DT_Parametros.Rows.Add("@IdEstado", 2, Obj_TiposClientes_DAL.CIdEstado.ToString().Trim());
 
-            Obj_DAL.sSentencia = ConfigurationManager.AppSettings["sp_modificar_TiposClientes"].ToString().Trim();
+            Obj_DAL.sSentencia = ConfigurationManager.AppSettings["Modificar_TiposClientes"].ToString().Trim();
             Obj_BLL.Ejec_NonQuery(ref Obj_DAL);
 
             if (Obj_DAL.sMsgError == string.Empty)
