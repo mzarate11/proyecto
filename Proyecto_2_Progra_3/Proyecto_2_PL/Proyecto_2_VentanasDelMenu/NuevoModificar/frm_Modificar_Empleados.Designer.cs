@@ -306,7 +306,7 @@
             // txt_Direccion
             // 
             this.txt_Direccion.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Direccion.Location = new System.Drawing.Point(391, 94);
+            this.txt_Direccion.Location = new System.Drawing.Point(392, 95);
             this.txt_Direccion.Multiline = true;
             this.txt_Direccion.Name = "txt_Direccion";
             this.txt_Direccion.Size = new System.Drawing.Size(310, 53);
