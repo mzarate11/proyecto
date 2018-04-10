@@ -118,7 +118,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
             PantTipoEmpleado.Obj_DAL_TipoEmpleado = ObjTipoEmpleadosDAL;
             Hide();
             PantTipoEmpleado.ShowDialog();
-
+            Show();
 
             txtFiltro.Text = string.Empty;
             CargarDatos();
@@ -158,6 +158,9 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
             ObjTipoEmpleadosDAL.CIdEstado = Convert.ToChar(dgv_view.SelectedRows[0].Cells[2].Value.ToString().Trim());
 
             PantTipoEmpleado.Obj_DAL_TipoEmpleado = ObjTipoEmpleadosDAL;
+            Hide();
+            PantTipoEmpleado.ShowDialog();
+            Show();
 
             txtFiltro.Text = string.Empty;
             CargarDatos();

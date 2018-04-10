@@ -148,7 +148,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
             PantTiposClientes.Obj_DAL_TiposClientes = ObjTiposClientesDAL;
             Hide();
             PantTiposClientes.ShowDialog();
-
+            Show();
 
             txtFiltro.Text = string.Empty;
             CargarDatos();
@@ -166,6 +166,9 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
             ObjTiposClientesDAL.CIdEstado = Convert.ToChar(Dgv_View.SelectedRows[0].Cells[3].Value.ToString().Trim());
 
             PantTiposClientes.Obj_DAL_TiposClientes = ObjTiposClientesDAL;
+            Hide();
+            PantTiposClientes.ShowDialog();
+            Show();
 
             txtFiltro.Text = string.Empty;
             CargarDatos();

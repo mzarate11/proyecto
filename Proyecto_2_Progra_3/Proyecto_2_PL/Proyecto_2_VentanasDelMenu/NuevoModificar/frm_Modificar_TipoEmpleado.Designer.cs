@@ -67,7 +67,7 @@
             this.cmb_IDEstado.MaxLength = 10;
             this.cmb_IDEstado.Name = "cmb_IDEstado";
             this.cmb_IDEstado.Size = new System.Drawing.Size(121, 21);
-            this.cmb_IDEstado.TabIndex = 2;
+            this.cmb_IDEstado.TabIndex = 3;
             this.cmb_IDEstado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmb_IDEstado_KeyPress);
             // 
             // toolStrip1
