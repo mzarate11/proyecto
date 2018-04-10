@@ -186,12 +186,32 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 if (ObjClientes_DAL.cBandAxn == 'I')
                 {
                     ObjClientes_BLL.Insertar_Clientes(ref sMsjError, ref ObjClientes_DAL);
-                    MessageBox.Show("La Base de Datos ha sido actualizada","INFO",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    if (sMsjError == string.Empty)
+                    {
+                        MessageBox.Show("La Base de Datos ha sido actualizada", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Hubo un Error y los Datos no han sido agregados:" + " [ " + sMsjError + " ] ", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
                 }
-                else
+                else if ((ObjClientes_DAL.cBandAxn == 'U') || (ObjClientes_DAL != null))
                 {
-                    MessageBox.Show("Hubo un Error y los Datos no han sido agregados:" + " [ " + sMsjError + " ] ","ERROR",MessageBoxButtons.OK,MessageBoxIcon.Error);
+
+                    ObjClientes_BLL.Modificar_Clientes(ref sMsjError, ref ObjClientes_DAL);
+
+                    if (sMsjError == string.Empty)
+                    {
+                        MessageBox.Show("La Base de Datos ha sido actualizada", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Hubo un Error y los Datos no han sido agregados:" + " [ " + sMsjError + " ] ", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
                 }
+                
             }
             else
             {
