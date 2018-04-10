@@ -37,8 +37,6 @@
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.cmb_ID_Tipo_Cliente = new System.Windows.Forms.ComboBox();
             this.cmb_ID_Estado = new System.Windows.Forms.ComboBox();
-            this.mtxt_Cedula = new System.Windows.Forms.MaskedTextBox();
-            this.mtxt_Telefono = new System.Windows.Forms.MaskedTextBox();
             this.txt_Nombre = new System.Windows.Forms.TextBox();
             this.txt_ID_Cliente = new System.Windows.Forms.TextBox();
             this.txt_Apellidos = new System.Windows.Forms.TextBox();
@@ -49,6 +47,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.txt_Cedula = new System.Windows.Forms.TextBox();
+            this.txt_Telefono = new System.Windows.Forms.TextBox();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -118,7 +118,7 @@
             this.cmb_ID_Tipo_Cliente.Location = new System.Drawing.Point(574, 161);
             this.cmb_ID_Tipo_Cliente.Name = "cmb_ID_Tipo_Cliente";
             this.cmb_ID_Tipo_Cliente.Size = new System.Drawing.Size(194, 24);
-            this.cmb_ID_Tipo_Cliente.TabIndex = 38;
+            this.cmb_ID_Tipo_Cliente.TabIndex = 6;
             // 
             // cmb_ID_Estado
             // 
@@ -129,32 +129,15 @@
             this.cmb_ID_Estado.Location = new System.Drawing.Point(574, 264);
             this.cmb_ID_Estado.Name = "cmb_ID_Estado";
             this.cmb_ID_Estado.Size = new System.Drawing.Size(194, 24);
-            this.cmb_ID_Estado.TabIndex = 39;
-            // 
-            // mtxt_Cedula
-            // 
-            this.mtxt_Cedula.Location = new System.Drawing.Point(285, 152);
-            this.mtxt_Cedula.Mask = "0-0000-0000";
-            this.mtxt_Cedula.Name = "mtxt_Cedula";
-            this.mtxt_Cedula.Size = new System.Drawing.Size(100, 20);
-            this.mtxt_Cedula.TabIndex = 40;
-            this.mtxt_Cedula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mtxt_Cedula_KeyPress);
-            // 
-            // mtxt_Telefono
-            // 
-            this.mtxt_Telefono.Location = new System.Drawing.Point(285, 341);
-            this.mtxt_Telefono.Mask = "0000-0000";
-            this.mtxt_Telefono.Name = "mtxt_Telefono";
-            this.mtxt_Telefono.Size = new System.Drawing.Size(100, 20);
-            this.mtxt_Telefono.TabIndex = 41;
-            this.mtxt_Telefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mtxt_Telefono_KeyPress);
+            this.cmb_ID_Estado.TabIndex = 7;
             // 
             // txt_Nombre
             // 
             this.txt_Nombre.Location = new System.Drawing.Point(285, 209);
+            this.txt_Nombre.MaxLength = 25;
             this.txt_Nombre.Name = "txt_Nombre";
             this.txt_Nombre.Size = new System.Drawing.Size(100, 20);
-            this.txt_Nombre.TabIndex = 42;
+            this.txt_Nombre.TabIndex = 3;
             this.txt_Nombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Nombre_KeyPress);
             // 
             // txt_ID_Cliente
@@ -163,15 +146,16 @@
             this.txt_ID_Cliente.MaxLength = 7;
             this.txt_ID_Cliente.Name = "txt_ID_Cliente";
             this.txt_ID_Cliente.Size = new System.Drawing.Size(100, 20);
-            this.txt_ID_Cliente.TabIndex = 43;
+            this.txt_ID_Cliente.TabIndex = 1;
             this.txt_ID_Cliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_ID_Cliente_KeyPress);
             // 
             // txt_Apellidos
             // 
             this.txt_Apellidos.Location = new System.Drawing.Point(285, 264);
+            this.txt_Apellidos.MaxLength = 150;
             this.txt_Apellidos.Name = "txt_Apellidos";
             this.txt_Apellidos.Size = new System.Drawing.Size(100, 20);
-            this.txt_Apellidos.TabIndex = 44;
+            this.txt_Apellidos.TabIndex = 4;
             this.txt_Apellidos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Apellidos_KeyPress);
             // 
             // label1
@@ -258,6 +242,24 @@
             this.label7.TabIndex = 51;
             this.label7.Text = "Teléfono";
             // 
+            // txt_Cedula
+            // 
+            this.txt_Cedula.Location = new System.Drawing.Point(285, 151);
+            this.txt_Cedula.MaxLength = 11;
+            this.txt_Cedula.Name = "txt_Cedula";
+            this.txt_Cedula.Size = new System.Drawing.Size(100, 20);
+            this.txt_Cedula.TabIndex = 2;
+            this.txt_Cedula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Cedula_KeyPress);
+            // 
+            // txt_Telefono
+            // 
+            this.txt_Telefono.Location = new System.Drawing.Point(285, 345);
+            this.txt_Telefono.MaxLength = 9;
+            this.txt_Telefono.Name = "txt_Telefono";
+            this.txt_Telefono.Size = new System.Drawing.Size(100, 20);
+            this.txt_Telefono.TabIndex = 5;
+            this.txt_Telefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Telefono_KeyPress);
+            // 
             // frm_ModificarClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -266,6 +268,8 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(840, 396);
             this.ControlBox = false;
+            this.Controls.Add(this.txt_Telefono);
+            this.Controls.Add(this.txt_Cedula);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -276,8 +280,6 @@
             this.Controls.Add(this.txt_Apellidos);
             this.Controls.Add(this.txt_ID_Cliente);
             this.Controls.Add(this.txt_Nombre);
-            this.Controls.Add(this.mtxt_Telefono);
-            this.Controls.Add(this.mtxt_Cedula);
             this.Controls.Add(this.cmb_ID_Estado);
             this.Controls.Add(this.cmb_ID_Tipo_Cliente);
             this.Controls.Add(this.toolStrip1);
@@ -304,8 +306,6 @@
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.ComboBox cmb_ID_Tipo_Cliente;
         private System.Windows.Forms.ComboBox cmb_ID_Estado;
-        private System.Windows.Forms.MaskedTextBox mtxt_Cedula;
-        private System.Windows.Forms.MaskedTextBox mtxt_Telefono;
         private System.Windows.Forms.TextBox txt_Nombre;
         private System.Windows.Forms.TextBox txt_ID_Cliente;
         private System.Windows.Forms.TextBox txt_Apellidos;
@@ -316,5 +316,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txt_Cedula;
+        private System.Windows.Forms.TextBox txt_Telefono;
     }
 }
