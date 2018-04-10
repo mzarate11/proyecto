@@ -113,5 +113,40 @@ namespace Proyecto_2_BLL.Catagolos_Mantinimiento_BLL
             }
         }
 
+        public void Modificar_Estados(ref string sMsjError, ref cls_Empleados_DAL Obj_Empleados_DAL)
+        {
+            cls_BaseDatos_DAL Obj_DAL = new cls_BaseDatos_DAL();
+            cls_Bases_BLL Obj_BLL = new cls_Bases_BLL();
+
+            Obj_BLL.TablaParametros(ref Obj_DAL);
+
+            Obj_DAL.DT_Parametros.Rows.Add("@IdEmpleado", 3, Obj_Empleados_DAL.uIdEmpleado.ToString().Trim());
+            Obj_DAL.DT_Parametros.Rows.Add("@Cedula", 3, Obj_Empleados_DAL.iCedula.ToString().Trim());
+            Obj_DAL.DT_Parametros.Rows.Add("@Nombre", 3, Obj_Empleados_DAL.sNombre.ToString().Trim());
+            Obj_DAL.DT_Parametros.Rows.Add("@Apellidos", 3, Obj_Empleados_DAL.sApellidos.ToString().Trim());
+            Obj_DAL.DT_Parametros.Rows.Add("@Direccion", 3, Obj_Empleados_DAL.sDireccion.ToString().Trim());
+            Obj_DAL.DT_Parametros.Rows.Add("@Edad", 1, Obj_Empleados_DAL.bEdad.ToString().Trim());
+            Obj_DAL.DT_Parametros.Rows.Add("@Telefono_Casa", 3, Obj_Empleados_DAL.iTelCasa.ToString().Trim());
+            Obj_DAL.DT_Parametros.Rows.Add("@Telefono_Referencia", 3, Obj_Empleados_DAL.iTelRef.ToString().Trim());
+            Obj_DAL.DT_Parametros.Rows.Add("@Celular", 3, Obj_Empleados_DAL.iCelular.ToString().Trim());
+            Obj_DAL.DT_Parametros.Rows.Add("@Salario", 5, Obj_Empleados_DAL.dSalario.ToString().Trim());
+            Obj_DAL.DT_Parametros.Rows.Add("@IdTipoEmpleado", 1, Obj_Empleados_DAL.iIdTipoEmpleado.ToString().Trim());
+            Obj_DAL.DT_Parametros.Rows.Add("@IdAerolinea", 1, Obj_Empleados_DAL.iIdAerolinea.ToString().Trim());
+            Obj_DAL.DT_Parametros.Rows.Add("@IdEstado", 2, Obj_Empleados_DAL.cIdEstado.ToString().Trim());
+
+            Obj_DAL.sSentencia = ConfigurationManager.AppSettings["Modificar_Empleados"].ToString().Trim();
+
+            Obj_BLL.Ejec_NonQuery(ref Obj_DAL);
+
+            if (Obj_DAL.sMsgError == string.Empty)
+            {
+                sMsjError = string.Empty;
+            }
+            else
+            {
+                sMsjError = Obj_DAL.sMsgError;
+            }
+        }
+
     }
 }

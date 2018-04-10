@@ -37,7 +37,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 DataTable DTE = new DataTable();
                 DTE = ObjBLLEstados.Listar_Estados(ref sMsjError);
 
-                DTE.Rows.Add("0", "-- SELECCIONE UN ESTADO --");
+                DTE.Rows.Add("0", "--Seleccione una opcion--");
 
                 cmb_IdEstado.DataSource = DTE;
                 cmb_IdEstado.DisplayMember = DTE.Columns[1].ToString();
@@ -50,7 +50,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 cls_Aerolineas_BLL ObjAero = new cls_Aerolineas_BLL();
                 DataTable DTA = new DataTable();
                 DTA = ObjAero.ListarAerolineas(ref sMsjError);
-                DTA.Rows.Add("0", "-- SELECCIONE UNA AEROLINEA --");
+                DTA.Rows.Add("0", "--Seleccione una opcion--");
                 cmb_IdAerolinea.DataSource = DTA;
                 cmb_IdAerolinea.DisplayMember = DTA.Columns[1].ToString();
                 cmb_IdAerolinea.ValueMember = DTA.Columns[0].ToString();
@@ -61,7 +61,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 cls_TiposA_BLL ObjTiposA = new cls_TiposA_BLL();
                 DataTable DTTA = new DataTable();
                 DTTA = ObjTiposA.ListarTiposA(ref sMsjError);
-                DTTA.Rows.Add("0", "-- SELECCIONE UN TIPO DE AVION --");
+                DTTA.Rows.Add("0", "--Seleccione una opcion--");
                 cmb_IdTipoAvion.DataSource = DTTA;
                 cmb_IdTipoAvion.DisplayMember = DTTA.Columns[1].ToString();
                 cmb_IdTipoAvion.ValueMember = DTTA.Columns[0].ToString();
@@ -80,9 +80,10 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                     txt_DescAvion.Text = objDal_Aviones.sDescAvion;
                     txt_IdAvion.Text = objDal_Aviones.sIdAvion;
                     txt_NomAvion.Text = objDal_Aviones.sNomAvion;
-                    cmb_IdAerolinea.Text = objDal_Aviones.iIdAerolinea.ToString();
-                    cmb_IdEstado.Text = objDal_Aviones.cIdEstado.ToString();
-                    cmb_IdTipoAvion.Text = objDal_Aviones.sIdTipoAvion.ToString();                                                     
+                    cmb_IdAerolinea.SelectedValue = objDal_Aviones.iIdAerolinea.ToString();
+                    cmb_IdEstado.SelectedValue = objDal_Aviones.cIdEstado.ToString();
+                    cmb_IdTipoAvion.SelectedValue = objDal_Aviones.sIdTipoAvion.ToString();
+                    txt_IdAvion.Enabled = false;
                 }
             }
             else
@@ -94,9 +95,30 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
 
         private void txt_IdAvion_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (char.IsLetter(e.KeyChar) || e.KeyChar == (char)(Keys.Back) || e.KeyChar == (char)(Keys.Space))
+            if (char.IsLetterOrDigit(e.KeyChar) || e.KeyChar == (char)(Keys.Back) || e.KeyChar == (char)(Keys.Space) || e.KeyChar == '-')
             {
-                e.Handled = false;
+                if(e.KeyChar == '-')
+                {
+                    if (txt_IdAvion.Text.Contains("-"))
+                    {
+                        e.Handled = true;
+                    }
+                    else if(txt_IdAvion.SelectionStart != 1 && e.KeyChar == '-')
+                    {
+                        if (txt_IdAvion.SelectionStart == 2 && e.KeyChar == '-')
+                        {
+                            e.Handled = false;
+                        }
+                        else
+                        {
+                            e.Handled = true;
+                        }                                            
+                    }                    
+                }
+                else
+                {
+                    e.Handled = false;
+                }
             }
             else
             {

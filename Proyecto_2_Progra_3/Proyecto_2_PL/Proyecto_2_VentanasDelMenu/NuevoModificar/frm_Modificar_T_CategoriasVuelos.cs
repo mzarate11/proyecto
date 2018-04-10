@@ -129,17 +129,35 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
 
         private void tb_DescCategoria_KeyPress_1(object sender, KeyPressEventArgs e)
         {
-            if (char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back)
+            if ((e.KeyChar.Equals(' ')) && (tb_DescCategoria.Text == ""))
             {
                 e.Handled = true;
-
-                MessageBox.Show("Este campo solo permite letras", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                MessageBox.Show("No se permiten campos vasidos al inicio", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                e.Handled = false;
+                if (e.KeyChar.Equals(' '))
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    if (char.IsLetter(e.KeyChar) || (e.KeyChar == (char)Keys.Back))
+                    {
+                        e.Handled = false;
+
+
+
+                    }
+                    else
+                    {
+                        e.Handled = true;
+                        MessageBox.Show("Este campo solo permite letras", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+
             }
+
         }
         #endregion
     }
