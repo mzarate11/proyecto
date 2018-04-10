@@ -29,9 +29,9 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 
                 string sMsjError = string.Empty;
 
-                cls_TiposClientes_BLL Obj_Tipo_Clientes_BLL = new cls_TiposClientes_BLL();
+                cls_Estados_BLL ObjBLLEstados = new cls_Estados_BLL();
                 DataTable DTE = new DataTable();
-                DTE = Obj_Tipo_Clientes_BLL.ListarTiposClientes(ref sMsjError);
+                DTE = ObjBLLEstados.Listar_Estados(ref sMsjError);
                 DTE.Rows.Add("0", "--SELECCIONE UN ESTADO--");
                 cmb_IDEstado.DataSource = DTE;
                 cmb_IDEstado.DisplayMember = DTE.Columns[1].ToString();
@@ -77,7 +77,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                     cls_TiposClientes_BLL obj_TiposClientes_BLL = new cls_TiposClientes_BLL();
                     string sMsjError = string.Empty;
                     Obj_DAL_TiposClientes.CIdEstado = Convert.ToChar(cmb_IDEstado.SelectedValue.ToString().Trim());
-                    Obj_DAL_TiposClientes.IIdTipoCliente = Convert.ToInt32(txt_IDTipoCliente.Text.Trim());
+                    //Obj_DAL_TiposClientes.IIdTipoCliente = Convert.ToInt32(txt_IDTipoCliente.Text.Trim());
                     Obj_DAL_TiposClientes.STipoCliente = txt_TipoCliente.Text.Trim();
                     Obj_DAL_TiposClientes.SDescripcion = txt_descripcion.Text.Trim();
 
@@ -130,51 +130,49 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
 
         private void txt_IDTipoCliente_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (char.IsNumber(e.KeyChar))
+            if (char.IsNumber(e.KeyChar) || e.KeyChar == (char)(Keys.Back))
             {
                 e.Handled = false;
             }
             else
             {
+                MessageBox.Show("Este espacio es solo para ingresar numeros", "Informacion",
+                   MessageBoxButtons.OK, MessageBoxIcon.Information);
                 e.Handled = true;
             }
         }
 
         private void txt_descripcion_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((char.IsNumber(e.KeyChar)) || (char.IsPunctuation(e.KeyChar)) || (char.IsSeparator(e.KeyChar)) || (char.IsSymbol(e.KeyChar)))
-            {
-                e.Handled = true;
+            if (char.IsLetter(e.KeyChar) || e.KeyChar == (char)(Keys.Back) || e.KeyChar == (char)(Keys.Space))
+                {
+                e.Handled = false;
             }
             else
             {
-                e.Handled = false;
+                MessageBox.Show("Este espacio es solo para ingresar numeros", "Informacion",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                e.Handled = true;
             }
         }
 
         private void txt_TipoCliente_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((char.IsNumber(e.KeyChar)) || (char.IsPunctuation(e.KeyChar)) || (char.IsSeparator(e.KeyChar)) || (char.IsSymbol(e.KeyChar)))
+            if (char.IsLetter(e.KeyChar) || e.KeyChar == (char)(Keys.Back) || e.KeyChar == (char)(Keys.Space))
             {
-                e.Handled = true;
+                e.Handled = false;
             }
             else
             {
-                e.Handled = false;
+                e.Handled = true;
             }
         }
 
         private void cmb_IDEstado_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (char.IsNumber(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                e.Handled = true;
+             e.Handled = true;
             }
         }
 
     }
-}
+
