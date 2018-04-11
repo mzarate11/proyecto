@@ -106,30 +106,49 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
         #region Boton Guardar
         private void btnGuardar_Click_1(object sender, EventArgs e)
         {
-            string sMsjError = string.Empty;
-            Obj_Usuarios_Dal.sUsername = txt_Username.Text;
-            Obj_Usuarios_Dal.sPassword = txt_Password.Text;
-            Obj_Usuarios_Dal.sIdEmpleado =Convert.ToString( cmb_IdEmpleado.SelectedValue);
+            cls_Usuarios_BLL Obj_ManteniUsuarios_BLL = new cls_Usuarios_BLL();
 
-            Obj_Usuarios_Dal.cIdEstado= Convert.ToChar(cmb_IdEstado.SelectedValue);
-            if (Obj_Usuarios_Dal.cBandAX == 'I')
+            if (txt_Username.Text == "" || txt_Password.Text == "" || cmb_IdEmpleado.Text == "--- Selecione un Estado ---" || cmb_IdEstado.Text == "--- Selecione un Estado ---")
             {
-                cls_Usuarios_BLL Obj_ManteniUsuarios_BLL = new  cls_Usuarios_BLL();
-
-                Obj_ManteniUsuarios_BLL.Insertar_Usuarios(ref sMsjError, ref Obj_Usuarios_Dal);
-
-                if (sMsjError == string.Empty)
-                {
-                    MessageBox.Show("La Base de Datos ha sido Actualizada", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("Hubo un error al ingresar los datos a la base de datos:" + "[" + sMsjError + "]", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                MessageBox.Show("Alguno de lo campos esta vacido favor de verificar","Informacion",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
             else
             {
 
+                string sMsjError = string.Empty;
+                Obj_Usuarios_Dal.sUsername = txt_Username.Text;
+                Obj_Usuarios_Dal.sPassword = txt_Password.Text;
+                Obj_Usuarios_Dal.sIdEmpleado = Convert.ToString(cmb_IdEmpleado.SelectedValue);
+
+                Obj_Usuarios_Dal.cIdEstado = Convert.ToChar(cmb_IdEstado.SelectedValue);
+                if (Obj_Usuarios_Dal.cBandAX == 'I')
+                {
+                    
+
+                    Obj_ManteniUsuarios_BLL.Insertar_Usuarios(ref sMsjError, ref Obj_Usuarios_Dal);
+
+                    if (sMsjError == string.Empty)
+                    {
+                        MessageBox.Show("La Base de Datos ha sido Actualizada", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Hubo un error al ingresar los datos a la base de datos:" + "[" + sMsjError + "]", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    Obj_ManteniUsuarios_BLL.Modificar_Usuarios(ref sMsjError, ref Obj_Usuarios_Dal);
+                    if (sMsjError == string.Empty)
+                    {
+                        MessageBox.Show("Usuario Modificado correctamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    }
+                    else
+                    {
+                        MessageBox.Show(sMsjError.ToString());
+                    }
+                }
             }
         }
         #endregion

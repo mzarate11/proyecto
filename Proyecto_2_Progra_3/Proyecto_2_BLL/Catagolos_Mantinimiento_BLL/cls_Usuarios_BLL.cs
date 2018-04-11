@@ -120,7 +120,7 @@ namespace Proyecto_2_BLL.Catagolos_Mantinimiento_BLL
             Obj_DAL.DT_Parametros.Rows.Add("@IdEmpleado", 3, Obj_Usuarios_DAL.sIdEmpleado.ToString().Trim());
             Obj_DAL.DT_Parametros.Rows.Add("@IdEstado", 2, Obj_Usuarios_DAL.cIdEstado.ToString().Trim());
 
-            Obj_DAL.sSentencia = ConfigurationManager.AppSettings["sp_modificar_Usuarios"].ToString().Trim();
+            Obj_DAL.sSentencia = ConfigurationManager.AppSettings["Modificar_Usuarios"].ToString().Trim();
             Obj_BLL.Ejec_NonQuery(ref Obj_DAL);
 
             if (Obj_DAL.sMsgError == string.Empty)
