@@ -130,7 +130,7 @@
             this.txt_IdAvion.MaxLength = 12;
             this.txt_IdAvion.Name = "txt_IdAvion";
             this.txt_IdAvion.Size = new System.Drawing.Size(178, 22);
-            this.txt_IdAvion.TabIndex = 6;
+            this.txt_IdAvion.TabIndex = 1;
             this.txt_IdAvion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_IdAvion_KeyPress);
             // 
             // txt_DescAvion
@@ -141,7 +141,7 @@
             this.txt_DescAvion.MaxLength = 20;
             this.txt_DescAvion.Name = "txt_DescAvion";
             this.txt_DescAvion.Size = new System.Drawing.Size(178, 22);
-            this.txt_DescAvion.TabIndex = 7;
+            this.txt_DescAvion.TabIndex = 3;
             this.txt_DescAvion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_DescAvion_KeyPress);
             // 
             // txt_NomAvion
@@ -152,7 +152,7 @@
             this.txt_NomAvion.MaxLength = 20;
             this.txt_NomAvion.Name = "txt_NomAvion";
             this.txt_NomAvion.Size = new System.Drawing.Size(178, 22);
-            this.txt_NomAvion.TabIndex = 8;
+            this.txt_NomAvion.TabIndex = 2;
             this.txt_NomAvion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_NomAvion_KeyPress);
             // 
             // cmb_IdAerolinea
@@ -163,7 +163,7 @@
             this.cmb_IdAerolinea.Margin = new System.Windows.Forms.Padding(2);
             this.cmb_IdAerolinea.Name = "cmb_IdAerolinea";
             this.cmb_IdAerolinea.Size = new System.Drawing.Size(178, 24);
-            this.cmb_IdAerolinea.TabIndex = 9;
+            this.cmb_IdAerolinea.TabIndex = 5;
             this.cmb_IdAerolinea.Text = "--Seleccione una opcion--";
             this.cmb_IdAerolinea.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmb_IdAerolinea_KeyPress);
             // 
@@ -175,7 +175,7 @@
             this.cmb_IdEstado.Margin = new System.Windows.Forms.Padding(2);
             this.cmb_IdEstado.Name = "cmb_IdEstado";
             this.cmb_IdEstado.Size = new System.Drawing.Size(178, 24);
-            this.cmb_IdEstado.TabIndex = 10;
+            this.cmb_IdEstado.TabIndex = 6;
             this.cmb_IdEstado.Text = "--Seleccione una opcion--";
             this.cmb_IdEstado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmb_IdEstado_KeyPress);
             // 
@@ -187,7 +187,7 @@
             this.cmb_IdTipoAvion.Margin = new System.Windows.Forms.Padding(2);
             this.cmb_IdTipoAvion.Name = "cmb_IdTipoAvion";
             this.cmb_IdTipoAvion.Size = new System.Drawing.Size(178, 24);
-            this.cmb_IdTipoAvion.TabIndex = 11;
+            this.cmb_IdTipoAvion.TabIndex = 4;
             this.cmb_IdTipoAvion.Text = "--Seleccione una opcion--";
             this.cmb_IdTipoAvion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmb_IdTipoAvion_KeyPress);
             // 
@@ -204,7 +204,7 @@
             this.toolStripLabel2});
             this.toolStrip2.Location = new System.Drawing.Point(6, 6);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(220, 39);
+            this.toolStrip2.Size = new System.Drawing.Size(251, 39);
             this.toolStrip2.TabIndex = 38;
             this.toolStrip2.Text = "toolStrip2";
             // 

@@ -81,7 +81,7 @@
             // 
             this.txt_IdAerolinea.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.txt_IdAerolinea.Location = new System.Drawing.Point(351, 80);
-            this.txt_IdAerolinea.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_IdAerolinea.Margin = new System.Windows.Forms.Padding(2);
             this.txt_IdAerolinea.MaxLength = 20;
             this.txt_IdAerolinea.Name = "txt_IdAerolinea";
             this.txt_IdAerolinea.Size = new System.Drawing.Size(178, 22);
@@ -92,22 +92,23 @@
             // 
             this.txt_NombreAerolinea.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.txt_NombreAerolinea.Location = new System.Drawing.Point(351, 177);
-            this.txt_NombreAerolinea.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_NombreAerolinea.Margin = new System.Windows.Forms.Padding(2);
             this.txt_NombreAerolinea.MaxLength = 20;
             this.txt_NombreAerolinea.Name = "txt_NombreAerolinea";
             this.txt_NombreAerolinea.Size = new System.Drawing.Size(178, 22);
-            this.txt_NombreAerolinea.TabIndex = 4;
+            this.txt_NombreAerolinea.TabIndex = 1;
             this.txt_NombreAerolinea.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_NombreAerolinea_KeyPress);
             // 
             // cmb_IdEstado
             // 
             this.cmb_IdEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.cmb_IdEstado.FormattingEnabled = true;
+            this.cmb_IdEstado.ItemHeight = 16;
             this.cmb_IdEstado.Location = new System.Drawing.Point(351, 278);
-            this.cmb_IdEstado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmb_IdEstado.Margin = new System.Windows.Forms.Padding(2);
             this.cmb_IdEstado.Name = "cmb_IdEstado";
             this.cmb_IdEstado.Size = new System.Drawing.Size(178, 24);
-            this.cmb_IdEstado.TabIndex = 5;
+            this.cmb_IdEstado.TabIndex = 2;
             this.cmb_IdEstado.Text = "--Seleccione una opcion--";
             this.cmb_IdEstado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmb_IdEstado_KeyPress);
             // 
@@ -183,7 +184,7 @@
             this.Controls.Add(this.lbl_NombreAerolinea);
             this.Controls.Add(this.lbl_IdAerolinea);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frm_ModificarAerolineas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_ModificarAerolineas";
