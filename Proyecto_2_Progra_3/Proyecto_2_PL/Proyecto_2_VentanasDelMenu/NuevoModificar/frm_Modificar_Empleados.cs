@@ -170,9 +170,9 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 Obj_Empleados_DAL.iTelRef = Convert.ToInt32(txt_TelRef.Text);
                 Obj_Empleados_DAL.uIdEmpleado = Convert.ToUInt16(txt_IdEmpleado.Text);
                 Obj_Empleados_DAL.dSalario = Convert.ToDouble(txt_Salario.Text);
-                Obj_Empleados_DAL.cIdEstado = Convert.ToChar(cb_Estado.SelectedValue.ToString());
-                Obj_Empleados_DAL.iIdTipoEmpleado = Convert.ToInt32(cb_TipoEmpleado.SelectedValue.ToString());
-                Obj_Empleados_DAL.iIdAerolinea = Convert.ToInt32(cb_IdAerolinea.SelectedValue.ToString());
+                Obj_Empleados_DAL.cIdEstado = Convert.ToChar(cb_Estado.SelectedValue.ToString().Trim());
+                Obj_Empleados_DAL.iIdTipoEmpleado = Convert.ToInt32(cb_TipoEmpleado.SelectedValue.ToString().Trim());
+                Obj_Empleados_DAL.iIdAerolinea = Convert.ToInt32(cb_IdAerolinea.SelectedValue.ToString().Trim());
 
                 if (Obj_Empleados_DAL.cBandera == 'I')
                 {
