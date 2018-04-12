@@ -108,13 +108,9 @@
             // 
             // txt_descripcion
             // 
-            this.txt_descripcion.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_descripcion.Location = new System.Drawing.Point(150, 217);
-            this.txt_descripcion.Multiline = true;
             this.txt_descripcion.Name = "txt_descripcion";
-            this.txt_descripcion.Size = new System.Drawing.Size(175, 59);
+            this.txt_descripcion.Size = new System.Drawing.Size(100, 20);
             this.txt_descripcion.TabIndex = 3;
             this.txt_descripcion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_descripcion_KeyPress);
             // 
@@ -125,6 +121,7 @@
             this.cmb_IDEstado.Name = "cmb_IDEstado";
             this.cmb_IDEstado.Size = new System.Drawing.Size(121, 21);
             this.cmb_IDEstado.TabIndex = 4;
+            
             this.cmb_IDEstado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmb_IDEstado_KeyPress);
             // 
             // lbl_IDTipoCliente
