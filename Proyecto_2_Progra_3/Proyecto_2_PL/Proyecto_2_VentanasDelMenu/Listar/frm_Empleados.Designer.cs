@@ -184,6 +184,7 @@
             // 
             this.tls_txt_Filtro.Name = "tls_txt_Filtro";
             this.tls_txt_Filtro.Size = new System.Drawing.Size(100, 34);
+            this.tls_txt_Filtro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tls_txt_Filtro_KeyPress);
             this.tls_txt_Filtro.TextChanged += new System.EventHandler(this.tls_txt_Filtro_TextChanged);
             // 
             // tls_btn_Salir
@@ -215,6 +216,7 @@
             this.dgv_Empleados.Location = new System.Drawing.Point(-2, 33);
             this.dgv_Empleados.MultiSelect = false;
             this.dgv_Empleados.Name = "dgv_Empleados";
+            this.dgv_Empleados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_Empleados.Size = new System.Drawing.Size(840, 362);
             this.dgv_Empleados.TabIndex = 6;
             // 
