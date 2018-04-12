@@ -54,7 +54,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                     txt_IDTipoEmpleado.Text = Obj_DAL_TipoEmpleado.ITipoEmpleado.ToString().Trim();
                    // txt_IDTipoEmpleado.Enabled = false;
                     txt_desc.Text = Obj_DAL_TipoEmpleado.SDescTipo.ToString().Trim();
-                    //cmb_IDEstado.Text = Obj_DAL_TipoEmpleado.SDescTipo.ToString().Trim();
+                    cmb_IDEstado.SelectedValue = Obj_DAL_TipoEmpleado.CIdEstado.ToString().Trim();
                     
                 }
             }
@@ -72,6 +72,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
+        //toolStripButton1_Click
         {
             if (cmb_IDEstado.SelectedValue.ToString() != "0" ||
                txt_IDTipoEmpleado.Text != string.Empty ||
@@ -92,17 +93,29 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                     {
 
                         MessageBox.Show("Se modifico el registro exitosamente");
+                        Obj_DAL_TipoEmpleado.CBandAX = 'U';
                     }
                     else {
 
-                        MessageBox.Show("Se presento un error");
+                        MessageBox.Show("Se presento un error al tratar de guardar el registro");
                     }
                 }
                 else
                 {
                     obj_TipoEmpleado_BLL.Modificat_TipoEmpleado(ref sMsjError, ref Obj_DAL_TipoEmpleado);
+                    if (sMsjError == string.Empty)
+                    {
+                        MessageBox.Show("Se modificó el nuevo registro exitosamente");
+                        Obj_DAL_TipoEmpleado.CBandAX = 'U';
+                    }
+                    else
+                    {
+                        MessageBox.Show("Se presento un error al tratar de guardar el registro");
+                    }
                 }
-            }
+
+                }
+            
             else
             {
                 MessageBox.Show("Todos los cambios son obligatorios", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -111,31 +124,35 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
 
         private void txt_desc_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((char.IsNumber(e.KeyChar)) || (char.IsPunctuation(e.KeyChar)) || (char.IsSeparator(e.KeyChar)) || (char.IsSymbol(e.KeyChar)))
+            if (char.IsLetter(e.KeyChar) || e.KeyChar == (char)(Keys.Back) || e.KeyChar == (char)(Keys.Space))
             {
-                e.Handled = true;
+                e.Handled = false;
             }
             else
             {
-                e.Handled = false;
+                MessageBox.Show("Este espacio es solo para ingresar numeros", "Informacion",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                e.Handled = true;
             }
         }
 
         private void cmb_IDEstado_KeyPress(object sender, KeyPressEventArgs e)
         {
             { 
-                e.Handled = false;
+                e.Handled = true;
             }
         }
 
         private void txt_IDTipoEmpleado_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (char.IsNumber(e.KeyChar))
+            if (char.IsNumber(e.KeyChar) || e.KeyChar == (char)(Keys.Back))
             {
                 e.Handled = false;
             }
             else
             {
+                MessageBox.Show("Este espacio es solo para ingresar numeros", "Informacion",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
                 e.Handled = true;
             }
         }

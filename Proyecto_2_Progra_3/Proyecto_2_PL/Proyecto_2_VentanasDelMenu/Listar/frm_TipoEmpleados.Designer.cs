@@ -221,7 +221,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frm_TipoEmpleados";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frm_TipoEmpleados";
+            this.Text = "Tipo Empleados";
             this.Load += new System.EventHandler(this.frm_TipoEmpleados_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_view)).EndInit();
             this.MenuVentana.ResumeLayout(false);

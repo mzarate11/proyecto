@@ -32,7 +32,7 @@
             this.txt_desc = new System.Windows.Forms.TextBox();
             this.cmb_IDEstado = new System.Windows.Forms.ComboBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.Guardar = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
@@ -55,8 +55,9 @@
             // 
             this.txt_desc.Location = new System.Drawing.Point(122, 165);
             this.txt_desc.MaxLength = 150;
+            this.txt_desc.Multiline = true;
             this.txt_desc.Name = "txt_desc";
-            this.txt_desc.Size = new System.Drawing.Size(100, 20);
+            this.txt_desc.Size = new System.Drawing.Size(167, 70);
             this.txt_desc.TabIndex = 1;
             this.txt_desc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_desc_KeyPress);
             // 
@@ -73,7 +74,7 @@
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
+            this.Guardar,
             this.toolStripLabel1,
             this.toolStripButton2,
             this.toolStripLabel2});
@@ -83,15 +84,14 @@
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // toolStripButton1
+            // Guardar
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = global::Proyecto_2_PL.Properties.Resources.bGuardar;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton1.Text = "toolStripButton1";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            this.Guardar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.Guardar.Image = global::Proyecto_2_PL.Properties.Resources.bGuardar;
+            this.Guardar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.Guardar.Name = "Guardar";
+            this.Guardar.Size = new System.Drawing.Size(23, 22);
+            this.Guardar.Text = "Guardar";
             // 
             // toolStripLabel1
             // 
@@ -159,7 +159,8 @@
             this.Controls.Add(this.txt_desc);
             this.Controls.Add(this.txt_IDTipoEmpleado);
             this.Name = "frm_Modificar_TipoEmpleado";
-            this.Text = "frm_Modificar_TipoEmpleado";
+            this.ShowIcon = false;
+            this.Text = "Modificar Tipo Empleado";
             this.Load += new System.EventHandler(this.frm_Modificar_TipoEmpleado_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
@@ -174,7 +175,7 @@
         private System.Windows.Forms.TextBox txt_desc;
         private System.Windows.Forms.ComboBox cmb_IDEstado;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton Guardar;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;

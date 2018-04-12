@@ -55,7 +55,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                     //txt_IDTipoCliente.Enabled = false;
                     txt_TipoCliente.Text = Obj_DAL_TiposClientes.STipoCliente.ToString().Trim();
                     txt_descripcion.Text = Obj_DAL_TiposClientes.SDescripcion.ToString().Trim();
-                   // cmb_IDEstado.Text = Obj_DAL_TiposClientes.CIdEstado.ToString().Trim();
+                   cmb_IDEstado.SelectedValue = Obj_DAL_TiposClientes.CIdEstado.ToString().Trim();
                   
                 }
 
@@ -87,6 +87,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                     if (sMsjError == string.Empty)
                     {
                         MessageBox.Show("Se guardó el nuevo registro exitosamente");
+                        Obj_DAL_TiposClientes.CBandAX = 'U';
                     }
                     else
                     {
@@ -165,6 +166,8 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             else
             {
                 e.Handled = true;
+                MessageBox.Show("Este espacio es solo para ingresar numeros", "Informacion",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

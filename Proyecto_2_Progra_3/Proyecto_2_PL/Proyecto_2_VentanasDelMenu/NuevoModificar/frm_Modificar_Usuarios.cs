@@ -46,10 +46,10 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             cmb_IdEstado.DisplayMember = DTUe.Columns[1].ToString();
             cmb_IdEstado.ValueMember = DTUe.Columns[0].ToString();
 
-            cmb_IdEstado.DisplayMember = DTUEm.Columns[1].ToString();
-            //cmb_IdEstado.ValueMember = DTUEm.Columns[0].ToString();
+            cmb_IdEmpleado.DisplayMember = DTUEm.Columns[1].ToString();
+            cmb_IdEmpleado.ValueMember = DTUEm.Columns[0].ToString();
 
-            //cmb_IdEmpleado.SelectedValue = "0";
+            cmb_IdEmpleado.SelectedValue = "0";
             cmb_IdEstado.SelectedValue = "0";
             CargarDatos();
         }

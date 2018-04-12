@@ -190,8 +190,9 @@
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Name = "frm_Modificar_TipoClientes";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frm_Modificar_TipoClientes";
+            this.Text = "Modificar Tipos Clientes";
             this.TransparencyKey = System.Drawing.Color.Maroon;
             this.Load += new System.EventHandler(this.frm_Modificar_TipoClientes_Load);
             this.toolStrip1.ResumeLayout(false);

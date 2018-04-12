@@ -232,15 +232,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
         {
             if (char.IsNumber(e.KeyChar) || e.KeyChar == (char)Keys.Back)
             {
-                if (string.IsNullOrEmpty(txt_IdEmpleado.Text) && e.KeyChar == '0')
-                {
-                    e.Handled = true;
-                }
-                else
-                {
-                    e.Handled = false;
-
-                }
+               e.Handled = true;
             }
             else
             {
