@@ -366,7 +366,7 @@
             // 
             this.txt_IdEmpleado.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_IdEmpleado.Location = new System.Drawing.Point(133, 48);
-            this.txt_IdEmpleado.MaxLength = 5;
+            this.txt_IdEmpleado.MaxLength = 4;
             this.txt_IdEmpleado.Name = "txt_IdEmpleado";
             this.txt_IdEmpleado.Size = new System.Drawing.Size(143, 25);
             this.txt_IdEmpleado.TabIndex = 9;
