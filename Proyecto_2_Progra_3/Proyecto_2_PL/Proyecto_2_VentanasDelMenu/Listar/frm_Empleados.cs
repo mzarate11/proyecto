@@ -68,6 +68,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
 
         private void tls_btn_Eliminar_Click(object sender, EventArgs e)
         {
+
             cls_Empleados_BLL objBLL = new cls_Empleados_BLL();
             string sMsjError = string.Empty;
 
@@ -79,7 +80,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
 
                     if (sMsjError != string.Empty)
                     {
-                        MessageBox.Show("Se presento un error a la hora de listar : [ " + sMsjError + " ]", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Se presento un error a la hora de eliminar : [ " + sMsjError + " ]", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
@@ -161,6 +162,20 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
             else
             {
                 MessageBox.Show("No se pueden realizar la acción, debido a que no existen datos por modificar", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void tls_txt_Filtro_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsNumber(e.KeyChar) || e.KeyChar==(char)Keys.Back)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                MessageBox.Show("El filtro se realiza por el número de empleado");
+                e.Handled = true;
+               
             }
         }
     }

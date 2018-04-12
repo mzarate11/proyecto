@@ -24,6 +24,14 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
         {
 
             CargarDatos();
+            if (Obj_Empleados_DAL.cBandera=='U')
+            {
+                txt_IdEmpleado.Enabled = false;
+            }
+            else
+            {
+                txt_IdEmpleado.Enabled = true;
+            }
         }
         public void CargarDatos()
         {
@@ -81,7 +89,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                     txt_Nombre.Text = Obj_Empleados_DAL.sNombre;
                     txt_Apellidos.Text = Obj_Empleados_DAL.sApellidos;
                     txt_Edad.Text = Obj_Empleados_DAL.bEdad.ToString().Trim();
-                    txt_IdEmpleado.Text = Obj_Empleados_DAL.iIdTipoEmpleado.ToString().Trim();
+                    txt_IdEmpleado.Text = Obj_Empleados_DAL.uIdEmpleado.ToString().Trim();
                     txt_Salario.Text = Obj_Empleados_DAL.dSalario.ToString().Trim();
                     txt_Cedula.Text = Obj_Empleados_DAL.iCedula.ToString().Trim();
                     txt_Celular.Text = Obj_Empleados_DAL.iCelular.ToString().Trim();
@@ -141,12 +149,13 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             if (string.IsNullOrEmpty(txt_Nombre.Text) || string.IsNullOrEmpty(txt_Apellidos.Text) || string.IsNullOrEmpty(txt_Edad.Text) ||
                 string.IsNullOrEmpty(txt_Direccion.Text) || string.IsNullOrEmpty(txt_Cedula.Text) || string.IsNullOrEmpty(txt_Celular.Text) ||
                 string.IsNullOrEmpty(txt_TelCasa.Text) || string.IsNullOrEmpty(txt_TelRef.Text)|| string.IsNullOrEmpty(txt_IdEmpleado.Text) ||
-                string.IsNullOrEmpty(txt_Salario.Text))
+                string.IsNullOrEmpty(txt_Salario.Text) )
             {
                 MessageBox.Show("Debe completar todos los datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
+
                 cls_Empleados_BLL Obj_Empleados_BLL = new cls_Empleados_BLL();
 
                 string M_Error = string.Empty;
@@ -167,11 +176,11 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
 
                 if (Obj_Empleados_DAL.cBandera == 'I')
                 {
-                    Obj_Empleados_BLL.Insertar_Estados(ref M_Error, ref Obj_Empleados_DAL);
+                    Obj_Empleados_BLL.Insertar_Empleados(ref M_Error, ref Obj_Empleados_DAL);
                     if (M_Error == string.Empty)
                     {
-                        Obj_Empleados_DAL.cBandera = 'U';
                         MessageBox.Show("Se ha ingresado un nuevo Empleado");
+                        Obj_Empleados_DAL.cBandera = 'U';
                     }
                     else
                     {
@@ -181,10 +190,12 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 }
                 else
                 {
-                    Obj_Empleados_BLL.Modificar_Estados(ref M_Error, ref Obj_Empleados_DAL);
+                    Obj_Empleados_BLL.Modificar_Empleados(ref M_Error, ref Obj_Empleados_DAL);
                     if (M_Error == string.Empty)
                     {
+                        
                         MessageBox.Show("Se ha realizado el cambio exitosamente");
+                        Obj_Empleados_DAL.cBandera = 'U';
                     }
                     else
                     {
