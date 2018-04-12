@@ -48,6 +48,8 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 DT_Estados.Rows.Add("0", "-- Seleccione un valor --");
                 cb_Estado.DisplayMember = DT_Estados.Columns[1].ToString();
                 cb_Estado.ValueMember = DT_Estados.Columns[0].ToString();
+
+                cb_Estado.SelectedValue = "0";
                 #endregion
 
                 #region ID Tipo Empleado
@@ -58,6 +60,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 cb_TipoEmpleado.DataSource = DT_TipoEmpleados;
                 cb_TipoEmpleado.DisplayMember = DT_TipoEmpleados.Columns[1].ToString();
                 cb_TipoEmpleado.ValueMember = DT_TipoEmpleados.Columns[0].ToString();
+                cb_TipoEmpleado.SelectedValue = "0";
                 #endregion
 
                 #region ID Aerolinea
@@ -68,6 +71,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 cb_IdAerolinea.DataSource = DT_Aerolinea;
                 cb_IdAerolinea.DisplayMember = DT_Aerolinea.Columns[1].ToString();
                 cb_IdAerolinea.ValueMember = DT_Aerolinea.Columns[0].ToString();
+                cb_IdAerolinea.SelectedValue = "0";
                 #endregion
 
                 if (Obj_Empleados_DAL.cBandera == 'I')
