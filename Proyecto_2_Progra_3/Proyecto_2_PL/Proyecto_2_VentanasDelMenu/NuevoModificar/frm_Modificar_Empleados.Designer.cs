@@ -92,7 +92,7 @@
             this.tls_btn_Guardar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tls_btn_Guardar.Name = "tls_btn_Guardar";
             this.tls_btn_Guardar.Size = new System.Drawing.Size(31, 31);
-            this.tls_btn_Guardar.Text = "toolStripButton1";
+            this.tls_btn_Guardar.Text = "Guardar";
             this.tls_btn_Guardar.Click += new System.EventHandler(this.tls_btn_Guardar_Click);
             // 
             // toolStripLabel1
@@ -114,7 +114,7 @@
             this.tls_btn_Salir.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tls_btn_Salir.Name = "tls_btn_Salir";
             this.tls_btn_Salir.Size = new System.Drawing.Size(31, 31);
-            this.tls_btn_Salir.Text = "toolStripButton2";
+            this.tls_btn_Salir.Text = "Salir";
             this.tls_btn_Salir.Click += new System.EventHandler(this.tls_btn_Salir_Click);
             // 
             // toolStripLabel2
@@ -237,7 +237,7 @@
             // 
             this.txt_TelCasa.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_TelCasa.Location = new System.Drawing.Point(524, 61);
-            this.txt_TelCasa.MaxLength = 6;
+            this.txt_TelCasa.MaxLength = 8;
             this.txt_TelCasa.Name = "txt_TelCasa";
             this.txt_TelCasa.Size = new System.Drawing.Size(128, 25);
             this.txt_TelCasa.TabIndex = 5;
