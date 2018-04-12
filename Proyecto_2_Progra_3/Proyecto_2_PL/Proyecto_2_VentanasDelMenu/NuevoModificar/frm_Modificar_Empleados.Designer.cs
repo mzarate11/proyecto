@@ -339,7 +339,6 @@
             this.cb_Estado.Location = new System.Drawing.Point(544, 76);
             this.cb_Estado.Name = "cb_Estado";
             this.cb_Estado.Size = new System.Drawing.Size(203, 25);
-            this.cb_Estado.Sorted = true;
             this.cb_Estado.TabIndex = 12;
             // 
             // cb_TipoEmpleado
@@ -349,7 +348,6 @@
             this.cb_TipoEmpleado.Location = new System.Drawing.Point(544, 48);
             this.cb_TipoEmpleado.Name = "cb_TipoEmpleado";
             this.cb_TipoEmpleado.Size = new System.Drawing.Size(203, 25);
-            this.cb_TipoEmpleado.Sorted = true;
             this.cb_TipoEmpleado.TabIndex = 11;
             // 
             // cb_IdAerolinea
@@ -359,7 +357,6 @@
             this.cb_IdAerolinea.Location = new System.Drawing.Point(544, 17);
             this.cb_IdAerolinea.Name = "cb_IdAerolinea";
             this.cb_IdAerolinea.Size = new System.Drawing.Size(203, 25);
-            this.cb_IdAerolinea.Sorted = true;
             this.cb_IdAerolinea.TabIndex = 10;
             // 
             // txt_IdEmpleado
