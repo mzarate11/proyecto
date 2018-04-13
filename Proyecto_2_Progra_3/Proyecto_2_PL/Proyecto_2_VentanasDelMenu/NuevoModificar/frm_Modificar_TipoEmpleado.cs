@@ -129,7 +129,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                     if (sMsjError == string.Empty)
                     {
 
-                        MessageBox.Show("Se modifico el registro exitosamente");
+                        MessageBox.Show("Se guardó el registro exitosamente");
                         Obj_DAL_TipoEmpleado.CBandAX = 'U';
                     }
                     else {
@@ -142,7 +142,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                     obj_TipoEmpleado_BLL.Modificar_TipoEmpleado(ref sMsjError, ref Obj_DAL_TipoEmpleado);
                     if (sMsjError == string.Empty)
                     {
-                        MessageBox.Show("Se modificó el nuevo registro exitosamente");
+                        MessageBox.Show("Se modificó el registro exitosamente");
                         Obj_DAL_TipoEmpleado.CBandAX = 'U';
                     }
                     else
