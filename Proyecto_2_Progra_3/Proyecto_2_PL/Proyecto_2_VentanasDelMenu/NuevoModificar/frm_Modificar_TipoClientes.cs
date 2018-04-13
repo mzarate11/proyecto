@@ -172,7 +172,12 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
         {
              e.Handled = true;
             }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            Close();
         }
+    }
 
     }
 
