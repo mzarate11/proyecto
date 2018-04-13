@@ -66,6 +66,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 }
                 else
                 {
+                    lb_Guardar.Text = "Modificar";
                     txt_ID_Cliente.Text = ObjClientes_DAL.sIdCliente.ToString().Trim();
                     txt_ID_Cliente.Enabled = false;
                     txt_Cedula.Text = ObjClientes_DAL.sCedula.ToString().Trim();
@@ -139,7 +140,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txt_ID_Cliente.Text)||(string.IsNullOrEmpty(txt_Cedula.Text))||(string.IsNullOrEmpty(txt_Nombre.Text))||(string.IsNullOrEmpty(txt_Apellidos.Text))||(string.IsNullOrEmpty(txt_Telefono.Text))||(cmb_ID_Estado.SelectedValue.ToString() == "0")||(cmb_ID_Tipo_Cliente.SelectedValue.ToString() == "0"))
+            if (string.IsNullOrEmpty(txt_ID_Cliente.Text)||(string.IsNullOrEmpty(txt_Cedula.Text))||(string.IsNullOrEmpty(txt_Nombre.Text))||(string.IsNullOrEmpty(txt_Apellidos.Text))||(string.IsNullOrEmpty(txt_Telefono.Text))||(cmb_ID_Estado.SelectedValue.ToString() == "0")||(cmb_ID_Tipo_Cliente.SelectedValue.ToString() == "0")||(txt_Cedula.Text.Length < 11)||(txt_Telefono.Text.Length < 9))
             {
                 MessageBox.Show("No se puede guardar sin no están todos los datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -162,6 +163,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                     if (sMsjError == string.Empty)
                     {
                         MessageBox.Show("La Base de Datos ha sido actualizada", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        lb_Guardar.Text = "Modificar";
                     }
                     else
                     {
@@ -189,7 +191,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
 
         private void txt_Cedula_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((char.IsLetter(e.KeyChar)) || (char.IsPunctuation(e.KeyChar)) || (char.IsSeparator(e.KeyChar)) || (e.KeyChar == (char)Keys.Space)||(char.IsSymbol(e.KeyChar)))
+            if ((char.IsLetter(e.KeyChar)) || (char.IsPunctuation(e.KeyChar)) || (char.IsSeparator(e.KeyChar)) || (e.KeyChar == (char)Keys.Space) || (char.IsSymbol(e.KeyChar)))
             {
                 e.Handled = true;
 
@@ -212,7 +214,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 e.Handled = true;
 
             }
-            else if ((txt_Cedula.SelectionStart == 0) && (e.KeyChar == '0'))
+            else if ((txt_Telefono.SelectionStart == 0) && (e.KeyChar == '0'))
             {
                 e.Handled = true;
                 MessageBox.Show("Un número de teléfono no puede iniciar con 0", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
