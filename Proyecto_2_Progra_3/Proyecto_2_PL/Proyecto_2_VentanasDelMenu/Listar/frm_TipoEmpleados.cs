@@ -129,7 +129,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
             ObjTipoEmpleadosDAL = new cls_TipoEmpleados_DAL();
             frm_Modificar_TipoEmpleado PantTipoEmpleado = new frm_Modificar_TipoEmpleado();
 
-            if (dgv_view.RowCount > 0)
+            if (dgv_view.RowCount > 1)
             {
                 ObjTipoEmpleadosDAL.CBandAX = 'U';
                 ObjTipoEmpleadosDAL.ITipoEmpleado = Convert.ToInt32(dgv_view.SelectedRows[0].Cells[0].Value.ToString().Trim());

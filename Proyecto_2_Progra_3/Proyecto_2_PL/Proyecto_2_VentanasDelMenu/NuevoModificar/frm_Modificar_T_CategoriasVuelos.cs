@@ -41,7 +41,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 if (Obj_ManteCategorias_DAL.cBandAX == 'I')
                 {
                     tb_IdCategoria.Enabled = false;
-                    lbiIdCategoria.Enabled = false;
+                    lbiIdCategoria.Enabled = true;
                     tb_DescCategoria.Text = string.Empty;
 
 
@@ -95,27 +95,44 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
         #region Boton Guardar
         private void btnGuardar_Click_1(object sender, EventArgs e)
         {
-            string sMsjError = string.Empty;
-            Obj_ManteCategorias_DAL.sDescCategoria = tb_DescCategoria.Text;
-            Obj_ManteCategorias_DAL.cIdEstado = Convert.ToChar(cmb_IdEstado.SelectedValue);
-            if (Obj_ManteCategorias_DAL.cBandAX == 'I')
+            cls_T_CategoriasVuelos_BLL Obj_CategoriaVuelos_BLL = new cls_T_CategoriasVuelos_BLL();
+            if (tb_DescCategoria.Text == "" || cmb_IdEstado.Text == "--- Selecione un Estado ---")
             {
-                cls_T_CategoriasVuelos_BLL Obj_CategoriaVuelos_BLL = new  cls_T_CategoriasVuelos_BLL();
-
-                Obj_CategoriaVuelos_BLL.Insertar_CategoriaVuelos(ref sMsjError, ref Obj_ManteCategorias_DAL);
-
-                if (sMsjError == string.Empty)
-                {
-                    MessageBox.Show("La Base de Datos ha sido Actualizada", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("Hubo un error al ingresar los datos a la base de datos:" + "[" + sMsjError + "]", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                MessageBox.Show("Alguno de lo campos esta vacido favor de verificar", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
+                string sMsjError = string.Empty;
+                Obj_ManteCategorias_DAL.sDescCategoria = tb_DescCategoria.Text;
+                Obj_ManteCategorias_DAL.cIdEstado = Convert.ToChar(cmb_IdEstado.SelectedValue);
+                if (Obj_ManteCategorias_DAL.cBandAX == 'I')
+                {
 
+
+                    Obj_CategoriaVuelos_BLL.Insertar_CategoriaVuelos(ref sMsjError, ref Obj_ManteCategorias_DAL);
+
+                    if (sMsjError == string.Empty)
+                    {
+                        MessageBox.Show("La Base de Datos ha sido Actualizada", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Hubo un error al ingresar los datos a la base de datos:" + "[" + sMsjError + "]", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    Obj_CategoriaVuelos_BLL.Modificar_Estados(ref sMsjError, ref Obj_ManteCategorias_DAL);
+                    if (sMsjError == string.Empty)
+                    {
+                        MessageBox.Show("Categoría Modificado correctamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    }
+                    else
+                    {
+                        MessageBox.Show(sMsjError.ToString());
+                    }
+                }
             }
         }
         #endregion
@@ -123,8 +140,16 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
         #region Validaciones Caja de texto
         private void tb_IdCategoria_KeyPress_1(object sender, KeyPressEventArgs e)
         {
-            MessageBox.Show("Este Campo no es editable", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            e.Handled = true;
+            if(char.IsNumber(e.KeyChar) || (e.KeyChar == (char)Keys.Back))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Este campo solo permite letras", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
         }
 
         private void tb_DescCategoria_KeyPress_1(object sender, KeyPressEventArgs e)

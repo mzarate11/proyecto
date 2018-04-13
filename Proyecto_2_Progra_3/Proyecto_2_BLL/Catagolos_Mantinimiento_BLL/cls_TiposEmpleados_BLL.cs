@@ -93,7 +93,7 @@ namespace Proyecto_2_BLL.Catagolos_Mantinimiento_BLL
 
 
                 Obj_DAL.sSentencia = ConfigurationManager.AppSettings["Insertar_TiposEmpleados"].ToString().Trim();
-                Obj_BLL.Ejec_NonQuery(ref Obj_DAL);
+                Obj_BLL.Ejec_Scalar(ref Obj_DAL);
 
                 if (Obj_DAL.sMsgError == string.Empty)
                 {
@@ -109,7 +109,7 @@ namespace Proyecto_2_BLL.Catagolos_Mantinimiento_BLL
                 }
             }
         }
-        public void Modificat_TipoEmpleado(ref string sMsjError, ref cls_TipoEmpleados_DAL Obj_TiposEmpleados_DAL)
+        public void Modificar_TipoEmpleado(ref string sMsjError, ref cls_TipoEmpleados_DAL Obj_TiposEmpleados_DAL)
         {
             cls_BaseDatos_DAL Obj_DAL = new cls_BaseDatos_DAL();
             cls_Bases_BLL Obj_BLL = new cls_Bases_BLL();

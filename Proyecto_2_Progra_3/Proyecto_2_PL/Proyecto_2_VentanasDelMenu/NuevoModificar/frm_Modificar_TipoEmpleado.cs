@@ -43,9 +43,9 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
 
                 if (Obj_DAL_TipoEmpleado.CBandAX == 'I')
                 {
-                    txt_IDTipoEmpleado.Text = string.Empty;
+                    txt_IDTipoEmpleado.Clear();
                    // txt_IDTipoEmpleado.Enabled = true;
-                    txt_desc.Text = string.Empty;
+                    txt_desc.Clear();
                   //  cmb_IDEstado.DataSource = null;
                     
                 }
@@ -61,7 +61,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             else
             {
                 MessageBox.Show("Se presento un error capa8", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                Close();
             }
 
         }
@@ -71,57 +71,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             CargarDatos();
         }
 
-        private void toolStripButton1_Click(object sender, EventArgs e)
-        //toolStripButton1_Click
-        {
-            if (cmb_IDEstado.SelectedValue.ToString() != "0" ||
-               txt_IDTipoEmpleado.Text != string.Empty ||
-               txt_desc.Text != string.Empty )
-                
-            {
-                cls_TiposEmpleados_BLL obj_TipoEmpleado_BLL = new cls_TiposEmpleados_BLL();
-                string sMsjError = string.Empty;
-                //Obj_DAL_TipoEmpleado.ITipoEmpleado = Convert.ToInt32(txt_IDTipoEmpleado.Text.Trim());
-                Obj_DAL_TipoEmpleado.SDescTipo = txt_desc.Text.Trim();
-                Obj_DAL_TipoEmpleado.CIdEstado = Convert.ToChar(cmb_IDEstado.SelectedValue.ToString().Trim());
-
-                if (Obj_DAL_TipoEmpleado.CBandAX == 'I')
-                {
-                    obj_TipoEmpleado_BLL.Insertar_TipoEmpleado(ref sMsjError, ref Obj_DAL_TipoEmpleado);
-
-                    if (sMsjError == string.Empty)
-                    {
-
-                        MessageBox.Show("Se modifico el registro exitosamente");
-                        Obj_DAL_TipoEmpleado.CBandAX = 'U';
-                    }
-                    else {
-
-                        MessageBox.Show("Se presento un error al tratar de guardar el registro");
-                    }
-                }
-                else
-                {
-                    obj_TipoEmpleado_BLL.Modificat_TipoEmpleado(ref sMsjError, ref Obj_DAL_TipoEmpleado);
-                    if (sMsjError == string.Empty)
-                    {
-                        MessageBox.Show("Se modificó el nuevo registro exitosamente");
-                        Obj_DAL_TipoEmpleado.CBandAX = 'U';
-                    }
-                    else
-                    {
-                        MessageBox.Show("Se presento un error al tratar de guardar el registro");
-                    }
-                }
-
-                }
-            
-            else
-            {
-                MessageBox.Show("Todos los cambios son obligatorios", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-         }
-
+        
         private void txt_desc_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (char.IsLetter(e.KeyChar) || e.KeyChar == (char)(Keys.Back) || e.KeyChar == (char)(Keys.Space))
@@ -154,6 +104,58 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 MessageBox.Show("Este espacio es solo para ingresar numeros", "Informacion",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 e.Handled = true;
+            }
+        }
+
+       
+
+        private void Guardar_Click(object sender, EventArgs e)
+        {
+            if (cmb_IDEstado.SelectedValue.ToString() != "0" ||
+             txt_IDTipoEmpleado.Text != string.Empty ||
+             txt_desc.Text != string.Empty)
+
+            {
+                cls_TiposEmpleados_BLL obj_TipoEmpleado_BLL = new cls_TiposEmpleados_BLL();
+                string sMsjError = string.Empty;
+                //Obj_DAL_TipoEmpleado.ITipoEmpleado = Convert.ToInt32(txt_IDTipoEmpleado.Text.Trim());
+                Obj_DAL_TipoEmpleado.SDescTipo = txt_desc.Text.Trim();
+                Obj_DAL_TipoEmpleado.CIdEstado = Convert.ToChar(cmb_IDEstado.SelectedValue.ToString().Trim());
+
+                if (Obj_DAL_TipoEmpleado.CBandAX == 'I')
+                {
+                    obj_TipoEmpleado_BLL.Insertar_TipoEmpleado(ref sMsjError, ref Obj_DAL_TipoEmpleado);
+
+                    if (sMsjError == string.Empty)
+                    {
+
+                        MessageBox.Show("Se modifico el registro exitosamente");
+                        Obj_DAL_TipoEmpleado.CBandAX = 'U';
+                    }
+                    else {
+
+                        MessageBox.Show("Se presento un error al tratar de guardar el registro");
+                    }
+                }
+                else
+                {
+                    obj_TipoEmpleado_BLL.Modificar_TipoEmpleado(ref sMsjError, ref Obj_DAL_TipoEmpleado);
+                    if (sMsjError == string.Empty)
+                    {
+                        MessageBox.Show("Se modificó el nuevo registro exitosamente");
+                        Obj_DAL_TipoEmpleado.CBandAX = 'U';
+                    }
+                    else
+                    {
+                        MessageBox.Show("Se presento un error al tratar de guardar el registro");
+                    }
+                }
+
+            }
+
+            else
+            {
+                MessageBox.Show("Todos los cambios son obligatorios", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

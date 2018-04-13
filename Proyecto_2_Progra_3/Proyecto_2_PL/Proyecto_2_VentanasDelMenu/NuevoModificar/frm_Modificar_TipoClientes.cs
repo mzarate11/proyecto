@@ -124,10 +124,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             CargarDatos();
         }
 
-        private void toolStripButton2_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
+        
 
         private void txt_IDTipoCliente_KeyPress(object sender, KeyPressEventArgs e)
         {

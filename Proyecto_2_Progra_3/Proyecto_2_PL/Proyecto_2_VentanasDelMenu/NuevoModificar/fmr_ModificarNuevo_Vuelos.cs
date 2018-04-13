@@ -38,6 +38,15 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             txt_IdVuelo.SelectAll();
             txt_IdVuelo.Focus();
 
+            if(Obj_Mant_DAL.cbanderaAccion == 'I')
+            {
+                labelAccion.Text = "Guardar";
+            }
+            else
+            {
+                labelAccion.Text = "Modificar";
+            }
+
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -95,7 +104,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 Obj_Mant_DAL.sIdVuelo = txt_IdVuelo.Text;
                 Obj_Mant_DAL.sIdDestino = cmb_IdDestino.SelectedValue.ToString();
                 Obj_Mant_DAL.sIdAvion = cmb_IdAvion.SelectedValue.ToString();
-                Obj_Mant_DAL.iIdAerolinea = Convert.ToInt32(cmb_IdAerolinea.SelectedValue.ToString());
+                Obj_Mant_DAL.iIdAerolinea = Convert.ToInt16(cmb_IdAerolinea.SelectedValue.ToString());
                 Obj_Mant_DAL.cIdEstado = Convert.ToChar(cmb_IdEstado.SelectedValue.ToString());
                 Obj_Mant_DAL.dtFechaHoraSalida = time_HoraSalida.Value;
                 Obj_Mant_DAL.dtFechaHoraLLegada = time_HoraLlegada.Value;
@@ -108,22 +117,27 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                     if (sMsjError == string.Empty)
                     {
                         MessageBox.Show("Vuelo agregado correctamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        cmb_IdEstado.SelectedValue = "0";
-                        cmb_IdAerolinea.SelectedValue = "0";
-                        cmb_IdAvion.SelectedValue = "0";
-                        cmb_IdDestino.SelectedValue = "0";
-                        txt_IdVuelo.SelectAll();
-                        txt_IdVuelo.Focus();
+                        labelAccion.Text = "Modificar";
+
+                    }
+                    else
+                    {
+                        MessageBox.Show(sMsjError.ToString());
+                        labelAccion.Text = "Guardar";
+                    }
+                }
+                else
+                {
+                    Obj_Mant_BLL.ModificarVuelos(ref sMsjError, ref Obj_Mant_DAL);
+                    if (sMsjError == string.Empty)
+                    {
+                        MessageBox.Show("Vuelo Modificado correctamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     }
                     else
                     {
                         MessageBox.Show(sMsjError.ToString());
                     }
-                }
-                else
-                {
-                    Obj_Mant_BLL.ModificarVuelos(ref sMsjError, ref Obj_Mant_DAL);
                 }
             }
             else

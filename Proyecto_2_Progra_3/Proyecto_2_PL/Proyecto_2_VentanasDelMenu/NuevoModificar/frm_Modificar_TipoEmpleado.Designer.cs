@@ -92,6 +92,7 @@
             this.Guardar.Name = "Guardar";
             this.Guardar.Size = new System.Drawing.Size(23, 22);
             this.Guardar.Text = "Guardar";
+            this.Guardar.Click += new System.EventHandler(this.Guardar_Click);
             // 
             // toolStripLabel1
             // 
@@ -106,7 +107,8 @@
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
             this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton2.Text = "toolStripButton2";
+            this.toolStripButton2.Text = "Salir";
+            this.toolStripButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // toolStripLabel2

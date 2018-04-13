@@ -47,21 +47,20 @@
             // tb_DescCategoria
             // 
             this.tb_DescCategoria.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.tb_DescCategoria.Location = new System.Drawing.Point(436, 273);
-            this.tb_DescCategoria.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tb_DescCategoria.Location = new System.Drawing.Point(327, 222);
+            this.tb_DescCategoria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tb_DescCategoria.MaxLength = 90;
             this.tb_DescCategoria.Name = "tb_DescCategoria";
-            this.tb_DescCategoria.Size = new System.Drawing.Size(427, 22);
+            this.tb_DescCategoria.Size = new System.Drawing.Size(321, 20);
             this.tb_DescCategoria.TabIndex = 1;
             this.tb_DescCategoria.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_DescCategoria_KeyPress_1);
             // 
             // tb_IdCategoria
             // 
-            this.tb_IdCategoria.Enabled = false;
-            this.tb_IdCategoria.Location = new System.Drawing.Point(436, 209);
-            this.tb_IdCategoria.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tb_IdCategoria.Location = new System.Drawing.Point(327, 170);
+            this.tb_IdCategoria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tb_IdCategoria.Name = "tb_IdCategoria";
-            this.tb_IdCategoria.Size = new System.Drawing.Size(128, 22);
+            this.tb_IdCategoria.Size = new System.Drawing.Size(97, 20);
             this.tb_IdCategoria.TabIndex = 0;
             this.tb_IdCategoria.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_IdCategoria_KeyPress_1);
             // 
@@ -76,9 +75,9 @@
             this.toolStripSeparator1,
             this.btnSalir,
             this.toolStripLabel2});
-            this.toolStrip1.Location = new System.Drawing.Point(105, -2);
+            this.toolStrip1.Location = new System.Drawing.Point(79, -2);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(295, 39);
+            this.toolStrip1.Size = new System.Drawing.Size(220, 39);
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -99,7 +98,7 @@
             this.toolStripLabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripLabel1.ForeColor = System.Drawing.Color.White;
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(104, 36);
+            this.toolStripLabel1.Size = new System.Drawing.Size(81, 36);
             this.toolStripLabel1.Text = "Guardar";
             // 
             // toolStripSeparator1
@@ -123,16 +122,15 @@
             this.toolStripLabel2.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripLabel2.ForeColor = System.Drawing.Color.White;
             this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(62, 36);
+            this.toolStripLabel2.Size = new System.Drawing.Size(49, 36);
             this.toolStripLabel2.Text = "Salir";
             // 
             // cmb_IdEstado
             // 
             this.cmb_IdEstado.FormattingEnabled = true;
-            this.cmb_IdEstado.Location = new System.Drawing.Point(436, 361);
-            this.cmb_IdEstado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmb_IdEstado.Location = new System.Drawing.Point(327, 293);
             this.cmb_IdEstado.Name = "cmb_IdEstado";
-            this.cmb_IdEstado.Size = new System.Drawing.Size(196, 24);
+            this.cmb_IdEstado.Size = new System.Drawing.Size(148, 21);
             this.cmb_IdEstado.TabIndex = 2;
             // 
             // label9
@@ -141,10 +139,9 @@
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(179, 345);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Location = new System.Drawing.Point(134, 280);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(110, 29);
+            this.label9.Size = new System.Drawing.Size(87, 23);
             this.label9.TabIndex = 53;
             this.label9.Text = "Id Estado";
             // 
@@ -154,10 +151,9 @@
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(181, 265);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Location = new System.Drawing.Point(136, 215);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(232, 29);
+            this.label11.Size = new System.Drawing.Size(184, 23);
             this.label11.TabIndex = 52;
             this.label11.Text = "Descripcion Categoria;";
             // 
@@ -167,20 +163,19 @@
             this.lbiIdCategoria.BackColor = System.Drawing.Color.Transparent;
             this.lbiIdCategoria.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbiIdCategoria.ForeColor = System.Drawing.Color.White;
-            this.lbiIdCategoria.Location = new System.Drawing.Point(181, 201);
-            this.lbiIdCategoria.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbiIdCategoria.Location = new System.Drawing.Point(136, 163);
             this.lbiIdCategoria.Name = "lbiIdCategoria";
-            this.lbiIdCategoria.Size = new System.Drawing.Size(147, 29);
+            this.lbiIdCategoria.Size = new System.Drawing.Size(118, 23);
             this.lbiIdCategoria.TabIndex = 51;
             this.lbiIdCategoria.Text = "ID Categor]ia";
             // 
             // frm_Modificar_T_CategoriasVuelos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Proyecto_2_PL.Properties.Resources.Fondo_CategoriaVuelos;
+           
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1120, 550);
+            this.ClientSize = new System.Drawing.Size(840, 447);
             this.ControlBox = false;
             this.Controls.Add(this.tb_DescCategoria);
             this.Controls.Add(this.tb_IdCategoria);
@@ -191,7 +186,7 @@
             this.Controls.Add(this.lbiIdCategoria);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frm_Modificar_T_CategoriasVuelos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_Modificar_T_CategoriasVuelos";

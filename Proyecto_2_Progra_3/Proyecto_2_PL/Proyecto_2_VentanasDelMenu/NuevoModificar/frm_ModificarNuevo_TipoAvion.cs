@@ -101,25 +101,27 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                     if(sMsjError == string.Empty)
                     {
                         MessageBox.Show("Tipo Avión agregado correctamente","Información",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                        cmb_IdEstado.SelectedValue = "0";
-                        txt_IdTipoAvion.Text = string.Empty;
-                        txt_NombreAvion.Text = string.Empty;
-                        txt_Descripcion.Text = string.Empty;
-                        txt_CantidadPasajeros.Text = string.Empty;
-                        txt_CantidadPeso.Text = string.Empty;
-                        txt_IdTipoAvion.SelectAll();
-                        txt_IdTipoAvion.Focus();
-
+                        labelTipoAvion.Text = "Modificar";
                     }
                     else
                     {
                         MessageBox.Show(sMsjError.ToString());
+                        labelTipoAvion.Text = "Guardar";
                     }
                 }
                 else
                 {
 
                     Obj_Mant_BLL.ModificarTipoAviones(ref sMsjError, ref Obj_Mant_DAL);
+                    if (sMsjError == string.Empty)
+                    {
+                        MessageBox.Show("Tipo Avión modificado correctamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    }
+                    else
+                    {
+                        MessageBox.Show(sMsjError.ToString());
+                    }
                 }
             }
             else
@@ -133,6 +135,14 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             cmb_IdEstado.DropDownStyle = ComboBoxStyle.DropDownList;
             cmb_IdEstado.Enabled = true;
             cargarDatos();
+            if(Obj_Mant_DAL.cbanderaAccion == 'I')
+            {
+                labelTipoAvion.Text = "Guardar";
+            }
+            else
+            {
+                labelTipoAvion.Text = "Modificar";
+            }
             
         }
 
