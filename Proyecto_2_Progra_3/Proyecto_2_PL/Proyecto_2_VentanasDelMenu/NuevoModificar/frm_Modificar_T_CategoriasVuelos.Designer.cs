@@ -48,7 +48,7 @@
             // 
             this.tb_DescCategoria.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tb_DescCategoria.Location = new System.Drawing.Point(327, 222);
-            this.tb_DescCategoria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tb_DescCategoria.Margin = new System.Windows.Forms.Padding(2);
             this.tb_DescCategoria.MaxLength = 90;
             this.tb_DescCategoria.Name = "tb_DescCategoria";
             this.tb_DescCategoria.Size = new System.Drawing.Size(321, 20);
@@ -58,7 +58,7 @@
             // tb_IdCategoria
             // 
             this.tb_IdCategoria.Location = new System.Drawing.Point(327, 170);
-            this.tb_IdCategoria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tb_IdCategoria.Margin = new System.Windows.Forms.Padding(2);
             this.tb_IdCategoria.Name = "tb_IdCategoria";
             this.tb_IdCategoria.Size = new System.Drawing.Size(97, 20);
             this.tb_IdCategoria.TabIndex = 0;
@@ -173,7 +173,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-           
+            this.BackgroundImage = global::Proyecto_2_PL.Properties.Resources.Fondo_CategoriaVuelos;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(840, 447);
             this.ControlBox = false;
@@ -186,7 +186,7 @@
             this.Controls.Add(this.lbiIdCategoria);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frm_Modificar_T_CategoriasVuelos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_Modificar_T_CategoriasVuelos";
