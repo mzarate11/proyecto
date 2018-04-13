@@ -92,7 +92,7 @@
             this.tls_btn_Guardar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tls_btn_Guardar.Name = "tls_btn_Guardar";
             this.tls_btn_Guardar.Size = new System.Drawing.Size(31, 31);
-            this.tls_btn_Guardar.Text = "toolStripButton1";
+            this.tls_btn_Guardar.Text = "Guardar";
             this.tls_btn_Guardar.Click += new System.EventHandler(this.tls_btn_Guardar_Click);
             // 
             // toolStripLabel1
@@ -114,7 +114,7 @@
             this.tls_btn_Salir.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tls_btn_Salir.Name = "tls_btn_Salir";
             this.tls_btn_Salir.Size = new System.Drawing.Size(31, 31);
-            this.tls_btn_Salir.Text = "toolStripButton2";
+            this.tls_btn_Salir.Text = "Salir";
             this.tls_btn_Salir.Click += new System.EventHandler(this.tls_btn_Salir_Click);
             // 
             // toolStripLabel2
@@ -237,7 +237,7 @@
             // 
             this.txt_TelCasa.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_TelCasa.Location = new System.Drawing.Point(524, 61);
-            this.txt_TelCasa.MaxLength = 6;
+            this.txt_TelCasa.MaxLength = 8;
             this.txt_TelCasa.Name = "txt_TelCasa";
             this.txt_TelCasa.Size = new System.Drawing.Size(128, 25);
             this.txt_TelCasa.TabIndex = 5;
@@ -339,7 +339,6 @@
             this.cb_Estado.Location = new System.Drawing.Point(544, 76);
             this.cb_Estado.Name = "cb_Estado";
             this.cb_Estado.Size = new System.Drawing.Size(203, 25);
-            this.cb_Estado.Sorted = true;
             this.cb_Estado.TabIndex = 12;
             // 
             // cb_TipoEmpleado
@@ -349,7 +348,6 @@
             this.cb_TipoEmpleado.Location = new System.Drawing.Point(544, 48);
             this.cb_TipoEmpleado.Name = "cb_TipoEmpleado";
             this.cb_TipoEmpleado.Size = new System.Drawing.Size(203, 25);
-            this.cb_TipoEmpleado.Sorted = true;
             this.cb_TipoEmpleado.TabIndex = 11;
             // 
             // cb_IdAerolinea
@@ -359,14 +357,13 @@
             this.cb_IdAerolinea.Location = new System.Drawing.Point(544, 17);
             this.cb_IdAerolinea.Name = "cb_IdAerolinea";
             this.cb_IdAerolinea.Size = new System.Drawing.Size(203, 25);
-            this.cb_IdAerolinea.Sorted = true;
             this.cb_IdAerolinea.TabIndex = 10;
             // 
             // txt_IdEmpleado
             // 
             this.txt_IdEmpleado.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_IdEmpleado.Location = new System.Drawing.Point(133, 48);
-            this.txt_IdEmpleado.MaxLength = 5;
+            this.txt_IdEmpleado.MaxLength = 4;
             this.txt_IdEmpleado.Name = "txt_IdEmpleado";
             this.txt_IdEmpleado.Size = new System.Drawing.Size(143, 25);
             this.txt_IdEmpleado.TabIndex = 9;

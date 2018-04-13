@@ -77,7 +77,7 @@ namespace Proyecto_2_BLL.Catagolos_Mantinimiento_BLL
             }
         }
 
-        public void Insertar_Estados(ref string sMsjError, ref cls_Empleados_DAL Obj_Empleados_DAL)
+        public void Insertar_Empleados(ref string sMsjError, ref cls_Empleados_DAL Obj_Empleados_DAL)
         {
             cls_BaseDatos_DAL Obj_DAL = new cls_BaseDatos_DAL();
             cls_Bases_BLL Obj_BLL = new cls_Bases_BLL();
@@ -113,7 +113,7 @@ namespace Proyecto_2_BLL.Catagolos_Mantinimiento_BLL
             }
         }
 
-        public void Modificar_Estados(ref string sMsjError, ref cls_Empleados_DAL Obj_Empleados_DAL)
+        public void Modificar_Empleados(ref string sMsjError, ref cls_Empleados_DAL Obj_Empleados_DAL)
         {
             cls_BaseDatos_DAL Obj_DAL = new cls_BaseDatos_DAL();
             cls_Bases_BLL Obj_BLL = new cls_Bases_BLL();
