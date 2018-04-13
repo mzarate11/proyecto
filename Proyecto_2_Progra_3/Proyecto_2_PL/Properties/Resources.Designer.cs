@@ -233,6 +233,26 @@ namespace Proyecto_2_PL.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Fondo_Usuarios {
+            get {
+                object obj = ResourceManager.GetObject("Fondo_Usuarios", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Fondo_Usuarios1 {
+            get {
+                object obj = ResourceManager.GetObject("Fondo_Usuarios1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fondo_vuelos {
             get {
                 object obj = ResourceManager.GetObject("fondo vuelos", resourceCulture);
@@ -243,9 +263,29 @@ namespace Proyecto_2_PL.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Fondo1 {
+            get {
+                object obj = ResourceManager.GetObject("Fondo1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fondo2 {
             get {
                 object obj = ResourceManager.GetObject("fondo2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fondoEstados {
+            get {
+                object obj = ResourceManager.GetObject("fondoEstados", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

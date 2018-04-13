@@ -49,10 +49,10 @@
             // cmb_IdEmpleado
             // 
             this.cmb_IdEmpleado.FormattingEnabled = true;
-            this.cmb_IdEmpleado.Location = new System.Drawing.Point(720, 286);
-            this.cmb_IdEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmb_IdEmpleado.Location = new System.Drawing.Point(540, 232);
+            this.cmb_IdEmpleado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmb_IdEmpleado.Name = "cmb_IdEmpleado";
-            this.cmb_IdEmpleado.Size = new System.Drawing.Size(193, 24);
+            this.cmb_IdEmpleado.Size = new System.Drawing.Size(146, 21);
             this.cmb_IdEmpleado.TabIndex = 2;
             // 
             // toolStrip1
@@ -66,9 +66,9 @@
             this.toolStripSeparator1,
             this.btnSalir,
             this.toolStripLabel2});
-            this.toolStrip1.Location = new System.Drawing.Point(65, 9);
+            this.toolStrip1.Location = new System.Drawing.Point(49, 7);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(295, 39);
+            this.toolStrip1.Size = new System.Drawing.Size(220, 39);
             this.toolStrip1.TabIndex = 4;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -88,7 +88,7 @@
             this.toolStripLabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripLabel1.ForeColor = System.Drawing.Color.White;
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(104, 36);
+            this.toolStripLabel1.Size = new System.Drawing.Size(81, 36);
             this.toolStripLabel1.Text = "Guardar";
             // 
             // toolStripSeparator1
@@ -112,16 +112,15 @@
             this.toolStripLabel2.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripLabel2.ForeColor = System.Drawing.Color.White;
             this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(62, 36);
+            this.toolStripLabel2.Size = new System.Drawing.Size(49, 36);
             this.toolStripLabel2.Text = "Salir";
             // 
             // cmb_IdEstado
             // 
             this.cmb_IdEstado.FormattingEnabled = true;
-            this.cmb_IdEstado.Location = new System.Drawing.Point(720, 367);
-            this.cmb_IdEstado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmb_IdEstado.Location = new System.Drawing.Point(540, 298);
             this.cmb_IdEstado.Name = "cmb_IdEstado";
-            this.cmb_IdEstado.Size = new System.Drawing.Size(193, 24);
+            this.cmb_IdEstado.Size = new System.Drawing.Size(146, 21);
             this.cmb_IdEstado.TabIndex = 3;
             // 
             // label9
@@ -130,21 +129,19 @@
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(471, 367);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Location = new System.Drawing.Point(353, 298);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(128, 29);
+            this.label9.Size = new System.Drawing.Size(101, 23);
             this.label9.TabIndex = 55;
             this.label9.Text = "Id Estado :";
             // 
             // txt_Password
             // 
             this.txt_Password.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txt_Password.Location = new System.Drawing.Point(720, 220);
-            this.txt_Password.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_Password.Location = new System.Drawing.Point(540, 179);
             this.txt_Password.MaxLength = 8;
             this.txt_Password.Name = "txt_Password";
-            this.txt_Password.Size = new System.Drawing.Size(331, 22);
+            this.txt_Password.Size = new System.Drawing.Size(249, 20);
             this.txt_Password.TabIndex = 1;
             this.txt_Password.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Password_KeyPress_1);
             // 
@@ -152,11 +149,10 @@
             // 
             this.txt_Username.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_Username.Enabled = false;
-            this.txt_Username.Location = new System.Drawing.Point(720, 155);
-            this.txt_Username.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_Username.Location = new System.Drawing.Point(540, 126);
             this.txt_Username.MaxLength = 15;
             this.txt_Username.Name = "txt_Username";
-            this.txt_Username.Size = new System.Drawing.Size(165, 22);
+            this.txt_Username.Size = new System.Drawing.Size(125, 20);
             this.txt_Username.TabIndex = 0;
             this.txt_Username.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Username_KeyPress_1);
             // 
@@ -166,10 +162,9 @@
             this.lb_IdEmpleado.BackColor = System.Drawing.Color.Transparent;
             this.lb_IdEmpleado.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_IdEmpleado.ForeColor = System.Drawing.Color.White;
-            this.lb_IdEmpleado.Location = new System.Drawing.Point(471, 283);
-            this.lb_IdEmpleado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lb_IdEmpleado.Location = new System.Drawing.Point(353, 230);
             this.lb_IdEmpleado.Name = "lb_IdEmpleado";
-            this.lb_IdEmpleado.Size = new System.Drawing.Size(154, 29);
+            this.lb_IdEmpleado.Size = new System.Drawing.Size(122, 23);
             this.lb_IdEmpleado.TabIndex = 52;
             this.lb_IdEmpleado.Text = "ID Empleado :";
             // 
@@ -179,10 +174,9 @@
             this.lb_Password.BackColor = System.Drawing.Color.Transparent;
             this.lb_Password.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_Password.ForeColor = System.Drawing.Color.White;
-            this.lb_Password.Location = new System.Drawing.Point(471, 217);
-            this.lb_Password.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lb_Password.Location = new System.Drawing.Point(353, 176);
             this.lb_Password.Name = "lb_Password";
-            this.lb_Password.Size = new System.Drawing.Size(120, 29);
+            this.lb_Password.Size = new System.Drawing.Size(94, 23);
             this.lb_Password.TabIndex = 51;
             this.lb_Password.Text = "Password :";
             // 
@@ -192,20 +186,19 @@
             this.Lb_Username.BackColor = System.Drawing.Color.Transparent;
             this.Lb_Username.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lb_Username.ForeColor = System.Drawing.Color.White;
-            this.Lb_Username.Location = new System.Drawing.Point(471, 151);
-            this.Lb_Username.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Lb_Username.Location = new System.Drawing.Point(353, 123);
             this.Lb_Username.Name = "Lb_Username";
-            this.Lb_Username.Size = new System.Drawing.Size(140, 29);
+            this.Lb_Username.Size = new System.Drawing.Size(111, 23);
             this.Lb_Username.TabIndex = 50;
             this.Lb_Username.Text = "User Name :";
             // 
             // frm_Modificar_Usuarios
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Proyecto_2_PL.Properties.Resources.Fondo_Usuarios;
+            this.BackgroundImage = global::Proyecto_2_PL.Properties.Resources.Fondo_Usuarios1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1120, 550);
+            this.ClientSize = new System.Drawing.Size(840, 447);
             this.ControlBox = false;
             this.Controls.Add(this.cmb_IdEmpleado);
             this.Controls.Add(this.toolStrip1);
@@ -217,7 +210,7 @@
             this.Controls.Add(this.lb_Password);
             this.Controls.Add(this.Lb_Username);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frm_Modificar_Usuarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_Modificar_Usuarios";
