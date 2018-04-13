@@ -16,6 +16,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
     public partial class frm_ModificarAviones : Form
     {
         public cls_Aviones_DAL objDal_Aviones = new cls_Aviones_DAL();
+
         public frm_ModificarAviones()
         {
             InitializeComponent();
@@ -25,6 +26,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
         {
             CargarDatos();
         }
+
         private void CargarDatos()
         {
             cls_BaseDatos_DAL objDAL_BaseDatos = new cls_BaseDatos_DAL();
@@ -103,40 +105,39 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                     {
                         e.Handled = true;
                     }
-                    else if(txt_IdAvion.SelectionStart != 1 && e.KeyChar == '-')
+                    else if(txt_IdAvion.SelectionStart == 0 && e.KeyChar == '-')
                     {
-                        if (txt_IdAvion.SelectionStart == 2 && e.KeyChar == '-')
-                        {
-                            e.Handled = false;
-                        }
-                        else
-                        {
-                            e.Handled = true;
-                        }                                            
+                        e.Handled = true;                       
                     }                    
-                }
-                else
-                {
-                    e.Handled = false;
-                }
+                }                
             }
             else
             {
-                MessageBox.Show("Este espacio es solo para ingresar numeros", "Informacion",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Este espacio no acepta caracteres especiales", "Informacion",
+                    MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 e.Handled = true;
             }
         }
 
         private void txt_NomAvion_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (char.IsLetter(e.KeyChar) || e.KeyChar == (char)(Keys.Back) || e.KeyChar == (char)(Keys.Space))
+            if (char.IsLetter(e.KeyChar) || e.KeyChar == (char)(Keys.Back) || e.KeyChar == (char)(Keys.Space) || e.KeyChar == '-')
             {
-                e.Handled = false;
+                if (e.KeyChar == '-')
+                {
+                    if (txt_NomAvion.Text.Contains("-"))
+                    {
+                        e.Handled = true;
+                    }
+                    else if (txt_NomAvion.SelectionStart == 0 && e.KeyChar == '-')
+                    {
+                        e.Handled = true;
+                    }
+                }
             }
             else
             {
-                MessageBox.Show("Este espacio es solo para ingresar numeros", "Informacion",
+                MessageBox.Show("Este espacio es solo para ingresar letras", "Informacion",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 e.Handled = true;
             }
@@ -150,7 +151,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             }
             else
             {
-                MessageBox.Show("Este espacio es solo para ingresar numeros", "Informacion",
+                MessageBox.Show("Este espacio es solo para ingresar letras", "Informacion",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 e.Handled = true;
             }
@@ -174,50 +175,58 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
 
         private void btn_Guardar_Click(object sender, EventArgs e)
         {
-            if (cmb_IdEstado.SelectedValue.ToString() != "0" ||
-                cmb_IdAerolinea.SelectedValue.ToString() != "0" ||
-                cmb_IdTipoAvion.SelectedValue.ToString() != "0" ||
-                txt_NomAvion.Text != string.Empty || txt_IdAvion.Text != string.Empty || txt_DescAvion.Text != string.Empty)
+            if (cmb_IdEstado.SelectedValue.ToString() != "0" &&
+                cmb_IdAerolinea.SelectedValue.ToString() != "0" &&
+                cmb_IdTipoAvion.SelectedValue.ToString() != "0" &&
+               (txt_NomAvion.Text != string.Empty && txt_IdAvion.Text != string.Empty && txt_DescAvion.Text != string.Empty))
             {
-                cls_Aviones_BLL objBLL_Aviones = new cls_Aviones_BLL();
-                string sMsjError = string.Empty;                
-                objDal_Aviones.sNomAvion = txt_NomAvion.Text;
-                objDal_Aviones.sDescAvion = txt_DescAvion.Text;
-                objDal_Aviones.sIdAvion = txt_IdAvion.Text;
-                objDal_Aviones.sIdTipoAvion = cmb_IdTipoAvion.SelectedValue.ToString();
-                objDal_Aviones.iIdAerolinea = Convert.ToInt32(cmb_IdAerolinea.SelectedValue.ToString().Trim());
-                objDal_Aviones.cIdEstado = Convert.ToChar(cmb_IdEstado.SelectedValue.ToString());
-
-                if (objDal_Aviones.cBandera == 'I')
+                if (txt_NomAvion.Text.Length >= 4 && txt_IdAvion.Text.Length >= 4)
                 {
-                    objBLL_Aviones.Insertar_Aviones(ref sMsjError, ref objDal_Aviones);
-                    if (sMsjError == string.Empty)
+                    cls_Aviones_BLL objBLL_Aviones = new cls_Aviones_BLL();
+                    string sMsjError = string.Empty;
+                    objDal_Aviones.sNomAvion = txt_NomAvion.Text;
+                    objDal_Aviones.sDescAvion = txt_DescAvion.Text;
+                    objDal_Aviones.sIdAvion = txt_IdAvion.Text;
+                    objDal_Aviones.sIdTipoAvion = cmb_IdTipoAvion.SelectedValue.ToString();
+                    objDal_Aviones.iIdAerolinea = Convert.ToInt32(cmb_IdAerolinea.SelectedValue.ToString().Trim());
+                    objDal_Aviones.cIdEstado = Convert.ToChar(cmb_IdEstado.SelectedValue.ToString());
+
+                    if (objDal_Aviones.cBandera == 'I')
                     {
-                        MessageBox.Show("Se guardó el nuevo registro exitosamente");
-                        objDal_Aviones.cBandera = 'U';
+                        objBLL_Aviones.Insertar_Aviones(ref sMsjError, ref objDal_Aviones);
+                        if (sMsjError == string.Empty)
+                        {
+                            MessageBox.Show("Se guardó el nuevo registro exitosamente");
+                            objDal_Aviones.cBandera = 'U';
+                        }
+                        else
+                        {
+                            MessageBox.Show("Se presentó un error al tratar de guardar el registro");
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Se presentó un error al tratar de guardar el registro");
+                        objBLL_Aviones.Modificar_Aviones(ref sMsjError, ref objDal_Aviones);
+                        if (sMsjError == string.Empty)
+                        {
+                            MessageBox.Show("Se modificó el nuevo registro exitosamente");
+                            objDal_Aviones.cBandera = 'U';
+                        }
+                        else
+                        {
+                            MessageBox.Show("Se presentó un error al tratar de modificar el registro");
+                        }
                     }
                 }
                 else
                 {
-                    objBLL_Aviones.Modificar_Aviones(ref sMsjError, ref objDal_Aviones);
-                    if (sMsjError == string.Empty)
-                    {
-                        MessageBox.Show("Se modificó el nuevo registro exitosamente");
-                        objDal_Aviones.cBandera = 'U';
-                    }
-                    else
-                    {
-                        MessageBox.Show("Se presentó un error al tratar de modificar el registro");
-                    }
+                    MessageBox.Show("Los datos que intententa ingresar no son válidos para un nombre o identificación de un avión",
+                        "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 }
             }
             else
             {
-                MessageBox.Show("Todos los cambios son obligatorios", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Todos los campos son obligatorios", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

@@ -79,11 +79,13 @@
             // 
             // txt_IdAerolinea
             // 
+            this.txt_IdAerolinea.Enabled = false;
             this.txt_IdAerolinea.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.txt_IdAerolinea.Location = new System.Drawing.Point(351, 80);
             this.txt_IdAerolinea.Margin = new System.Windows.Forms.Padding(2);
             this.txt_IdAerolinea.MaxLength = 20;
             this.txt_IdAerolinea.Name = "txt_IdAerolinea";
+            this.txt_IdAerolinea.ReadOnly = true;
             this.txt_IdAerolinea.Size = new System.Drawing.Size(178, 22);
             this.txt_IdAerolinea.TabIndex = 3;
             this.txt_IdAerolinea.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_IdAerolinea_KeyPress);

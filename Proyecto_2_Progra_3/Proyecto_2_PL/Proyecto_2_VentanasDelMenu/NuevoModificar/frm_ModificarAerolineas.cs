@@ -16,6 +16,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
     public partial class frm_ModificarAerolineas : Form
     {
         public cls_Aerolineas_DAL objDAL_Aerolinea = new cls_Aerolineas_DAL();
+
         public frm_ModificarAerolineas()
         {
             InitializeComponent();
@@ -25,6 +26,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
         {
             CargarDatos();
         }
+
         private void CargarDatos()
         {
             cls_BaseDatos_DAL objDAL_BaseDatos = new cls_BaseDatos_DAL();
@@ -42,10 +44,9 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 cmb_IdEstado.ValueMember = DTE.Columns[0].ToString();
                 cmb_IdEstado.SelectedValue = "0";
                 #endregion
-                txt_IdAerolinea.Enabled = false;
                 if (objDAL_Aerolinea.cBandera == 'I')
                 {
-                    txt_IdAerolinea.Clear();
+                    txt_IdAerolinea.Text = "Asignación automatica";
                     //txt_IdAerolinea.Enabled = true;
                     txt_NombreAerolinea.Clear();
                    
@@ -88,8 +89,8 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             }
             else
             {
-                MessageBox.Show("Este espacio es solo para ingresar numeros", "Informacion",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Este espacio es solo para ingresar letras", "Informacion",
+                    MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 e.Handled = true;
             }
         }
@@ -102,45 +103,52 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
 
         private void btn_Guardar_Click(object sender, EventArgs e)
         {
-            if (cmb_IdEstado.SelectedValue.ToString() != "0" ||
-                txt_IdAerolinea.Text != string.Empty || txt_NombreAerolinea.Text != string.Empty)
+            if (cmb_IdEstado.SelectedValue.ToString() != "0" && txt_NombreAerolinea.Text != string.Empty)
             {
-                cls_Aerolineas_BLL objBLL_Aerolineas = new cls_Aerolineas_BLL();
-                string sMsjError = string.Empty;
-                //objDAL_Aerolinea.iIdAerolinea = Convert.ToInt32(txt_IdAerolinea.Text);
-                objDAL_Aerolinea.cIdEstado = Convert.ToChar(cmb_IdEstado.SelectedValue.ToString());
-                objDAL_Aerolinea.sNombreAerolinea = txt_NombreAerolinea.Text;
-
-                if (objDAL_Aerolinea.cBandera == 'I')
+                if (txt_NombreAerolinea.Text.Length >= 2)
                 {
-                    objBLL_Aerolineas.Insertar_Aerolineas(ref sMsjError, ref objDAL_Aerolinea);
-                    if (sMsjError == string.Empty)
+                    cls_Aerolineas_BLL objBLL_Aerolineas = new cls_Aerolineas_BLL();
+                    string sMsjError = string.Empty;
+                    objDAL_Aerolinea.cIdEstado = Convert.ToChar(cmb_IdEstado.SelectedValue.ToString());
+                    objDAL_Aerolinea.sNombreAerolinea = txt_NombreAerolinea.Text;
+
+                    if (objDAL_Aerolinea.cBandera == 'I')
                     {
-                        MessageBox.Show("Se guardó el nuevo registro exitosamente");
-                        objDAL_Aerolinea.cBandera = 'U';
+                        objBLL_Aerolineas.Insertar_Aerolineas(ref sMsjError, ref objDAL_Aerolinea);
+                        if (sMsjError == string.Empty)
+                        {
+                            MessageBox.Show("Se guardó el nuevo registro exitosamente");
+                            txt_IdAerolinea.Text = objDAL_Aerolinea.iIdAerolinea.ToString();
+                            objDAL_Aerolinea.cBandera = 'U';
+                        }
+                        else
+                        {
+                            MessageBox.Show("Se presentó un error al tratar de guardar el registro");
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Se presentó un error al tratar de guardar el registro");
+                        objBLL_Aerolineas.Modificar_Aerolineas(ref sMsjError, ref objDAL_Aerolinea);
+                        if (sMsjError == string.Empty)
+                        {
+                            MessageBox.Show("Se modificó el nuevo registro exitosamente");
+                            objDAL_Aerolinea.cBandera = 'U';
+                        }
+                        else
+                        {
+                            MessageBox.Show("Se presentó un error al tratar de modificar el registro");
+                        }
                     }
                 }
                 else
                 {
-                    objBLL_Aerolineas.Modificar_Aerolineas(ref sMsjError, ref objDAL_Aerolinea);
-                    if (sMsjError == string.Empty)
-                    {
-                        MessageBox.Show("Se modificó el nuevo registro exitosamente");
-                        objDAL_Aerolinea.cBandera = 'U';
-                    }
-                    else
-                    {
-                        MessageBox.Show("Se presentó un error al tratar de modificar el registro");
-                    }
-                }
+                    MessageBox.Show("Los datos que intententa ingresar no son válidos para un nombre de una aerolinea",
+                        "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                }            
             }
             else
             {
-                MessageBox.Show("Todos los cambios son obligatorios", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Todos los campos son obligatorios", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
