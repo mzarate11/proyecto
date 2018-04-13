@@ -32,6 +32,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 }
                 else
                 {
+                    lb_Guardar.Text = "Modificar";
                     txt_ID_Estados.Text = Obj_DAL_Estados.cIdEstado.ToString().Trim();
                     txt_ID_Estados.Enabled = false;
                     txt_Descripcion.Text = Obj_DAL_Estados.sDescripcion.Trim();
@@ -75,6 +76,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                     if (sMsjError == string.Empty)
                     {
                         MessageBox.Show("La Base de Datos ha sido Actualizada", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        lb_Guardar.Text = "Modificar";
                     }
                     else
                     {
