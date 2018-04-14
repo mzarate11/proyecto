@@ -92,7 +92,7 @@
             this.tls_btn_Refrescar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tls_btn_Refrescar.Name = "tls_btn_Refrescar";
             this.tls_btn_Refrescar.Size = new System.Drawing.Size(28, 28);
-            this.tls_btn_Refrescar.Text = "toolStripButton1";
+            this.tls_btn_Refrescar.Text = "Refrescar";
             this.tls_btn_Refrescar.Click += new System.EventHandler(this.tls_btn_Refrescar_Click);
             // 
             // toolStripLabel1
@@ -113,7 +113,7 @@
             this.tls_btn_Nuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tls_btn_Nuevo.Name = "tls_btn_Nuevo";
             this.tls_btn_Nuevo.Size = new System.Drawing.Size(28, 28);
-            this.tls_btn_Nuevo.Text = "toolStripButton2";
+            this.tls_btn_Nuevo.Text = "Nuevo";
             this.tls_btn_Nuevo.Click += new System.EventHandler(this.tls_btn_Nuevo_Click);
             // 
             // toolStripLabel2
@@ -134,7 +134,7 @@
             this.tls_btn_Modificar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tls_btn_Modificar.Name = "tls_btn_Modificar";
             this.tls_btn_Modificar.Size = new System.Drawing.Size(28, 28);
-            this.tls_btn_Modificar.Text = "toolStripButton3";
+            this.tls_btn_Modificar.Text = "Modificar";
             this.tls_btn_Modificar.Click += new System.EventHandler(this.tls_btn_Modificar_Click);
             // 
             // toolStripLabel3
@@ -155,7 +155,7 @@
             this.tls_btn_Eliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tls_btn_Eliminar.Name = "tls_btn_Eliminar";
             this.tls_btn_Eliminar.Size = new System.Drawing.Size(28, 28);
-            this.tls_btn_Eliminar.Text = "toolStripButton4";
+            this.tls_btn_Eliminar.Text = "Eliminar";
             this.tls_btn_Eliminar.Click += new System.EventHandler(this.tls_btn_Eliminar_Click);
             // 
             // toolStripLabel4
@@ -189,7 +189,7 @@
             this.tls_btn_Salir.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tls_btn_Salir.Name = "tls_btn_Salir";
             this.tls_btn_Salir.Size = new System.Drawing.Size(28, 28);
-            this.tls_btn_Salir.Text = "toolStripButton5";
+            this.tls_btn_Salir.Text = "Salir";
             this.tls_btn_Salir.Click += new System.EventHandler(this.tls_btn_Salir_Click);
             // 
             // toolStripLabel6
@@ -204,7 +204,7 @@
             this.dgv_Paises.AllowUserToDeleteRows = false;
             this.dgv_Paises.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Paises.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgv_Paises.Location = new System.Drawing.Point(9, 37);
+            this.dgv_Paises.Location = new System.Drawing.Point(9, 34);
             this.dgv_Paises.MultiSelect = false;
             this.dgv_Paises.Name = "dgv_Paises";
             this.dgv_Paises.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
