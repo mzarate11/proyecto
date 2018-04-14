@@ -118,15 +118,33 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
 
         private void txt_Nombre_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (char.IsLetter(e.KeyChar)|| e.KeyChar==(char)Keys.Back)
+            if (char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back)
             {
                 e.Handled = false;
             }
+
+            else if (e.KeyChar == (char)Keys.Space)
+            {
+                if (string.IsNullOrEmpty(txt_Apellidos.Text))
+                {
+                    e.Handled = true;
+                }
+                else if (txt_Apellidos.Text.Contains(' '))
+                {
+                    e.Handled = true;
+                }
+                else
+                {
+                    e.Handled = false;
+                }
+            }
+
             else
             {
                 e.Handled = true;
             }
         }
+        
 
         private void txt_Apellidos_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -136,9 +154,24 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             }
             else
             {
-                if (char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Space)
+                if (char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back )
                 {
                     e.Handled = false;
+                }
+                else if (e.KeyChar == (char)Keys.Space)
+                {
+                    if (string.IsNullOrEmpty(txt_Apellidos.Text))
+                    {
+                        e.Handled = true;
+                    }
+                    else if (txt_Apellidos.Text.Contains(' '))
+                    {
+                        e.Handled = true;
+                    }
+                    else
+                    {
+                        e.Handled = false;
+                    }
                 }
                 else
                 {

@@ -173,7 +173,7 @@
             // 
             this.txt_Nombre.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Nombre.Location = new System.Drawing.Point(99, 21);
-            this.txt_Nombre.MaxLength = 0;
+            this.txt_Nombre.MaxLength = 12;
             this.txt_Nombre.Name = "txt_Nombre";
             this.txt_Nombre.Size = new System.Drawing.Size(136, 25);
             this.txt_Nombre.TabIndex = 0;
@@ -183,6 +183,7 @@
             // 
             this.txt_Apellidos.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Apellidos.Location = new System.Drawing.Point(315, 21);
+            this.txt_Apellidos.MaxLength = 15;
             this.txt_Apellidos.Name = "txt_Apellidos";
             this.txt_Apellidos.Size = new System.Drawing.Size(245, 25);
             this.txt_Apellidos.TabIndex = 1;
@@ -307,6 +308,7 @@
             // 
             this.txt_Direccion.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Direccion.Location = new System.Drawing.Point(392, 95);
+            this.txt_Direccion.MaxLength = 150;
             this.txt_Direccion.Multiline = true;
             this.txt_Direccion.Name = "txt_Direccion";
             this.txt_Direccion.Size = new System.Drawing.Size(310, 53);
@@ -363,7 +365,7 @@
             // 
             this.txt_IdEmpleado.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_IdEmpleado.Location = new System.Drawing.Point(133, 48);
-            this.txt_IdEmpleado.MaxLength = 4;
+            this.txt_IdEmpleado.MaxLength = 3;
             this.txt_IdEmpleado.Name = "txt_IdEmpleado";
             this.txt_IdEmpleado.Size = new System.Drawing.Size(143, 25);
             this.txt_IdEmpleado.TabIndex = 9;
@@ -373,7 +375,7 @@
             // 
             this.txt_Salario.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Salario.Location = new System.Drawing.Point(123, 17);
-            this.txt_Salario.MaxLength = 7;
+            this.txt_Salario.MaxLength = 8;
             this.txt_Salario.Name = "txt_Salario";
             this.txt_Salario.Size = new System.Drawing.Size(153, 25);
             this.txt_Salario.TabIndex = 8;
