@@ -133,7 +133,7 @@
             // 
             // txt_Nombre
             // 
-            this.txt_Nombre.Location = new System.Drawing.Point(285, 209);
+            this.txt_Nombre.Location = new System.Drawing.Point(285, 195);
             this.txt_Nombre.MaxLength = 25;
             this.txt_Nombre.Name = "txt_Nombre";
             this.txt_Nombre.Size = new System.Drawing.Size(100, 20);
@@ -142,7 +142,7 @@
             // 
             // txt_ID_Cliente
             // 
-            this.txt_ID_Cliente.Location = new System.Drawing.Point(285, 95);
+            this.txt_ID_Cliente.Location = new System.Drawing.Point(285, 80);
             this.txt_ID_Cliente.MaxLength = 7;
             this.txt_ID_Cliente.Name = "txt_ID_Cliente";
             this.txt_ID_Cliente.Size = new System.Drawing.Size(100, 20);
@@ -151,7 +151,7 @@
             // 
             // txt_Apellidos
             // 
-            this.txt_Apellidos.Location = new System.Drawing.Point(285, 264);
+            this.txt_Apellidos.Location = new System.Drawing.Point(285, 253);
             this.txt_Apellidos.MaxLength = 150;
             this.txt_Apellidos.Name = "txt_Apellidos";
             this.txt_Apellidos.Size = new System.Drawing.Size(100, 20);
@@ -163,7 +163,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label1.Location = new System.Drawing.Point(439, 259);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(98, 23);
@@ -175,7 +175,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label2.Location = new System.Drawing.Point(439, 164);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(129, 23);
@@ -187,8 +187,8 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label3.Location = new System.Drawing.Point(152, 95);
+            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label3.Location = new System.Drawing.Point(152, 76);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(90, 23);
             this.label3.TabIndex = 47;
@@ -199,8 +199,8 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label4.Location = new System.Drawing.Point(152, 148);
+            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label4.Location = new System.Drawing.Point(152, 132);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(59, 23);
             this.label4.TabIndex = 48;
@@ -211,8 +211,8 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label5.Location = new System.Drawing.Point(152, 205);
+            this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label5.Location = new System.Drawing.Point(152, 191);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(70, 23);
             this.label5.TabIndex = 49;
@@ -223,8 +223,8 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label6.Location = new System.Drawing.Point(152, 259);
+            this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label6.Location = new System.Drawing.Point(152, 249);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(77, 23);
             this.label6.TabIndex = 50;
@@ -235,8 +235,8 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label7.Location = new System.Drawing.Point(152, 341);
+            this.label7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label7.Location = new System.Drawing.Point(152, 312);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(75, 23);
             this.label7.TabIndex = 51;
@@ -244,7 +244,7 @@
             // 
             // txt_Cedula
             // 
-            this.txt_Cedula.Location = new System.Drawing.Point(285, 151);
+            this.txt_Cedula.Location = new System.Drawing.Point(285, 136);
             this.txt_Cedula.MaxLength = 11;
             this.txt_Cedula.Name = "txt_Cedula";
             this.txt_Cedula.Size = new System.Drawing.Size(100, 20);
@@ -253,7 +253,7 @@
             // 
             // txt_Telefono
             // 
-            this.txt_Telefono.Location = new System.Drawing.Point(285, 345);
+            this.txt_Telefono.Location = new System.Drawing.Point(285, 316);
             this.txt_Telefono.MaxLength = 9;
             this.txt_Telefono.Name = "txt_Telefono";
             this.txt_Telefono.Size = new System.Drawing.Size(100, 20);
@@ -264,7 +264,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Proyecto_2_PL.Properties.Resources.clientes;
+            this.BackgroundImage = global::Proyecto_2_PL.Properties.Resources.Fondo1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(840, 396);
             this.ControlBox = false;
