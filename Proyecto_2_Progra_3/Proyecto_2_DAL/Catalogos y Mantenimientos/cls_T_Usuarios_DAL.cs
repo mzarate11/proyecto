@@ -10,7 +10,7 @@ namespace Proyecto_2_DAL.Catalogos_y_Mantenimientos
     {
         private string _sUsername, _sPassword, _sIdEmpleado;
         private char _cIdEstado, _cBandAX;
-
+        private char _cBandLogin;
         public string sUsername
         {
             get
@@ -76,5 +76,17 @@ namespace Proyecto_2_DAL.Catalogos_y_Mantenimientos
             }
         }
 
+        public char cBandLogin
+        {
+            get
+            {
+                return _cBandLogin;
+            }
+
+            set
+            {
+                _cBandLogin = value;
+            }
+        }
     }
 }
