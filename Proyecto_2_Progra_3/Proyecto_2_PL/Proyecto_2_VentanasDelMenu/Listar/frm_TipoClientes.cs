@@ -113,7 +113,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
             ObjTiposClientesDAL = new cls_TiposClientes_DAL();
             frm_Modificar_TipoClientes PantTiposClientes = new frm_Modificar_TipoClientes();
 
-            if (Dgv_View.RowCount > 1)
+            if (Dgv_View.RowCount > 0)
             {
                 ObjTiposClientesDAL.CBandAX = 'U';
                 ObjTiposClientesDAL.IIdTipoCliente = Convert.ToInt32(Dgv_View.SelectedRows[0].Cells[0].Value.ToString().Trim());
