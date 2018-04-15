@@ -27,8 +27,15 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             string sMsjError = string.Empty;
             DataTable DTE = new DataTable();
             DTE = ObjBLLEstados.Listar_Estados(ref sMsjError);
+
+
+            DTE.Rows.Add("0", "SELECCIONE UN ESTADO");
+
+
             cmb_ID_Estado.DataSource = DTE;
-            cmb_ID_Estado.DisplayMember = DTE.Columns[0].ToString();
+            cmb_ID_Estado.DisplayMember = DTE.Columns[1].ToString();
+            cmb_ID_Estado.ValueMember = DTE.Columns[0].ToString();
+            cmb_ID_Estado.SelectedValue = "0";
             #endregion
 
             #region Combo ID Clientes
@@ -36,8 +43,13 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             string sMsjError1 = string.Empty;
             DataTable DTTC = new DataTable();
             DTTC = ObjBLLTipoC.ListarTiposClientes(ref sMsjError1);
+
+            DTTC.Rows.Add("0", "SELECCIONE UN ID CLIENTE");
+
             cmb_ID_Tipo_Cliente.DataSource = DTTC;
-            cmb_ID_Tipo_Cliente.DisplayMember = DTTC.Columns[0].ToString();
+            cmb_ID_Tipo_Cliente.DisplayMember = DTTC.Columns[1].ToString();
+            cmb_ID_Tipo_Cliente.ValueMember = DTTC.Columns[0].ToString();
+            cmb_ID_Tipo_Cliente.SelectedValue = "0";
             #endregion
 
 
@@ -47,19 +59,20 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 {
                     txt_ID_Cliente.Text = string.Empty;
                     txt_ID_Cliente.Enabled = true;
-                    mtxt_Cedula.Text = string.Empty;
+                    txt_Cedula.Text = string.Empty;
                     txt_Nombre.Text = string.Empty;
                     txt_Apellidos.Text = string.Empty;
-                    mtxt_Telefono.Text = string.Empty;
+                    txt_Telefono.Text = string.Empty;
                 }
                 else
                 {
+                    lb_Guardar.Text = "Modificar";
                     txt_ID_Cliente.Text = ObjClientes_DAL.sIdCliente.ToString().Trim();
                     txt_ID_Cliente.Enabled = false;
-                    mtxt_Cedula.Text = ObjClientes_DAL.sCedula.ToString().Trim();
+                    txt_Cedula.Text = ObjClientes_DAL.sCedula.ToString().Trim();
                     txt_Nombre.Text = ObjClientes_DAL.sNombre.ToString().Trim();
                     txt_Apellidos.Text = ObjClientes_DAL.sApellido.ToString().Trim();
-                    mtxt_Telefono.Text = ObjClientes_DAL.sTelefono.ToString().Trim();
+                    txt_Telefono.Text = ObjClientes_DAL.sTelefono.ToString().Trim();
                 }
             }
             else
@@ -85,7 +98,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
 
         private void txt_ID_Cliente_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((char.IsLetter(e.KeyChar)) || (char.IsPunctuation(e.KeyChar)) || (char.IsSeparator(e.KeyChar))||(e.KeyChar == (char)Keys.Space))
+            if ((char.IsLetter(e.KeyChar)) || (char.IsPunctuation(e.KeyChar)) || (char.IsSeparator(e.KeyChar))||(e.KeyChar == (char)Keys.Space)||(char.IsSymbol(e.KeyChar)))
             {
                 e.Handled = true;
             }
@@ -97,7 +110,15 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
 
         private void txt_Apellidos_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((char.IsNumber(e.KeyChar)) || (char.IsPunctuation(e.KeyChar)) || (char.IsSymbol(e.KeyChar))|| (e.KeyChar == (char)Keys.Space))
+            if ((char.IsNumber(e.KeyChar)) || (char.IsPunctuation(e.KeyChar)) || (char.IsSymbol(e.KeyChar)))
+            {
+                e.Handled = true;
+            }
+            else if ((txt_Apellidos.Text == string.Empty) && (e.KeyChar == (char)Keys.Space))
+            {
+                e.Handled = true;
+            }
+            else if ((e.KeyChar == ' ')&&(txt_Apellidos.Text.Contains(' ')))
             {
                 e.Handled = true;
             }
@@ -106,46 +127,6 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 e.Handled = false;
             }
         }
-
-        private void mtxt_Cedula_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((mtxt_Cedula.SelectionStart == 0) && (e.KeyChar == '0'))
-            {
-                e.Handled = true;
-                MessageBox.Show("La cédula no puede iniciar con 0", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-               
-                
-            }
-            else
-            {
-                if ((char.IsLetter(e.KeyChar)) || (char.IsPunctuation(e.KeyChar)) || (char.IsSymbol(e.KeyChar)) || (e.KeyChar == ' '))
-                {
-                    e.Handled = true;
-                }
-                else
-                {
-                    e.Handled = false;
-                }
-            }
-        }
-
-        private void mtxt_Telefono_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((mtxt_Telefono.SelectionStart == 0) && mtxt_Telefono.Text == "0")
-            {
-                MessageBox.Show("El teléfono no puede iniciar con 0", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-            }
-            else if ((char.IsLetter(e.KeyChar)) || (char.IsPunctuation(e.KeyChar)) || (char.IsSymbol(e.KeyChar)) || (e.KeyChar == ' '))
-                {
-                    e.Handled = true;
-                }
-                else
-                {
-                    e.Handled = false;
-                }
-            
-         }
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
@@ -159,13 +140,88 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (ObjClientes_DAL.cBandAxn == 'I')
+            if (string.IsNullOrEmpty(txt_ID_Cliente.Text)||(string.IsNullOrEmpty(txt_Cedula.Text))||(string.IsNullOrEmpty(txt_Nombre.Text))||(string.IsNullOrEmpty(txt_Apellidos.Text))||(string.IsNullOrEmpty(txt_Telefono.Text))||(cmb_ID_Estado.SelectedValue.ToString() == "0")||(cmb_ID_Tipo_Cliente.SelectedValue.ToString() == "0")||(txt_Cedula.Text.Length < 11)||(txt_Telefono.Text.Length < 9))
             {
-
+                MessageBox.Show("No se puede guardar sin no están todos los datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
 
+                string sMsjError = string.Empty;
+                cls_Clientes_BLL ObjClientes_BLL = new cls_Clientes_BLL();
+                ObjClientes_DAL.sIdCliente = txt_ID_Cliente.Text;
+                ObjClientes_DAL.sCedula = txt_Cedula.Text;
+                ObjClientes_DAL.sNombre = txt_Nombre.Text;
+                ObjClientes_DAL.sApellido = txt_Apellidos.Text;
+                ObjClientes_DAL.sTelefono = txt_Telefono.Text;
+                ObjClientes_DAL.sIdTipoCliente = cmb_ID_Tipo_Cliente.SelectedValue.ToString();
+                ObjClientes_DAL.cIdEstado = Convert.ToChar(cmb_ID_Estado.SelectedValue.ToString());
+
+                if (ObjClientes_DAL.cBandAxn == 'I')
+                {
+                    ObjClientes_BLL.Insertar_Clientes(ref sMsjError, ref ObjClientes_DAL);
+                    if (sMsjError == string.Empty)
+                    {
+                        MessageBox.Show("La Base de Datos ha sido actualizada", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        lb_Guardar.Text = "Modificar";
+                    }
+                    else
+                    {
+                        MessageBox.Show("Hubo un Error y los Datos no han sido agregados:" + " [ " + sMsjError + " ] ", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                }
+                else if ((ObjClientes_DAL.cBandAxn == 'U') || (ObjClientes_DAL != null))
+                {
+
+                    ObjClientes_BLL.Modificar_Clientes(ref sMsjError, ref ObjClientes_DAL);
+
+                    if (sMsjError == string.Empty)
+                    {
+                        MessageBox.Show("La Base de Datos ha sido actualizada", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Hubo un Error y los Datos no han sido agregados:" + " [ " + sMsjError + " ] ", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                }
+            }
+        }
+
+        private void txt_Cedula_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((char.IsLetter(e.KeyChar)) || (char.IsPunctuation(e.KeyChar)) || (char.IsSeparator(e.KeyChar)) || (e.KeyChar == (char)Keys.Space) || (char.IsSymbol(e.KeyChar)))
+            {
+                e.Handled = true;
+
+            }
+            else if ((txt_Cedula.SelectionStart == 0) && (e.KeyChar == '0'))
+            {
+                e.Handled = true;
+                MessageBox.Show("La Cédula de indentidad no puede iniciar con 0", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                e.Handled = false;
+            }
+        }
+
+        private void txt_Telefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((char.IsLetter(e.KeyChar)) || (char.IsPunctuation(e.KeyChar)) || (char.IsSeparator(e.KeyChar)) || (e.KeyChar == (char)Keys.Space) || (char.IsSymbol(e.KeyChar)))
+            {
+                e.Handled = true;
+
+            }
+            else if ((txt_Telefono.SelectionStart == 0) && (e.KeyChar == '0'))
+            {
+                e.Handled = true;
+                MessageBox.Show("Un número de teléfono no puede iniciar con 0", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                e.Handled = false;
             }
         }
     }

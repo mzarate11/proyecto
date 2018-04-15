@@ -43,6 +43,8 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.btnSalir = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.txt_IdPais = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,7 +53,7 @@
             this.cmboxEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmboxEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmboxEstado.FormattingEnabled = true;
-            this.cmboxEstado.Location = new System.Drawing.Point(552, 157);
+            this.cmboxEstado.Location = new System.Drawing.Point(554, 179);
             this.cmboxEstado.Name = "cmboxEstado";
             this.cmboxEstado.Size = new System.Drawing.Size(161, 24);
             this.cmboxEstado.TabIndex = 25;
@@ -61,7 +63,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(397, 156);
+            this.label4.Location = new System.Drawing.Point(399, 178);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(70, 23);
             this.label4.TabIndex = 24;
@@ -71,35 +73,38 @@
             // 
             this.txtCodigoArea.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCodigoArea.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodigoArea.Location = new System.Drawing.Point(552, 123);
+            this.txtCodigoArea.Location = new System.Drawing.Point(554, 145);
             this.txtCodigoArea.MaxLength = 5;
             this.txtCodigoArea.Name = "txtCodigoArea";
             this.txtCodigoArea.Size = new System.Drawing.Size(161, 22);
             this.txtCodigoArea.TabIndex = 23;
+            this.txtCodigoArea.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigoArea_KeyPress);
             // 
             // txtCodigoISO
             // 
             this.txtCodigoISO.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCodigoISO.Location = new System.Drawing.Point(552, 78);
+            this.txtCodigoISO.Location = new System.Drawing.Point(554, 100);
             this.txtCodigoISO.MaxLength = 4;
             this.txtCodigoISO.Name = "txtCodigoISO";
             this.txtCodigoISO.Size = new System.Drawing.Size(161, 20);
             this.txtCodigoISO.TabIndex = 22;
+            this.txtCodigoISO.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigoISO_KeyPress);
             // 
             // txtNombrePais
             // 
             this.txtNombrePais.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNombrePais.Location = new System.Drawing.Point(552, 42);
+            this.txtNombrePais.Location = new System.Drawing.Point(554, 64);
             this.txtNombrePais.Name = "txtNombrePais";
             this.txtNombrePais.Size = new System.Drawing.Size(161, 20);
             this.txtNombrePais.TabIndex = 21;
+            this.txtNombrePais.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombrePais_KeyPress);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(397, 119);
+            this.label3.Location = new System.Drawing.Point(399, 141);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(139, 23);
             this.label3.TabIndex = 20;
@@ -110,7 +115,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(397, 75);
+            this.label2.Location = new System.Drawing.Point(399, 97);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(105, 23);
             this.label2.TabIndex = 19;
@@ -121,7 +126,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(397, 39);
+            this.label1.Location = new System.Drawing.Point(399, 61);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(149, 23);
             this.label1.TabIndex = 18;
@@ -184,12 +189,34 @@
             this.toolStripLabel2.Size = new System.Drawing.Size(49, 36);
             this.toolStripLabel2.Text = "Salir";
             // 
+            // txt_IdPais
+            // 
+            this.txt_IdPais.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_IdPais.Enabled = false;
+            this.txt_IdPais.Location = new System.Drawing.Point(554, 33);
+            this.txt_IdPais.Name = "txt_IdPais";
+            this.txt_IdPais.Size = new System.Drawing.Size(161, 20);
+            this.txt_IdPais.TabIndex = 28;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(399, 30);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(67, 23);
+            this.label5.TabIndex = 27;
+            this.label5.Text = "Id Pais:";
+            // 
             // frm_Modificar_Paises
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(723, 378);
+            this.Controls.Add(this.txt_IdPais);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.cmboxEstado);
             this.Controls.Add(this.label4);
@@ -227,5 +254,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton btnSalir;
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
+        private System.Windows.Forms.TextBox txt_IdPais;
+        private System.Windows.Forms.Label label5;
     }
 }

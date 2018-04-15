@@ -109,22 +109,29 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
             frm_Modificar_Estados PantEstados = new frm_Modificar_Estados();
             ObjEstadosDAL.cBandAX = 'I';
             PantEstados.Obj_DAL_Estados = ObjEstadosDAL;
+            this.Hide();
             PantEstados.ShowDialog();
-
+            this.Show();
             txtFiltro.Text = string.Empty;
             CargarDatos();
         }
 
         private void btn_Modificar_Click(object sender, EventArgs e)
         {
-            ObjEstadosDAL = new cls_Estados_DAL();
-            frm_Modificar_Estados PantEstados = new frm_Modificar_Estados();
-            ObjEstadosDAL.cBandAX = 'U';
-            ObjEstadosDAL.cIdEstado = Convert.ToChar(dgv_Estados.SelectedRows[0].Cells[0].Value.ToString().Trim());
-            ObjEstadosDAL.sDescripcion = dgv_Estados.SelectedRows[0].Cells[1].Value.ToString().Trim();
-            PantEstados.Obj_DAL_Estados = ObjEstadosDAL;
-            PantEstados.ShowDialog();
-
+            if (dgv_Estados.RowCount == 0)
+            {
+                MessageBox.Show("No hay datos a modificar", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                ObjEstadosDAL = new cls_Estados_DAL();
+                frm_Modificar_Estados PantEstados = new frm_Modificar_Estados();
+                ObjEstadosDAL.cBandAX = 'U';
+                ObjEstadosDAL.cIdEstado = Convert.ToChar(dgv_Estados.SelectedRows[0].Cells[0].Value.ToString().Trim());
+                ObjEstadosDAL.sDescripcion = dgv_Estados.SelectedRows[0].Cells[1].Value.ToString().Trim();
+                PantEstados.Obj_DAL_Estados = ObjEstadosDAL;
+                PantEstados.ShowDialog();
+            }
             txtFiltro.Text = string.Empty;
             CargarDatos();
         }

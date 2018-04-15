@@ -79,9 +79,9 @@
             this.tls_btn_Salir,
             this.toolStripLabel6});
             this.MenuVentana.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
-            this.MenuVentana.Location = new System.Drawing.Point(8, 15);
+            this.MenuVentana.Location = new System.Drawing.Point(2, 3);
             this.MenuVentana.Name = "MenuVentana";
-            this.MenuVentana.Size = new System.Drawing.Size(815, 28);
+            this.MenuVentana.Size = new System.Drawing.Size(810, 29);
             this.MenuVentana.TabIndex = 5;
             this.MenuVentana.Text = "toolStrip1";
             // 
@@ -92,7 +92,7 @@
             this.tls_btn_Refrescar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tls_btn_Refrescar.Name = "tls_btn_Refrescar";
             this.tls_btn_Refrescar.Size = new System.Drawing.Size(28, 28);
-            this.tls_btn_Refrescar.Text = "toolStripButton1";
+            this.tls_btn_Refrescar.Text = "Refrescar";
             this.tls_btn_Refrescar.Click += new System.EventHandler(this.tls_btn_Refrescar_Click);
             // 
             // toolStripLabel1
@@ -113,7 +113,7 @@
             this.tls_btn_Nuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tls_btn_Nuevo.Name = "tls_btn_Nuevo";
             this.tls_btn_Nuevo.Size = new System.Drawing.Size(28, 28);
-            this.tls_btn_Nuevo.Text = "toolStripButton2";
+            this.tls_btn_Nuevo.Text = "Nuevo";
             this.tls_btn_Nuevo.Click += new System.EventHandler(this.tls_btn_Nuevo_Click);
             // 
             // toolStripLabel2
@@ -134,7 +134,7 @@
             this.tls_btn_Modificar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tls_btn_Modificar.Name = "tls_btn_Modificar";
             this.tls_btn_Modificar.Size = new System.Drawing.Size(28, 28);
-            this.tls_btn_Modificar.Text = "toolStripButton3";
+            this.tls_btn_Modificar.Text = "Modificar";
             this.tls_btn_Modificar.Click += new System.EventHandler(this.tls_btn_Modificar_Click);
             // 
             // toolStripLabel3
@@ -155,7 +155,7 @@
             this.tls_btn_Eliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tls_btn_Eliminar.Name = "tls_btn_Eliminar";
             this.tls_btn_Eliminar.Size = new System.Drawing.Size(28, 28);
-            this.tls_btn_Eliminar.Text = "toolStripButton4";
+            this.tls_btn_Eliminar.Text = "Eliminar";
             this.tls_btn_Eliminar.Click += new System.EventHandler(this.tls_btn_Eliminar_Click);
             // 
             // toolStripLabel4
@@ -188,7 +188,7 @@
             this.tls_btn_Salir.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tls_btn_Salir.Name = "tls_btn_Salir";
             this.tls_btn_Salir.Size = new System.Drawing.Size(28, 28);
-            this.tls_btn_Salir.Text = "toolStripButton5";
+            this.tls_btn_Salir.Text = "Salir";
             this.tls_btn_Salir.Click += new System.EventHandler(this.tls_btn_Salir_Click);
             // 
             // toolStripLabel6
@@ -203,11 +203,11 @@
             this.dgv_Destinos.AllowUserToDeleteRows = false;
             this.dgv_Destinos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Destinos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgv_Destinos.Location = new System.Drawing.Point(9, 46);
+            this.dgv_Destinos.Location = new System.Drawing.Point(-3, 31);
             this.dgv_Destinos.MultiSelect = false;
             this.dgv_Destinos.Name = "dgv_Destinos";
             this.dgv_Destinos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_Destinos.Size = new System.Drawing.Size(815, 380);
+            this.dgv_Destinos.Size = new System.Drawing.Size(815, 387);
             this.dgv_Destinos.TabIndex = 6;
             // 
             // frm_Destinos
@@ -215,7 +215,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(833, 417);
+            this.ClientSize = new System.Drawing.Size(813, 418);
             this.Controls.Add(this.dgv_Destinos);
             this.Controls.Add(this.MenuVentana);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

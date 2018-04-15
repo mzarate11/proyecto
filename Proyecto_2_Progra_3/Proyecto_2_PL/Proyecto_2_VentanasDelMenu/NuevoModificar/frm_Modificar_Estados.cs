@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Proyecto_2_DAL.Catalogos_y_Mantenimientos;
+using Proyecto_2_BLL.Catagolos_Mantinimiento_BLL;
 
 namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
 {
@@ -31,6 +32,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 }
                 else
                 {
+                    lb_Guardar.Text = "Modificar";
                     txt_ID_Estados.Text = Obj_DAL_Estados.cIdEstado.ToString().Trim();
                     txt_ID_Estados.Enabled = false;
                     txt_Descripcion.Text = Obj_DAL_Estados.sDescripcion.Trim();
@@ -48,7 +50,57 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             CargarDatos();
         }
 
-        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            cls_Estados_BLL Obj_Estados_BLL = new cls_Estados_BLL();
+            
+
+            if ((string.IsNullOrEmpty(txt_ID_Estados.Text)) || (string.IsNullOrEmpty(txt_Descripcion.Text)))
+            {
+                MessageBox.Show("No se pueden guardar datos vacios", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                string sMsjError = string.Empty;
+                Obj_DAL_Estados.cIdEstado = Convert.ToChar(txt_ID_Estados.Text.Trim());
+                Obj_DAL_Estados.sDescripcion = txt_Descripcion.Text.Trim();
+                if (Obj_DAL_Estados.cBandAX == 'I')
+                {
+                    Obj_Estados_BLL.Insertar_Estados(ref sMsjError, ref Obj_DAL_Estados);
+
+                    if (sMsjError == string.Empty)
+                    {
+                        MessageBox.Show("La Base de Datos ha sido Actualizada", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        lb_Guardar.Text = "Modificar";
+                    }
+                    else
+                    {
+                        MessageBox.Show("Hubo un error al ingresar los datos a la base de datos:" + "[" + sMsjError + "]", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else if ((Obj_DAL_Estados.cIdEstado == 'U') || (Obj_DAL_Estados != null))
+                {
+
+                    Obj_Estados_BLL.Modificar_Estados(ref sMsjError, ref Obj_DAL_Estados);
+
+                    if (sMsjError == string.Empty)
+                    {
+                        MessageBox.Show("La Base de Datos ha sido Actualizada", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Hubo un error al ingresar los datos a la base de datos:" + "[" + sMsjError + "]", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+
+        private void txt_ID_Estados_KeyPress(object sender, KeyPressEventArgs e)
         {
             if ((char.IsNumber(e.KeyChar)) || (char.IsPunctuation(e.KeyChar)) || (char.IsSeparator(e.KeyChar)) || (char.IsSymbol(e.KeyChar)))
             {
@@ -60,32 +112,15 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             }
         }
 
-        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        private void txt_Descripcion_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((char.IsNumber(e.KeyChar)) || (char.IsPunctuation(e.KeyChar)) || (char.IsSeparator(e.KeyChar))||(char.IsSymbol(e.KeyChar)))
+            if ((char.IsNumber(e.KeyChar)) || (char.IsPunctuation(e.KeyChar)) || (char.IsSeparator(e.KeyChar)) || (char.IsSymbol(e.KeyChar)))
             {
                 e.Handled = true;
             }
             else
             {
                 e.Handled = false;
-            }
-        }
-
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-            if (Obj_DAL_Estados.cBandAX == 'I')
-            {
-
-            }
-            else
-            {
-
             }
         }
     }

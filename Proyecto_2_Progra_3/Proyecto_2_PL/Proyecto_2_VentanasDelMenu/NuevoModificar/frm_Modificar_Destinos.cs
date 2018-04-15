@@ -19,6 +19,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             InitializeComponent();
         }
         public cls_Destinos_DAL Obj_Destinos_DAL;
+        frm_Destinos Destinos = new frm_Destinos();
 
         public void CargarDatos()
         {
@@ -30,7 +31,12 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 DataTable DTA = new DataTable();
                 DTA = ObjAerolinea.ListarAerolineas(ref sMsjError);
                 cmboxAerolinea.DataSource = DTA;
-                cmboxAerolinea.DisplayMember = DTA.Columns[0].ToString();
+                DTA.Rows.Add("0", "Seleccione una aerolinea");
+                cmboxAerolinea.DisplayMember = DTA.Columns[1].ToString();
+                cmboxAerolinea.ValueMember = DTA.Columns[0].ToString();
+                cmboxAerolinea.SelectedValue = "0";
+                
+
                 #endregion
 
                 #region Paises
@@ -41,8 +47,14 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 DTP1 = ObjPaises.ListarPaises(ref sMsjError);
                 cmboxPaisLlegada.DataSource = DTP;
                 cmboxPaisSalida.DataSource = DTP1;
-                cmboxPaisSalida.DisplayMember = DTP1.Columns[0].ToString();
-                cmboxPaisLlegada.DisplayMember = DTP.Columns[0].ToString();
+                DTP.Rows.Add("0", "Seleccione un país");
+                DTP1.Rows.Add("0", "Seleccione un país");
+                cmboxPaisSalida.DisplayMember = DTP1.Columns[1].ToString();
+                cmboxPaisLlegada.DisplayMember = DTP.Columns[1].ToString();
+                cmboxPaisSalida.ValueMember = DTP1.Columns[0].ToString();
+                cmboxPaisLlegada.ValueMember = DTP.Columns[0].ToString();
+                cmboxPaisLlegada.SelectedValue = "0";
+                cmboxPaisSalida.SelectedValue = "0";
                 #endregion
 
                 #region Estados
@@ -50,7 +62,10 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 DataTable DT = new DataTable();
                 DT = ObjEstados.Listar_Estados(ref sMsjError);
                 cmboxEstado.DataSource = DT;
-                cmboxEstado.DisplayMember = DT.Columns[0].ToString();
+                DT.Rows.Add("0", "Seleccione un estado");
+                cmboxEstado.DisplayMember = DT.Columns[1].ToString();
+                cmboxEstado.ValueMember = DT.Columns[0].ToString();
+                cmboxEstado.SelectedValue = "0";
                 #endregion
 
                 if (Obj_Destinos_DAL.cBandera == 'I')
@@ -61,11 +76,12 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 else
                 {
                     txt_IdDestino.Text = Obj_Destinos_DAL.sIdDestino;
-                    cmboxAerolinea.Text = Obj_Destinos_DAL.bIdAerolinea.ToString();
+                    txt_IdDestino.Enabled = false;
+                    cmboxAerolinea.SelectedValue = Obj_Destinos_DAL.bIdAerolinea.ToString();
                     txt_NombreDestino.Text = Obj_Destinos_DAL.sNomDestino;
-                    cmboxPaisSalida.Text = Obj_Destinos_DAL.bPaisSalida.ToString();
-                    cmboxPaisLlegada.Text = Obj_Destinos_DAL.bPaisLlegada.ToString();
-                    cmboxEstado.Text = Obj_Destinos_DAL.cIdEstado.ToString();
+                    cmboxPaisSalida.SelectedValue= Obj_Destinos_DAL.bPaisSalida.ToString();
+                    cmboxPaisLlegada.SelectedValue = Obj_Destinos_DAL.bPaisLlegada.ToString();
+                    cmboxEstado.SelectedValue = Obj_Destinos_DAL.cIdEstado.ToString();
                 }
 
             }
@@ -91,32 +107,49 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if ((txt_IdDestino.Text != string.Empty) || (txt_NombreDestino.Text != string.Empty))
+            if ((cmboxAerolinea.SelectedValue.ToString() != "0")&&(cmboxPaisLlegada.SelectedValue.ToString()!="0")&&(cmboxPaisSalida.SelectedValue.ToString()!="0")&&
+                (cmboxEstado.SelectedValue.ToString()!="0")&&(txt_IdDestino.Text != string.Empty) && (txt_NombreDestino.Text != string.Empty))
             {
                 cls_Destinos_BLL ObjDestinos_BLL = new cls_Destinos_BLL();
                 string sMsjError = string.Empty;
 
                 Obj_Destinos_DAL.sIdDestino = txt_IdDestino.Text;
+                Obj_Destinos_DAL.bIdAerolinea = Convert.ToByte(cmboxAerolinea.SelectedValue);
                 Obj_Destinos_DAL.sNomDestino = txt_NombreDestino.Text;
+                Obj_Destinos_DAL.bPaisSalida = Convert.ToByte(cmboxPaisSalida.SelectedValue);
+                Obj_Destinos_DAL.bPaisLlegada = Convert.ToByte(cmboxPaisLlegada.SelectedValue);
+                Obj_Destinos_DAL.cIdEstado = Convert.ToChar(cmboxEstado.SelectedValue);
 
                 if (Obj_Destinos_DAL.cBandera == 'I')
                 {
                     ObjDestinos_BLL.Insertar_Destinos(ref sMsjError, ref Obj_Destinos_DAL);
+                    txt_IdDestino.Enabled = false;
                 }
                 else
                 {
                     ObjDestinos_BLL.Modificar_Destinos(ref sMsjError, ref Obj_Destinos_DAL);
                 }
+                if(sMsjError == string.Empty)
+                {
+
+                    MessageBox.Show("Se han ingresado los datos correctamente", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txt_IdDestino.Text= Obj_Destinos_DAL.sIdDestino.ToString();
+                    Obj_Destinos_DAL.cBandera = 'U';
+                }
             }
             else
             {
-                MessageBox.Show("Se ecnuentran cajas de texto vacías, favor revisar", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Se encuentran cajas de texto vacías u opciones sin elegir, favor revisar", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
-        private void txt_NombreDestino_KeyPress(object sender, KeyPressEventArgs e)
+
+        private void txt_IdDestino_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((char.IsLetter(e.KeyChar)) || (e.KeyChar == Convert.ToChar(Keys.Back)))
+            if ((e.KeyChar == '-' && !txt_IdDestino.Text.Contains("-")) ||
+                (char.IsLetter(e.KeyChar)) ||
+                (char.IsNumber(e.KeyChar)) ||
+               (e.KeyChar == Convert.ToChar(Keys.Back)))
             {
                 e.Handled = false;
             }
@@ -126,12 +159,9 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             }
         }
 
-        private void txt_IdDestino_KeyPress(object sender, KeyPressEventArgs e)
+        private void txt_NombreDestino_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((e.KeyChar == '-' && !txt_IdDestino.Text.Contains("-")) ||
-                (char.IsLetter(e.KeyChar)) ||
-                (char.IsNumber(e.KeyChar)) ||
-               (e.KeyChar == Convert.ToChar(Keys.Back)))
+            if ((char.IsLetter(e.KeyChar)) || (e.KeyChar == Convert.ToChar(Keys.Back))||(e.KeyChar == Convert.ToChar(Keys.Space)))
             {
                 e.Handled = false;
             }

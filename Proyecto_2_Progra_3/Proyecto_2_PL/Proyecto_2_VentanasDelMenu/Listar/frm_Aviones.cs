@@ -8,11 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Proyecto_2_BLL.Catagolos_Mantinimiento_BLL;
+using Proyecto_2_DAL.Catalogos_y_Mantenimientos;
+using Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar;
 
 namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
 {
     public partial class frm_Aviones : Form
     {
+        cls_Aviones_DAL objDal_Aviones = new cls_Aviones_DAL();
         public frm_Aviones()
         {
             InitializeComponent();
@@ -35,7 +38,6 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
 
         private void txtFiltro_TextChanged(object sender, EventArgs e)
         {
-            txtFiltro.Text = string.Empty;
             CargarDatos();
         }
 
@@ -46,7 +48,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
             DataTable DT = new DataTable();
             if (txtFiltro.Text == string.Empty)
             {
-                DT = objAviones_BLL.ListarAerolineas(ref sMsjError);
+                DT = objAviones_BLL.ListarAvion(ref sMsjError);
             }
             else
             {
@@ -94,6 +96,64 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
             {
                 MessageBox.Show("No hay registros para eliminar");
             }
+        }
+
+        private void btn_Modificar_Click(object sender, EventArgs e)
+        {
+            if(dgv_Aviones.RowCount == 0)
+            {
+                MessageBox.Show("No existen datos para modificar", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                objDal_Aviones = new cls_Aviones_DAL();
+                objDal_Aviones.cBandera = 'U';
+                objDal_Aviones.sIdAvion = dgv_Aviones.SelectedRows[0].Cells[0].Value.ToString().Trim();
+                objDal_Aviones.sNomAvion = dgv_Aviones.SelectedRows[0].Cells[1].Value.ToString().Trim();
+                objDal_Aviones.sDescAvion = dgv_Aviones.SelectedRows[0].Cells[2].Value.ToString().Trim();
+                objDal_Aviones.iIdAerolinea = Convert.ToInt32(dgv_Aviones.SelectedRows[0].Cells[3].Value.ToString().Trim());
+                objDal_Aviones.sIdTipoAvion = dgv_Aviones.SelectedRows[0].Cells[4].Value.ToString().Trim();
+                objDal_Aviones.cIdEstado = Convert.ToChar(dgv_Aviones.SelectedRows[0].Cells[5].Value.ToString().Trim());
+                frm_ModificarAviones Pantalla = new frm_ModificarAviones();
+                Pantalla.objDal_Aviones = objDal_Aviones;
+                Hide();
+                Pantalla.ShowDialog();
+                Show();
+                txtFiltro.Text = string.Empty;
+                CargarDatos();
+            }            
+        }
+
+        private void bnt_Nuevo_Click(object sender, EventArgs e)
+        {
+            frm_ModificarAviones Pantalla = new frm_ModificarAviones();
+            objDal_Aviones = new cls_Aviones_DAL();
+            objDal_Aviones.cBandera = 'I';
+            Pantalla.objDal_Aviones = objDal_Aviones;
+            Hide();
+            Pantalla.ShowDialog();
+            Show();
+            txtFiltro.Text = string.Empty;
+            CargarDatos();
+        }
+
+        private void dgv_Aviones_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            objDal_Aviones = new cls_Aviones_DAL();
+            objDal_Aviones.cBandera = 'U';
+            objDal_Aviones.sIdAvion = dgv_Aviones.SelectedRows[0].Cells[0].Value.ToString().Trim();
+            objDal_Aviones.sNomAvion = dgv_Aviones.SelectedRows[0].Cells[1].Value.ToString().Trim();
+            objDal_Aviones.sDescAvion = dgv_Aviones.SelectedRows[0].Cells[2].Value.ToString().Trim();
+            objDal_Aviones.iIdAerolinea = Convert.ToInt32(dgv_Aviones.SelectedRows[0].Cells[3].Value.ToString().Trim());
+            objDal_Aviones.sIdTipoAvion = dgv_Aviones.SelectedRows[0].Cells[4].Value.ToString().Trim();
+            objDal_Aviones.cIdEstado = Convert.ToChar(dgv_Aviones.SelectedRows[0].Cells[5].Value.ToString().Trim());
+            frm_ModificarAviones Pantalla = new frm_ModificarAviones();
+            Pantalla.objDal_Aviones = objDal_Aviones;
+            Hide();
+            Pantalla.ShowDialog();
+            Show();
+            txtFiltro.Text = string.Empty;
+            CargarDatos();
         }
     }
 }

@@ -82,12 +82,60 @@ namespace Proyecto_2_BLL.Catagolos_Mantinimiento_BLL
 
         public void ModificarTipoAviones(ref string sMsjError, ref cls_TipoAviones_DAL Obj_TipoAviones_DAL)
         {
+            cls_BaseDatos_DAL Obj_DAL = new cls_BaseDatos_DAL();
+            cls_Bases_BLL Obj_BLL = new cls_Bases_BLL();
 
+            Obj_BLL.TablaParametros(ref Obj_DAL);
+
+            Obj_DAL.DT_Parametros.Rows.Add("@IdTipoAvion", 3, Obj_TipoAviones_DAL.sIdTipoAvion);
+            Obj_DAL.DT_Parametros.Rows.Add("@NombreTipoAvion", 3, Obj_TipoAviones_DAL.sNombreTipoAvion);
+            Obj_DAL.DT_Parametros.Rows.Add("@DescTipoAvion", 3, Obj_TipoAviones_DAL.sDescTipoAvion);
+            Obj_DAL.DT_Parametros.Rows.Add("@CapacidadPasajeros", 1, Obj_TipoAviones_DAL.iCapacidadPasajeros);
+            Obj_DAL.DT_Parametros.Rows.Add("@CapacidadPeso", 5, Obj_TipoAviones_DAL.dcapacidadPeso);
+            Obj_DAL.DT_Parametros.Rows.Add("@IdEstado", 2, Obj_TipoAviones_DAL.cIdEstado);
+
+
+            Obj_DAL.sSentencia = ConfigurationManager.AppSettings["Modificar_TipoAviones"].ToString().Trim();
+            Obj_BLL.Ejec_NonQuery(ref Obj_DAL);
+
+            if (Obj_DAL.sMsgError == string.Empty)
+            {
+                sMsjError = string.Empty;
+            }
+            else
+            {
+                sMsjError = Obj_DAL.sMsgError;
+            }
         }
 
         public void AgregarTipoAviones(ref string sMsjError, ref cls_TipoAviones_DAL Obj_TipoAviones_DAL)
         {
+            cls_BaseDatos_DAL Obj_DAL = new cls_BaseDatos_DAL();
+            cls_Bases_BLL Obj_BLL = new cls_Bases_BLL();
 
+            Obj_BLL.TablaParametros(ref Obj_DAL);
+
+            Obj_DAL.DT_Parametros.Rows.Add("@IdTipoAvion", 3, Obj_TipoAviones_DAL.sIdTipoAvion);
+            Obj_DAL.DT_Parametros.Rows.Add("@NombreTipoAvion", 3, Obj_TipoAviones_DAL.sNombreTipoAvion);
+            Obj_DAL.DT_Parametros.Rows.Add("@DescTipoAvion", 3, Obj_TipoAviones_DAL.sDescTipoAvion);
+            Obj_DAL.DT_Parametros.Rows.Add("@CapacidadPasajeros", 1, Obj_TipoAviones_DAL.iCapacidadPasajeros);
+            Obj_DAL.DT_Parametros.Rows.Add("@CapacidadPeso", 5, Obj_TipoAviones_DAL.dcapacidadPeso);
+            Obj_DAL.DT_Parametros.Rows.Add("@IdEstado", 2, Obj_TipoAviones_DAL.cIdEstado);
+
+
+            Obj_DAL.sSentencia = ConfigurationManager.AppSettings["Insertar_TipoAviones"].ToString().Trim();
+            Obj_BLL.Ejec_NonQuery(ref Obj_DAL);
+
+            if (Obj_DAL.sMsgError == string.Empty)
+            {
+                sMsjError = string.Empty;
+                Obj_TipoAviones_DAL.cbanderaAccion = 'U';
+            }
+            else
+            {
+                sMsjError = Obj_DAL.sMsgError;
+                Obj_TipoAviones_DAL.cbanderaAccion = 'I';
+            }
         }
 
     }

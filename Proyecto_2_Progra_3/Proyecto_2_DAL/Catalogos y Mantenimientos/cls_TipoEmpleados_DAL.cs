@@ -6,15 +6,14 @@ using System.Threading.Tasks;
 
 namespace Proyecto_2_DAL.Catalogos_y_Mantenimientos
 {
-   public class cls_TipoEmpleados_DAL
+    public class cls_TipoEmpleados_DAL
     {
         private char _cIdEstado,
-                  _cBandAX;
+                   _cBandAX;
 
         private int _iTipoEmpleado;
         private string _sDescTipo;
 
-        #region
         public char CBandAX
         {
             get
@@ -66,6 +65,5 @@ namespace Proyecto_2_DAL.Catalogos_y_Mantenimientos
                 _sDescTipo = value;
             }
         }
-        #endregion 
     }
 }

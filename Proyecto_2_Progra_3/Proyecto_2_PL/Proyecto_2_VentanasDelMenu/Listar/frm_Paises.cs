@@ -24,17 +24,17 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
         private void CargarDatos()
         {
 
-            cls_Paises_BLL Obj_Estados_BLL = new cls_Paises_BLL();
+            cls_Paises_BLL ObjPaises_BLL = new cls_Paises_BLL();
             string sMsjError = string.Empty;
             DataTable dtEstados = new DataTable();
 
             if (tls_txt_Filtro.Text == string.Empty)
             {
-                dtEstados = Obj_Estados_BLL.ListarPaises(ref sMsjError);
+                dtEstados = ObjPaises_BLL.ListarPaises(ref sMsjError);
             }
             else
             {
-                dtEstados = Obj_Estados_BLL.FiltrarPaises(ref sMsjError, tls_txt_Filtro.Text.Trim());
+                dtEstados = ObjPaises_BLL.FiltrarPaises(ref sMsjError, tls_txt_Filtro.Text.Trim());
             }
 
             if (sMsjError == string.Empty)
@@ -57,7 +57,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
 
         private void tls_btn_Refrescar_Click(object sender, EventArgs e)
         {
-            dgv_Paises = null;
+            dgv_Paises.DataSource = null;
             CargarDatos();
         }
 
@@ -108,6 +108,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
                 ObjPaises_DAL = new cls_Paises_DAL();
 
                 ObjPaises_DAL.cBandera = 'U';
+                ObjPaises_DAL.iIdPais = Convert.ToInt32(dgv_Paises.SelectedRows[0].Cells[0].Value);
                 ObjPaises_DAL.sNombrePais = dgv_Paises.SelectedRows[0].Cells[1].Value.ToString().Trim();
                 ObjPaises_DAL.sCodigoISOPais = dgv_Paises.SelectedRows[0].Cells[2].Value.ToString().Trim();
                 ObjPaises_DAL.sCodigoAreaPais = dgv_Paises.SelectedRows[0].Cells[3].Value.ToString().Trim();
@@ -132,6 +133,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
             frm_Modificar_Paises ModificarPaises = new frm_Modificar_Paises();
 
             ObjPaises_DAL.cBandera = 'I';
+            ObjPaises_DAL.iIdPais = 0;
             ObjPaises_DAL.sNombrePais = string.Empty;
             ObjPaises_DAL.sCodigoISOPais = string.Empty;
             ObjPaises_DAL.sCodigoAreaPais = string.Empty;

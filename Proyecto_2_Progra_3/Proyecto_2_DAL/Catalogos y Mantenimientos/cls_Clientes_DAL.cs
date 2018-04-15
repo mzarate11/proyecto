@@ -8,11 +8,10 @@ namespace Proyecto_2_DAL.Catalogos_y_Mantenimientos
 {
     public class cls_Clientes_DAL
     {
-        private string _sIdCliente, _sCedula, _sNombre, _sApellido, _sTelefono;
+        private string _sIdCliente, _sCedula, _sNombre, _sApellido, _sTelefono, _sIdTipoCliente;
 
-        private char _cBandAxn;
+        private char _cBandAxn, _cIdEstado;
 
-        private char[] _aIdEstado;
 
         public string sIdCliente
         {
@@ -79,19 +78,6 @@ namespace Proyecto_2_DAL.Catalogos_y_Mantenimientos
             }
         }
 
-        public char[] aIdEstado
-        {
-            get
-            {
-                return _aIdEstado;
-            }
-
-            set
-            {
-                _aIdEstado = value;
-            }
-        }
-
         public char cBandAxn
         {
             get
@@ -102,6 +88,32 @@ namespace Proyecto_2_DAL.Catalogos_y_Mantenimientos
             set
             {
                 _cBandAxn = value;
+            }
+        }
+
+        public char cIdEstado
+        {
+            get
+            {
+                return _cIdEstado;
+            }
+
+            set
+            {
+                _cIdEstado = value;
+            }
+        }
+
+        public string sIdTipoCliente
+        {
+            get
+            {
+                return _sIdTipoCliente;
+            }
+
+            set
+            {
+                _sIdTipoCliente = value;
             }
         }
     }

@@ -79,10 +79,10 @@
             this.btn_Salir,
             this.toolStripLabel6});
             this.MenuVentana.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
-            this.MenuVentana.Location = new System.Drawing.Point(13, 9);
+            this.MenuVentana.Location = new System.Drawing.Point(14, 9);
             this.MenuVentana.Name = "MenuVentana";
             this.MenuVentana.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
-            this.MenuVentana.Size = new System.Drawing.Size(1223, 43);
+            this.MenuVentana.Size = new System.Drawing.Size(1222, 43);
             this.MenuVentana.TabIndex = 4;
             this.MenuVentana.Text = "toolStrip1";
             // 
@@ -93,7 +93,7 @@
             this.btn_Refrescar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btn_Refrescar.Name = "btn_Refrescar";
             this.btn_Refrescar.Size = new System.Drawing.Size(28, 28);
-            this.btn_Refrescar.Text = "toolStripButton1";
+            this.btn_Refrescar.Text = "Refrescar";
             this.btn_Refrescar.Click += new System.EventHandler(this.btn_Refrescar_Click);
             // 
             // toolStripLabel1
@@ -114,7 +114,8 @@
             this.bnt_Nuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bnt_Nuevo.Name = "bnt_Nuevo";
             this.bnt_Nuevo.Size = new System.Drawing.Size(28, 28);
-            this.bnt_Nuevo.Text = "toolStripButton2";
+            this.bnt_Nuevo.Text = "Nuevo";
+            this.bnt_Nuevo.Click += new System.EventHandler(this.bnt_Nuevo_Click);
             // 
             // toolStripLabel2
             // 
@@ -134,7 +135,8 @@
             this.btn_Modificar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btn_Modificar.Name = "btn_Modificar";
             this.btn_Modificar.Size = new System.Drawing.Size(28, 28);
-            this.btn_Modificar.Text = "toolStripButton3";
+            this.btn_Modificar.Text = "Modificar";
+            this.btn_Modificar.Click += new System.EventHandler(this.btn_Modificar_Click);
             // 
             // toolStripLabel3
             // 
@@ -154,7 +156,7 @@
             this.btn_Eliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btn_Eliminar.Name = "btn_Eliminar";
             this.btn_Eliminar.Size = new System.Drawing.Size(28, 28);
-            this.btn_Eliminar.Text = "toolStripButton4";
+            this.btn_Eliminar.Text = "Eliminar";
             this.btn_Eliminar.Click += new System.EventHandler(this.btn_Eliminar_Click);
             // 
             // toolStripLabel4
@@ -188,7 +190,7 @@
             this.btn_Salir.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btn_Salir.Name = "btn_Salir";
             this.btn_Salir.Size = new System.Drawing.Size(28, 28);
-            this.btn_Salir.Text = "toolStripButton5";
+            this.btn_Salir.Text = "Salir";
             this.btn_Salir.Click += new System.EventHandler(this.btn_Salir_Click);
             // 
             // toolStripLabel6
@@ -204,20 +206,21 @@
             this.dgv_Aviones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_Aviones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Aviones.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgv_Aviones.Location = new System.Drawing.Point(13, 57);
+            this.dgv_Aviones.Location = new System.Drawing.Point(14, 57);
             this.dgv_Aviones.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgv_Aviones.MultiSelect = false;
             this.dgv_Aviones.Name = "dgv_Aviones";
             this.dgv_Aviones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_Aviones.Size = new System.Drawing.Size(1223, 570);
+            this.dgv_Aviones.Size = new System.Drawing.Size(1222, 569);
             this.dgv_Aviones.TabIndex = 5;
+            this.dgv_Aviones.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Aviones_CellContentDoubleClick);
             // 
             // frm_Aviones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(1249, 641);
+            this.ClientSize = new System.Drawing.Size(1250, 642);
             this.Controls.Add(this.dgv_Aviones);
             this.Controls.Add(this.MenuVentana);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

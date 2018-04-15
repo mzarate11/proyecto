@@ -12,8 +12,7 @@ namespace Proyecto_2_BLL.Catagolos_Mantinimiento_BLL
 {
     public class cls_TiposEmpleados_BLL
     {
-
-
+        
         public DataTable ListarTiposEmpleados(ref string MsjError)
         {
             cls_BaseDatos_DAL objDal = new cls_BaseDatos_DAL();
@@ -82,10 +81,56 @@ namespace Proyecto_2_BLL.Catagolos_Mantinimiento_BLL
 
         public void Insertar_TipoEmpleado(ref string sMsjError, ref cls_TipoEmpleados_DAL Obj_TiposEmpleados_DAL)
         {
+            {
+                cls_BaseDatos_DAL Obj_DAL = new cls_BaseDatos_DAL();
+                cls_Bases_BLL Obj_BLL = new cls_Bases_BLL();
 
+                Obj_BLL.TablaParametros(ref Obj_DAL);
+               
+                Obj_DAL.DT_Parametros.Rows.Add("@DescTipo", 3, Obj_TiposEmpleados_DAL.SDescTipo.ToString().Trim());
+                Obj_DAL.DT_Parametros.Rows.Add("@IdEstado", 2, Obj_TiposEmpleados_DAL.CIdEstado.ToString().Trim());
+                
+
+
+                Obj_DAL.sSentencia = ConfigurationManager.AppSettings["Insertar_TiposEmpleados"].ToString().Trim();
+                Obj_BLL.Ejec_Scalar(ref Obj_DAL);
+
+                if (Obj_DAL.sMsgError == string.Empty)
+                {
+                    sMsjError = string.Empty;
+                    Obj_TiposEmpleados_DAL.ITipoEmpleado = Obj_DAL.iValorScalar;
+                    Obj_TiposEmpleados_DAL.CBandAX = 'I';
+                }
+                else
+                {
+                    sMsjError = Obj_DAL.sMsgError;
+                    Obj_TiposEmpleados_DAL.CBandAX = 'U';
+                    Obj_TiposEmpleados_DAL.ITipoEmpleado = -1;
+                }
+            }
         }
-        public void Modificat_TipoEmpleado(ref string sMsjError, ref cls_TipoEmpleados_DAL Obj_TiposEmpleados_DAL)
+        public void Modificar_TipoEmpleado(ref string sMsjError, ref cls_TipoEmpleados_DAL Obj_TiposEmpleados_DAL)
         {
+            cls_BaseDatos_DAL Obj_DAL = new cls_BaseDatos_DAL();
+            cls_Bases_BLL Obj_BLL = new cls_Bases_BLL();
+
+
+            Obj_BLL.TablaParametros(ref Obj_DAL);
+            Obj_DAL.DT_Parametros.Rows.Add("@IdTipoEmpleado", 1, Obj_TiposEmpleados_DAL.ITipoEmpleado.ToString().Trim());
+            Obj_DAL.DT_Parametros.Rows.Add("@DescTipo", 3, Obj_TiposEmpleados_DAL.SDescTipo.ToString().Trim());
+            Obj_DAL.DT_Parametros.Rows.Add("@IdEstado", 2, Obj_TiposEmpleados_DAL.CIdEstado.ToString().Trim());
+
+            Obj_DAL.sSentencia = ConfigurationManager.AppSettings["Modificar_TiposEmpleados"].ToString().Trim();
+            Obj_BLL.Ejec_NonQuery(ref Obj_DAL);
+
+            if (Obj_DAL.sMsgError == string.Empty)
+            {
+                sMsjError = string.Empty;
+            }
+            else
+            {
+                sMsjError = Obj_DAL.sMsgError;
+            }
 
         }
     }

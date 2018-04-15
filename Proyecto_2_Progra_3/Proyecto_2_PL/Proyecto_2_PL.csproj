@@ -65,6 +65,11 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Proyecto_2_Login\frm_Inicio_PL_.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,6 +172,18 @@
     <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\fmr_ModificarNuevo_Vuelos.Designer.cs">
       <DependentUpon>fmr_ModificarNuevo_Vuelos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_ModificarAerolineas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_ModificarAerolineas.Designer.cs">
+      <DependentUpon>frm_ModificarAerolineas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_ModificarAviones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_ModificarAviones.Designer.cs">
+      <DependentUpon>frm_ModificarAviones.cs</DependentUpon>
+    </Compile>
     <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_ModificarClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -203,6 +220,18 @@
     <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Modificar_Paises.Designer.cs">
       <DependentUpon>frm_Modificar_Paises.cs</DependentUpon>
     </Compile>
+    <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Modificar_TipoClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Modificar_TipoClientes.Designer.cs">
+      <DependentUpon>frm_Modificar_TipoClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Modificar_TipoEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Modificar_TipoEmpleado.Designer.cs">
+      <DependentUpon>frm_Modificar_TipoEmpleado.cs</DependentUpon>
+    </Compile>
     <Compile Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Modificar_T_CategoriasVuelos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -217,14 +246,9 @@
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Proyecto_2_Login\frm_Inicio_PL_.resx">
       <DependentUpon>frm_Inicio_PL_.cs</DependentUpon>
     </EmbeddedResource>
@@ -276,6 +300,12 @@
     <EmbeddedResource Include="Proyecto_2_VentanasDelMenu\NuevoModificar\fmr_ModificarNuevo_Vuelos.resx">
       <DependentUpon>fmr_ModificarNuevo_Vuelos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_ModificarAerolineas.resx">
+      <DependentUpon>frm_ModificarAerolineas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_ModificarAviones.resx">
+      <DependentUpon>frm_ModificarAviones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_ModificarClientes.resx">
       <DependentUpon>frm_ModificarClientes.cs</DependentUpon>
     </EmbeddedResource>
@@ -293,6 +323,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Modificar_Paises.resx">
       <DependentUpon>frm_Modificar_Paises.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Modificar_TipoClientes.resx">
+      <DependentUpon>frm_Modificar_TipoClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Modificar_TipoEmpleado.resx">
+      <DependentUpon>frm_Modificar_TipoEmpleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Proyecto_2_VentanasDelMenu\NuevoModificar\frm_Modificar_T_CategoriasVuelos.resx">
       <DependentUpon>frm_Modificar_T_CategoriasVuelos.cs</DependentUpon>
@@ -411,6 +447,42 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\fondo vuelos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Aerolineas1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\aerolineas2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\avion_960_720.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Aviones1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Aviation.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delta_nose2-01.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fondo_Usuarios.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fondo_CategoriaVuelos.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\58d22ea12007b.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo-usuarios.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondoEstados.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fondo1.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

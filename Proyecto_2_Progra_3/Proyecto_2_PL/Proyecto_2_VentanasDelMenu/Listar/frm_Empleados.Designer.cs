@@ -78,9 +78,9 @@
             this.tls_txt_Filtro,
             this.tls_btn_Salir,
             this.toolStripLabel6});
-            this.MenuVentana.Location = new System.Drawing.Point(-2, 1);
+            this.MenuVentana.Location = new System.Drawing.Point(-1, 1);
             this.MenuVentana.Name = "MenuVentana";
-            this.MenuVentana.Size = new System.Drawing.Size(840, 34);
+            this.MenuVentana.Size = new System.Drawing.Size(964, 34);
             this.MenuVentana.TabIndex = 4;
             this.MenuVentana.Text = "toolStrip1";
             // 
@@ -91,7 +91,7 @@
             this.tls_btn_Refrescar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tls_btn_Refrescar.Name = "tls_btn_Refrescar";
             this.tls_btn_Refrescar.Size = new System.Drawing.Size(34, 31);
-            this.tls_btn_Refrescar.Text = "toolStripButton1";
+            this.tls_btn_Refrescar.Text = "Refrescar";
             this.tls_btn_Refrescar.Click += new System.EventHandler(this.tls_btn_Refrescar_Click);
             // 
             // toolStripLabel1
@@ -113,7 +113,7 @@
             this.tls_btn_Nuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tls_btn_Nuevo.Name = "tls_btn_Nuevo";
             this.tls_btn_Nuevo.Size = new System.Drawing.Size(34, 31);
-            this.tls_btn_Nuevo.Text = "toolStripButton2";
+            this.tls_btn_Nuevo.Text = "Nuevo";
             this.tls_btn_Nuevo.Click += new System.EventHandler(this.tls_btn_Nuevo_Click);
             // 
             // toolStripLabel2
@@ -136,7 +136,7 @@
             this.tls_btn_Modificar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tls_btn_Modificar.Name = "tls_btn_Modificar";
             this.tls_btn_Modificar.Size = new System.Drawing.Size(34, 31);
-            this.tls_btn_Modificar.Text = "toolStripButton3";
+            this.tls_btn_Modificar.Text = "Modificar";
             this.tls_btn_Modificar.Click += new System.EventHandler(this.tls_btn_Modificar_Click);
             // 
             // toolStripLabel3
@@ -158,7 +158,7 @@
             this.tls_btn_Eliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tls_btn_Eliminar.Name = "tls_btn_Eliminar";
             this.tls_btn_Eliminar.Size = new System.Drawing.Size(34, 31);
-            this.tls_btn_Eliminar.Text = "toolStripButton4";
+            this.tls_btn_Eliminar.Text = "Eliminar";
             this.tls_btn_Eliminar.Click += new System.EventHandler(this.tls_btn_Eliminar_Click);
             // 
             // toolStripLabel4
@@ -183,7 +183,8 @@
             // tls_txt_Filtro
             // 
             this.tls_txt_Filtro.Name = "tls_txt_Filtro";
-            this.tls_txt_Filtro.Size = new System.Drawing.Size(100, 34);
+            this.tls_txt_Filtro.Size = new System.Drawing.Size(90, 34);
+            this.tls_txt_Filtro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tls_txt_Filtro_KeyPress);
             this.tls_txt_Filtro.TextChanged += new System.EventHandler(this.tls_txt_Filtro_TextChanged);
             // 
             // tls_btn_Salir
@@ -194,7 +195,7 @@
             this.tls_btn_Salir.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tls_btn_Salir.Name = "tls_btn_Salir";
             this.tls_btn_Salir.Size = new System.Drawing.Size(34, 31);
-            this.tls_btn_Salir.Text = "toolStripButton5";
+            this.tls_btn_Salir.Text = "Salir";
             this.tls_btn_Salir.Click += new System.EventHandler(this.tls_btn_Salir_Click);
             // 
             // toolStripLabel6
@@ -212,10 +213,11 @@
             this.dgv_Empleados.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgv_Empleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Empleados.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgv_Empleados.Location = new System.Drawing.Point(-2, 33);
+            this.dgv_Empleados.Location = new System.Drawing.Point(-1, 33);
             this.dgv_Empleados.MultiSelect = false;
             this.dgv_Empleados.Name = "dgv_Empleados";
-            this.dgv_Empleados.Size = new System.Drawing.Size(840, 362);
+            this.dgv_Empleados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_Empleados.Size = new System.Drawing.Size(964, 373);
             this.dgv_Empleados.TabIndex = 6;
             // 
             // frm_Empleados
@@ -223,7 +225,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(840, 396);
+            this.ClientSize = new System.Drawing.Size(954, 407);
             this.Controls.Add(this.dgv_Empleados);
             this.Controls.Add(this.MenuVentana);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

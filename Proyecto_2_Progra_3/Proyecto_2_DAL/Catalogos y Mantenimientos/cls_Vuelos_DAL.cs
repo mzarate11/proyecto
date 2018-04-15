@@ -12,7 +12,6 @@ namespace Proyecto_2_DAL.Catalogos_y_Mantenimientos
         char _cIdEstado, _cbanderaAccion;
         DateTime _DtFechaHoraSalida, _DtFechaHoraLLegada;
         int _iIdAerolinea;
-        char[] _cEstados;
         string[] _asIdAviones, _asIdDestinos, _asIdAerolineas;
         public string sIdVuelo
         {

@@ -15,7 +15,6 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
 {
     public partial class frm_TipoEmpleados : Form
     {
-
         #region
         cls_TipoEmpleados_DAL ObjTipoEmpleadosDAL;
         #endregion
@@ -26,17 +25,17 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
         private void CargarDatos()
         {
 
-            cls_TiposEmpleados_BLL Obj_Estados_BLL = new cls_TiposEmpleados_BLL();
+            cls_TiposEmpleados_BLL Obj_Tipos_Empleados__BLL = new cls_TiposEmpleados_BLL();
             string sMsjError = string.Empty;
             DataTable dtEstados = new DataTable();
 
             if (txtFiltro.Text == string.Empty)
             {
-                dtEstados = Obj_Estados_BLL.ListarTiposEmpleados(ref sMsjError);
+                dtEstados = Obj_Tipos_Empleados__BLL.ListarTiposEmpleados(ref sMsjError);
             }
             else
             {
-                dtEstados = Obj_Estados_BLL.FiltrarTiposEmpleados(ref sMsjError, txtFiltro.Text.Trim());
+                dtEstados = Obj_Tipos_Empleados__BLL.FiltrarTiposEmpleados(ref sMsjError, txtFiltro.Text.Trim());
             }
 
             if (sMsjError == string.Empty)
@@ -113,16 +112,13 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
         private void bnt_Nuevo_Click(object sender, EventArgs e)
         {
             ObjTipoEmpleadosDAL = new cls_TipoEmpleados_DAL();
-           frm_Modificar_TipoEmpleado PantTipoEmpleado = new frm_Modificar_TipoEmpleado();
-
+            frm_Modificar_TipoEmpleado PantTipoEmpleado = new frm_Modificar_TipoEmpleado();
             ObjTipoEmpleadosDAL.CBandAX = 'I';
-            ObjTipoEmpleadosDAL.ITipoEmpleado = 0;
-            ObjTipoEmpleadosDAL.SDescTipo = string.Empty;
-            ObjTipoEmpleadosDAL.CIdEstado = ' ';
 
             PantTipoEmpleado.Obj_DAL_TipoEmpleado = ObjTipoEmpleadosDAL;
+            Hide();
             PantTipoEmpleado.ShowDialog();
-
+            Show();
 
             txtFiltro.Text = string.Empty;
             CargarDatos();
@@ -132,15 +128,19 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
         {
             ObjTipoEmpleadosDAL = new cls_TipoEmpleados_DAL();
             frm_Modificar_TipoEmpleado PantTipoEmpleado = new frm_Modificar_TipoEmpleado();
-            if (dgv_view.RowCount > 0)
+
+            if (dgv_view.RowCount > 1)
             {
                 ObjTipoEmpleadosDAL.CBandAX = 'U';
                 ObjTipoEmpleadosDAL.ITipoEmpleado = Convert.ToInt32(dgv_view.SelectedRows[0].Cells[0].Value.ToString().Trim());
                 ObjTipoEmpleadosDAL.SDescTipo = dgv_view.SelectedRows[0].Cells[1].Value.ToString().Trim();
-                ObjTipoEmpleadosDAL.CIdEstado = Convert.ToChar(dgv_view.SelectedRows[0].Cells[3].Value.ToString().Trim());
+                ObjTipoEmpleadosDAL.CIdEstado = Convert.ToChar(dgv_view.SelectedRows[0].Cells[2].Value.ToString().Trim());
 
                 PantTipoEmpleado.Obj_DAL_TipoEmpleado = ObjTipoEmpleadosDAL;
+
+                Hide();
                 PantTipoEmpleado.ShowDialog();
+                Show();
 
                 txtFiltro.Text = string.Empty;
                 CargarDatos();
@@ -154,14 +154,16 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
         private void dgv_view_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             ObjTipoEmpleadosDAL = new cls_TipoEmpleados_DAL();
-            frm_Modificar_TipoEmpleado Pant_tipoEmpleados = new frm_Modificar_TipoEmpleado();
+            frm_Modificar_TipoEmpleado PantTipoEmpleado = new frm_Modificar_TipoEmpleado();
             ObjTipoEmpleadosDAL.CBandAX = 'U';
             ObjTipoEmpleadosDAL.ITipoEmpleado = Convert.ToInt32(dgv_view.SelectedRows[0].Cells[0].Value.ToString().Trim());
             ObjTipoEmpleadosDAL.SDescTipo = dgv_view.SelectedRows[0].Cells[1].Value.ToString().Trim();
             ObjTipoEmpleadosDAL.CIdEstado = Convert.ToChar(dgv_view.SelectedRows[0].Cells[2].Value.ToString().Trim());
 
-            Pant_tipoEmpleados.Obj_DAL_TipoEmpleado = ObjTipoEmpleadosDAL;
-
+            PantTipoEmpleado.Obj_DAL_TipoEmpleado = ObjTipoEmpleadosDAL;
+            Hide();
+            PantTipoEmpleado.ShowDialog();
+            Show();
             txtFiltro.Text = string.Empty;
             CargarDatos();
         }

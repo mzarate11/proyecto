@@ -21,63 +21,6 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             InitializeComponent();
         }
 
-        #region Boton salir
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-
-            this.Close();
-
-        }
-        #endregion
-
-        #region Validar Descripcion
-        private void tb_DescCategoria_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back)
-            {
-                e.Handled = true;
-
-                MessageBox.Show("Este campo solo permite letras", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            }
-            else
-            {
-                e.Handled = false;
-            }
-        }
-        #endregion
-
-        #region Validar ID Categoria
-        private void tb_IdCategoria_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            MessageBox.Show("Este Campo no es editable", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            e.Handled = true;
-        }
-        #endregion
-
-        #region Boton Guardar
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-            if (Obj_ManteCategorias_DAL.cBandAX == 'I')
-            {
-
-            }
-            else
-            {
-
-            }
-        }
-        #endregion
-
-        #region no aplica
-        private void frm_Modificar_T_CategoriasVuelos_Load(object sender, EventArgs e)
-        {
-
-          //  CargarDatos();
-
-        }
-        #endregion  
-
         #region CargarDatos
         private void CargarDatos()
         {
@@ -98,7 +41,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 if (Obj_ManteCategorias_DAL.cBandAX == 'I')
                 {
                     tb_IdCategoria.Enabled = false;
-                    lbiIdCategoria.Enabled = false;
+                    lbiIdCategoria.Enabled = true;
                     tb_DescCategoria.Text = string.Empty;
 
 
@@ -121,9 +64,126 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
 
         #endregion
 
+        #region Load
         private void frm_Modificar_T_CategoriasVuelos_Load_1(object sender, EventArgs e)
         {
+            string sMsjError = string.Empty;
+            cls_Estados_BLL objCateVuelo = new cls_Estados_BLL();
+
+            DataTable DTcv = new DataTable();
+
+            DTcv = objCateVuelo.Listar_Estados(ref sMsjError);
+
+            DTcv.Rows.Add("0", "--- Selecione un Estado ---");
+            cmb_IdEstado.DataSource = DTcv;
+
+            cmb_IdEstado.DisplayMember = DTcv.Columns[1].ToString();
+            cmb_IdEstado.ValueMember = DTcv.Columns[0].ToString();
+
+            cmb_IdEstado.SelectedValue = "0";
             CargarDatos();
         }
+        #endregion
+
+        #region Boton Salir
+        private void btnSalir_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        #endregion
+
+        #region Boton Guardar
+        private void btnGuardar_Click_1(object sender, EventArgs e)
+        {
+            cls_T_CategoriasVuelos_BLL Obj_CategoriaVuelos_BLL = new cls_T_CategoriasVuelos_BLL();
+            if (tb_DescCategoria.Text == "" || cmb_IdEstado.Text == "--- Selecione un Estado ---")
+            {
+                MessageBox.Show("Alguno de lo campos esta vacido favor de verificar", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                string sMsjError = string.Empty;
+                Obj_ManteCategorias_DAL.sDescCategoria = tb_DescCategoria.Text;
+                Obj_ManteCategorias_DAL.cIdEstado = Convert.ToChar(cmb_IdEstado.SelectedValue);
+                if (Obj_ManteCategorias_DAL.cBandAX == 'I')
+                {
+
+
+                    Obj_CategoriaVuelos_BLL.Insertar_CategoriaVuelos(ref sMsjError, ref Obj_ManteCategorias_DAL);
+
+                    if (sMsjError == string.Empty)
+                    {
+                        MessageBox.Show("La Base de Datos ha sido Actualizada", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Hubo un error al ingresar los datos a la base de datos:" + "[" + sMsjError + "]", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    Obj_CategoriaVuelos_BLL.Modificar_Estados(ref sMsjError, ref Obj_ManteCategorias_DAL);
+                    if (sMsjError == string.Empty)
+                    {
+                        MessageBox.Show("Categoría Modificado correctamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    }
+                    else
+                    {
+                        MessageBox.Show(sMsjError.ToString());
+                    }
+                }
+            }
+        }
+        #endregion
+
+        #region Validaciones Caja de texto
+        private void tb_IdCategoria_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if(char.IsNumber(e.KeyChar) || (e.KeyChar == (char)Keys.Back))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Este campo solo permite letras", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+        }
+
+        private void tb_DescCategoria_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar.Equals(' ')) && (tb_DescCategoria.Text == ""))
+            {
+                e.Handled = true;
+                MessageBox.Show("No se permiten campos vasidos al inicio", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                if (e.KeyChar.Equals(' '))
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    if (char.IsLetter(e.KeyChar) || (e.KeyChar == (char)Keys.Back))
+                    {
+                        e.Handled = false;
+
+
+
+                    }
+                    else
+                    {
+                        e.Handled = true;
+                        MessageBox.Show("Este campo solo permite letras", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+
+            }
+
+        }
+        #endregion
     }
 }

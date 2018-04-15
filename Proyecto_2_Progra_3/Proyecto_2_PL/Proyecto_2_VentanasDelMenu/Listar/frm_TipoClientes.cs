@@ -11,6 +11,7 @@ using Proyecto_2_BLL.Catagolos_Mantinimiento_BLL;
 using Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar;
 using Proyecto_2_DAL.Catalogos_y_Mantenimientos;
 
+
 namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
 {
     public partial class frm_TipoClientes : Form
@@ -18,7 +19,6 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
         #region GLOBAL
         cls_TiposClientes_DAL ObjTiposClientesDAL;
         #endregion
-
         public frm_TipoClientes()
         {
             InitializeComponent();
@@ -27,17 +27,17 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
         private void CargarDatos()
         {
 
-            cls_TiposClientes_BLL Obj_Estados_BLL = new cls_TiposClientes_BLL();
+            cls_TiposClientes_BLL Obj_Tipos_Clientes_BLL = new cls_TiposClientes_BLL();
             string sMsjError = string.Empty;
             DataTable dtEstados = new DataTable();
 
             if (txtFiltro.Text == string.Empty)
             {
-                dtEstados = Obj_Estados_BLL.ListarTiposClientes(ref sMsjError);
+                dtEstados = Obj_Tipos_Clientes_BLL.ListarTiposClientes(ref sMsjError);
             }
             else
             {
-                dtEstados = Obj_Estados_BLL.FiltrarTiposClientes(ref sMsjError, txtFiltro.Text.Trim());
+                dtEstados = Obj_Tipos_Clientes_BLL.FiltrarTiposClientes(ref sMsjError, txtFiltro.Text.Trim());
             }
 
             if (sMsjError == string.Empty)
@@ -61,9 +61,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
 
         private void btn_Salir_Click(object sender, EventArgs e)
         {
-            Proyecto_2_PL.Proyecto_2_VentanaPrincipal.frm_Ventana_Principal V_Principal = new Proyecto_2_VentanaPrincipal.frm_Ventana_Principal();
-            V_Principal.ShowDialog();
-            this.Dispose();
+            Close();
         }
 
         private void frm_TipoClientes_Load(object sender, EventArgs e)
@@ -114,45 +112,47 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
         {
             ObjTiposClientesDAL = new cls_TiposClientes_DAL();
             frm_Modificar_TipoClientes PantTiposClientes = new frm_Modificar_TipoClientes();
-            if (Dgv_View.RowCount > 0)
+
+            if (Dgv_View.RowCount > 1)
             {
                 ObjTiposClientesDAL.CBandAX = 'U';
-            ObjTiposClientesDAL.IIdTipoCliente = Convert.ToInt32(Dgv_View.SelectedRows[0].Cells[0].Value.ToString().Trim());
-            ObjTiposClientesDAL.STipoCliente = Dgv_View.SelectedRows[0].Cells[1].Value.ToString().Trim();
-            ObjTiposClientesDAL.SDescripcion = Dgv_View.SelectedRows[0].Cells[2].Value.ToString().Trim();
-            ObjTiposClientesDAL.CIdEstado = Convert.ToChar(Dgv_View.SelectedRows[0].Cells[3].Value.ToString().Trim());
+                ObjTiposClientesDAL.IIdTipoCliente = Convert.ToInt32(Dgv_View.SelectedRows[0].Cells[0].Value.ToString().Trim());
+                ObjTiposClientesDAL.STipoCliente = Dgv_View.SelectedRows[0].Cells[1].Value.ToString().Trim();
+                ObjTiposClientesDAL.SDescripcion = Dgv_View.SelectedRows[0].Cells[2].Value.ToString().Trim();
+                ObjTiposClientesDAL.CIdEstado = Convert.ToChar(Dgv_View.SelectedRows[0].Cells[3].Value.ToString().Trim());
 
-            PantTiposClientes.Obj_DAL_TiposClientes = ObjTiposClientesDAL;
-            PantTiposClientes.ShowDialog();
+                PantTiposClientes.Obj_DAL_TiposClientes = ObjTiposClientesDAL;
+                Hide();
+                PantTiposClientes.ShowDialog();
+                Show();
+                txtFiltro.Text = string.Empty;
+                CargarDatos();
 
-            txtFiltro.Text = string.Empty;
-            CargarDatos();
-        }
+            }
             else {
-
                 MessageBox.Show("No se pueden realizar la acción, debido a que no existen datos por modificar", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-}
+        }
+
+        private void txtFiltro_Click(object sender, EventArgs e)
+        {
+            CargarDatos();
+        }
 
         private void bnt_Nuevo_Click(object sender, EventArgs e)
         {
-                ObjTiposClientesDAL = new cls_TiposClientes_DAL();
-            frm_Modificar_TipoClientes PantTiposClientes = new frm_Modificar_TipoClientes();
-            
-                ObjTiposClientesDAL.CBandAX = 'I';
+            ObjTiposClientesDAL = new cls_TiposClientes_DAL();
+            frm_Modificar_TipoClientes PantTiposClientes = new frm_Modificar_TipoClientes(); 
+            ObjTiposClientesDAL.CBandAX = 'I';
 
-                ObjTiposClientesDAL.IIdTipoCliente = 0;
-                ObjTiposClientesDAL.SDescripcion = string.Empty;
-                ObjTiposClientesDAL.STipoCliente = string.Empty;
-                ObjTiposClientesDAL.CIdEstado = ' ';
+            PantTiposClientes.Obj_DAL_TiposClientes = ObjTiposClientesDAL;
+            Hide();
+            PantTiposClientes.ShowDialog();
+            Show();
 
-                PantTiposClientes.Obj_DAL_TiposClientes = ObjTiposClientesDAL;
-                PantTiposClientes.ShowDialog();
+            txtFiltro.Text = string.Empty;
+            CargarDatos();
 
-
-                txtFiltro.Text = string.Empty;
-                CargarDatos();
-            
         }
 
         private void Dgv_View_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -166,7 +166,9 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
             ObjTiposClientesDAL.CIdEstado = Convert.ToChar(Dgv_View.SelectedRows[0].Cells[3].Value.ToString().Trim());
 
             PantTiposClientes.Obj_DAL_TiposClientes = ObjTiposClientesDAL;
-
+            Hide();
+            PantTiposClientes.ShowDialog();
+            Show();
             txtFiltro.Text = string.Empty;
             CargarDatos();
         }

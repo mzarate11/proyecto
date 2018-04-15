@@ -25,29 +25,43 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
         {
             if (Obj_DAL_TipoEmpleado != null)
             {
+                cls_Estados_BLL ObjBLLEstados = new cls_Estados_BLL();
+                string sMsjError = string.Empty;
+
+                DataTable DTLE = new DataTable();
+                DTLE= ObjBLLEstados.Listar_Estados(ref sMsjError);
+
+
+                DTLE.Rows.Add("0", "--SELECCIONE UN ESTADO--");
+
+                cmb_IDEstado.DataSource = DTLE;
+                cmb_IDEstado.DisplayMember = DTLE.Columns[1].ToString();
+                cmb_IDEstado.ValueMember = DTLE.Columns[0].ToString();
+
+                cmb_IDEstado.SelectedValue = "0";
+                txt_IDTipoEmpleado.Enabled = false;
+
                 if (Obj_DAL_TipoEmpleado.CBandAX == 'I')
                 {
-                    txt_IDTipoEmpleado.Text = string.Empty;
-                    txt_IDTipoEmpleado.Enabled = true;
-                    txt_desc.Text = string.Empty;
-                    txt_desc.Enabled = true;
-                    cmb_IDEstado.DataSource = null;
-                    cmb_IDEstado.Enabled = true;
+                    txt_IDTipoEmpleado.Clear();
+                   // txt_IDTipoEmpleado.Enabled = true;
+                    txt_desc.Clear();
+                  //  cmb_IDEstado.DataSource = null;
+                    
                 }
                 else
                 {
                     txt_IDTipoEmpleado.Text = Obj_DAL_TipoEmpleado.ITipoEmpleado.ToString().Trim();
-                    txt_IDTipoEmpleado.Enabled = false;
+                   // txt_IDTipoEmpleado.Enabled = false;
                     txt_desc.Text = Obj_DAL_TipoEmpleado.SDescTipo.ToString().Trim();
-                    txt_desc.Enabled = false;
-                    cmb_IDEstado.Text = Obj_DAL_TipoEmpleado.SDescTipo.ToString().Trim();
-                    cmb_IDEstado.Enabled = false;
+                    cmb_IDEstado.SelectedValue = Obj_DAL_TipoEmpleado.CIdEstado.ToString().Trim();
+                    
                 }
             }
             else
             {
                 MessageBox.Show("Se presento un error capa8", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                Close();
             }
 
         }
@@ -57,51 +71,97 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             CargarDatos();
         }
 
-        private void toolStripButton1_Click(object sender, EventArgs e)
-        {
-            cls_TiposEmpleados_BLL obj_TipoEmpleado_BLL = new cls_TiposEmpleados_BLL();
-            string sMsjError = string.Empty;
-            Obj_DAL_TipoEmpleado.ITipoEmpleado = Convert.ToInt32(txt_IDTipoEmpleado.Text.Trim());
-            Obj_DAL_TipoEmpleado.SDescTipo = txt_desc.Text.Trim();
-            Obj_DAL_TipoEmpleado.CIdEstado = Convert.ToChar(cmb_IDEstado.Text.Trim());
-
-            if (Obj_DAL_TipoEmpleado.CBandAX == 'I')
-            {
-                obj_TipoEmpleado_BLL.Insertar_TipoEmpleado(ref sMsjError, ref Obj_DAL_TipoEmpleado);
-            }
-            else
-            {
-                obj_TipoEmpleado_BLL.Modificat_TipoEmpleado(ref sMsjError, ref Obj_DAL_TipoEmpleado);
-            }
-        }
-
+        
         private void txt_desc_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((char.IsNumber(e.KeyChar)) || (char.IsPunctuation(e.KeyChar)) || (char.IsSeparator(e.KeyChar)) || (char.IsSymbol(e.KeyChar)))
+            if (char.IsLetter(e.KeyChar) || e.KeyChar == (char)(Keys.Back) || e.KeyChar == (char)(Keys.Space))
             {
-                e.Handled = true;
+                e.Handled = false;
             }
             else
             {
-                e.Handled = false;
+                MessageBox.Show("Este espacio es solo para ingresar numeros", "Informacion",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                e.Handled = true;
             }
         }
 
         private void cmb_IDEstado_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((char.IsNumber(e.KeyChar)) || (char.IsPunctuation(e.KeyChar)) || (char.IsSeparator(e.KeyChar)) || (char.IsSymbol(e.KeyChar)))
-            {
+            { 
                 e.Handled = true;
-            }
-            else
-            {
-                e.Handled = false;
             }
         }
 
         private void txt_IDTipoEmpleado_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (char.IsNumber(e.KeyChar) || e.KeyChar == (char)(Keys.Back))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                MessageBox.Show("Este espacio es solo para ingresar numeros", "Informacion",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                e.Handled = true;
+            }
+        }
 
+       
+
+        private void Guardar_Click(object sender, EventArgs e)
+        {
+            if (cmb_IDEstado.SelectedValue.ToString() != "0" ||
+             txt_IDTipoEmpleado.Text != string.Empty ||
+             txt_desc.Text != string.Empty)
+
+            {
+                cls_TiposEmpleados_BLL obj_TipoEmpleado_BLL = new cls_TiposEmpleados_BLL();
+                string sMsjError = string.Empty;
+                //Obj_DAL_TipoEmpleado.ITipoEmpleado = Convert.ToInt32(txt_IDTipoEmpleado.Text.Trim());
+                Obj_DAL_TipoEmpleado.SDescTipo = txt_desc.Text.Trim();
+                Obj_DAL_TipoEmpleado.CIdEstado = Convert.ToChar(cmb_IDEstado.SelectedValue.ToString().Trim());
+
+                if (Obj_DAL_TipoEmpleado.CBandAX == 'I')
+                {
+                    obj_TipoEmpleado_BLL.Insertar_TipoEmpleado(ref sMsjError, ref Obj_DAL_TipoEmpleado);
+
+                    if (sMsjError == string.Empty)
+                    {
+
+                        MessageBox.Show("Se guardó el registro exitosamente");
+                        Obj_DAL_TipoEmpleado.CBandAX = 'U';
+                    }
+                    else {
+
+                        MessageBox.Show("Se presento un error al tratar de guardar el registro");
+                    }
+                }
+                else
+                {
+                    obj_TipoEmpleado_BLL.Modificar_TipoEmpleado(ref sMsjError, ref Obj_DAL_TipoEmpleado);
+                    if (sMsjError == string.Empty)
+                    {
+                        MessageBox.Show("Se modificó el registro exitosamente");
+                        Obj_DAL_TipoEmpleado.CBandAX = 'U';
+                    }
+                    else
+                    {
+                        MessageBox.Show("Se presento un error al tratar de guardar el registro");
+                    }
+                }
+
+            }
+
+            else
+            {
+                MessageBox.Show("Todos los cambios son obligatorios", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
