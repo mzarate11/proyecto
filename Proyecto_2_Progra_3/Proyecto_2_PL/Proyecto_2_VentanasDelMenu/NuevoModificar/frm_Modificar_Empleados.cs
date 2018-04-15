@@ -190,6 +190,10 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             {
                 MessageBox.Show("Debe completar todos los datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            else if (Convert.ToUInt16(txt_Edad.Text) < 18)
+            {
+                MessageBox.Show("El empleado debe ser mayor de edad");
+            }
             else
             {
 
