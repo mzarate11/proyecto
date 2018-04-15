@@ -109,8 +109,9 @@
             // txt_descripcion
             // 
             this.txt_descripcion.Location = new System.Drawing.Point(150, 217);
+            this.txt_descripcion.Multiline = true;
             this.txt_descripcion.Name = "txt_descripcion";
-            this.txt_descripcion.Size = new System.Drawing.Size(100, 20);
+            this.txt_descripcion.Size = new System.Drawing.Size(151, 71);
             this.txt_descripcion.TabIndex = 3;
             this.txt_descripcion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_descripcion_KeyPress);
             // 
