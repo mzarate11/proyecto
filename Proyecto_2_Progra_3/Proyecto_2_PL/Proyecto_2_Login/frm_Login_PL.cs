@@ -11,6 +11,7 @@ using Proyecto_2_PL.Proyecto_2_VentanaPrincipal;
 using Proyecto_2_DAL.Catalogos_y_Mantenimientos;
 using Proyecto_2_BLL.Catagolos_Mantinimiento_BLL;
 
+
 namespace Proyecto_2_PL.Proyecto_2_Login
 {
     public partial class frm_Login_PL : Form
@@ -27,41 +28,120 @@ namespace Proyecto_2_PL.Proyecto_2_Login
 
         private void btn_Ingreso_Click(object sender, EventArgs e)
         {
-            cls_Usuarios_BLL Obj_Usuario_BLL = new cls_Usuarios_BLL();
-            cls_T_Usuarios_DAL Obj_Usuarios_DAL = new cls_T_Usuarios_DAL();
-            string sMsjError = string.Empty;
-
             if (txt_Usuario.Text == "" || txt_Contraseña.Text == "")
             {
-                MessageBox.Show("Alguno de lo campos esta vacio favor de verificar ... ", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                if (txt_Usuario.Text == "")
+                MessageBox.Show("Alguno de los Campos esta vacido  ",
+                 "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txt_Usuario.Focus();
+            }
+            else
+            {
+                CargarDatos();
+            }
+
+
+        }
+
+        private void frm_Login_PL_Load(object sender, EventArgs e)
+        {
+            txt_Usuario.Text = "";
+            txt_Usuario.Text = "";
+
+        }
+
+        private void CargarDatos()
+        {
+            cls_Usuarios_BLL obj_User_BLL = new cls_Usuarios_BLL();
+            string sMsjError = string.Empty;
+            DataTable DT = new DataTable();
+            char cUser = 'E';
+            DT = obj_User_BLL.ListarUsuarios(ref sMsjError);
+
+
+            if (sMsjError == string.Empty)
+            {
+
+                int i = 0;
+                foreach (DataRow row in DT.Rows)
                 {
+                    if (DT.Rows[i][0].ToString() == txt_Usuario.Text.ToString())
+                    {
+
+                        if (DT.Rows[i][1].ToString() == txt_Contraseña.Text.ToString())
+                        {
+                   
+                            frm_Ventana_Principal Pantalla = new frm_Ventana_Principal();
+                            Pantalla.Show();
+                            Hide();
+
+                            cUser = 'P';
+                        }
+                        else
+                        {
+                            MessageBox.Show("La contraseña que digito es incorrecta  ",
+                                 "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            cUser = 'P';
+                            txt_Contraseña.Text = "";
+                            txt_Contraseña.Focus();
+                        }
+                    }
+
+                    ++i;
+                }
+
+
+
+            }
+            else
+            {
+
+
+                MessageBox.Show("Se presento un error  favor de comunicarse con soporte   .\n\nDetalle Error : [" + sMsjError + "]",
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            if (cUser == 'E')
+            {
+                MessageBox.Show("El Usuario que digito es incorrecto  " + txt_Usuario.Text,
+                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txt_Usuario.Text = "";
+                txt_Usuario.Focus();
+            }
+
+
+
+
+        }
+
+        private void txt_Contraseña_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                if (txt_Usuario.Text == "" || txt_Contraseña.Text == "")
+                {
+                    MessageBox.Show("Alguno de los Campos esta vacido  ",
+                     "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txt_Usuario.Focus();
                 }
                 else
                 {
-                    txt_Contraseña.Focus();
+                    CargarDatos();
                 }
+
+            }
+        }
+
+        private void txt_Usuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back)
+            {
+                e.Handled = false;
+
             }
             else
             {
-                Obj_Usuarios_DAL.sUsername = txt_Usuario.Text;
-                Obj_Usuarios_DAL.sPassword = txt_Contraseña.Text;
-                Obj_Usuario_BLL.Login_Usuarios(ref sMsjError, ref Obj_Usuarios_DAL);
-
-                if (Obj_Usuarios_DAL.cBandLogin == 'T')
-                {
-                    frm_Ventana_Principal Pantalla = new frm_Ventana_Principal();
-                    Pantalla.Show();
-                    Hide();
-                }
-                else
-                {
-                    MessageBox.Show("El Usuario o la contraseña no son validos favor de intentar de nuevo ... ", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    txt_Contraseña.Text = string.Empty;
-                    txt_Usuario.Text = string.Empty;
-
-                }
+                e.Handled = true;
+                MessageBox.Show("Este campo solo admite letras ", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }
