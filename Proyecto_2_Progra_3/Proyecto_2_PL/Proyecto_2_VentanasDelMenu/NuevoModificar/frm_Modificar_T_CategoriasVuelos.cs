@@ -56,7 +56,11 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                     tb_IdCategoria.Enabled = false;
                     tb_DescCategoria.Text = Obj_ManteCategorias_DAL.sDescCategoria.ToString().Trim();
                     cmb_IdEstado.SelectedValue = Obj_ManteCategorias_DAL.cIdEstado.ToString().Trim();
+                                          
+
+                 
                 }
+
             }
             else
             {
@@ -104,6 +108,8 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                     if (sMsjError == string.Empty)
                     {
                         MessageBox.Show("La Base de Datos ha sido Actualizada", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        tb_IdCategoria.Text = Obj_ManteCategorias_DAL.iIdCategoria.ToString();
+                        Obj_ManteCategorias_DAL.cBandAX = 'U';
                     }
                     else
                     {
