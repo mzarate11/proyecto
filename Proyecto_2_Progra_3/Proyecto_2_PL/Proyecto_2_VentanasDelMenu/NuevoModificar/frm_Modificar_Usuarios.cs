@@ -28,8 +28,19 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
         {
             txt_Username.Enabled = false;
             string sMsjError = string.Empty;
+
+            CargarDatos();
+        }
+        #endregion
+
+        #region Proceso Cargar Datos
+        private void CargarDatos()
+        {
+
+            #region Combo 
+            string sMsjError = string.Empty;
             cls_Estados_BLL obj_Estado_BLL = new cls_Estados_BLL();
-            cls_Empleados_BLL obj_Empleado_BLL = new  cls_Empleados_BLL();
+            cls_Empleados_BLL obj_Empleado_BLL = new cls_Empleados_BLL();
 
             DataTable DTUe = new DataTable();
             DataTable DTUEm = new DataTable();
@@ -38,7 +49,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             DTUEm = obj_Empleado_BLL.Listar_Empleados(ref sMsjError);
 
             DTUe.Rows.Add("0", "--- Selecione un Estado ---");
-            DTUEm.Rows.Add("0", "--- Selecione un Estado ---");
+            DTUEm.Rows.Add("0", "--- Selecione un Nombre ---");
 
             cmb_IdEstado.DataSource = DTUe;
             cmb_IdEmpleado.DataSource = DTUEm;
@@ -46,33 +57,11 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             cmb_IdEstado.DisplayMember = DTUe.Columns[1].ToString();
             cmb_IdEstado.ValueMember = DTUe.Columns[0].ToString();
 
-            cmb_IdEmpleado.DisplayMember = DTUEm.Columns[1].ToString();
+            cmb_IdEmpleado.DisplayMember = DTUEm.Columns[2].ToString();
             cmb_IdEmpleado.ValueMember = DTUEm.Columns[0].ToString();
 
             cmb_IdEmpleado.SelectedValue = "0";
             cmb_IdEstado.SelectedValue = "0";
-            CargarDatos();
-        }
-        #endregion
-
-        #region Proceso Cargar Datos
-        private void CargarDatos()
-        {
-            #region Combo ID Estados
-            //cls_Estados_BLL ObjBLLEstados = new cls_Estados_BLL();
-            //string sMsjError = string.Empty;
-            // DataTable DTE = new DataTable();
-            /// DTE = ObjBLLEstados.Listar_Estados(ref sMsjError);
-            // cmb_IdEstado.DataSource = DTE;
-            // cmb_IdEstado.DisplayMember = DTE.Columns[0].ToString();
-            #endregion
-
-            #region Combo ID Empleado
-            // cls_Empleados_BLL ObjBLL_Empleados = new cls_Empleados_BLL();
-            //  DataTable DT = new DataTable();
-            // DT = ObjBLL_Empleados.Listar_Empleados(ref sMsjError);
-            //  cmb_IdEmpleado.DataSource = DT;
-            //  cmb_IdEmpleado.DisplayMember = DT.Columns[0].ToString();
             #endregion
 
 
@@ -84,6 +73,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                     Obj_Usuarios_Dal.sUsername = string.Empty;
                     Obj_Usuarios_Dal.sPassword = string.Empty;
 
+                    
                 }
                 else
                 {
