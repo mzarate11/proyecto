@@ -24,13 +24,17 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
         #region CargarDatos
         private void CargarDatos()
         {
-            #region Combo ID Estados
-            // cls_Estados_BLL ObjBLLEstados = new cls_Estados_BLL();
-            // string sMsjError = string.Empty;
-            // DataTable DTE = new DataTable();
-            // DTE = ObjBLLEstados.Listar_Estados(ref sMsjError);
-            // cmb_IdEstado.DataSource = DTE;
-            // cmb_IdEstado.DisplayMember = DTE.Columns[0].ToString();
+            #region CargarDatos IdEstados
+            cls_Estados_BLL ObjBLLEstados = new cls_Estados_BLL();
+            string sMsjError = string.Empty;
+            DataTable DTE = new DataTable();
+            DTE = ObjBLLEstados.Listar_Estados(ref sMsjError);
+            DTE.Rows.Add("0", "-- SELECCIONE UN ESTADO --");
+            cmb_IdEstado.DataSource = DTE;
+            cmb_IdEstado.DisplayMember = DTE.Columns[1].ToString();
+            cmb_IdEstado.ValueMember = DTE.Columns[0].ToString();
+            cmb_IdEstado.SelectedValue = "0";
+
             #endregion
 
 
@@ -51,7 +55,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                     tb_IdCategoria.Text = Obj_ManteCategorias_DAL.iIdCategoria.ToString().Trim();
                     tb_IdCategoria.Enabled = false;
                     tb_DescCategoria.Text = Obj_ManteCategorias_DAL.sDescCategoria.ToString().Trim();
-                    cmb_IdEstado.Text = Obj_ManteCategorias_DAL.cIdEstado.ToString().Trim();
+                    cmb_IdEstado.SelectedValue = Obj_ManteCategorias_DAL.cIdEstado.ToString().Trim();
                 }
             }
             else
@@ -67,20 +71,6 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
         #region Load
         private void frm_Modificar_T_CategoriasVuelos_Load_1(object sender, EventArgs e)
         {
-            string sMsjError = string.Empty;
-            cls_Estados_BLL objCateVuelo = new cls_Estados_BLL();
-
-            DataTable DTcv = new DataTable();
-
-            DTcv = objCateVuelo.Listar_Estados(ref sMsjError);
-
-            DTcv.Rows.Add("0", "--- Selecione un Estado ---");
-            cmb_IdEstado.DataSource = DTcv;
-
-            cmb_IdEstado.DisplayMember = DTcv.Columns[1].ToString();
-            cmb_IdEstado.ValueMember = DTcv.Columns[0].ToString();
-
-            cmb_IdEstado.SelectedValue = "0";
             CargarDatos();
         }
         #endregion

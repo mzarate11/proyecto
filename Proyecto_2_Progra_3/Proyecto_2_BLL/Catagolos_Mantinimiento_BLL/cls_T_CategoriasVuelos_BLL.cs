@@ -92,20 +92,22 @@ namespace Proyecto_2_BLL.Catagolos_Mantinimiento_BLL
 
             Obj_BLL.TablaParametros(ref Obj_DAL);
             Obj_DAL.DT_Parametros.Rows.Add("@DescCategoria", 3, Obj_ManteCategorias_DAL.sDescCategoria.ToString().Trim());
-            Obj_DAL.DT_Parametros.Rows.Add("@IdEstado", 2, Obj_ManteCategorias_DAL.sDescCategoria.ToString().Trim());
+            Obj_DAL.DT_Parametros.Rows.Add("@IdEstado", 2, Obj_ManteCategorias_DAL.cIdEstado.ToString().Trim());
 
             Obj_DAL.sSentencia = ConfigurationManager.AppSettings["Insertar_CategoriasVuelos"].ToString().Trim();
-            Obj_BLL.Ejec_NonQuery(ref Obj_DAL);
+            Obj_BLL.Ejec_Scalar(ref Obj_DAL);
 
             if (Obj_DAL.sMsgError == string.Empty)
             {
                 sMsjError = string.Empty;
-                Obj_ManteCategorias_DAL.cBandAX = Convert.ToChar("U");
+                Obj_ManteCategorias_DAL.iIdCategoria = Obj_DAL.iValorScalar;
+                Obj_ManteCategorias_DAL.cBandAX = 'I';
             }
             else
             {
                 sMsjError = Obj_DAL.sMsgError;
-                Obj_ManteCategorias_DAL.cBandAX = Convert.ToChar("I");
+                Obj_ManteCategorias_DAL.cBandAX = 'U';
+                Obj_ManteCategorias_DAL.iIdCategoria = -1;
             }
         }
         #endregion
@@ -118,11 +120,11 @@ namespace Proyecto_2_BLL.Catagolos_Mantinimiento_BLL
 
 
             Obj_BLL.TablaParametros(ref Obj_DAL);
-            Obj_DAL.DT_Parametros.Rows.Add("@Username", 3, Obj_EstaCatego_DAL.iIdCategoria.ToString().Trim());
-            Obj_DAL.DT_Parametros.Rows.Add("@Password", 3, Obj_EstaCatego_DAL.sDescCategoria.ToString().Trim());
+            Obj_DAL.DT_Parametros.Rows.Add("@IdCategoria", 3, Obj_EstaCatego_DAL.iIdCategoria.ToString().Trim());
+            Obj_DAL.DT_Parametros.Rows.Add("@DescCategoria", 3, Obj_EstaCatego_DAL.sDescCategoria.ToString().Trim());
             Obj_DAL.DT_Parametros.Rows.Add("@IdEstado", 2, Obj_EstaCatego_DAL.cIdEstado.ToString().Trim());
 
-            Obj_DAL.sSentencia = ConfigurationManager.AppSettings["Insertar_CategoriasVuelos"].ToString().Trim();
+            Obj_DAL.sSentencia = ConfigurationManager.AppSettings["Modificar_CategoriasVuelos"].ToString().Trim();
             Obj_BLL.Ejec_NonQuery(ref Obj_DAL);
 
             if (Obj_DAL.sMsgError == string.Empty)

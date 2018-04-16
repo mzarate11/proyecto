@@ -88,7 +88,7 @@ namespace Proyecto_2_BLL.Catagolos_Mantinimiento_BLL
             Obj_BLL.TablaParametros(ref Obj_DAL);
             Obj_DAL.DT_Parametros.Rows.Add("@Username", 3, Obj_Usuarios_DAL.sUsername.ToString().Trim());
             Obj_DAL.DT_Parametros.Rows.Add("@Password", 3, Obj_Usuarios_DAL.sPassword.ToString().Trim());
-            Obj_DAL.DT_Parametros.Rows.Add("@IdEmpleado", 3, Obj_Usuarios_DAL.sPassword.ToString().Trim());
+            Obj_DAL.DT_Parametros.Rows.Add("@IdEmpleado", 3, Obj_Usuarios_DAL.sIdEmpleado.ToString().Trim());
             Obj_DAL.DT_Parametros.Rows.Add("@IdEstado", 2, Obj_Usuarios_DAL.cIdEstado.ToString().Trim());
 
             Obj_DAL.sSentencia = ConfigurationManager.AppSettings["Insertar_Usuarios"].ToString().Trim();
@@ -134,6 +134,7 @@ namespace Proyecto_2_BLL.Catagolos_Mantinimiento_BLL
             }
         }
         #endregion
+
 
         #region  Tabla Login Usuarios
         public void Login_Usuarios(ref string sMsjError, ref Proyecto_2_DAL.Catalogos_y_Mantenimientos.cls_T_Usuarios_DAL Obj_Usuarios_DAL)

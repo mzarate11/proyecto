@@ -90,6 +90,8 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                     txt_Username.Text = Obj_Usuarios_Dal.sUsername.ToString().Trim();
                     txt_Username.Enabled = false;
                     txt_Password.Text = Obj_Usuarios_Dal.sPassword.ToString().Trim();
+                    cmb_IdEmpleado.SelectedValue = Obj_Usuarios_Dal.sIdEmpleado.ToString().Trim();
+                    cmb_IdEstado.SelectedValue = Obj_Usuarios_Dal.cIdEstado.ToString().Trim ();
 
                 }
             }
@@ -103,6 +105,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
 
         #endregion
 
+
         #region Boton Guardar
         private void btnGuardar_Click_1(object sender, EventArgs e)
         {
@@ -110,7 +113,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
 
             if (txt_Username.Text == "" || txt_Password.Text == "" || cmb_IdEmpleado.Text == "--- Selecione un Estado ---" || cmb_IdEstado.Text == "--- Selecione un Estado ---")
             {
-                MessageBox.Show("Alguno de lo campos esta vacido favor de verificar","Informacion",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                MessageBox.Show("Alguno de lo campos esta vacido favor de verificar", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -118,12 +121,14 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 string sMsjError = string.Empty;
                 Obj_Usuarios_Dal.sUsername = txt_Username.Text;
                 Obj_Usuarios_Dal.sPassword = txt_Password.Text;
+
                 Obj_Usuarios_Dal.sIdEmpleado = Convert.ToString(cmb_IdEmpleado.SelectedValue);
 
                 Obj_Usuarios_Dal.cIdEstado = Convert.ToChar(cmb_IdEstado.SelectedValue);
+
                 if (Obj_Usuarios_Dal.cBandAX == 'I')
                 {
-                    
+
 
                     Obj_ManteniUsuarios_BLL.Insertar_Usuarios(ref sMsjError, ref Obj_Usuarios_Dal);
 
@@ -152,6 +157,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             }
         }
         #endregion
+
 
         #region Boton salir
         private void btnSalir_Click(object sender, EventArgs e)
