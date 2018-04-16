@@ -77,7 +77,6 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 cls_Paises_BLL Obj_Paises_BLL = new cls_Paises_BLL();
                 string sMsjError = string.Empty;
 
-                Obj_Paises_DAL.iIdPais = Convert.ToInt32(txt_IdPais.Text);
                 Obj_Paises_DAL.sNombrePais = txtNombrePais.Text;
                 Obj_Paises_DAL.sCodigoISOPais = txtCodigoISO.Text;
                 Obj_Paises_DAL.sCodigoAreaPais = txtCodigoArea.Text;

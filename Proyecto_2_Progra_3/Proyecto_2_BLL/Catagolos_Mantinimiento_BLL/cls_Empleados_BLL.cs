@@ -62,7 +62,7 @@ namespace Proyecto_2_BLL.Catagolos_Mantinimiento_BLL
             cls_Bases_BLL Obj_BLL = new cls_Bases_BLL();
 
             Obj_BLL.TablaParametros(ref Obj_DAL);
-            Obj_DAL.DT_Parametros.Rows.Add("@IdEmpleado", 3, sFiltro);
+            Obj_DAL.DT_Parametros.Rows.Add("@Id_Empleado", 3, sFiltro);
 
             Obj_DAL.sSentencia = ConfigurationManager.AppSettings["Eliminar_Empleados"].ToString().Trim();
             Obj_BLL.Ejec_NonQuery(ref Obj_DAL);

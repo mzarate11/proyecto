@@ -42,7 +42,7 @@ namespace Proyecto_2_BLL.Catagolos_Mantinimiento_BLL
             cls_BaseDatos_DAL Obj_DAL = new cls_BaseDatos_DAL();
             cls_Bases_BLL Obj_BLL = new cls_Bases_BLL();
             Obj_BLL.TablaParametros(ref Obj_DAL);
-            Obj_DAL.DT_Parametros.Rows.Add("@DescCategoria", 3, sFiltro);
+            Obj_DAL.DT_Parametros.Rows.Add("@idCategoria", 3, sFiltro);
 
 
             Obj_DAL.sNombreTabla = "FILTROS";
