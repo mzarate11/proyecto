@@ -44,15 +44,13 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 if (Obj_DAL_TipoEmpleado.CBandAX == 'I')
                 {
                     txt_IDTipoEmpleado.Clear();
-                   // txt_IDTipoEmpleado.Enabled = true;
                     txt_desc.Clear();
-                  //  cmb_IDEstado.DataSource = null;
+                  
                     
                 }
                 else
                 {
                     txt_IDTipoEmpleado.Text = Obj_DAL_TipoEmpleado.ITipoEmpleado.ToString().Trim();
-                   // txt_IDTipoEmpleado.Enabled = false;
                     txt_desc.Text = Obj_DAL_TipoEmpleado.SDescTipo.ToString().Trim();
                     cmb_IDEstado.SelectedValue = Obj_DAL_TipoEmpleado.CIdEstado.ToString().Trim();
                     
@@ -118,7 +116,6 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             {
                 cls_TiposEmpleados_BLL obj_TipoEmpleado_BLL = new cls_TiposEmpleados_BLL();
                 string sMsjError = string.Empty;
-                //Obj_DAL_TipoEmpleado.ITipoEmpleado = Convert.ToInt32(txt_IDTipoEmpleado.Text.Trim());
                 Obj_DAL_TipoEmpleado.SDescTipo = txt_desc.Text.Trim();
                 Obj_DAL_TipoEmpleado.CIdEstado = Convert.ToChar(cmb_IDEstado.SelectedValue.ToString().Trim());
 
@@ -158,10 +155,12 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 MessageBox.Show("Todos los cambios son obligatorios", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-
-        private void toolStripButton2_Click(object sender, EventArgs e)
+        
+        private void Sal_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+
     }
 }

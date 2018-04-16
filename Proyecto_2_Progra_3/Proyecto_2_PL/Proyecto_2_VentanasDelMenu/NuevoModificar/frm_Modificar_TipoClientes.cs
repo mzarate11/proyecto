@@ -26,7 +26,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             cls_TiposClientes_DAL Obj_Tipo_clientes_DAL = new cls_TiposClientes_DAL();
             if (Obj_DAL_TiposClientes != null)
             {
-                
+
                 string sMsjError = string.Empty;
 
                 cls_Estados_BLL ObjBLLEstados = new cls_Estados_BLL();
@@ -36,27 +36,25 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 cmb_IDEstado.DataSource = DTE;
                 cmb_IDEstado.DisplayMember = DTE.Columns[1].ToString();
                 cmb_IDEstado.ValueMember = DTE.Columns[0].ToString();
-                 cmb_IDEstado.SelectedValue = "0";
+                cmb_IDEstado.SelectedValue = "0";
 
                 txt_IDTipoCliente.Enabled = false;
 
                 if (Obj_DAL_TiposClientes.CBandAX == 'I')
                 {
                     txt_IDTipoCliente.Text = string.Empty;
-                    //txt_IDTipoCliente.Enabled = true;
                     txt_TipoCliente.Text = string.Empty;
                     txt_descripcion.Text = string.Empty;
-                    //cmb_IDEstado.DataSource = null;
-                   
+
+
                 }
                 else
                 {
                     txt_IDTipoCliente.Text = Obj_DAL_TiposClientes.IIdTipoCliente.ToString().Trim();
-                    //txt_IDTipoCliente.Enabled = false;
                     txt_TipoCliente.Text = Obj_DAL_TiposClientes.STipoCliente.ToString().Trim();
                     txt_descripcion.Text = Obj_DAL_TiposClientes.SDescripcion.ToString().Trim();
-                   cmb_IDEstado.SelectedValue = Obj_DAL_TiposClientes.CIdEstado.ToString().Trim();
-                  
+                    cmb_IDEstado.SelectedValue = Obj_DAL_TiposClientes.CIdEstado.ToString().Trim();
+
                 }
 
             }
@@ -66,20 +64,18 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 this.Close();
             }
         }
-
-        private void toolStripButton1_Click(object sender, EventArgs e)
+        private void Guardar_Click(object sender, EventArgs e)
         {
-             if (txt_IDTipoCliente.Text != string.Empty ||
-                    txt_descripcion.Text != string.Empty ||
-                    txt_TipoCliente.Text != string.Empty || 
-                    cmb_IDEstado.SelectedValue.ToString() != "0" )
-                {
-                    cls_TiposClientes_BLL obj_TiposClientes_BLL = new cls_TiposClientes_BLL();
-                    string sMsjError = string.Empty;
-                    Obj_DAL_TiposClientes.CIdEstado = Convert.ToChar(cmb_IDEstado.SelectedValue.ToString().Trim());
-                    //Obj_DAL_TiposClientes.IIdTipoCliente = Convert.ToInt32(txt_IDTipoCliente.Text.Trim());
-                    Obj_DAL_TiposClientes.STipoCliente = txt_TipoCliente.Text.Trim();
-                    Obj_DAL_TiposClientes.SDescripcion = txt_descripcion.Text.Trim();
+            if (txt_IDTipoCliente.Text != string.Empty ||
+                     txt_descripcion.Text != string.Empty ||
+                     txt_TipoCliente.Text != string.Empty ||
+                     cmb_IDEstado.SelectedValue.ToString() != "0")
+            {
+                cls_TiposClientes_BLL obj_TiposClientes_BLL = new cls_TiposClientes_BLL();
+                string sMsjError = string.Empty;
+                Obj_DAL_TiposClientes.CIdEstado = Convert.ToChar(cmb_IDEstado.SelectedValue.ToString().Trim());
+                Obj_DAL_TiposClientes.STipoCliente = txt_TipoCliente.Text.Trim();
+                Obj_DAL_TiposClientes.SDescripcion = txt_descripcion.Text.Trim();
 
                 if (Obj_DAL_TiposClientes.CBandAX == 'I')
                 {
@@ -107,18 +103,16 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                         MessageBox.Show("Se presentó un error");
                     }
                 }
-                }
-                else
-                {
+            }
+            else
+            {
 
-                    MessageBox.Show("Todos los cambios son obligatorios", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                }
-
+                MessageBox.Show("Todos los cambios son obligatorios", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
-        
 
+        }
+        
         private void frm_Modificar_TipoClientes_Load(object sender, EventArgs e)
         {
             CargarDatos();
@@ -172,8 +166,8 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
         {
              e.Handled = true;
             }
-
-        private void toolStripButton2_Click(object sender, EventArgs e)
+        
+        private void Salir_Click(object sender, EventArgs e)
         {
             Close();
         }

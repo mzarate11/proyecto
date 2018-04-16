@@ -1,4 +1,6 @@
-﻿namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
+﻿using System;
+
+namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
 {
     partial class frm_Modificar_TipoEmpleado
     {
@@ -34,7 +36,7 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.Guardar = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.Sal = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -76,7 +78,7 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Guardar,
             this.toolStripLabel1,
-            this.toolStripButton2,
+            this.Sal,
             this.toolStripLabel2});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
@@ -100,16 +102,16 @@
             this.toolStripLabel1.Size = new System.Drawing.Size(49, 22);
             this.toolStripLabel1.Text = "Guardar";
             // 
-            // toolStripButton2
+            // Sal
             // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = global::Proyecto_2_PL.Properties.Resources.bSalir;
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton2.Text = "Salir";
-            this.toolStripButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            this.Sal.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.Sal.Image = global::Proyecto_2_PL.Properties.Resources.bSalir;
+            this.Sal.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.Sal.Name = "Sal";
+            this.Sal.Size = new System.Drawing.Size(23, 22);
+            this.Sal.Text = "Salir";
+            this.Sal.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.Sal.Click += new System.EventHandler(this.SalClick); //toolStripButton2_Click
             // 
             // toolStripLabel2
             // 
@@ -177,12 +179,13 @@
         private System.Windows.Forms.TextBox txt_desc;
         private System.Windows.Forms.ComboBox cmb_IDEstado;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton Guardar;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripButton Sal;
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ToolStripButton Guardar;
+        private EventHandler SalClick;
     }
 }
