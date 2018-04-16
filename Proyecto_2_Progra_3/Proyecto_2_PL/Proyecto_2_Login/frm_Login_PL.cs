@@ -98,6 +98,7 @@ namespace Proyecto_2_PL.Proyecto_2_Login
 
                 MessageBox.Show("Se presento un error  favor de comunicarse con soporte   .\n\nDetalle Error : [" + sMsjError + "]",
                     "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
             }
 
             if (cUser == 'E')
