@@ -126,7 +126,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
             NuevoModificar.frm_Modificar_T_CategoriasVuelos PantCategoriaVuelo = new NuevoModificar.frm_Modificar_T_CategoriasVuelos();
 
             Obj_CategoriasVuelos_DAL.cBandAX = 'U';
-            Obj_CategoriasVuelos_DAL.iIdCategoria = Convert.ToChar(dgv_CategoriasVuelos.SelectedRows[0].Cells[0].Value.ToString().Trim());
+            Obj_CategoriasVuelos_DAL.iIdCategoria = Convert.ToInt32(dgv_CategoriasVuelos.SelectedRows[0].Cells[0].Value.ToString().Trim());
             Obj_CategoriasVuelos_DAL.sDescCategoria = dgv_CategoriasVuelos.SelectedRows[0].Cells[1].Value.ToString().Trim();
             Obj_CategoriasVuelos_DAL.cIdEstado = Convert.ToChar(dgv_CategoriasVuelos.SelectedRows[0].Cells[2].Value.ToString().Trim());
             PantCategoriaVuelo.Obj_ManteCategorias_DAL = Obj_CategoriasVuelos_DAL;
@@ -145,7 +145,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
             NuevoModificar.frm_Modificar_T_CategoriasVuelos PantCategoriaVuelo = new NuevoModificar.frm_Modificar_T_CategoriasVuelos();
 
             Obj_CategoriasVuelos_DAL.cBandAX = 'U';
-            Obj_CategoriasVuelos_DAL.iIdCategoria = Convert.ToChar(dgv_CategoriasVuelos.SelectedRows[0].Cells[0].Value.ToString().Trim());
+            Obj_CategoriasVuelos_DAL.iIdCategoria = Convert.ToInt32(dgv_CategoriasVuelos.SelectedRows[0].Cells[0].Value.ToString().Trim());
             Obj_CategoriasVuelos_DAL.sDescCategoria = dgv_CategoriasVuelos.SelectedRows[0].Cells[1].Value.ToString().Trim();
             Obj_CategoriasVuelos_DAL.cIdEstado = Convert.ToChar(dgv_CategoriasVuelos.SelectedRows[0].Cells[2].Value.ToString().Trim());
             PantCategoriaVuelo.Obj_ManteCategorias_DAL = Obj_CategoriasVuelos_DAL;

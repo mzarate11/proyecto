@@ -50,7 +50,7 @@
             // 
             this.cmb_IdEmpleado.FormattingEnabled = true;
             this.cmb_IdEmpleado.Location = new System.Drawing.Point(540, 232);
-            this.cmb_IdEmpleado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmb_IdEmpleado.Margin = new System.Windows.Forms.Padding(2);
             this.cmb_IdEmpleado.Name = "cmb_IdEmpleado";
             this.cmb_IdEmpleado.Size = new System.Drawing.Size(146, 21);
             this.cmb_IdEmpleado.TabIndex = 2;
@@ -137,7 +137,6 @@
             // 
             // txt_Password
             // 
-            this.txt_Password.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_Password.Location = new System.Drawing.Point(540, 179);
             this.txt_Password.MaxLength = 8;
             this.txt_Password.Name = "txt_Password";
@@ -210,7 +209,7 @@
             this.Controls.Add(this.lb_Password);
             this.Controls.Add(this.Lb_Username);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frm_Modificar_Usuarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_Modificar_Usuarios";
