@@ -90,6 +90,8 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                     txt_Username.Text = Obj_Usuarios_Dal.sUsername.ToString().Trim();
                     txt_Username.Enabled = false;
                     txt_Password.Text = Obj_Usuarios_Dal.sPassword.ToString().Trim();
+                    cmb_IdEmpleado.SelectedValue = Obj_Usuarios_Dal.sIdEmpleado.ToString().Trim();
+                    cmb_IdEstado.SelectedValue = Obj_Usuarios_Dal.cIdEstado.ToString().Trim ();
 
                 }
             }
