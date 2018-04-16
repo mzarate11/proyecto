@@ -78,7 +78,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             }
             else
             {
-                MessageBox.Show("Este espacio es solo para ingresar numeros", "Informacion",
+                MessageBox.Show("Este espacio es solo para ingresar letras", "Informacion",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 e.Handled = true;
             }
@@ -99,7 +99,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             }
             else
             {
-                MessageBox.Show("Este espacio es solo para ingresar numeros", "Informacion",
+                MessageBox.Show("Este espacio es solo para ingresar letras", "Informacion",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 e.Handled = true;
             }
