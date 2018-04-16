@@ -130,7 +130,9 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
                 ObjEstadosDAL.cIdEstado = Convert.ToChar(dgv_Estados.SelectedRows[0].Cells[0].Value.ToString().Trim());
                 ObjEstadosDAL.sDescripcion = dgv_Estados.SelectedRows[0].Cells[1].Value.ToString().Trim();
                 PantEstados.Obj_DAL_Estados = ObjEstadosDAL;
+                this.Hide();
                 PantEstados.ShowDialog();
+                this.Show();
             }
             txtFiltro.Text = string.Empty;
             CargarDatos();
@@ -144,8 +146,9 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
             ObjEstadosDAL.cIdEstado = Convert.ToChar(dgv_Estados.SelectedRows[0].Cells[0].Value.ToString().Trim());
             ObjEstadosDAL.sDescripcion = dgv_Estados.SelectedRows[0].Cells[1].Value.ToString().Trim();
             PantEstados.Obj_DAL_Estados = ObjEstadosDAL;
+            this.Hide();
             PantEstados.ShowDialog();
-
+            this.Show();
             txtFiltro.Text = string.Empty;
             CargarDatos();
 
