@@ -111,7 +111,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             this.Sal.Size = new System.Drawing.Size(23, 22);
             this.Sal.Text = "Salir";
             this.Sal.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.Sal.Click += new System.EventHandler(this.SalClick); //toolStripButton2_Click
+            this.Sal.Click += new System.EventHandler(this.Sal_Click);
             // 
             // toolStripLabel2
             // 
