@@ -137,7 +137,9 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
 
 
                 pantClientes.ObjClientes_DAL = ObjCLientes_DAL;
+                this.Hide();
                 pantClientes.ShowDialog();
+                this.Show();
             }
             txtFiltro.Text = string.Empty;
             CargarDatos();
@@ -157,8 +159,9 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
 
 
             pantClientes.ObjClientes_DAL = ObjCLientes_DAL;
+            this.Hide();
             pantClientes.ShowDialog();
-
+            this.Show();
             txtFiltro.Text = string.Empty;
             CargarDatos();
         }
