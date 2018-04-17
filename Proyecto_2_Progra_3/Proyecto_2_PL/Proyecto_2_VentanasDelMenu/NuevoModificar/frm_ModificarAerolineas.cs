@@ -76,7 +76,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             else
             {
                 MessageBox.Show("Este espacio es solo para ingresar numeros", "Informacion",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 e.Handled = true;
             }
         }
@@ -85,7 +85,17 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
         {
             if (char.IsLetter(e.KeyChar) || e.KeyChar == (char)(Keys.Back) || e.KeyChar == (char)(Keys.Space))
             {
-                e.Handled = false;
+                if (e.KeyChar == (char)(Keys.Space))
+                {
+                    if (txt_NombreAerolinea.Text.Contains(" "))
+                    {
+                        e.Handled = true;
+                    }
+                    else if (txt_NombreAerolinea.SelectionStart == 0)
+                    {
+                        e.Handled = true;
+                    }
+                }
             }
             else
             {

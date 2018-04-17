@@ -105,11 +105,17 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                     {
                         e.Handled = true;
                     }
-                    else if(txt_IdAvion.SelectionStart == 0 && e.KeyChar == '-')
+                    else if(txt_IdAvion.SelectionStart == 0)
                     {
                         e.Handled = true;                       
                     }                    
-                }                
+                }
+                else if (e.KeyChar == (char)(Keys.Space))
+                {
+                    MessageBox.Show("La identificación de un avión no tiene espacios", "Informacion",
+                    MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    e.Handled = true;
+                }
             }
             else
             {
@@ -129,7 +135,18 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                     {
                         e.Handled = true;
                     }
-                    else if (txt_NomAvion.SelectionStart == 0 && e.KeyChar == '-')
+                    else if (txt_NomAvion.SelectionStart == 0)
+                    {
+                        e.Handled = true;
+                    }
+                }
+                else if (e.KeyChar == (char)(Keys.Space))
+                {
+                    if (txt_NomAvion.Text.Contains(" "))
+                    {
+                        e.Handled = true;
+                    }
+                    else if (txt_NomAvion.SelectionStart == 0)
                     {
                         e.Handled = true;
                     }
@@ -138,7 +155,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             else
             {
                 MessageBox.Show("Este espacio es solo para ingresar letras", "Informacion",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 e.Handled = true;
             }
         }
@@ -147,12 +164,22 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
         {
             if (char.IsLetter(e.KeyChar) || e.KeyChar == (char)(Keys.Back) || e.KeyChar == (char)(Keys.Space))
             {
-                e.Handled = false;
+                if (e.KeyChar == (char)(Keys.Space))
+                {
+                    if (txt_DescAvion.Text.Contains(" "))
+                    {
+                        e.Handled = true;
+                    }
+                    else if (txt_DescAvion.SelectionStart == 0)
+                    {
+                        e.Handled = true;
+                    }
+                }
             }
             else
             {
                 MessageBox.Show("Este espacio es solo para ingresar letras", "Informacion",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 e.Handled = true;
             }
         }

@@ -127,7 +127,7 @@
             this.txt_IdAvion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.txt_IdAvion.Location = new System.Drawing.Point(235, 262);
             this.txt_IdAvion.Margin = new System.Windows.Forms.Padding(2);
-            this.txt_IdAvion.MaxLength = 12;
+            this.txt_IdAvion.MaxLength = 7;
             this.txt_IdAvion.Name = "txt_IdAvion";
             this.txt_IdAvion.Size = new System.Drawing.Size(178, 22);
             this.txt_IdAvion.TabIndex = 1;
@@ -204,7 +204,7 @@
             this.toolStripLabel2});
             this.toolStrip2.Location = new System.Drawing.Point(6, 6);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(251, 39);
+            this.toolStrip2.Size = new System.Drawing.Size(220, 39);
             this.toolStrip2.TabIndex = 38;
             this.toolStrip2.Text = "toolStrip2";
             // 
