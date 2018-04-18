@@ -80,7 +80,7 @@
             this.toolStripLabel6});
             this.MenuVentana.Location = new System.Drawing.Point(-1, 1);
             this.MenuVentana.Name = "MenuVentana";
-            this.MenuVentana.Size = new System.Drawing.Size(964, 34);
+            this.MenuVentana.Size = new System.Drawing.Size(964, 38);
             this.MenuVentana.TabIndex = 4;
             this.MenuVentana.Text = "toolStrip1";
             // 
@@ -89,16 +89,17 @@
             this.tls_btn_Refrescar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.tls_btn_Refrescar.Image = global::Proyecto_2_PL.Properties.Resources.refrescar;
             this.tls_btn_Refrescar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tls_btn_Refrescar.Margin = new System.Windows.Forms.Padding(0, 1, 0, 3);
             this.tls_btn_Refrescar.Name = "tls_btn_Refrescar";
-            this.tls_btn_Refrescar.Size = new System.Drawing.Size(34, 31);
+            this.tls_btn_Refrescar.Size = new System.Drawing.Size(34, 34);
             this.tls_btn_Refrescar.Text = "Refrescar";
             this.tls_btn_Refrescar.Click += new System.EventHandler(this.tls_btn_Refrescar_Click);
             // 
             // toolStripLabel1
             // 
-            this.toolStripLabel1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripLabel1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(63, 31);
+            this.toolStripLabel1.Size = new System.Drawing.Size(55, 31);
             this.toolStripLabel1.Text = "Refrescar";
             // 
             // toolStripSeparator1
@@ -109,19 +110,20 @@
             // tls_btn_Nuevo
             // 
             this.tls_btn_Nuevo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tls_btn_Nuevo.Image = global::Proyecto_2_PL.Properties.Resources.agregar;
+            this.tls_btn_Nuevo.Image = global::Proyecto_2_PL.Properties.Resources.bNuevo;
             this.tls_btn_Nuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tls_btn_Nuevo.Margin = new System.Windows.Forms.Padding(0, 1, 0, 3);
             this.tls_btn_Nuevo.Name = "tls_btn_Nuevo";
-            this.tls_btn_Nuevo.Size = new System.Drawing.Size(34, 31);
+            this.tls_btn_Nuevo.Size = new System.Drawing.Size(34, 34);
             this.tls_btn_Nuevo.Text = "Nuevo";
             this.tls_btn_Nuevo.Click += new System.EventHandler(this.tls_btn_Nuevo_Click);
             // 
             // toolStripLabel2
             // 
-            this.toolStripLabel2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripLabel2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripLabel2.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(46, 33);
+            this.toolStripLabel2.Size = new System.Drawing.Size(42, 33);
             this.toolStripLabel2.Text = "Nuevo";
             // 
             // toolStripSeparator2
@@ -134,16 +136,17 @@
             this.tls_btn_Modificar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.tls_btn_Modificar.Image = global::Proyecto_2_PL.Properties.Resources.modificar;
             this.tls_btn_Modificar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tls_btn_Modificar.Margin = new System.Windows.Forms.Padding(0, 1, 0, 3);
             this.tls_btn_Modificar.Name = "tls_btn_Modificar";
-            this.tls_btn_Modificar.Size = new System.Drawing.Size(34, 31);
+            this.tls_btn_Modificar.Size = new System.Drawing.Size(34, 34);
             this.tls_btn_Modificar.Text = "Modificar";
             this.tls_btn_Modificar.Click += new System.EventHandler(this.tls_btn_Modificar_Click);
             // 
             // toolStripLabel3
             // 
-            this.toolStripLabel3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripLabel3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripLabel3.Name = "toolStripLabel3";
-            this.toolStripLabel3.Size = new System.Drawing.Size(64, 31);
+            this.toolStripLabel3.Size = new System.Drawing.Size(58, 31);
             this.toolStripLabel3.Text = "Modificar";
             // 
             // toolStripSeparator3
@@ -156,16 +159,17 @@
             this.tls_btn_Eliminar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.tls_btn_Eliminar.Image = global::Proyecto_2_PL.Properties.Resources.eliminar;
             this.tls_btn_Eliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tls_btn_Eliminar.Margin = new System.Windows.Forms.Padding(0, 1, 0, 3);
             this.tls_btn_Eliminar.Name = "tls_btn_Eliminar";
-            this.tls_btn_Eliminar.Size = new System.Drawing.Size(34, 31);
+            this.tls_btn_Eliminar.Size = new System.Drawing.Size(34, 34);
             this.tls_btn_Eliminar.Text = "Eliminar";
             this.tls_btn_Eliminar.Click += new System.EventHandler(this.tls_btn_Eliminar_Click);
             // 
             // toolStripLabel4
             // 
-            this.toolStripLabel4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripLabel4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripLabel4.Name = "toolStripLabel4";
-            this.toolStripLabel4.Size = new System.Drawing.Size(54, 31);
+            this.toolStripLabel4.Size = new System.Drawing.Size(50, 31);
             this.toolStripLabel4.Text = "Eliminar";
             // 
             // toolStripSeparator4
@@ -175,9 +179,9 @@
             // 
             // toolStripLabel5
             // 
-            this.toolStripLabel5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripLabel5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripLabel5.Name = "toolStripLabel5";
-            this.toolStripLabel5.Size = new System.Drawing.Size(40, 31);
+            this.toolStripLabel5.Size = new System.Drawing.Size(37, 31);
             this.toolStripLabel5.Text = "Filtro:";
             // 
             // tls_txt_Filtro
@@ -191,18 +195,19 @@
             // 
             this.tls_btn_Salir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.tls_btn_Salir.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tls_btn_Salir.Image = global::Proyecto_2_PL.Properties.Resources.salir;
+            this.tls_btn_Salir.Image = global::Proyecto_2_PL.Properties.Resources.bSalir;
             this.tls_btn_Salir.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tls_btn_Salir.Margin = new System.Windows.Forms.Padding(0, 1, 0, 3);
             this.tls_btn_Salir.Name = "tls_btn_Salir";
-            this.tls_btn_Salir.Size = new System.Drawing.Size(34, 31);
+            this.tls_btn_Salir.Size = new System.Drawing.Size(34, 34);
             this.tls_btn_Salir.Text = "Salir";
             this.tls_btn_Salir.Click += new System.EventHandler(this.tls_btn_Salir_Click);
             // 
             // toolStripLabel6
             // 
-            this.toolStripLabel6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripLabel6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripLabel6.Name = "toolStripLabel6";
-            this.toolStripLabel6.Size = new System.Drawing.Size(33, 31);
+            this.toolStripLabel6.Size = new System.Drawing.Size(29, 31);
             this.toolStripLabel6.Text = "Salir";
             // 
             // dgv_Empleados
@@ -213,11 +218,11 @@
             this.dgv_Empleados.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgv_Empleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Empleados.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgv_Empleados.Location = new System.Drawing.Point(-1, 33);
+            this.dgv_Empleados.Location = new System.Drawing.Point(-1, 39);
             this.dgv_Empleados.MultiSelect = false;
             this.dgv_Empleados.Name = "dgv_Empleados";
             this.dgv_Empleados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_Empleados.Size = new System.Drawing.Size(964, 373);
+            this.dgv_Empleados.Size = new System.Drawing.Size(964, 371);
             this.dgv_Empleados.TabIndex = 6;
             this.dgv_Empleados.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Empleados_CellContentDoubleClick);
             // 

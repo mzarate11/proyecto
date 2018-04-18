@@ -56,11 +56,11 @@
             this.Dgv_View.AllowUserToDeleteRows = false;
             this.Dgv_View.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Dgv_View.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.Dgv_View.Location = new System.Drawing.Point(9, 37);
+            this.Dgv_View.Location = new System.Drawing.Point(0, 29);
             this.Dgv_View.MultiSelect = false;
             this.Dgv_View.Name = "Dgv_View";
             this.Dgv_View.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Dgv_View.Size = new System.Drawing.Size(815, 370);
+            this.Dgv_View.Size = new System.Drawing.Size(833, 388);
             this.Dgv_View.TabIndex = 0;
             this.Dgv_View.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_View_CellContentDoubleClick);
             // 
@@ -74,7 +74,7 @@
             this.MenuVentana.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.MenuVentana.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.MenuVentana.Dock = System.Windows.Forms.DockStyle.None;
-            this.MenuVentana.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.MenuVentana.ImageScalingSize = new System.Drawing.Size(30, 30);
             this.MenuVentana.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btn_Refrescar,
             this.toolStripLabel1,
@@ -92,10 +92,9 @@
             this.txtFiltro,
             this.btn_Salir,
             this.toolStripLabel6});
-            this.MenuVentana.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
-            this.MenuVentana.Location = new System.Drawing.Point(9, 6);
+            this.MenuVentana.Location = new System.Drawing.Point(0, 0);
             this.MenuVentana.Name = "MenuVentana";
-            this.MenuVentana.Size = new System.Drawing.Size(815, 28);
+            this.MenuVentana.Size = new System.Drawing.Size(833, 38);
             this.MenuVentana.TabIndex = 4;
             this.MenuVentana.Text = "toolStrip1";
             // 
@@ -104,94 +103,98 @@
             this.btn_Refrescar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.btn_Refrescar.Image = global::Proyecto_2_PL.Properties.Resources.refrescar;
             this.btn_Refrescar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_Refrescar.Margin = new System.Windows.Forms.Padding(0, 1, 0, 3);
             this.btn_Refrescar.Name = "btn_Refrescar";
-            this.btn_Refrescar.Size = new System.Drawing.Size(28, 28);
+            this.btn_Refrescar.Size = new System.Drawing.Size(34, 34);
             this.btn_Refrescar.Text = "Refrescar";
             // 
             // toolStripLabel1
             // 
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(55, 15);
+            this.toolStripLabel1.Size = new System.Drawing.Size(55, 31);
             this.toolStripLabel1.Text = "Refrescar";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 23);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 34);
             // 
             // bnt_Nuevo
             // 
             this.bnt_Nuevo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bnt_Nuevo.Image = global::Proyecto_2_PL.Properties.Resources.agregar;
+            this.bnt_Nuevo.Image = global::Proyecto_2_PL.Properties.Resources.bNuevo;
             this.bnt_Nuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bnt_Nuevo.Margin = new System.Windows.Forms.Padding(0, 1, 0, 3);
             this.bnt_Nuevo.Name = "bnt_Nuevo";
-            this.bnt_Nuevo.Size = new System.Drawing.Size(28, 28);
+            this.bnt_Nuevo.Size = new System.Drawing.Size(34, 34);
             this.bnt_Nuevo.Text = "Nuevo";
             this.bnt_Nuevo.Click += new System.EventHandler(this.bnt_Nuevo_Click);
             // 
             // toolStripLabel2
             // 
             this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(42, 15);
+            this.toolStripLabel2.Size = new System.Drawing.Size(42, 31);
             this.toolStripLabel2.Text = "Nuevo";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 23);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 34);
             // 
             // btn_Modificar
             // 
             this.btn_Modificar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.btn_Modificar.Image = global::Proyecto_2_PL.Properties.Resources.modificar;
             this.btn_Modificar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_Modificar.Margin = new System.Windows.Forms.Padding(0, 1, 0, 3);
             this.btn_Modificar.Name = "btn_Modificar";
-            this.btn_Modificar.Size = new System.Drawing.Size(28, 28);
+            this.btn_Modificar.Size = new System.Drawing.Size(34, 34);
             this.btn_Modificar.Text = "Modificar";
             this.btn_Modificar.Click += new System.EventHandler(this.btn_Modificar_Click);
             // 
             // toolStripLabel3
             // 
             this.toolStripLabel3.Name = "toolStripLabel3";
-            this.toolStripLabel3.Size = new System.Drawing.Size(58, 15);
+            this.toolStripLabel3.Size = new System.Drawing.Size(58, 31);
             this.toolStripLabel3.Text = "Modificar";
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 23);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 34);
             // 
             // btn_Eliminar
             // 
             this.btn_Eliminar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.btn_Eliminar.Image = global::Proyecto_2_PL.Properties.Resources.eliminar;
             this.btn_Eliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_Eliminar.Margin = new System.Windows.Forms.Padding(0, 1, 0, 3);
             this.btn_Eliminar.Name = "btn_Eliminar";
-            this.btn_Eliminar.Size = new System.Drawing.Size(28, 28);
+            this.btn_Eliminar.Size = new System.Drawing.Size(34, 34);
             this.btn_Eliminar.Text = "Eliminar";
             this.btn_Eliminar.Click += new System.EventHandler(this.btn_Eliminar_Click);
             // 
             // toolStripLabel4
             // 
             this.toolStripLabel4.Name = "toolStripLabel4";
-            this.toolStripLabel4.Size = new System.Drawing.Size(50, 15);
+            this.toolStripLabel4.Size = new System.Drawing.Size(50, 31);
             this.toolStripLabel4.Text = "Eliminar";
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 23);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 34);
             // 
             // toolStripLabel5
             // 
             this.toolStripLabel5.Name = "toolStripLabel5";
-            this.toolStripLabel5.Size = new System.Drawing.Size(37, 15);
+            this.toolStripLabel5.Size = new System.Drawing.Size(37, 31);
             this.toolStripLabel5.Text = "Filtro:";
             // 
             // txtFiltro
             // 
             this.txtFiltro.Name = "txtFiltro";
-            this.txtFiltro.Size = new System.Drawing.Size(100, 23);
+            this.txtFiltro.Size = new System.Drawing.Size(100, 34);
             this.txtFiltro.Click += new System.EventHandler(this.txtFiltro_Click);
             this.txtFiltro.TextChanged += new System.EventHandler(this.txtFiltro_TextChanged_1);
             // 
@@ -199,17 +202,18 @@
             // 
             this.btn_Salir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.btn_Salir.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Salir.Image = global::Proyecto_2_PL.Properties.Resources.salir;
+            this.btn_Salir.Image = global::Proyecto_2_PL.Properties.Resources.bSalir;
             this.btn_Salir.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_Salir.Margin = new System.Windows.Forms.Padding(0, 1, 0, 3);
             this.btn_Salir.Name = "btn_Salir";
-            this.btn_Salir.Size = new System.Drawing.Size(28, 28);
+            this.btn_Salir.Size = new System.Drawing.Size(34, 34);
             this.btn_Salir.Text = "Salir";
             this.btn_Salir.Click += new System.EventHandler(this.btn_Salir_Click_1);
             // 
             // toolStripLabel6
             // 
             this.toolStripLabel6.Name = "toolStripLabel6";
-            this.toolStripLabel6.Size = new System.Drawing.Size(29, 15);
+            this.toolStripLabel6.Size = new System.Drawing.Size(29, 31);
             this.toolStripLabel6.Text = "Salir";
             // 
             // frm_TipoClientes

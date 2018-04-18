@@ -105,7 +105,7 @@
             // btnNuevo
             // 
             this.btnNuevo.BackColor = System.Drawing.Color.Transparent;
-            this.btnNuevo.BackgroundImage = global::Proyecto_2_PL.Properties.Resources.agregar;
+            this.btnNuevo.BackgroundImage = global::Proyecto_2_PL.Properties.Resources.bNuevo;
             this.btnNuevo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnNuevo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.btnNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -191,7 +191,7 @@
             // btnSalir
             // 
             this.btnSalir.BackColor = System.Drawing.Color.Transparent;
-            this.btnSalir.BackgroundImage = global::Proyecto_2_PL.Properties.Resources.salir;
+            this.btnSalir.BackgroundImage = global::Proyecto_2_PL.Properties.Resources.bSalir;
             this.btnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSalir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.btnSalir.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -214,11 +214,11 @@
             this.dgv_CategoriasVuelos.AllowUserToResizeRows = false;
             this.dgv_CategoriasVuelos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_CategoriasVuelos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgv_CategoriasVuelos.Location = new System.Drawing.Point(0, 28);
+            this.dgv_CategoriasVuelos.Location = new System.Drawing.Point(0, 25);
             this.dgv_CategoriasVuelos.MultiSelect = false;
             this.dgv_CategoriasVuelos.Name = "dgv_CategoriasVuelos";
             this.dgv_CategoriasVuelos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_CategoriasVuelos.Size = new System.Drawing.Size(832, 380);
+            this.dgv_CategoriasVuelos.Size = new System.Drawing.Size(832, 391);
             this.dgv_CategoriasVuelos.TabIndex = 4;
             this.dgv_CategoriasVuelos.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_CategoriasVuelos_RowHeaderMouseDoubleClick_1);
             // 

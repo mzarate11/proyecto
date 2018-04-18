@@ -81,7 +81,7 @@
             this.MenuVentana.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.MenuVentana.Location = new System.Drawing.Point(-1, 0);
             this.MenuVentana.Name = "MenuVentana";
-            this.MenuVentana.Size = new System.Drawing.Size(835, 34);
+            this.MenuVentana.Size = new System.Drawing.Size(835, 38);
             this.MenuVentana.TabIndex = 4;
             this.MenuVentana.Text = "toolStrip1";
             // 
@@ -90,8 +90,9 @@
             this.btn_Refrescar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.btn_Refrescar.Image = global::Proyecto_2_PL.Properties.Resources.refrescar;
             this.btn_Refrescar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_Refrescar.Margin = new System.Windows.Forms.Padding(0, 1, 0, 3);
             this.btn_Refrescar.Name = "btn_Refrescar";
-            this.btn_Refrescar.Size = new System.Drawing.Size(34, 31);
+            this.btn_Refrescar.Size = new System.Drawing.Size(34, 34);
             this.btn_Refrescar.Text = "Refrescar";
             this.btn_Refrescar.Click += new System.EventHandler(this.btn_Refrescar_Click);
             // 
@@ -109,10 +110,11 @@
             // bnt_Nuevo
             // 
             this.bnt_Nuevo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bnt_Nuevo.Image = global::Proyecto_2_PL.Properties.Resources.agregar;
+            this.bnt_Nuevo.Image = global::Proyecto_2_PL.Properties.Resources.bNuevo;
             this.bnt_Nuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bnt_Nuevo.Margin = new System.Windows.Forms.Padding(0, 1, 0, 3);
             this.bnt_Nuevo.Name = "bnt_Nuevo";
-            this.bnt_Nuevo.Size = new System.Drawing.Size(34, 31);
+            this.bnt_Nuevo.Size = new System.Drawing.Size(34, 34);
             this.bnt_Nuevo.Text = "Nuevo";
             this.bnt_Nuevo.Click += new System.EventHandler(this.bnt_Nuevo_Click);
             // 
@@ -132,8 +134,9 @@
             this.btn_Modificar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.btn_Modificar.Image = global::Proyecto_2_PL.Properties.Resources.modificar;
             this.btn_Modificar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_Modificar.Margin = new System.Windows.Forms.Padding(0, 1, 0, 3);
             this.btn_Modificar.Name = "btn_Modificar";
-            this.btn_Modificar.Size = new System.Drawing.Size(34, 31);
+            this.btn_Modificar.Size = new System.Drawing.Size(34, 34);
             this.btn_Modificar.Text = "Modificar";
             this.btn_Modificar.Click += new System.EventHandler(this.btn_Modificar_Click);
             // 
@@ -153,8 +156,9 @@
             this.btn_Eliminar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.btn_Eliminar.Image = global::Proyecto_2_PL.Properties.Resources.eliminar;
             this.btn_Eliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_Eliminar.Margin = new System.Windows.Forms.Padding(0, 1, 0, 3);
             this.btn_Eliminar.Name = "btn_Eliminar";
-            this.btn_Eliminar.Size = new System.Drawing.Size(34, 31);
+            this.btn_Eliminar.Size = new System.Drawing.Size(34, 34);
             this.btn_Eliminar.Text = "Eliminar";
             this.btn_Eliminar.Click += new System.EventHandler(this.btn_Eliminar_Click);
             // 
@@ -185,10 +189,11 @@
             // 
             this.btn_Salir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.btn_Salir.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Salir.Image = global::Proyecto_2_PL.Properties.Resources.salir;
+            this.btn_Salir.Image = global::Proyecto_2_PL.Properties.Resources.bSalir;
             this.btn_Salir.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_Salir.Margin = new System.Windows.Forms.Padding(0, 1, 0, 3);
             this.btn_Salir.Name = "btn_Salir";
-            this.btn_Salir.Size = new System.Drawing.Size(34, 31);
+            this.btn_Salir.Size = new System.Drawing.Size(34, 34);
             this.btn_Salir.Text = "Salir";
             this.btn_Salir.Click += new System.EventHandler(this.btn_Salir_Click);
             // 
