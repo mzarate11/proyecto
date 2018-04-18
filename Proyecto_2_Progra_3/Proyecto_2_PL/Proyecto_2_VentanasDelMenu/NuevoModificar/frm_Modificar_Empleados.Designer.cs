@@ -281,6 +281,7 @@
             this.cb_Estado.Name = "cb_Estado";
             this.cb_Estado.Size = new System.Drawing.Size(203, 25);
             this.cb_Estado.TabIndex = 12;
+            this.cb_Estado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cb_Estado_KeyPress);
             // 
             // cb_TipoEmpleado
             // 
@@ -290,6 +291,7 @@
             this.cb_TipoEmpleado.Name = "cb_TipoEmpleado";
             this.cb_TipoEmpleado.Size = new System.Drawing.Size(203, 25);
             this.cb_TipoEmpleado.TabIndex = 11;
+            this.cb_TipoEmpleado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cb_TipoEmpleado_KeyPress);
             // 
             // cb_IdAerolinea
             // 
@@ -299,6 +301,7 @@
             this.cb_IdAerolinea.Name = "cb_IdAerolinea";
             this.cb_IdAerolinea.Size = new System.Drawing.Size(203, 25);
             this.cb_IdAerolinea.TabIndex = 10;
+            this.cb_IdAerolinea.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cb_IdAerolinea_KeyPress);
             // 
             // txt_IdEmpleado
             // 

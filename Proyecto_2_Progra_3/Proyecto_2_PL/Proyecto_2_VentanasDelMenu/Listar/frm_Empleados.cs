@@ -178,5 +178,40 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
                
             }
         }
+
+        private void dgv_Empleados_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            frm_Modificar_Empleados ModificarEmpleado = new frm_Modificar_Empleados();
+            if (dgv_Empleados.RowCount > 0)
+            {
+                Obj_Empleados_DAL = new cls_Empleados_DAL();
+
+                Obj_Empleados_DAL.cBandera = 'U';
+                Obj_Empleados_DAL.uIdEmpleado = Convert.ToUInt16(dgv_Empleados.SelectedRows[0].Cells[0].Value.ToString().Trim());
+                Obj_Empleados_DAL.iCedula = Convert.ToInt32(dgv_Empleados.SelectedRows[0].Cells[1].Value.ToString().Trim());
+                Obj_Empleados_DAL.sNombre = dgv_Empleados.SelectedRows[0].Cells[2].Value.ToString();
+                Obj_Empleados_DAL.sApellidos = dgv_Empleados.SelectedRows[0].Cells[3].Value.ToString();
+                Obj_Empleados_DAL.sDireccion = dgv_Empleados.SelectedRows[0].Cells[4].Value.ToString();
+                Obj_Empleados_DAL.bEdad = Convert.ToByte(dgv_Empleados.SelectedRows[0].Cells[5].Value.ToString().Trim());
+                Obj_Empleados_DAL.iTelCasa = Convert.ToInt32(dgv_Empleados.SelectedRows[0].Cells[6].Value.ToString().Trim());
+                Obj_Empleados_DAL.iTelRef = Convert.ToInt32(dgv_Empleados.SelectedRows[0].Cells[7].Value.ToString().Trim());
+                Obj_Empleados_DAL.iCelular = Convert.ToInt32(dgv_Empleados.SelectedRows[0].Cells[8].Value.ToString().Trim());
+                Obj_Empleados_DAL.dSalario = Convert.ToDouble(dgv_Empleados.SelectedRows[0].Cells[9].Value.ToString().Trim());
+                Obj_Empleados_DAL.iIdTipoEmpleado = Convert.ToInt32(dgv_Empleados.SelectedRows[0].Cells[10].Value.ToString().Trim());
+                Obj_Empleados_DAL.iIdAerolinea = Convert.ToInt32(dgv_Empleados.SelectedRows[0].Cells[11].Value.ToString().Trim());
+                Obj_Empleados_DAL.cIdEstado = Convert.ToChar(dgv_Empleados.SelectedRows[0].Cells[12].Value.ToString().Trim());
+
+                ModificarEmpleado.Obj_Empleados_DAL = Obj_Empleados_DAL;
+                ModificarEmpleado.ShowDialog();
+                Hide();
+                tls_txt_Filtro.Text = string.Empty;
+                Cargar();
+
+            }
+            else
+            {
+                MessageBox.Show("No se pueden realizar la acción, debido a que no existen datos por modificar", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
     }
 }

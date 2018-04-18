@@ -99,6 +99,9 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                     txt_Celular.Text = Obj_Empleados_DAL.iCelular.ToString().Trim();
                     txt_TelCasa.Text = Obj_Empleados_DAL.iTelCasa.ToString().Trim();
                     txt_TelRef.Text = Obj_Empleados_DAL.iTelRef.ToString().Trim();
+                    cb_Estado.SelectedValue = Obj_Empleados_DAL.cIdEstado.ToString().Trim();
+                    cb_IdAerolinea.SelectedValue = Obj_Empleados_DAL.iIdAerolinea.ToString().Trim();
+                    cb_TipoEmpleado.SelectedValue = Obj_Empleados_DAL.iIdTipoEmpleado.ToString().Trim();
                     
                 }         
             }
@@ -384,7 +387,24 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
 
         private void tlsbtn_Salir_Click(object sender, EventArgs e)
         {
-            this.Close();
+            frm_Empleados Empleados = new frm_Empleados();
+            Hide();
+            Empleados.ShowDialog();
+        }
+
+        private void cb_IdAerolinea_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void cb_TipoEmpleado_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void cb_Estado_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
         }
     }
 }
