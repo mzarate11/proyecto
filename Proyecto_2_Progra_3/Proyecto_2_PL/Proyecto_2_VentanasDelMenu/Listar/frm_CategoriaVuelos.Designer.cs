@@ -88,7 +88,7 @@
             this.btnRefrescar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnRefrescar.Name = "btnRefrescar";
             this.btnRefrescar.Size = new System.Drawing.Size(23, 22);
-            this.btnRefrescar.Text = "toolStripButton1";
+            this.btnRefrescar.Text = "Refrescar";
             this.btnRefrescar.Click += new System.EventHandler(this.btnRefrescar_Click);
             // 
             // toolStripLabel1
@@ -111,7 +111,7 @@
             this.btnNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(23, 22);
-            this.btnNuevo.Text = "toolStripButton2";
+            this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click_1);
             // 
             // toolStripLabel2
@@ -134,7 +134,7 @@
             this.btnModificar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(23, 22);
-            this.btnModificar.Text = "toolStripButton3";
+            this.btnModificar.Text = "Modificar";
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click_1);
             // 
             // toolStripLabel3
@@ -157,7 +157,7 @@
             this.btnEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(23, 22);
-            this.btnEliminar.Text = "toolStripButton4";
+            this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // toolStripLabel4
@@ -197,7 +197,7 @@
             this.btnSalir.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(23, 22);
-            this.btnSalir.Text = "toolS";
+            this.btnSalir.Text = "Salir";
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // toolStripLabel6
@@ -214,11 +214,11 @@
             this.dgv_CategoriasVuelos.AllowUserToResizeRows = false;
             this.dgv_CategoriasVuelos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_CategoriasVuelos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgv_CategoriasVuelos.Location = new System.Drawing.Point(9, 28);
+            this.dgv_CategoriasVuelos.Location = new System.Drawing.Point(0, 28);
             this.dgv_CategoriasVuelos.MultiSelect = false;
             this.dgv_CategoriasVuelos.Name = "dgv_CategoriasVuelos";
             this.dgv_CategoriasVuelos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_CategoriasVuelos.Size = new System.Drawing.Size(815, 380);
+            this.dgv_CategoriasVuelos.Size = new System.Drawing.Size(832, 380);
             this.dgv_CategoriasVuelos.TabIndex = 4;
             this.dgv_CategoriasVuelos.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_CategoriasVuelos_RowHeaderMouseDoubleClick_1);
             // 

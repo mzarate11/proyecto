@@ -97,9 +97,9 @@
             this.btn_Salir,
             this.toolStripLabel6});
             this.MenuVentana.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
-            this.MenuVentana.Location = new System.Drawing.Point(-1, -4);
+            this.MenuVentana.Location = new System.Drawing.Point(-1, -1);
             this.MenuVentana.Name = "MenuVentana";
-            this.MenuVentana.Size = new System.Drawing.Size(834, 38);
+            this.MenuVentana.Size = new System.Drawing.Size(834, 35);
             this.MenuVentana.TabIndex = 2;
             this.MenuVentana.Text = "toolStrip1";
             // 
@@ -109,41 +109,41 @@
             this.btn_Refrescar.Image = global::Proyecto_2_PL.Properties.Resources.refrescar;
             this.btn_Refrescar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btn_Refrescar.Name = "btn_Refrescar";
-            this.btn_Refrescar.Size = new System.Drawing.Size(28, 35);
+            this.btn_Refrescar.Size = new System.Drawing.Size(28, 32);
             this.btn_Refrescar.Text = "Refrescar";
             this.btn_Refrescar.Click += new System.EventHandler(this.btn_Refrescar_Click);
             // 
             // toolStripLabel1
             // 
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(55, 35);
+            this.toolStripLabel1.Size = new System.Drawing.Size(55, 32);
             this.toolStripLabel1.Text = "Refrescar";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 38);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 35);
             // 
             // bnt_Nuevo
             // 
             this.bnt_Nuevo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bnt_Nuevo.Image = global::Proyecto_2_PL.Properties.Resources.bNuevo;
+            this.bnt_Nuevo.Image = global::Proyecto_2_PL.Properties.Resources.agregar;
             this.bnt_Nuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bnt_Nuevo.Name = "bnt_Nuevo";
-            this.bnt_Nuevo.Size = new System.Drawing.Size(28, 35);
+            this.bnt_Nuevo.Size = new System.Drawing.Size(28, 32);
             this.bnt_Nuevo.Text = "Nuevo";
             this.bnt_Nuevo.Click += new System.EventHandler(this.bnt_Nuevo_Click);
             // 
             // toolStripLabel2
             // 
             this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(42, 35);
+            this.toolStripLabel2.Size = new System.Drawing.Size(42, 32);
             this.toolStripLabel2.Text = "Nuevo";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 38);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 35);
             // 
             // btn_Modificar
             // 
@@ -151,20 +151,20 @@
             this.btn_Modificar.Image = global::Proyecto_2_PL.Properties.Resources.modificar;
             this.btn_Modificar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btn_Modificar.Name = "btn_Modificar";
-            this.btn_Modificar.Size = new System.Drawing.Size(28, 35);
+            this.btn_Modificar.Size = new System.Drawing.Size(28, 32);
             this.btn_Modificar.Text = "Modificar";
             this.btn_Modificar.Click += new System.EventHandler(this.btn_Modificar_Click);
             // 
             // toolStripLabel3
             // 
             this.toolStripLabel3.Name = "toolStripLabel3";
-            this.toolStripLabel3.Size = new System.Drawing.Size(58, 35);
+            this.toolStripLabel3.Size = new System.Drawing.Size(58, 32);
             this.toolStripLabel3.Text = "Modificar";
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 38);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 35);
             // 
             // btn_Eliminar
             // 
@@ -172,48 +172,48 @@
             this.btn_Eliminar.Image = global::Proyecto_2_PL.Properties.Resources.eliminar;
             this.btn_Eliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btn_Eliminar.Name = "btn_Eliminar";
-            this.btn_Eliminar.Size = new System.Drawing.Size(28, 35);
+            this.btn_Eliminar.Size = new System.Drawing.Size(28, 32);
             this.btn_Eliminar.Text = "Eliminar";
             this.btn_Eliminar.Click += new System.EventHandler(this.btn_Eliminar_Click);
             // 
             // toolStripLabel4
             // 
             this.toolStripLabel4.Name = "toolStripLabel4";
-            this.toolStripLabel4.Size = new System.Drawing.Size(50, 35);
+            this.toolStripLabel4.Size = new System.Drawing.Size(50, 32);
             this.toolStripLabel4.Text = "Eliminar";
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 38);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 35);
             // 
             // toolStripLabel5
             // 
             this.toolStripLabel5.Name = "toolStripLabel5";
-            this.toolStripLabel5.Size = new System.Drawing.Size(37, 35);
+            this.toolStripLabel5.Size = new System.Drawing.Size(37, 32);
             this.toolStripLabel5.Text = "Filtro:";
             // 
             // txtFiltro
             // 
             this.txtFiltro.Name = "txtFiltro";
-            this.txtFiltro.Size = new System.Drawing.Size(100, 38);
+            this.txtFiltro.Size = new System.Drawing.Size(100, 35);
             this.txtFiltro.TextChanged += new System.EventHandler(this.txtFiltro_TextChanged_1);
             // 
             // btn_Salir
             // 
             this.btn_Salir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.btn_Salir.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Salir.Image = global::Proyecto_2_PL.Properties.Resources.bSalir;
+            this.btn_Salir.Image = global::Proyecto_2_PL.Properties.Resources.salir;
             this.btn_Salir.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btn_Salir.Name = "btn_Salir";
-            this.btn_Salir.Size = new System.Drawing.Size(28, 35);
+            this.btn_Salir.Size = new System.Drawing.Size(28, 32);
             this.btn_Salir.Text = "Salir";
             this.btn_Salir.Click += new System.EventHandler(this.btn_Salir_Click);
             // 
             // toolStripLabel6
             // 
             this.toolStripLabel6.Name = "toolStripLabel6";
-            this.toolStripLabel6.Size = new System.Drawing.Size(29, 35);
+            this.toolStripLabel6.Size = new System.Drawing.Size(29, 32);
             this.toolStripLabel6.Text = "Salir";
             // 
             // frm_TiposAviones

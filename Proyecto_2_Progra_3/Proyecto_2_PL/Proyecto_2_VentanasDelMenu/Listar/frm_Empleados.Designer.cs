@@ -109,7 +109,7 @@
             // tls_btn_Nuevo
             // 
             this.tls_btn_Nuevo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tls_btn_Nuevo.Image = global::Proyecto_2_PL.Properties.Resources.bNuevo;
+            this.tls_btn_Nuevo.Image = global::Proyecto_2_PL.Properties.Resources.agregar;
             this.tls_btn_Nuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tls_btn_Nuevo.Name = "tls_btn_Nuevo";
             this.tls_btn_Nuevo.Size = new System.Drawing.Size(34, 31);
@@ -191,7 +191,7 @@
             // 
             this.tls_btn_Salir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.tls_btn_Salir.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tls_btn_Salir.Image = global::Proyecto_2_PL.Properties.Resources.bSalir;
+            this.tls_btn_Salir.Image = global::Proyecto_2_PL.Properties.Resources.salir;
             this.tls_btn_Salir.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tls_btn_Salir.Name = "tls_btn_Salir";
             this.tls_btn_Salir.Size = new System.Drawing.Size(34, 31);
