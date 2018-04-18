@@ -79,9 +79,9 @@
             this.tls_btn_Salir,
             this.toolStripLabel6});
             this.MenuVentana.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
-            this.MenuVentana.Location = new System.Drawing.Point(9, 6);
+            this.MenuVentana.Location = new System.Drawing.Point(3, 2);
             this.MenuVentana.Name = "MenuVentana";
-            this.MenuVentana.Size = new System.Drawing.Size(815, 28);
+            this.MenuVentana.Size = new System.Drawing.Size(815, 32);
             this.MenuVentana.TabIndex = 5;
             this.MenuVentana.Text = "toolStrip1";
             // 
@@ -204,7 +204,7 @@
             this.dgv_Paises.AllowUserToDeleteRows = false;
             this.dgv_Paises.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Paises.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgv_Paises.Location = new System.Drawing.Point(9, 34);
+            this.dgv_Paises.Location = new System.Drawing.Point(2, 34);
             this.dgv_Paises.MultiSelect = false;
             this.dgv_Paises.Name = "dgv_Paises";
             this.dgv_Paises.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -216,7 +216,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(833, 417);
+            this.ClientSize = new System.Drawing.Size(818, 402);
             this.Controls.Add(this.dgv_Paises);
             this.Controls.Add(this.MenuVentana);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
