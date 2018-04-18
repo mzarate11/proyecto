@@ -52,8 +52,9 @@
             this.cmb_IdEmpleado.Location = new System.Drawing.Point(540, 232);
             this.cmb_IdEmpleado.Margin = new System.Windows.Forms.Padding(2);
             this.cmb_IdEmpleado.Name = "cmb_IdEmpleado";
-            this.cmb_IdEmpleado.Size = new System.Drawing.Size(146, 21);
+            this.cmb_IdEmpleado.Size = new System.Drawing.Size(194, 21);
             this.cmb_IdEmpleado.TabIndex = 2;
+            this.cmb_IdEmpleado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmb_IdEmpleado_KeyPress);
             // 
             // toolStrip1
             // 
@@ -120,8 +121,9 @@
             this.cmb_IdEstado.FormattingEnabled = true;
             this.cmb_IdEstado.Location = new System.Drawing.Point(540, 298);
             this.cmb_IdEstado.Name = "cmb_IdEstado";
-            this.cmb_IdEstado.Size = new System.Drawing.Size(146, 21);
+            this.cmb_IdEstado.Size = new System.Drawing.Size(194, 21);
             this.cmb_IdEstado.TabIndex = 3;
+            this.cmb_IdEstado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmb_IdEstado_KeyPress);
             // 
             // label9
             // 

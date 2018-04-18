@@ -101,7 +101,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
         {
             cls_Usuarios_BLL Obj_ManteniUsuarios_BLL = new cls_Usuarios_BLL();
 
-            if (txt_Username.Text == "" || txt_Password.Text == "" || cmb_IdEmpleado.Text == "--- Selecione un Estado ---" || cmb_IdEstado.Text == "--- Selecione un Estado ---")
+            if (txt_Username.Text == "" || txt_Password.Text == "" || cmb_IdEmpleado.Text == "--- Selecione un Estado ---" || cmb_IdEmpleado.Text == "" || cmb_IdEstado.Text == "--- Selecione un Estado ---")
             {
                 MessageBox.Show("Alguno de lo campos esta vacido favor de verificar", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -187,6 +187,17 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
 
         #endregion
 
+        private void cmb_IdEmpleado_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+            MessageBox.Show("Este campo no se puede editar ","Información",MessageBoxButtons.OK,MessageBoxIcon.Information);
+        }
+
+        private void cmb_IdEstado_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+            MessageBox.Show("Este campo no se puede editar ", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     } /// fin
 
 }
