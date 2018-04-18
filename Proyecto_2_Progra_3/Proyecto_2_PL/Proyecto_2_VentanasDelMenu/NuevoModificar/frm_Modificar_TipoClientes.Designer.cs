@@ -29,11 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Modificar_TipoClientes));
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.Guardar = new System.Windows.Forms.ToolStripButton();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.Salir = new System.Windows.Forms.ToolStripButton();
-            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.txt_IDTipoCliente = new System.Windows.Forms.TextBox();
             this.txt_TipoCliente = new System.Windows.Forms.TextBox();
             this.txt_descripcion = new System.Windows.Forms.TextBox();
@@ -42,53 +37,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.toolStrip1.SuspendLayout();
+            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
+            this.btnGuardar = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnSalir = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel4 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStrip2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.Guardar,
-            this.toolStripLabel1,
-            this.Salir,
-            this.toolStripLabel2});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(750, 25);
-            this.toolStrip1.TabIndex = 0;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // Guardar
-            // 
-            this.Guardar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.Guardar.Image = ((System.Drawing.Image)(resources.GetObject("Guardar.Image")));
-            this.Guardar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.Guardar.Name = "Guardar";
-            this.Guardar.Size = new System.Drawing.Size(23, 22);
-            this.Guardar.Text = "Guardar";
-            this.Guardar.Click += new System.EventHandler(this.Guardar_Click);
-            // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(49, 22);
-            this.toolStripLabel1.Text = "Guardar";
-            // 
-            // Salir
-            // 
-            this.Salir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.Salir.Image = ((System.Drawing.Image)(resources.GetObject("Salir.Image")));
-            this.Salir.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.Salir.Name = "Salir";
-            this.Salir.Size = new System.Drawing.Size(23, 22);
-            this.Salir.Text = "Salir";
-            this.Salir.Click += new System.EventHandler(this.Salir_Click);
-            // 
-            // toolStripLabel2
-            // 
-            this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(29, 22);
-            this.toolStripLabel2.Text = "Salir";
             // 
             // txt_IDTipoCliente
             // 
@@ -168,6 +124,65 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "ID Estado";
             // 
+            // toolStrip2
+            // 
+            this.toolStrip2.BackColor = System.Drawing.Color.Transparent;
+            this.toolStrip2.Dock = System.Windows.Forms.DockStyle.None;
+            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnGuardar,
+            this.toolStripLabel3,
+            this.toolStripSeparator1,
+            this.btnSalir,
+            this.toolStripLabel4});
+            this.toolStrip2.Location = new System.Drawing.Point(9, 9);
+            this.toolStrip2.Name = "toolStrip2";
+            this.toolStrip2.Size = new System.Drawing.Size(251, 39);
+            this.toolStrip2.TabIndex = 22;
+            this.toolStrip2.Text = "toolStrip2";
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
+            this.btnGuardar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnGuardar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(36, 36);
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // toolStripLabel3
+            // 
+            this.toolStripLabel3.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripLabel3.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.toolStripLabel3.Name = "toolStripLabel3";
+            this.toolStripLabel3.Size = new System.Drawing.Size(81, 36);
+            this.toolStripLabel3.Text = "Guardar";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 39);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
+            this.btnSalir.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnSalir.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(36, 36);
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // toolStripLabel4
+            // 
+            this.toolStripLabel4.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripLabel4.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.toolStripLabel4.Name = "toolStripLabel4";
+            this.toolStripLabel4.Size = new System.Drawing.Size(49, 36);
+            this.toolStripLabel4.Text = "Salir";
+            // 
             // frm_Modificar_TipoClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -175,6 +190,7 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(750, 331);
+            this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -183,7 +199,6 @@
             this.Controls.Add(this.txt_descripcion);
             this.Controls.Add(this.txt_TipoCliente);
             this.Controls.Add(this.txt_IDTipoCliente);
-            this.Controls.Add(this.toolStrip1);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Name = "frm_Modificar_TipoClientes";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -192,20 +207,14 @@
             this.Text = "Modificar Tipos Clientes";
             this.TransparencyKey = System.Drawing.Color.Maroon;
             this.Load += new System.EventHandler(this.frm_Modificar_TipoClientes_Load);
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
+            this.toolStrip2.ResumeLayout(false);
+            this.toolStrip2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton Guardar;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
-        private System.Windows.Forms.ToolStripButton Salir;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.TextBox txt_IDTipoCliente;
         private System.Windows.Forms.TextBox txt_TipoCliente;
         private System.Windows.Forms.TextBox txt_descripcion;
@@ -214,5 +223,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ToolStrip toolStrip2;
+        private System.Windows.Forms.ToolStripButton btnGuardar;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel3;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton btnSalir;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel4;
     }
 }

@@ -88,6 +88,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
         {
             { 
                 e.Handled = true;
+                MessageBox.Show("Este campo no se puede editar", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -105,13 +106,11 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             }
         }
 
-       
-
-        private void Guardar_Click(object sender, EventArgs e)
+        private void btnGuardar_Click(object sender, EventArgs e)
         {
             if (cmb_IDEstado.SelectedValue.ToString() != "0" ||
-             txt_IDTipoEmpleado.Text != string.Empty ||
-             txt_desc.Text != string.Empty)
+                        txt_IDTipoEmpleado.Text != string.Empty ||
+                        txt_desc.Text != string.Empty)
 
             {
                 cls_TiposEmpleados_BLL obj_TipoEmpleado_BLL = new cls_TiposEmpleados_BLL();
@@ -155,12 +154,10 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 MessageBox.Show("Todos los cambios son obligatorios", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-        
-        private void Sal_Click(object sender, EventArgs e)
+
+        private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
-
     }
 }

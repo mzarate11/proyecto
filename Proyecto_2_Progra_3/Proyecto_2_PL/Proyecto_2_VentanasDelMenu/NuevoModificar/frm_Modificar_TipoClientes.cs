@@ -64,55 +64,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 this.Close();
             }
         }
-        private void Guardar_Click(object sender, EventArgs e)
-        {
-            if (txt_IDTipoCliente.Text != string.Empty ||
-                     txt_descripcion.Text != string.Empty ||
-                     txt_TipoCliente.Text != string.Empty ||
-                     cmb_IDEstado.SelectedValue.ToString() != "0")
-            {
-                cls_TiposClientes_BLL obj_TiposClientes_BLL = new cls_TiposClientes_BLL();
-                string sMsjError = string.Empty;
-                Obj_DAL_TiposClientes.CIdEstado = Convert.ToChar(cmb_IDEstado.SelectedValue.ToString().Trim());
-                Obj_DAL_TiposClientes.STipoCliente = txt_TipoCliente.Text.Trim();
-                Obj_DAL_TiposClientes.SDescripcion = txt_descripcion.Text.Trim();
-
-                if (Obj_DAL_TiposClientes.CBandAX == 'I')
-                {
-                    obj_TiposClientes_BLL.Insertar_TipoCliente(ref sMsjError, ref Obj_DAL_TiposClientes);
-                    if (sMsjError == string.Empty)
-                    {
-                        MessageBox.Show("Se guardó el nuevo registro exitosamente");
-                        Obj_DAL_TiposClientes.CBandAX = 'U';
-                    }
-                    else
-                    {
-                        MessageBox.Show("Se presentó un error");
-                    }
-
-                }
-                else
-                {
-                    obj_TiposClientes_BLL.Modificar_TipoCliente(ref sMsjError, ref Obj_DAL_TiposClientes);
-                    if (sMsjError == string.Empty)
-                    {
-                        MessageBox.Show("Se modificó el nuevo registro exitosamente");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Se presentó un error");
-                    }
-                }
-            }
-            else
-            {
-
-                MessageBox.Show("Todos los cambios son obligatorios", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            }
-
-        }
-        
+       
         private void frm_Modificar_TipoClientes_Load(object sender, EventArgs e)
         {
             CargarDatos();
@@ -165,9 +117,60 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
         private void cmb_IDEstado_KeyPress(object sender, KeyPressEventArgs e)
         {
              e.Handled = true;
+            MessageBox.Show("Este campo no se puede editar", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+ 
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            if (txt_IDTipoCliente.Text != string.Empty ||
+                                txt_descripcion.Text != string.Empty ||
+                                txt_TipoCliente.Text != string.Empty ||
+                                cmb_IDEstado.SelectedValue.ToString() != "0")
+            {
+                cls_TiposClientes_BLL obj_TiposClientes_BLL = new cls_TiposClientes_BLL();
+                string sMsjError = string.Empty;
+                Obj_DAL_TiposClientes.CIdEstado = Convert.ToChar(cmb_IDEstado.SelectedValue.ToString().Trim());
+                Obj_DAL_TiposClientes.STipoCliente = txt_TipoCliente.Text.Trim();
+                Obj_DAL_TiposClientes.SDescripcion = txt_descripcion.Text.Trim();
+
+                if (Obj_DAL_TiposClientes.CBandAX == 'I')
+                {
+                    obj_TiposClientes_BLL.Insertar_TipoCliente(ref sMsjError, ref Obj_DAL_TiposClientes);
+                    if (sMsjError == string.Empty)
+                    {
+                        MessageBox.Show("Se guardó el nuevo registro exitosamente");
+                        Obj_DAL_TiposClientes.CBandAX = 'U';
+                    }
+                    else
+                    {
+                        MessageBox.Show("Se presentó un error");
+                    }
+
+                }
+                else
+                {
+                    obj_TiposClientes_BLL.Modificar_TipoCliente(ref sMsjError, ref Obj_DAL_TiposClientes);
+                    if (sMsjError == string.Empty)
+                    {
+                        MessageBox.Show("Se modificó el nuevo registro exitosamente");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Se presentó un error");
+                    }
+                }
             }
-        
-        private void Salir_Click(object sender, EventArgs e)
+            else
+            {
+
+                MessageBox.Show("Todos los cambios son obligatorios", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
         {
             Close();
         }

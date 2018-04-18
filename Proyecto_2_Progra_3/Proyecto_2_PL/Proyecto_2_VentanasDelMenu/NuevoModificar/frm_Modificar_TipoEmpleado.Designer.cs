@@ -30,18 +30,20 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Modificar_TipoEmpleado));
             this.txt_IDTipoEmpleado = new System.Windows.Forms.TextBox();
             this.txt_desc = new System.Windows.Forms.TextBox();
             this.cmb_IDEstado = new System.Windows.Forms.ComboBox();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.Guardar = new System.Windows.Forms.ToolStripButton();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.Sal = new System.Windows.Forms.ToolStripButton();
-            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.toolStrip1.SuspendLayout();
+            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
+            this.btnGuardar = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnSalir = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel4 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // txt_IDTipoEmpleado
@@ -73,52 +75,6 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             this.cmb_IDEstado.TabIndex = 2;
             this.cmb_IDEstado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmb_IDEstado_KeyPress);
             // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.Guardar,
-            this.toolStripLabel1,
-            this.Sal,
-            this.toolStripLabel2});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(549, 25);
-            this.toolStrip1.TabIndex = 3;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // Guardar
-            // 
-            this.Guardar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.Guardar.Image = global::Proyecto_2_PL.Properties.Resources.bGuardar;
-            this.Guardar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.Guardar.Name = "Guardar";
-            this.Guardar.Size = new System.Drawing.Size(23, 22);
-            this.Guardar.Text = "Guardar";
-            this.Guardar.Click += new System.EventHandler(this.Guardar_Click);
-            // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(49, 22);
-            this.toolStripLabel1.Text = "Guardar";
-            // 
-            // Sal
-            // 
-            this.Sal.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.Sal.Image = global::Proyecto_2_PL.Properties.Resources.bSalir;
-            this.Sal.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.Sal.Name = "Sal";
-            this.Sal.Size = new System.Drawing.Size(23, 22);
-            this.Sal.Text = "Salir";
-            this.Sal.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.Sal.Click += new System.EventHandler(this.Sal_Click);
-            // 
-            // toolStripLabel2
-            // 
-            this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(29, 22);
-            this.toolStripLabel2.Text = "Salir";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -149,16 +105,75 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             this.label3.TabIndex = 6;
             this.label3.Text = "ID Estado";
             // 
+            // toolStrip2
+            // 
+            this.toolStrip2.BackColor = System.Drawing.Color.Transparent;
+            this.toolStrip2.Dock = System.Windows.Forms.DockStyle.None;
+            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnGuardar,
+            this.toolStripLabel3,
+            this.toolStripSeparator1,
+            this.btnSalir,
+            this.toolStripLabel4});
+            this.toolStrip2.Location = new System.Drawing.Point(9, 0);
+            this.toolStrip2.Name = "toolStrip2";
+            this.toolStrip2.Size = new System.Drawing.Size(251, 39);
+            this.toolStrip2.TabIndex = 23;
+            this.toolStrip2.Text = "toolStrip2";
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
+            this.btnGuardar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnGuardar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(36, 36);
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // toolStripLabel3
+            // 
+            this.toolStripLabel3.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripLabel3.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.toolStripLabel3.Name = "toolStripLabel3";
+            this.toolStripLabel3.Size = new System.Drawing.Size(81, 36);
+            this.toolStripLabel3.Text = "Guardar";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 39);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
+            this.btnSalir.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnSalir.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(36, 36);
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // toolStripLabel4
+            // 
+            this.toolStripLabel4.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripLabel4.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.toolStripLabel4.Name = "toolStripLabel4";
+            this.toolStripLabel4.Size = new System.Drawing.Size(49, 36);
+            this.toolStripLabel4.Text = "Salir";
+            // 
             // frm_Modificar_TipoEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Proyecto_2_PL.Properties.Resources.fondomenu;
             this.ClientSize = new System.Drawing.Size(549, 261);
+            this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.cmb_IDEstado);
             this.Controls.Add(this.txt_desc);
             this.Controls.Add(this.txt_IDTipoEmpleado);
@@ -166,8 +181,8 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             this.ShowIcon = false;
             this.Text = "Modificar Tipo Empleado";
             this.Load += new System.EventHandler(this.frm_Modificar_TipoEmpleado_Load);
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
+            this.toolStrip2.ResumeLayout(false);
+            this.toolStrip2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -178,14 +193,15 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
         private System.Windows.Forms.TextBox txt_IDTipoEmpleado;
         private System.Windows.Forms.TextBox txt_desc;
         private System.Windows.Forms.ComboBox cmb_IDEstado;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
-        private System.Windows.Forms.ToolStripButton Sal;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ToolStripButton Guardar;
         private EventHandler SalClick;
+        private System.Windows.Forms.ToolStrip toolStrip2;
+        private System.Windows.Forms.ToolStripButton btnGuardar;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel3;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton btnSalir;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel4;
     }
 }
