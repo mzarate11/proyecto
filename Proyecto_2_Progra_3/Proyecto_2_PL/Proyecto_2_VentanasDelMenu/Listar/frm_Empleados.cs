@@ -98,7 +98,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
 
         private void tls_btn_Salir_Click(object sender, EventArgs e)
         {
-            Close();
+            this.Close();
         }
 
         private void tls_btn_Nuevo_Click(object sender, EventArgs e)
@@ -122,9 +122,10 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
             Obj_Empleados_DAL.cIdEstado = ' ';
 
             NuevoEmpleado.Obj_Empleados_DAL = Obj_Empleados_DAL;
-            NuevoEmpleado.ShowDialog();
-            Show();
             this.Hide();
+            NuevoEmpleado.ShowDialog();
+            this.Show();
+            
 
             tls_txt_Filtro.Text = string.Empty;
             Cargar();
@@ -153,8 +154,9 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
                 Obj_Empleados_DAL.cIdEstado = Convert.ToChar(dgv_Empleados.SelectedRows[0].Cells[12].Value.ToString().Trim());
 
                 ModificarEmpleado.Obj_Empleados_DAL = Obj_Empleados_DAL;
+                this.Hide();
                 ModificarEmpleado.ShowDialog();
-                Hide();
+                this.Show();
                 tls_txt_Filtro.Text = string.Empty;
                 Cargar();
 
@@ -202,8 +204,9 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
                 Obj_Empleados_DAL.cIdEstado = Convert.ToChar(dgv_Empleados.SelectedRows[0].Cells[12].Value.ToString().Trim());
 
                 ModificarEmpleado.Obj_Empleados_DAL = Obj_Empleados_DAL;
+                this.Hide();
                 ModificarEmpleado.ShowDialog();
-                Hide();
+                this.Show();
                 tls_txt_Filtro.Text = string.Empty;
                 Cargar();
 
