@@ -44,6 +44,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 }
                 else
                 {
+                    toolStripLabel1.Text = "Modificar";
                     txt_IdPais.Text = Obj_Paises_DAL.iIdPais.ToString().Trim();
                     txtNombrePais.Text = Obj_Paises_DAL.sNombrePais;
                     txtCodigoISO.Text = Obj_Paises_DAL.sCodigoISOPais;
@@ -90,12 +91,13 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 {
                     Obj_Paises_BLL.Modificar_Paises(ref sMsjError, ref Obj_Paises_DAL);
                 }
-                if(sMsjError == string.Empty)
+                if (sMsjError == string.Empty)
                 {
-                    
+
                     MessageBox.Show("Se han ingresado los datos correctamente", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txt_IdPais.Text = Obj_Paises_DAL.iIdPais.ToString();
                     Obj_Paises_DAL.cBandera = 'U';
+                    toolStripLabel1.Text = "Modificar";
                 }
             }
             else

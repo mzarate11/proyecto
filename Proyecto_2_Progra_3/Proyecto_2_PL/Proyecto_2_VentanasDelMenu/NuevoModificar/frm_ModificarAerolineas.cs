@@ -53,6 +53,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 }
                 else
                 {
+                    toolStripLabel1.Text = "Modificar";
                     txt_IdAerolinea.Text = objDAL_Aerolinea.iIdAerolinea.ToString().Trim();
                     //txt_IdAerolinea.Enabled = false;
                     txt_NombreAerolinea.Text = objDAL_Aerolinea.sNombreAerolinea.ToString().Trim();
@@ -127,13 +128,14 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                         objBLL_Aerolineas.Insertar_Aerolineas(ref sMsjError, ref objDAL_Aerolinea);
                         if (sMsjError == string.Empty)
                         {
-                            MessageBox.Show("Se guardó el nuevo registro exitosamente");
+                            MessageBox.Show("Se han ingresado los datos correctamente","INFO");
                             txt_IdAerolinea.Text = objDAL_Aerolinea.iIdAerolinea.ToString();
                             objDAL_Aerolinea.cBandera = 'U';
+                            toolStripLabel1.Text = "Modificar";
                         }
                         else
                         {
-                            MessageBox.Show("Se presentó un error al tratar de guardar el registro");
+                            MessageBox.Show("Se presentó un error al tratar de guardar el registro" + "[ " + sMsjError + " ]");
                         }
                     }
                     else
@@ -141,12 +143,12 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                         objBLL_Aerolineas.Modificar_Aerolineas(ref sMsjError, ref objDAL_Aerolinea);
                         if (sMsjError == string.Empty)
                         {
-                            MessageBox.Show("Se modificó el nuevo registro exitosamente");
+                            MessageBox.Show("Se han ingresado los datos correctamente","INFO");
                             objDAL_Aerolinea.cBandera = 'U';
                         }
                         else
                         {
-                            MessageBox.Show("Se presentó un error al tratar de modificar el registro");
+                            MessageBox.Show("Se presentó un error al tratar de modificar el registro" + "[ " + sMsjError + " ]");
                         }
                     }
                 }

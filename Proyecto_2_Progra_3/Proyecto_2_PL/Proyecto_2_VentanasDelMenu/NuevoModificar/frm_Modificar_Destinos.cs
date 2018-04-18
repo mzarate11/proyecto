@@ -75,6 +75,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 }
                 else
                 {
+                    toolStripLabel1.Text = "Modificar";
                     txt_IdDestino.Text = Obj_Destinos_DAL.sIdDestino;
                     txt_IdDestino.Enabled = false;
                     cmboxAerolinea.SelectedValue = Obj_Destinos_DAL.bIdAerolinea.ToString();
@@ -124,6 +125,9 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 {
                     ObjDestinos_BLL.Insertar_Destinos(ref sMsjError, ref Obj_Destinos_DAL);
                     txt_IdDestino.Enabled = false;
+                    toolStripLabel1.Text = "Modificar";
+
+
                 }
                 else
                 {

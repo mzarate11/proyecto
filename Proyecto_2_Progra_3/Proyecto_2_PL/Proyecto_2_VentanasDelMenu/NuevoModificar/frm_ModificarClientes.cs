@@ -162,7 +162,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                     ObjClientes_BLL.Insertar_Clientes(ref sMsjError, ref ObjClientes_DAL);
                     if (sMsjError == string.Empty)
                     {
-                        MessageBox.Show("La Base de Datos ha sido actualizada", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Se han ingresado los datos correctamente", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         lb_Guardar.Text = "Modificar";
                     }
                     else
@@ -178,7 +178,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
 
                     if (sMsjError == string.Empty)
                     {
-                        MessageBox.Show("La Base de Datos ha sido actualizada", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Se han ingresado los datos correctamente", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {

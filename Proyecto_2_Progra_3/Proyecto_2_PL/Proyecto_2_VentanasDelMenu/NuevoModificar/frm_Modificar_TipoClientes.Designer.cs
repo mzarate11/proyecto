@@ -57,6 +57,7 @@
             // txt_TipoCliente
             // 
             this.txt_TipoCliente.Location = new System.Drawing.Point(424, 96);
+            this.txt_TipoCliente.MaxLength = 20;
             this.txt_TipoCliente.Name = "txt_TipoCliente";
             this.txt_TipoCliente.Size = new System.Drawing.Size(100, 20);
             this.txt_TipoCliente.TabIndex = 2;
@@ -65,6 +66,7 @@
             // txt_descripcion
             // 
             this.txt_descripcion.Location = new System.Drawing.Point(150, 217);
+            this.txt_descripcion.MaxLength = 150;
             this.txt_descripcion.Multiline = true;
             this.txt_descripcion.Name = "txt_descripcion";
             this.txt_descripcion.Size = new System.Drawing.Size(151, 71);
@@ -136,7 +138,7 @@
             this.toolStripLabel4});
             this.toolStrip2.Location = new System.Drawing.Point(9, 9);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(251, 39);
+            this.toolStrip2.Size = new System.Drawing.Size(220, 39);
             this.toolStrip2.TabIndex = 22;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -190,6 +192,7 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(750, 331);
+            this.ControlBox = false;
             this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -199,12 +202,14 @@
             this.Controls.Add(this.txt_descripcion);
             this.Controls.Add(this.txt_TipoCliente);
             this.Controls.Add(this.txt_IDTipoCliente);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frm_Modificar_TipoClientes";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Modificar Tipos Clientes";
             this.TransparencyKey = System.Drawing.Color.Maroon;
             this.Load += new System.EventHandler(this.frm_Modificar_TipoClientes_Load);
             this.toolStrip2.ResumeLayout(false);

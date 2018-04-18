@@ -50,6 +50,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 }
                 else
                 {
+                    toolStripLabel3.Text = "Modificar";
                     txt_IDTipoCliente.Text = Obj_DAL_TiposClientes.IIdTipoCliente.ToString().Trim();
                     txt_TipoCliente.Text = Obj_DAL_TiposClientes.STipoCliente.ToString().Trim();
                     txt_descripcion.Text = Obj_DAL_TiposClientes.SDescripcion.ToString().Trim();
@@ -139,12 +140,13 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                     obj_TiposClientes_BLL.Insertar_TipoCliente(ref sMsjError, ref Obj_DAL_TiposClientes);
                     if (sMsjError == string.Empty)
                     {
-                        MessageBox.Show("Se guardó el nuevo registro exitosamente");
+                        MessageBox.Show("Se han ingresado los datos correctamente");
                         Obj_DAL_TiposClientes.CBandAX = 'U';
+                        toolStripLabel3.Text = "Modificar";
                     }
                     else
                     {
-                        MessageBox.Show("Se presentó un error");
+                        MessageBox.Show("Se presentó un error" + "[ " + sMsjError + " ]");
                     }
 
                 }
@@ -153,7 +155,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                     obj_TiposClientes_BLL.Modificar_TipoCliente(ref sMsjError, ref Obj_DAL_TiposClientes);
                     if (sMsjError == string.Empty)
                     {
-                        MessageBox.Show("Se modificó el nuevo registro exitosamente");
+                        MessageBox.Show("Se han ingresado los datos correctamente");
                     }
                     else
                     {

@@ -50,6 +50,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 }
                 else
                 {
+                    toolStripLabel3.Text = "Modificar";
                     txt_IDTipoEmpleado.Text = Obj_DAL_TipoEmpleado.ITipoEmpleado.ToString().Trim();
                     txt_desc.Text = Obj_DAL_TipoEmpleado.SDescTipo.ToString().Trim();
                     cmb_IDEstado.SelectedValue = Obj_DAL_TipoEmpleado.CIdEstado.ToString().Trim();
@@ -125,12 +126,13 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                     if (sMsjError == string.Empty)
                     {
 
-                        MessageBox.Show("Se guardó el registro exitosamente");
+                        MessageBox.Show("Se han ingresado los datos correctamente");
                         Obj_DAL_TipoEmpleado.CBandAX = 'U';
+                        toolStripLabel3.Text = "Modificar";
                     }
                     else {
 
-                        MessageBox.Show("Se presento un error al tratar de guardar el registro");
+                        MessageBox.Show("Se presento un error al tratar de guardar el registro" + "[ " + sMsjError + " ]");
                     }
                 }
                 else
@@ -143,7 +145,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                     }
                     else
                     {
-                        MessageBox.Show("Se presento un error al tratar de guardar el registro");
+                        MessageBox.Show("Se presento un error al tratar de guardar el registro" + "[ " + sMsjError + " ]");
                     }
                 }
 

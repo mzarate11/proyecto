@@ -49,7 +49,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             // txt_IDTipoEmpleado
             // 
             this.txt_IDTipoEmpleado.Location = new System.Drawing.Point(122, 56);
-            this.txt_IDTipoEmpleado.MaxLength = 10;
+            this.txt_IDTipoEmpleado.MaxLength = 20;
             this.txt_IDTipoEmpleado.Name = "txt_IDTipoEmpleado";
             this.txt_IDTipoEmpleado.Size = new System.Drawing.Size(100, 20);
             this.txt_IDTipoEmpleado.TabIndex = 0;
@@ -170,6 +170,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Proyecto_2_PL.Properties.Resources.fondomenu;
             this.ClientSize = new System.Drawing.Size(549, 261);
+            this.ControlBox = false;
             this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -177,9 +178,9 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             this.Controls.Add(this.cmb_IDEstado);
             this.Controls.Add(this.txt_desc);
             this.Controls.Add(this.txt_IDTipoEmpleado);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frm_Modificar_TipoEmpleado";
             this.ShowIcon = false;
-            this.Text = "Modificar Tipo Empleado";
             this.Load += new System.EventHandler(this.frm_Modificar_TipoEmpleado_Load);
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();

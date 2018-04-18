@@ -75,7 +75,7 @@
             this.toolStripSeparator1,
             this.btnSalir,
             this.toolStripLabel2});
-            this.toolStrip1.Location = new System.Drawing.Point(79, -2);
+            this.toolStrip1.Location = new System.Drawing.Point(9, 9);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(251, 39);
             this.toolStrip1.TabIndex = 3;

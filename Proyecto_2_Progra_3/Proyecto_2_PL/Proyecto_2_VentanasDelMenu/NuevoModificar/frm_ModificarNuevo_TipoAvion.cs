@@ -100,7 +100,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                     Obj_Mant_BLL.AgregarTipoAviones(ref sMsjError, ref Obj_Mant_DAL);
                     if(sMsjError == string.Empty)
                     {
-                        MessageBox.Show("Tipo Avión agregado correctamente","Información",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                        MessageBox.Show("Se han ingresado los datos correctamente", "Información",MessageBoxButtons.OK,MessageBoxIcon.Information);
                         labelTipoAvion.Text = "Modificar";
                     }
                     else
@@ -115,7 +115,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                     Obj_Mant_BLL.ModificarTipoAviones(ref sMsjError, ref Obj_Mant_DAL);
                     if (sMsjError == string.Empty)
                     {
-                        MessageBox.Show("Tipo Avión modificado correctamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Se han ingresado los datos correctamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     }
                     else

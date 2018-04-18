@@ -89,6 +89,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 }
                 else
                 {
+                    toolStripLabel1.Text = "Modificar";
                     txt_Direccion.Text = Obj_Empleados_DAL.sDireccion;
                     txt_Nombre.Text = Obj_Empleados_DAL.sNombre;
                     txt_Apellidos.Text = Obj_Empleados_DAL.sApellidos;
@@ -359,13 +360,14 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 Obj_Empleados_BLL.Insertar_Empleados(ref M_Error, ref Obj_Empleados_DAL);
                 if (M_Error == string.Empty)
                 {
-                    MessageBox.Show("Se ha ingresado un nuevo Empleado");
+                    MessageBox.Show("Se han ingresado los datos correctamente", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Obj_Empleados_DAL.cBandera = 'U';
                     txt_IdEmpleado.Enabled = false;
+                    toolStripLabel1.Text = "Modificar";
                 }
                 else
                 {
-                    MessageBox.Show("Se ha presentado un error al guardar");
+                    MessageBox.Show("Se ha presentado un error al guardar" + "[ " + M_Error + " ]");
                 }
 
             }

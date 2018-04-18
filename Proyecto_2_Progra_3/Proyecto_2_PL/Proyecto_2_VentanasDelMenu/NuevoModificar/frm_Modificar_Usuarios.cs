@@ -108,6 +108,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             else
             {
 
+                toolStripLabel1.Text = "Modificar";
                 string sMsjError = string.Empty;
                 Obj_Usuarios_Dal.sUsername = txt_Username.Text;
                 Obj_Usuarios_Dal.sPassword = txt_Password.Text;
@@ -124,7 +125,8 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
 
                     if (sMsjError == string.Empty)
                     {
-                        MessageBox.Show("La Base de Datos ha sido Actualizada", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Se han ingresado los datos correctamente", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        toolStripLabel1.Text = "Modificar";
                     }
                     else
                     {
@@ -136,7 +138,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                     Obj_ManteniUsuarios_BLL.Modificar_Usuarios(ref sMsjError, ref Obj_Usuarios_Dal);
                     if (sMsjError == string.Empty)
                     {
-                        MessageBox.Show("Usuario Modificado correctamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Se han ingresado los datos correctamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     }
                     else

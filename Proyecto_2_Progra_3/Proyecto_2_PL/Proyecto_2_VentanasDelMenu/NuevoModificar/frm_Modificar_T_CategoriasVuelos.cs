@@ -52,6 +52,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                 }
                 else
                 {
+                    toolStripLabel1.Text = "Modificar";
                     tb_IdCategoria.Text = Obj_ManteCategorias_DAL.iIdCategoria.ToString().Trim();
                     tb_IdCategoria.Enabled = false;
                     tb_DescCategoria.Text = Obj_ManteCategorias_DAL.sDescCategoria.ToString().Trim();
@@ -107,9 +108,10 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
 
                     if (sMsjError == string.Empty)
                     {
-                        MessageBox.Show("La Base de Datos ha sido Actualizada", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Se han ingresado los datos correctamente", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         tb_IdCategoria.Text = Obj_ManteCategorias_DAL.iIdCategoria.ToString();
                         Obj_ManteCategorias_DAL.cBandAX = 'U';
+                        toolStripLabel1.Text = "Modificar";
                     }
                     else
                     {
@@ -121,7 +123,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                     Obj_CategoriaVuelos_BLL.Modificar_Estados(ref sMsjError, ref Obj_ManteCategorias_DAL);
                     if (sMsjError == string.Empty)
                     {
-                        MessageBox.Show("Categoría Modificado correctamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Se han ingresado los datos correctamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     }
                     else
