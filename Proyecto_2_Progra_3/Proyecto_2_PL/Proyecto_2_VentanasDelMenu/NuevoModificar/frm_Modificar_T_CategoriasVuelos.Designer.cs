@@ -130,8 +130,9 @@
             this.cmb_IdEstado.FormattingEnabled = true;
             this.cmb_IdEstado.Location = new System.Drawing.Point(327, 293);
             this.cmb_IdEstado.Name = "cmb_IdEstado";
-            this.cmb_IdEstado.Size = new System.Drawing.Size(148, 21);
+            this.cmb_IdEstado.Size = new System.Drawing.Size(211, 21);
             this.cmb_IdEstado.TabIndex = 2;
+            this.cmb_IdEstado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmb_IdEstado_KeyPress);
             // 
             // label9
             // 

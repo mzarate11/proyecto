@@ -75,130 +75,135 @@
             this.toolStripLabel6});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1110, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(832, 25);
             this.toolStrip1.TabIndex = 5;
             this.toolStrip1.Text = "toolStrip1";
             // 
             // btnRefrescar
             // 
+            this.btnRefrescar.BackColor = System.Drawing.Color.Transparent;
             this.btnRefrescar.BackgroundImage = global::Proyecto_2_PL.Properties.Resources.refrescar;
             this.btnRefrescar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnRefrescar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.btnRefrescar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnRefrescar.Name = "btnRefrescar";
-            this.btnRefrescar.Size = new System.Drawing.Size(23, 24);
+            this.btnRefrescar.Size = new System.Drawing.Size(23, 22);
             this.btnRefrescar.Text = "toolStripButton1";
             this.btnRefrescar.Click += new System.EventHandler(this.btnRefrescar_Click);
             // 
             // toolStripLabel1
             // 
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(70, 24);
+            this.toolStripLabel1.Size = new System.Drawing.Size(55, 22);
             this.toolStripLabel1.Text = "Refrescar";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 27);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // btnNuevo
             // 
+            this.btnNuevo.BackColor = System.Drawing.Color.Transparent;
             this.btnNuevo.BackgroundImage = global::Proyecto_2_PL.Properties.Resources.agregar;
             this.btnNuevo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnNuevo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.btnNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(23, 24);
+            this.btnNuevo.Size = new System.Drawing.Size(23, 22);
             this.btnNuevo.Text = "toolStripButton2";
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click_1);
             // 
             // toolStripLabel2
             // 
             this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(52, 24);
+            this.toolStripLabel2.Size = new System.Drawing.Size(42, 22);
             this.toolStripLabel2.Text = "Nuevo";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 27);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // btnModificar
             // 
+            this.btnModificar.BackColor = System.Drawing.Color.Transparent;
             this.btnModificar.BackgroundImage = global::Proyecto_2_PL.Properties.Resources.modificar;
             this.btnModificar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnModificar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.btnModificar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(23, 24);
+            this.btnModificar.Size = new System.Drawing.Size(23, 22);
             this.btnModificar.Text = "toolStripButton3";
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click_1);
             // 
             // toolStripLabel3
             // 
             this.toolStripLabel3.Name = "toolStripLabel3";
-            this.toolStripLabel3.Size = new System.Drawing.Size(73, 24);
+            this.toolStripLabel3.Size = new System.Drawing.Size(58, 22);
             this.toolStripLabel3.Text = "Modificar";
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 27);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
             // 
             // btnEliminar
             // 
+            this.btnEliminar.BackColor = System.Drawing.Color.Transparent;
             this.btnEliminar.BackgroundImage = global::Proyecto_2_PL.Properties.Resources.eliminar;
             this.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnEliminar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.btnEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(23, 24);
+            this.btnEliminar.Size = new System.Drawing.Size(23, 22);
             this.btnEliminar.Text = "toolStripButton4";
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // toolStripLabel4
             // 
             this.toolStripLabel4.Name = "toolStripLabel4";
-            this.toolStripLabel4.Size = new System.Drawing.Size(63, 24);
+            this.toolStripLabel4.Size = new System.Drawing.Size(50, 22);
             this.toolStripLabel4.Text = "Eliminar";
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 27);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
             // 
             // toolStripLabel5
             // 
             this.toolStripLabel5.Name = "toolStripLabel5";
-            this.toolStripLabel5.Size = new System.Drawing.Size(46, 24);
+            this.toolStripLabel5.Size = new System.Drawing.Size(37, 22);
             this.toolStripLabel5.Text = "Filtro:";
             // 
             // txtFiltro
             // 
             this.txtFiltro.Name = "txtFiltro";
-            this.txtFiltro.Size = new System.Drawing.Size(100, 27);
+            this.txtFiltro.Size = new System.Drawing.Size(76, 25);
             this.txtFiltro.TextChanged += new System.EventHandler(this.txtFiltro_TextChanged);
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 27);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
             // 
             // btnSalir
             // 
+            this.btnSalir.BackColor = System.Drawing.Color.Transparent;
             this.btnSalir.BackgroundImage = global::Proyecto_2_PL.Properties.Resources.salir;
             this.btnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSalir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.btnSalir.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(23, 24);
+            this.btnSalir.Size = new System.Drawing.Size(23, 22);
             this.btnSalir.Text = "toolS";
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // toolStripLabel6
             // 
             this.toolStripLabel6.Name = "toolStripLabel6";
-            this.toolStripLabel6.Size = new System.Drawing.Size(38, 24);
+            this.toolStripLabel6.Size = new System.Drawing.Size(29, 22);
             this.toolStripLabel6.Text = "Salir";
             // 
             // dgv_CategoriasVuelos
@@ -209,25 +214,23 @@
             this.dgv_CategoriasVuelos.AllowUserToResizeRows = false;
             this.dgv_CategoriasVuelos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_CategoriasVuelos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgv_CategoriasVuelos.Location = new System.Drawing.Point(12, 34);
-            this.dgv_CategoriasVuelos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgv_CategoriasVuelos.Location = new System.Drawing.Point(9, 28);
             this.dgv_CategoriasVuelos.MultiSelect = false;
             this.dgv_CategoriasVuelos.Name = "dgv_CategoriasVuelos";
             this.dgv_CategoriasVuelos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_CategoriasVuelos.Size = new System.Drawing.Size(1087, 468);
+            this.dgv_CategoriasVuelos.Size = new System.Drawing.Size(815, 380);
             this.dgv_CategoriasVuelos.TabIndex = 4;
             this.dgv_CategoriasVuelos.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_CategoriasVuelos_RowHeaderMouseDoubleClick_1);
             // 
             // frm_CategoriaVuelos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(1110, 513);
+            this.ClientSize = new System.Drawing.Size(832, 417);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.dgv_CategoriasVuelos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frm_CategoriaVuelos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Categoria Vuelos";

@@ -29,7 +29,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             string sMsjError = string.Empty;
             DataTable DTE = new DataTable();
             DTE = ObjBLLEstados.Listar_Estados(ref sMsjError);
-            DTE.Rows.Add("0", "-- SELECCIONE UN ESTADO --");
+            DTE.Rows.Add("0", "--- SELECCIONE UN ESTADO ---");
             cmb_IdEstado.DataSource = DTE;
             cmb_IdEstado.DisplayMember = DTE.Columns[1].ToString();
             cmb_IdEstado.ValueMember = DTE.Columns[0].ToString();
@@ -90,7 +90,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
         private void btnGuardar_Click_1(object sender, EventArgs e)
         {
             cls_T_CategoriasVuelos_BLL Obj_CategoriaVuelos_BLL = new cls_T_CategoriasVuelos_BLL();
-            if (tb_DescCategoria.Text == "" || cmb_IdEstado.Text == "--- Selecione un Estado ---")
+            if (tb_DescCategoria.Text == "" || cmb_IdEstado.Text == "--- SELECCIONE UN ESTADO ---")
             {
                 MessageBox.Show("Alguno de lo campos esta vacido favor de verificar", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -181,5 +181,11 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
 
         }
         #endregion
-    }
+
+        private void cmb_IdEstado_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+            MessageBox.Show("Este campo no se puede editar ", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+        }
 }
