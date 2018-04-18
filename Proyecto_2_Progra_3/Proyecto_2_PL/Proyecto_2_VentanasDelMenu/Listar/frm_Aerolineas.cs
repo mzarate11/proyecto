@@ -150,6 +150,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
             txtFiltro.Text = string.Empty;
             CargarDatos();
         }
+
     }
     
 }

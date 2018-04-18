@@ -79,10 +79,9 @@
             this.btn_Salir,
             this.toolStripLabel6});
             this.MenuVentana.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
-            this.MenuVentana.Location = new System.Drawing.Point(14, 9);
+            this.MenuVentana.Location = new System.Drawing.Point(2, 2);
             this.MenuVentana.Name = "MenuVentana";
-            this.MenuVentana.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
-            this.MenuVentana.Size = new System.Drawing.Size(1222, 43);
+            this.MenuVentana.Size = new System.Drawing.Size(815, 33);
             this.MenuVentana.TabIndex = 4;
             this.MenuVentana.Text = "toolStrip1";
             // 
@@ -99,7 +98,7 @@
             // toolStripLabel1
             // 
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(83, 25);
+            this.toolStripLabel1.Size = new System.Drawing.Size(55, 15);
             this.toolStripLabel1.Text = "Refrescar";
             // 
             // toolStripSeparator1
@@ -120,7 +119,7 @@
             // toolStripLabel2
             // 
             this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(64, 25);
+            this.toolStripLabel2.Size = new System.Drawing.Size(42, 15);
             this.toolStripLabel2.Text = "Nuevo";
             // 
             // toolStripSeparator2
@@ -141,7 +140,7 @@
             // toolStripLabel3
             // 
             this.toolStripLabel3.Name = "toolStripLabel3";
-            this.toolStripLabel3.Size = new System.Drawing.Size(87, 25);
+            this.toolStripLabel3.Size = new System.Drawing.Size(58, 15);
             this.toolStripLabel3.Text = "Modificar";
             // 
             // toolStripSeparator3
@@ -162,7 +161,7 @@
             // toolStripLabel4
             // 
             this.toolStripLabel4.Name = "toolStripLabel4";
-            this.toolStripLabel4.Size = new System.Drawing.Size(74, 25);
+            this.toolStripLabel4.Size = new System.Drawing.Size(50, 15);
             this.toolStripLabel4.Text = "Eliminar";
             // 
             // toolStripSeparator4
@@ -173,13 +172,13 @@
             // toolStripLabel5
             // 
             this.toolStripLabel5.Name = "toolStripLabel5";
-            this.toolStripLabel5.Size = new System.Drawing.Size(56, 25);
+            this.toolStripLabel5.Size = new System.Drawing.Size(37, 15);
             this.toolStripLabel5.Text = "Filtro:";
             // 
             // txtFiltro
             // 
             this.txtFiltro.Name = "txtFiltro";
-            this.txtFiltro.Size = new System.Drawing.Size(148, 31);
+            this.txtFiltro.Size = new System.Drawing.Size(100, 23);
             this.txtFiltro.TextChanged += new System.EventHandler(this.txtFiltro_TextChanged);
             // 
             // btn_Salir
@@ -196,7 +195,7 @@
             // toolStripLabel6
             // 
             this.toolStripLabel6.Name = "toolStripLabel6";
-            this.toolStripLabel6.Size = new System.Drawing.Size(45, 25);
+            this.toolStripLabel6.Size = new System.Drawing.Size(29, 15);
             this.toolStripLabel6.Text = "Salir";
             // 
             // dgv_Aerolineas
@@ -206,25 +205,23 @@
             this.dgv_Aerolineas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_Aerolineas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Aerolineas.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgv_Aerolineas.Location = new System.Drawing.Point(14, 57);
-            this.dgv_Aerolineas.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dgv_Aerolineas.Location = new System.Drawing.Point(0, 35);
             this.dgv_Aerolineas.MultiSelect = false;
             this.dgv_Aerolineas.Name = "dgv_Aerolineas";
             this.dgv_Aerolineas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_Aerolineas.Size = new System.Drawing.Size(1222, 569);
+            this.dgv_Aerolineas.Size = new System.Drawing.Size(815, 370);
             this.dgv_Aerolineas.TabIndex = 6;
             this.dgv_Aerolineas.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Aerolineas_CellContentDoubleClick);
             // 
             // frm_Aerolineas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(1250, 642);
+            this.ClientSize = new System.Drawing.Size(811, 407);
             this.Controls.Add(this.dgv_Aerolineas);
             this.Controls.Add(this.MenuVentana);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frm_Aerolineas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Aerolineas";
