@@ -23,11 +23,12 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
 
         private void fmr_ModificarNuevo_Vuelos_Load(object sender, EventArgs e)
         {
+            //FORMATO DE FECHA INTERNACIONAL DEFINIDO POR LA ISO
             time_HoraLlegada.Format = DateTimePickerFormat.Custom;
-            time_HoraLlegada.CustomFormat = "dd-MMM-yyy hh:mm tt";
+            time_HoraLlegada.CustomFormat = "yyy-MMM-dd hh:mm tt";
 
             time_HoraSalida.Format = DateTimePickerFormat.Custom;
-            time_HoraSalida.CustomFormat = "dd-MMM-yyy hh:mm tt";
+            time_HoraSalida.CustomFormat = "yyy-MMM-dd hh:mm tt";
 
             cmb_IdAerolinea.DropDownStyle = ComboBoxStyle.DropDownList;
             cmb_IdDestino.DropDownStyle = ComboBoxStyle.DropDownList;
