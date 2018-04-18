@@ -79,9 +79,9 @@
             this.btn_Salir,
             this.toolStripLabel6});
             this.MenuVentana.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
-            this.MenuVentana.Location = new System.Drawing.Point(9, 6);
+            this.MenuVentana.Location = new System.Drawing.Point(1, 0);
             this.MenuVentana.Name = "MenuVentana";
-            this.MenuVentana.Size = new System.Drawing.Size(815, 28);
+            this.MenuVentana.Size = new System.Drawing.Size(832, 36);
             this.MenuVentana.TabIndex = 3;
             this.MenuVentana.Text = "toolStrip1";
             // 
@@ -92,7 +92,7 @@
             this.btn_Refrescar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btn_Refrescar.Name = "btn_Refrescar";
             this.btn_Refrescar.Size = new System.Drawing.Size(28, 28);
-            this.btn_Refrescar.Text = "toolStripButton1";
+            this.btn_Refrescar.Text = "Refrescar";
             this.btn_Refrescar.Click += new System.EventHandler(this.btn_Refrescar_Click);
             // 
             // toolStripLabel1
@@ -113,7 +113,7 @@
             this.bnt_Nuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bnt_Nuevo.Name = "bnt_Nuevo";
             this.bnt_Nuevo.Size = new System.Drawing.Size(28, 28);
-            this.bnt_Nuevo.Text = "toolStripButton2";
+            this.bnt_Nuevo.Text = "Nuevo";
             this.bnt_Nuevo.Click += new System.EventHandler(this.bnt_Nuevo_Click);
             // 
             // toolStripLabel2
@@ -134,7 +134,7 @@
             this.btn_Modificar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btn_Modificar.Name = "btn_Modificar";
             this.btn_Modificar.Size = new System.Drawing.Size(28, 28);
-            this.btn_Modificar.Text = "toolStripButton3";
+            this.btn_Modificar.Text = "Modificar";
             this.btn_Modificar.Click += new System.EventHandler(this.btn_Modificar_Click);
             // 
             // toolStripLabel3
@@ -155,7 +155,7 @@
             this.btn_Eliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btn_Eliminar.Name = "btn_Eliminar";
             this.btn_Eliminar.Size = new System.Drawing.Size(28, 28);
-            this.btn_Eliminar.Text = "toolStripButton4";
+            this.btn_Eliminar.Text = "Eliminar";
             this.btn_Eliminar.Click += new System.EventHandler(this.btn_Eliminar_Click);
             // 
             // toolStripLabel4
@@ -189,7 +189,7 @@
             this.btn_Salir.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btn_Salir.Name = "btn_Salir";
             this.btn_Salir.Size = new System.Drawing.Size(28, 28);
-            this.btn_Salir.Text = "toolStripButton5";
+            this.btn_Salir.Text = "Salir";
             this.btn_Salir.Click += new System.EventHandler(this.btn_Salir_Click);
             // 
             // toolStripLabel6
@@ -204,13 +204,13 @@
             this.dgv_Estados.AllowUserToDeleteRows = false;
             this.dgv_Estados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Estados.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgv_Estados.Location = new System.Drawing.Point(9, 37);
+            this.dgv_Estados.Location = new System.Drawing.Point(1, 30);
             this.dgv_Estados.MultiSelect = false;
             this.dgv_Estados.Name = "dgv_Estados";
             this.dgv_Estados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_Estados.Size = new System.Drawing.Size(815, 370);
+            this.dgv_Estados.Size = new System.Drawing.Size(832, 387);
             this.dgv_Estados.TabIndex = 4;
-            this.dgv_Estados.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_Estados_RowHeaderMouseDoubleClick);
+            this.dgv_Estados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Estados_CellDoubleClick);
             // 
             // frm_Estados
             // 

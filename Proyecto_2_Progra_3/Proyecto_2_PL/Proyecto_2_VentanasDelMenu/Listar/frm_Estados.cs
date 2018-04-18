@@ -138,7 +138,12 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
             CargarDatos();
         }
 
-        private void dgv_Estados_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void dgv_Estados_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void dgv_Estados_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             ObjEstadosDAL = new cls_Estados_DAL();
             frm_Modificar_Estados PantEstados = new frm_Modificar_Estados();
@@ -151,7 +156,6 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
             this.Show();
             txtFiltro.Text = string.Empty;
             CargarDatos();
-
         }
     }
 }

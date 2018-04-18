@@ -147,6 +147,11 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
 
         private void dgv_Clientes_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            
+        }
+
+        private void dgv_Clientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
             ObjCLientes_DAL = new cls_Clientes_DAL();
             frm_ModificarClientes pantClientes = new frm_ModificarClientes();
             ObjCLientes_DAL.cBandAxn = 'U';
