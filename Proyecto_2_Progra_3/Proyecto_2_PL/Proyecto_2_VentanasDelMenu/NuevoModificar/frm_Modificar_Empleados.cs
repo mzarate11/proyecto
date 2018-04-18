@@ -183,67 +183,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
 
         private void tls_btn_Guardar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txt_Nombre.Text) || string.IsNullOrEmpty(txt_Apellidos.Text) || string.IsNullOrEmpty(txt_Edad.Text) ||
-                string.IsNullOrEmpty(txt_Direccion.Text) || string.IsNullOrEmpty(txt_Cedula.Text) || string.IsNullOrEmpty(txt_Celular.Text) ||
-                string.IsNullOrEmpty(txt_TelCasa.Text) || string.IsNullOrEmpty(txt_TelRef.Text)|| string.IsNullOrEmpty(txt_IdEmpleado.Text) ||
-                string.IsNullOrEmpty(txt_Salario.Text) )
-            {
-                MessageBox.Show("Debe completar todos los datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else if (Convert.ToUInt16(txt_Edad.Text) < 18)
-            {
-                MessageBox.Show("El empleado debe ser mayor de edad");
-            }
-            else
-            {
-
-                cls_Empleados_BLL Obj_Empleados_BLL = new cls_Empleados_BLL();
-
-                string M_Error = string.Empty;
-
-                Obj_Empleados_DAL.sNombre = txt_Nombre.Text;
-                Obj_Empleados_DAL.sApellidos = txt_Apellidos.Text;
-                Obj_Empleados_DAL.bEdad = Convert.ToByte(txt_Edad.Text);
-                Obj_Empleados_DAL.sDireccion = txt_Direccion.Text;
-                Obj_Empleados_DAL.iCedula = Convert.ToInt32(txt_Cedula.Text);
-                Obj_Empleados_DAL.iCelular = Convert.ToInt32(txt_Celular.Text);
-                Obj_Empleados_DAL.iTelCasa = Convert.ToInt32(txt_TelCasa.Text);
-                Obj_Empleados_DAL.iTelRef = Convert.ToInt32(txt_TelRef.Text);
-                Obj_Empleados_DAL.uIdEmpleado = Convert.ToUInt16(txt_IdEmpleado.Text);
-                Obj_Empleados_DAL.dSalario = Convert.ToDouble(txt_Salario.Text);
-                Obj_Empleados_DAL.cIdEstado = Convert.ToChar(cb_Estado.SelectedValue.ToString().Trim());
-                Obj_Empleados_DAL.iIdTipoEmpleado = Convert.ToInt32(cb_TipoEmpleado.SelectedValue.ToString().Trim());
-                Obj_Empleados_DAL.iIdAerolinea = Convert.ToInt32(cb_IdAerolinea.SelectedValue.ToString().Trim());
-
-                if (Obj_Empleados_DAL.cBandera == 'I')
-                {
-                    Obj_Empleados_BLL.Insertar_Empleados(ref M_Error, ref Obj_Empleados_DAL);
-                    if (M_Error == string.Empty)
-                    {
-                        MessageBox.Show("Se ha ingresado un nuevo Empleado");
-                        Obj_Empleados_DAL.cBandera = 'U';
-                    }
-                    else
-                    {
-                        MessageBox.Show("Se ha presentado un error al guardar");
-                    }
-
-                }
-                else
-                {
-                    Obj_Empleados_BLL.Modificar_Empleados(ref M_Error, ref Obj_Empleados_DAL);
-                    if (M_Error == string.Empty)
-                    {
-                        
-                        MessageBox.Show("Se ha realizado el cambio exitosamente");
-                        Obj_Empleados_DAL.cBandera = 'U';
-                    }
-                    else
-                    {
-                        MessageBox.Show("Se ha presentado un error al guardar");
-                    }
-                }
-            }
+            
 
         }
 
@@ -390,6 +330,61 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             {
                 e.Handled = true;
             }
+        }
+
+        private void tlsbtn_Guardar_Click(object sender, EventArgs e)
+        {
+            cls_Empleados_BLL Obj_Empleados_BLL = new cls_Empleados_BLL();
+            string M_Error = string.Empty;
+
+            Obj_Empleados_DAL.sNombre = txt_Nombre.Text;
+            Obj_Empleados_DAL.sApellidos = txt_Apellidos.Text;
+            Obj_Empleados_DAL.bEdad = Convert.ToByte(txt_Edad.Text);
+            Obj_Empleados_DAL.sDireccion = txt_Direccion.Text;
+            Obj_Empleados_DAL.iCedula = Convert.ToInt32(txt_Cedula.Text);
+            Obj_Empleados_DAL.iCelular = Convert.ToInt32(txt_Celular.Text);
+            Obj_Empleados_DAL.iTelCasa = Convert.ToInt32(txt_TelCasa.Text);
+            Obj_Empleados_DAL.iTelRef = Convert.ToInt32(txt_TelRef.Text);
+            Obj_Empleados_DAL.uIdEmpleado = Convert.ToUInt16(txt_IdEmpleado.Text);
+            Obj_Empleados_DAL.dSalario = Convert.ToDouble(txt_Salario.Text);
+            Obj_Empleados_DAL.cIdEstado = Convert.ToChar(cb_Estado.SelectedValue.ToString().Trim());
+            Obj_Empleados_DAL.iIdTipoEmpleado = Convert.ToInt32(cb_TipoEmpleado.SelectedValue.ToString().Trim());
+            Obj_Empleados_DAL.iIdAerolinea = Convert.ToInt32(cb_IdAerolinea.SelectedValue.ToString().Trim());
+
+            if (Obj_Empleados_DAL.cBandera == 'I')
+            {
+                Obj_Empleados_BLL.Insertar_Empleados(ref M_Error, ref Obj_Empleados_DAL);
+                if (M_Error == string.Empty)
+                {
+                    MessageBox.Show("Se ha ingresado un nuevo Empleado");
+                    Obj_Empleados_DAL.cBandera = 'U';
+                    txt_IdEmpleado.Enabled = false;
+                }
+                else
+                {
+                    MessageBox.Show("Se ha presentado un error al guardar");
+                }
+
+            }
+            else
+            {
+                Obj_Empleados_BLL.Modificar_Empleados(ref M_Error, ref Obj_Empleados_DAL);
+                if (M_Error == string.Empty)
+                {
+                    Obj_Empleados_DAL.cBandera = 'U';
+                    MessageBox.Show("Se ha realizado el cambio exitosamente");
+                    txt_IdEmpleado.Enabled = false;
+                }
+                else
+                {
+                    MessageBox.Show("Se ha presentado un error al guardar");
+                }
+            }
+        }
+
+        private void tlsbtn_Salir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

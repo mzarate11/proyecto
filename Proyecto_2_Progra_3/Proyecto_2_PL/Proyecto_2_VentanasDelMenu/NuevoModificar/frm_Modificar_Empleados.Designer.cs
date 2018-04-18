@@ -28,13 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.tls_btn_Guardar = new System.Windows.Forms.ToolStripButton();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.tls_btn_Salir = new System.Windows.Forms.ToolStripButton();
-            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Modificar_Empleados));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -63,71 +57,16 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.toolStrip1.SuspendLayout();
+            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
+            this.tlsbtn_Guardar = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.tlsbtn_Salir = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.toolStrip2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.BackColor = System.Drawing.Color.LightBlue;
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(27, 27);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tls_btn_Guardar,
-            this.toolStripLabel1,
-            this.toolStripSeparator1,
-            this.tls_btn_Salir,
-            this.toolStripLabel2,
-            this.toolStripSeparator2});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(840, 34);
-            this.toolStrip1.TabIndex = 0;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // tls_btn_Guardar
-            // 
-            this.tls_btn_Guardar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tls_btn_Guardar.Image = global::Proyecto_2_PL.Properties.Resources.bGuardar;
-            this.tls_btn_Guardar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tls_btn_Guardar.Name = "tls_btn_Guardar";
-            this.tls_btn_Guardar.Size = new System.Drawing.Size(31, 31);
-            this.tls_btn_Guardar.Text = "Guardar";
-            this.tls_btn_Guardar.Click += new System.EventHandler(this.tls_btn_Guardar_Click);
-            // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(56, 31);
-            this.toolStripLabel1.Text = "Guardar";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 34);
-            // 
-            // tls_btn_Salir
-            // 
-            this.tls_btn_Salir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tls_btn_Salir.Image = global::Proyecto_2_PL.Properties.Resources.bSalir;
-            this.tls_btn_Salir.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tls_btn_Salir.Name = "tls_btn_Salir";
-            this.tls_btn_Salir.Size = new System.Drawing.Size(31, 31);
-            this.tls_btn_Salir.Text = "Salir";
-            this.tls_btn_Salir.Click += new System.EventHandler(this.tls_btn_Salir_Click);
-            // 
-            // toolStripLabel2
-            // 
-            this.toolStripLabel2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(33, 31);
-            this.toolStripLabel2.Text = "Salir";
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 34);
             // 
             // label1
             // 
@@ -431,6 +370,64 @@
             this.label9.TabIndex = 0;
             this.label9.Text = "Salario";
             // 
+            // toolStrip2
+            // 
+            this.toolStrip2.BackColor = System.Drawing.Color.LightBlue;
+            this.toolStrip2.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tlsbtn_Guardar,
+            this.toolStripLabel1,
+            this.toolStripSeparator2,
+            this.tlsbtn_Salir,
+            this.toolStripLabel2});
+            this.toolStrip2.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip2.Name = "toolStrip2";
+            this.toolStrip2.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.toolStrip2.Size = new System.Drawing.Size(840, 39);
+            this.toolStrip2.TabIndex = 38;
+            this.toolStrip2.Text = "toolStrip2";
+            // 
+            // tlsbtn_Guardar
+            // 
+            this.tlsbtn_Guardar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tlsbtn_Guardar.Image = ((System.Drawing.Image)(resources.GetObject("tlsbtn_Guardar.Image")));
+            this.tlsbtn_Guardar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tlsbtn_Guardar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tlsbtn_Guardar.Name = "tlsbtn_Guardar";
+            this.tlsbtn_Guardar.Size = new System.Drawing.Size(36, 36);
+            this.tlsbtn_Guardar.Text = "Guardar";
+            this.tlsbtn_Guardar.Click += new System.EventHandler(this.tlsbtn_Guardar_Click);
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(81, 36);
+            this.toolStripLabel1.Text = "Guardar";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 39);
+            // 
+            // tlsbtn_Salir
+            // 
+            this.tlsbtn_Salir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tlsbtn_Salir.Image = ((System.Drawing.Image)(resources.GetObject("tlsbtn_Salir.Image")));
+            this.tlsbtn_Salir.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tlsbtn_Salir.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tlsbtn_Salir.Name = "tlsbtn_Salir";
+            this.tlsbtn_Salir.Size = new System.Drawing.Size(36, 36);
+            this.tlsbtn_Salir.Text = "Salir";
+            this.tlsbtn_Salir.Click += new System.EventHandler(this.tlsbtn_Salir_Click);
+            // 
+            // toolStripLabel2
+            // 
+            this.toolStripLabel2.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(49, 36);
+            this.toolStripLabel2.Text = "Salir";
+            // 
             // frm_Modificar_Empleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -439,34 +436,26 @@
             this.BackgroundImage = global::Proyecto_2_PL.Properties.Resources.fondoLogin2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(840, 452);
+            this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.toolStrip1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frm_Modificar_Empleados";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frm_Modificar_Empleados_Load);
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.toolStrip2.ResumeLayout(false);
+            this.toolStrip2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton tls_btn_Guardar;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripButton tls_btn_Salir;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -495,5 +484,11 @@
         private System.Windows.Forms.TextBox txt_TelCasa;
         private System.Windows.Forms.TextBox txt_Celular;
         private System.Windows.Forms.TextBox txt_Cedula;
+        private System.Windows.Forms.ToolStrip toolStrip2;
+        private System.Windows.Forms.ToolStripButton tlsbtn_Guardar;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripButton tlsbtn_Salir;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
     }
 }
