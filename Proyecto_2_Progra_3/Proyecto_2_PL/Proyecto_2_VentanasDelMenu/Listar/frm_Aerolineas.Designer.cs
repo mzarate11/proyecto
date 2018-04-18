@@ -209,7 +209,7 @@
             this.dgv_Aerolineas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_Aerolineas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Aerolineas.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgv_Aerolineas.Location = new System.Drawing.Point(0, 37);
+            this.dgv_Aerolineas.Location = new System.Drawing.Point(0, 38);
             this.dgv_Aerolineas.MultiSelect = false;
             this.dgv_Aerolineas.Name = "dgv_Aerolineas";
             this.dgv_Aerolineas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
