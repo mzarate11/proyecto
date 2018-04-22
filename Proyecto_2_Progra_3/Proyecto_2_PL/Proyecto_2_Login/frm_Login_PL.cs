@@ -66,7 +66,7 @@ namespace Proyecto_2_PL.Proyecto_2_Login
                 {
                     if (DT.Rows[i][0].ToString() == txt_Usuario.Text.ToString())
                     {
-
+                    
                         if (DT.Rows[i][1].ToString() == txt_Contraseña.Text.ToString())
                         {
                    

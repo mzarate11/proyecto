@@ -275,6 +275,7 @@
             // 
             // cb_Estado
             // 
+            this.cb_Estado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_Estado.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_Estado.FormattingEnabled = true;
             this.cb_Estado.Location = new System.Drawing.Point(544, 76);
@@ -285,6 +286,7 @@
             // 
             // cb_TipoEmpleado
             // 
+            this.cb_TipoEmpleado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_TipoEmpleado.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_TipoEmpleado.FormattingEnabled = true;
             this.cb_TipoEmpleado.Location = new System.Drawing.Point(544, 48);
@@ -295,6 +297,7 @@
             // 
             // cb_IdAerolinea
             // 
+            this.cb_IdAerolinea.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_IdAerolinea.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_IdAerolinea.FormattingEnabled = true;
             this.cb_IdAerolinea.Location = new System.Drawing.Point(544, 17);

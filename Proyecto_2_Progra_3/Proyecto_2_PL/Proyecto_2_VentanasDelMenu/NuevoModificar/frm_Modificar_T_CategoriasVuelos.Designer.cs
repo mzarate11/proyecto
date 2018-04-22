@@ -77,7 +77,7 @@
             this.toolStripLabel2});
             this.toolStrip1.Location = new System.Drawing.Point(9, 9);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(251, 39);
+            this.toolStrip1.Size = new System.Drawing.Size(220, 39);
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -127,6 +127,7 @@
             // 
             // cmb_IdEstado
             // 
+            this.cmb_IdEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_IdEstado.FormattingEnabled = true;
             this.cmb_IdEstado.Location = new System.Drawing.Point(327, 293);
             this.cmb_IdEstado.Name = "cmb_IdEstado";
@@ -140,11 +141,11 @@
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(134, 280);
+            this.label9.Location = new System.Drawing.Point(142, 289);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(87, 23);
+            this.label9.Size = new System.Drawing.Size(94, 23);
             this.label9.TabIndex = 53;
-            this.label9.Text = "Id Estado";
+            this.label9.Text = "Id Estado:";
             // 
             // label11
             // 
@@ -156,7 +157,7 @@
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(184, 23);
             this.label11.TabIndex = 52;
-            this.label11.Text = "Descripcion Categoria;";
+            this.label11.Text = "Descripcion Categoría:";
             // 
             // lbiIdCategoria
             // 
@@ -166,9 +167,9 @@
             this.lbiIdCategoria.ForeColor = System.Drawing.Color.White;
             this.lbiIdCategoria.Location = new System.Drawing.Point(136, 163);
             this.lbiIdCategoria.Name = "lbiIdCategoria";
-            this.lbiIdCategoria.Size = new System.Drawing.Size(118, 23);
+            this.lbiIdCategoria.Size = new System.Drawing.Size(119, 23);
             this.lbiIdCategoria.TabIndex = 51;
-            this.lbiIdCategoria.Text = "ID Categor]ia";
+            this.lbiIdCategoria.Text = "ID Categoría:";
             // 
             // frm_Modificar_T_CategoriasVuelos
             // 

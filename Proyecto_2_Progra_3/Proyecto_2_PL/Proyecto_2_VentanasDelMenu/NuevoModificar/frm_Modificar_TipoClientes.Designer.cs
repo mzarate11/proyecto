@@ -75,10 +75,11 @@
             // 
             // cmb_IDEstado
             // 
+            this.cmb_IDEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_IDEstado.FormattingEnabled = true;
             this.cmb_IDEstado.Location = new System.Drawing.Point(415, 216);
             this.cmb_IDEstado.Name = "cmb_IDEstado";
-            this.cmb_IDEstado.Size = new System.Drawing.Size(121, 21);
+            this.cmb_IDEstado.Size = new System.Drawing.Size(198, 21);
             this.cmb_IDEstado.TabIndex = 4;
             this.cmb_IDEstado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmb_IDEstado_KeyPress);
             // 

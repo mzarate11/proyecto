@@ -64,7 +64,7 @@
             this.toolStripLabel2});
             this.toolStrip1.Location = new System.Drawing.Point(9, 9);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(251, 39);
+            this.toolStrip1.Size = new System.Drawing.Size(220, 39);
             this.toolStrip1.TabIndex = 36;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -111,6 +111,7 @@
             // 
             // cmb_IdEstado
             // 
+            this.cmb_IdEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_IdEstado.FormattingEnabled = true;
             this.cmb_IdEstado.Location = new System.Drawing.Point(152, 238);
             this.cmb_IdEstado.Name = "cmb_IdEstado";
@@ -151,6 +152,7 @@
             // 
             // cmb_IdDestino
             // 
+            this.cmb_IdDestino.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_IdDestino.FormattingEnabled = true;
             this.cmb_IdDestino.Location = new System.Drawing.Point(152, 115);
             this.cmb_IdDestino.Name = "cmb_IdDestino";
@@ -170,6 +172,7 @@
             // 
             // cmb_IdAerolinea
             // 
+            this.cmb_IdAerolinea.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_IdAerolinea.FormattingEnabled = true;
             this.cmb_IdAerolinea.Location = new System.Drawing.Point(152, 154);
             this.cmb_IdAerolinea.Name = "cmb_IdAerolinea";
@@ -189,6 +192,7 @@
             // 
             // cmb_IdAvion
             // 
+            this.cmb_IdAvion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_IdAvion.FormattingEnabled = true;
             this.cmb_IdAvion.Location = new System.Drawing.Point(152, 190);
             this.cmb_IdAvion.Name = "cmb_IdAvion";

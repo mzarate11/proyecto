@@ -68,33 +68,47 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
 
         private void tls_btn_Eliminar_Click(object sender, EventArgs e)
         {
-
-            cls_Empleados_BLL objBLL = new cls_Empleados_BLL();
             string sMsjError = string.Empty;
+            cls_Usuarios_BLL obj_User_BLL = new cls_Usuarios_BLL();
+            DataTable DT = new DataTable();
+            DT = obj_User_BLL.ListarUsuarios(ref sMsjError);
+            cls_Empleados_BLL objBLL = new cls_Empleados_BLL();
 
             if (dgv_Empleados.Rows.Count > 0)
             {
-                if (MessageBox.Show("Realmente desea eliminar?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    objBLL.Eliminar_Empleados(ref sMsjError, dgv_Empleados.SelectedRows[0].Cells[0].Value.ToString());
-
-                    if (sMsjError != string.Empty)
+                
+                    if (DT.Rows[0][2].ToString() == dgv_Empleados.SelectedRows[0].Cells[0].Value.ToString())
                     {
-                        MessageBox.Show("Se presento un error a la hora de eliminar : [ " + sMsjError + " ]", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Este usuario es el administrador, no se puede eliminar.\nContacte con soporte para eliminarlo ");
                     }
                     else
                     {
-                        MessageBox.Show("Registro eliminado correctamente", "Listo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        Cargar();
+                        if (MessageBox.Show("Realmente desea eliminar?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        {
+                            objBLL.Eliminar_Empleados(ref sMsjError, dgv_Empleados.SelectedRows[0].Cells[0].Value.ToString());
+                            if (sMsjError != string.Empty)
+                            {
+                                MessageBox.Show("Se presento un error a la hora de eliminar : [ " + sMsjError + " ]", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            else
+                            {
+                                MessageBox.Show("Registro eliminado correctamente", "Listo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                Cargar();
+                            }
+                            tls_txt_Filtro.Text = string.Empty;
+                        }
+
                     }
-                    tls_txt_Filtro.Text = string.Empty;
+
                 }
-            }
+            
             else
             {
                 MessageBox.Show("No hay registros para eliminar");
             }
+
         }
+        
 
         private void tls_btn_Salir_Click(object sender, EventArgs e)
         {
@@ -139,7 +153,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
                 Obj_Empleados_DAL = new cls_Empleados_DAL();
 
                 Obj_Empleados_DAL.cBandera = 'U';
-                Obj_Empleados_DAL.uIdEmpleado = Convert.ToUInt16(dgv_Empleados.SelectedRows[0].Cells[0].Value.ToString().Trim());
+                Obj_Empleados_DAL.sIdEmpleado = (dgv_Empleados.SelectedRows[0].Cells[0].Value.ToString().Trim());
                 Obj_Empleados_DAL.iCedula = Convert.ToInt32(dgv_Empleados.SelectedRows[0].Cells[1].Value.ToString().Trim());
                 Obj_Empleados_DAL.sNombre = dgv_Empleados.SelectedRows[0].Cells[2].Value.ToString();
                 Obj_Empleados_DAL.sApellidos = dgv_Empleados.SelectedRows[0].Cells[3].Value.ToString();
@@ -189,7 +203,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
                 Obj_Empleados_DAL = new cls_Empleados_DAL();
 
                 Obj_Empleados_DAL.cBandera = 'U';
-                Obj_Empleados_DAL.uIdEmpleado = Convert.ToUInt16(dgv_Empleados.SelectedRows[0].Cells[0].Value.ToString().Trim());
+                Obj_Empleados_DAL.sIdEmpleado = (dgv_Empleados.SelectedRows[0].Cells[0].Value.ToString().Trim());
                 Obj_Empleados_DAL.iCedula = Convert.ToInt32(dgv_Empleados.SelectedRows[0].Cells[1].Value.ToString().Trim());
                 Obj_Empleados_DAL.sNombre = dgv_Empleados.SelectedRows[0].Cells[2].Value.ToString();
                 Obj_Empleados_DAL.sApellidos = dgv_Empleados.SelectedRows[0].Cells[3].Value.ToString();

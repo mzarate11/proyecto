@@ -76,7 +76,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
             cls_Usuarios_BLL objBLL = new cls_Usuarios_BLL();
             string sMsjError = string.Empty;
 
-            if (dgv_Usuarios.Rows.Count > 0)
+            if (dgv_Usuarios.Rows.Count > 1)
             {
                 if (MessageBox.Show("Realmente desea eliminar?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
@@ -96,7 +96,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
             }
             else
             {
-                MessageBox.Show("No hay registros para eliminar");
+                MessageBox.Show("No hay registros para eliminar o solo existe un usuario en la base de datos.");
             }
         }
 

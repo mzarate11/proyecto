@@ -9,7 +9,7 @@ namespace Proyecto_2_DAL.Catalogos_y_Mantenimientos
     public class cls_Empleados_DAL
     {
         
-        private string _sNombre, _sApellidos, _sDireccion;
+        private string _sNombre, _sApellidos, _sDireccion, _sIdEmpleado; 
         private int _iIdTipoEmpleado, _iIdAerolinea, _iCedula, _iTelCasa, _iTelRef, _iCelular;
         private double _dSalario;
         private ushort _uIdEmpleado;
@@ -18,6 +18,18 @@ namespace Proyecto_2_DAL.Catalogos_y_Mantenimientos
 
         #region Constructores 
 
+        public string sIdEmpleado
+        {
+            get
+            {
+                return _sIdEmpleado;
+            }
+
+            set
+            {
+                _sIdEmpleado = value;
+            }
+        }
         public string sNombre
         {
             get

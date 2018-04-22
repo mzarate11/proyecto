@@ -99,13 +99,13 @@
             // 
             this.toolStripLabel1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(55, 31);
+            this.toolStripLabel1.Size = new System.Drawing.Size(55, 35);
             this.toolStripLabel1.Text = "Refrescar";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 34);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 38);
             // 
             // tls_btn_Nuevo
             // 
@@ -123,13 +123,13 @@
             this.toolStripLabel2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripLabel2.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(42, 33);
+            this.toolStripLabel2.Size = new System.Drawing.Size(42, 37);
             this.toolStripLabel2.Text = "Nuevo";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 34);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 38);
             // 
             // tls_btn_Modificar
             // 
@@ -146,13 +146,13 @@
             // 
             this.toolStripLabel3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripLabel3.Name = "toolStripLabel3";
-            this.toolStripLabel3.Size = new System.Drawing.Size(58, 31);
+            this.toolStripLabel3.Size = new System.Drawing.Size(58, 35);
             this.toolStripLabel3.Text = "Modificar";
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 34);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 38);
             // 
             // tls_btn_Eliminar
             // 
@@ -169,25 +169,25 @@
             // 
             this.toolStripLabel4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripLabel4.Name = "toolStripLabel4";
-            this.toolStripLabel4.Size = new System.Drawing.Size(50, 31);
+            this.toolStripLabel4.Size = new System.Drawing.Size(50, 35);
             this.toolStripLabel4.Text = "Eliminar";
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 34);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 38);
             // 
             // toolStripLabel5
             // 
             this.toolStripLabel5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripLabel5.Name = "toolStripLabel5";
-            this.toolStripLabel5.Size = new System.Drawing.Size(37, 31);
+            this.toolStripLabel5.Size = new System.Drawing.Size(37, 35);
             this.toolStripLabel5.Text = "Filtro:";
             // 
             // tls_txt_Filtro
             // 
             this.tls_txt_Filtro.Name = "tls_txt_Filtro";
-            this.tls_txt_Filtro.Size = new System.Drawing.Size(90, 34);
+            this.tls_txt_Filtro.Size = new System.Drawing.Size(90, 38);
             this.tls_txt_Filtro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tls_txt_Filtro_KeyPress);
             this.tls_txt_Filtro.TextChanged += new System.EventHandler(this.tls_txt_Filtro_TextChanged);
             // 
@@ -207,7 +207,7 @@
             // 
             this.toolStripLabel6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripLabel6.Name = "toolStripLabel6";
-            this.toolStripLabel6.Size = new System.Drawing.Size(29, 31);
+            this.toolStripLabel6.Size = new System.Drawing.Size(29, 35);
             this.toolStripLabel6.Text = "Salir";
             // 
             // dgv_Empleados
@@ -221,6 +221,7 @@
             this.dgv_Empleados.Location = new System.Drawing.Point(-1, 39);
             this.dgv_Empleados.MultiSelect = false;
             this.dgv_Empleados.Name = "dgv_Empleados";
+            this.dgv_Empleados.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dgv_Empleados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_Empleados.Size = new System.Drawing.Size(964, 371);
             this.dgv_Empleados.TabIndex = 6;

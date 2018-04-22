@@ -67,11 +67,12 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             // 
             // cmb_IDEstado
             // 
+            this.cmb_IDEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_IDEstado.FormattingEnabled = true;
-            this.cmb_IDEstado.Location = new System.Drawing.Point(361, 116);
+            this.cmb_IDEstado.Location = new System.Drawing.Point(337, 116);
             this.cmb_IDEstado.MaxLength = 10;
             this.cmb_IDEstado.Name = "cmb_IDEstado";
-            this.cmb_IDEstado.Size = new System.Drawing.Size(121, 21);
+            this.cmb_IDEstado.Size = new System.Drawing.Size(200, 21);
             this.cmb_IDEstado.TabIndex = 2;
             this.cmb_IDEstado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmb_IDEstado_KeyPress);
             // 
@@ -99,7 +100,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(276, 119);
+            this.label3.Location = new System.Drawing.Point(277, 119);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(54, 13);
             this.label3.TabIndex = 6;
@@ -117,7 +118,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             this.toolStripLabel4});
             this.toolStrip2.Location = new System.Drawing.Point(9, 0);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(251, 39);
+            this.toolStrip2.Size = new System.Drawing.Size(220, 39);
             this.toolStrip2.TabIndex = 23;
             this.toolStrip2.Text = "toolStrip2";
             // 

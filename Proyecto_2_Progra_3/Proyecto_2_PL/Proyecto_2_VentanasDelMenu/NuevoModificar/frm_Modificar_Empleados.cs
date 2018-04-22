@@ -94,7 +94,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
                     txt_Nombre.Text = Obj_Empleados_DAL.sNombre;
                     txt_Apellidos.Text = Obj_Empleados_DAL.sApellidos;
                     txt_Edad.Text = Obj_Empleados_DAL.bEdad.ToString().Trim();
-                    txt_IdEmpleado.Text = Obj_Empleados_DAL.uIdEmpleado.ToString().Trim();
+                    txt_IdEmpleado.Text = Obj_Empleados_DAL.sIdEmpleado.ToString().Trim();
                     txt_Salario.Text = Obj_Empleados_DAL.dSalario.ToString().Trim();
                     txt_Cedula.Text = Obj_Empleados_DAL.iCedula.ToString().Trim();
                     txt_Celular.Text = Obj_Empleados_DAL.iCelular.ToString().Trim();
@@ -340,7 +340,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
         {
             cls_Empleados_BLL Obj_Empleados_BLL = new cls_Empleados_BLL();
             string M_Error = string.Empty;
-
+            
             Obj_Empleados_DAL.sNombre = txt_Nombre.Text;
             Obj_Empleados_DAL.sApellidos = txt_Apellidos.Text;
             Obj_Empleados_DAL.bEdad = Convert.ToByte(txt_Edad.Text);
@@ -349,7 +349,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
             Obj_Empleados_DAL.iCelular = Convert.ToInt32(txt_Celular.Text);
             Obj_Empleados_DAL.iTelCasa = Convert.ToInt32(txt_TelCasa.Text);
             Obj_Empleados_DAL.iTelRef = Convert.ToInt32(txt_TelRef.Text);
-            Obj_Empleados_DAL.uIdEmpleado = Convert.ToUInt16(txt_IdEmpleado.Text);
+            Obj_Empleados_DAL.sIdEmpleado = cb_TipoEmpleado.Text.ToUpper().Substring(0,3)+"-"+ Convert.ToUInt16(txt_IdEmpleado.Text);
             Obj_Empleados_DAL.dSalario = Convert.ToDouble(txt_Salario.Text);
             Obj_Empleados_DAL.cIdEstado = Convert.ToChar(cb_Estado.SelectedValue.ToString().Trim());
             Obj_Empleados_DAL.iIdTipoEmpleado = Convert.ToInt32(cb_TipoEmpleado.SelectedValue.ToString().Trim());
@@ -389,9 +389,8 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu.NuevoModificar
 
         private void tlsbtn_Salir_Click(object sender, EventArgs e)
         {
-            frm_Empleados Empleados = new frm_Empleados();
+            
             Hide();
-            Empleados.ShowDialog();
         }
 
         private void cb_IdAerolinea_KeyPress(object sender, KeyPressEventArgs e)

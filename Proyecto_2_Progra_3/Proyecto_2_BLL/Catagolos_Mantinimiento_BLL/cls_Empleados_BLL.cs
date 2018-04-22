@@ -84,7 +84,7 @@ namespace Proyecto_2_BLL.Catagolos_Mantinimiento_BLL
 
             Obj_BLL.TablaParametros(ref Obj_DAL);
 
-            Obj_DAL.DT_Parametros.Rows.Add("@IdEmpleado", 3, Obj_Empleados_DAL.uIdEmpleado.ToString().Trim());
+            Obj_DAL.DT_Parametros.Rows.Add("@IdEmpleado", 3, Obj_Empleados_DAL.sIdEmpleado);
             Obj_DAL.DT_Parametros.Rows.Add("@Cedula", 3, Obj_Empleados_DAL.iCedula.ToString().Trim());
             Obj_DAL.DT_Parametros.Rows.Add("@Nombre", 3, Obj_Empleados_DAL.sNombre.ToString().Trim());
             Obj_DAL.DT_Parametros.Rows.Add("@Apellidos", 3, Obj_Empleados_DAL.sApellidos.ToString().Trim());
@@ -120,7 +120,7 @@ namespace Proyecto_2_BLL.Catagolos_Mantinimiento_BLL
 
             Obj_BLL.TablaParametros(ref Obj_DAL);
 
-            Obj_DAL.DT_Parametros.Rows.Add("@IdEmpleado", 3, Obj_Empleados_DAL.uIdEmpleado.ToString().Trim());
+            Obj_DAL.DT_Parametros.Rows.Add("@IdEmpleado", 3, Obj_Empleados_DAL.sIdEmpleado);
             Obj_DAL.DT_Parametros.Rows.Add("@Cedula", 3, Obj_Empleados_DAL.iCedula.ToString().Trim());
             Obj_DAL.DT_Parametros.Rows.Add("@Nombre", 3, Obj_Empleados_DAL.sNombre.ToString().Trim());
             Obj_DAL.DT_Parametros.Rows.Add("@Apellidos", 3, Obj_Empleados_DAL.sApellidos.ToString().Trim());
