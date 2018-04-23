@@ -16,6 +16,7 @@ namespace Proyecto_2_PL.Proyecto_2_Login
 {
     public partial class frm_Login_PL : Form
     {
+        int conta = 0;
         public frm_Login_PL()
         {
             InitializeComponent();
@@ -37,6 +38,8 @@ namespace Proyecto_2_PL.Proyecto_2_Login
             else
             {
                 CargarDatos();
+
+                
             }
 
 
@@ -69,21 +72,33 @@ namespace Proyecto_2_PL.Proyecto_2_Login
                     
                         if (DT.Rows[i][1].ToString() == txt_Contraseña.Text.ToString())
                         {
-                   
-                            frm_Ventana_Principal Pantalla = new frm_Ventana_Principal();
-                            Pantalla.Show();
-                            Hide();
+                           if (DT.Rows[i][3].ToString()=="A" || DT.Rows[i][3].ToString()=="a")
+                            {
 
-                            cUser = 'P';
+                                frm_Ventana_Principal Pantalla = new frm_Ventana_Principal();
+                                Pantalla.User(txt_Usuario.Text);
+                                Pantalla.Show();
+                                Hide();
+                                cUser = 'P';
+                            }
+                           else
+                              {
+                                  MessageBox.Show("Este usuario tine restricciones ala hora de ingresar  .\n\n Contacte al Administarador   ",
+                                 "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                 cUser = 'P';
+                                  txt_Contraseña.Text = "";
+                                  txt_Contraseña.Focus();
+                              }
                         }
                         else
                         {
                             MessageBox.Show("La contraseña que digito es incorrecta  ",
-                                 "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                           "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             cUser = 'P';
                             txt_Contraseña.Text = "";
                             txt_Contraseña.Focus();
                         }
+
                     }
 
                     ++i;
@@ -94,11 +109,11 @@ namespace Proyecto_2_PL.Proyecto_2_Login
             }
             else
             {
-
-
-                MessageBox.Show("Se presento un error  favor de comunicarse con soporte   .\n\nDetalle Error : [" + sMsjError + "]",
+                    MessageBox.Show("Se presento un error  favor de comunicarse con soporte   .\n\nDetalle Error : [" + sMsjError + "]",
                     "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.Close();
+                    cUser = 'P';
+                    Application.Exit();
+                    
             }
 
             if (cUser == 'E')
@@ -109,10 +124,7 @@ namespace Proyecto_2_PL.Proyecto_2_Login
                 txt_Usuario.Focus();
             }
 
-
-
-
-        }
+  }
 
         private void txt_Contraseña_KeyPress(object sender, KeyPressEventArgs e)
         {

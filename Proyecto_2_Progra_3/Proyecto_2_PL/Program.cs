@@ -16,7 +16,7 @@ namespace Proyecto_2_PL
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Proyecto_2_PL.Proyecto_2_Login.frm_Inicio_PL());
+            Application.Run(new Proyecto_2_PL.Proyecto_2_Login.frm_Login_PL());
         }
     }
 }

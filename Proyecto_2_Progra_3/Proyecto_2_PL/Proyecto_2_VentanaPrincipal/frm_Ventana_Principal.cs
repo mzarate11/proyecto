@@ -8,11 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Proyecto_2_PL.Proyecto_2_VentanasDelMenu;
+using Proyecto_2_DAL.Catalogos_y_Mantenimientos;
 
 namespace Proyecto_2_PL.Proyecto_2_VentanaPrincipal
 {
     public partial class frm_Ventana_Principal : Form
     {
+        public  cls_Login_User_DAL obj_loginUser_DAL;
+        string data;
+
+
         public frm_Ventana_Principal()
         {
             InitializeComponent();
@@ -109,6 +114,7 @@ namespace Proyecto_2_PL.Proyecto_2_VentanaPrincipal
         private void lnklbl_Usuarios_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             frm_Usuarios Pantalla = new frm_Usuarios();
+            Pantalla.user(lb_loginUser.Text);
             Hide();
             Pantalla.ShowDialog();
             Show();
@@ -125,6 +131,18 @@ namespace Proyecto_2_PL.Proyecto_2_VentanaPrincipal
         private void linkLabel14_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void frm_Ventana_Principal_Load(object sender, EventArgs e)
+        {
+            lb_loginUser.Text = data;
+            
+
+        }
+        public void User(string sUser)
+         {
+
+            data = sUser;
         }
     }
 }

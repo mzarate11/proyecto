@@ -47,6 +47,7 @@
     <Compile Include="Catalogos y Mantenimientos\cls_Destinos_DAL.cs" />
     <Compile Include="Catalogos y Mantenimientos\cls_Empleados_DAL.cs" />
     <Compile Include="Catalogos y Mantenimientos\cls_Estados_DAL.cs" />
+    <Compile Include="Catalogos y Mantenimientos\cls_Login_User_DAL.cs" />
     <Compile Include="Catalogos y Mantenimientos\cls_Paises_DAL.cs" />
     <Compile Include="Catalogos y Mantenimientos\cls_TipoAviones_DAL.cs" />
     <Compile Include="Catalogos y Mantenimientos\cls_TipoEmpleados_DAL.cs" />

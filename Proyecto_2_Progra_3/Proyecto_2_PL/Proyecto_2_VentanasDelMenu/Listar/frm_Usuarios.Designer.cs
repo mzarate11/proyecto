@@ -46,6 +46,8 @@
             this.btn_Salir = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel6 = new System.Windows.Forms.ToolStripLabel();
             this.dgv_Usuarios = new System.Windows.Forms.DataGridView();
+            this.toolStripLabel7 = new System.Windows.Forms.ToolStripLabel();
+            this.LbUser = new System.Windows.Forms.ToolStripLabel();
             this.MenuVentana.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Usuarios)).BeginInit();
             this.SuspendLayout();
@@ -77,7 +79,9 @@
             this.toolStripLabel5,
             this.txtFiltro,
             this.btn_Salir,
-            this.toolStripLabel6});
+            this.toolStripLabel6,
+            this.toolStripLabel7,
+            this.LbUser});
             this.MenuVentana.Location = new System.Drawing.Point(1, 1);
             this.MenuVentana.Name = "MenuVentana";
             this.MenuVentana.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
@@ -220,6 +224,17 @@
             this.dgv_Usuarios.TabIndex = 6;
             this.dgv_Usuarios.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_Usuarios_RowHeaderMouseDoubleClick);
             // 
+            // toolStripLabel7
+            // 
+            this.toolStripLabel7.Name = "toolStripLabel7";
+            this.toolStripLabel7.Size = new System.Drawing.Size(56, 35);
+            this.toolStripLabel7.Text = "Usuario : ";
+            // 
+            // LbUser
+            // 
+            this.LbUser.Name = "LbUser";
+            this.LbUser.Size = new System.Drawing.Size(0, 35);
+            // 
             // frm_Usuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -260,5 +275,7 @@
         private System.Windows.Forms.ToolStripButton btn_Salir;
         private System.Windows.Forms.ToolStripLabel toolStripLabel6;
         private System.Windows.Forms.DataGridView dgv_Usuarios;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel7;
+        private System.Windows.Forms.ToolStripLabel LbUser;
     }
 }

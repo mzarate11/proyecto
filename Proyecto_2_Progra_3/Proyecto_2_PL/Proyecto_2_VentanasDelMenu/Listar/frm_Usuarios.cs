@@ -73,31 +73,34 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
 
         private void btn_Eliminar_Click(object sender, EventArgs e)
         {
-            cls_Usuarios_BLL objBLL = new cls_Usuarios_BLL();
-            string sMsjError = string.Empty;
 
-            if (dgv_Usuarios.Rows.Count > 1)
-            {
-                if (MessageBox.Show("Realmente desea eliminar?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    objBLL.Eliminar_Usuarios(ref sMsjError, dgv_Usuarios.SelectedRows[0].Cells[0].Value.ToString());
+            MessageBox.Show("No se puede eliminar usuarios solo modificar ", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    if (sMsjError != string.Empty)
-                    {
-                        MessageBox.Show("Se presento un error a la hora de listar : [ " + sMsjError + " ]", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Registro eliminado correctamente", "Listo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        CargarDatos();
-                    }
-                    txtFiltro.Text = string.Empty;
-                }
-            }
-            else
-            {
-                MessageBox.Show("No hay registros para eliminar o solo existe un usuario en la base de datos.");
-            }
+            //cls_Usuarios_BLL objBLL = new cls_Usuarios_BLL();
+            //string sMsjError = string.Empty;
+
+            ///if (dgv_Usuarios.Rows.Count > 1)
+           // {
+             ///   if (MessageBox.Show("Realmente desea eliminar?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+              //  {
+                 //   objBLL.Eliminar_Usuarios(ref sMsjError, dgv_Usuarios.SelectedRows[0].Cells[0].Value.ToString());
+
+                 //   if (sMsjError != string.Empty)
+                   /// {
+                   //     MessageBox.Show("Se presento un error a la hora de listar : [ " + sMsjError + " ]", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                   // }
+                   // else
+                   /// {
+                     //   MessageBox.Show("Registro eliminado correctamente", "Listo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                     //   CargarDatos();
+                   // }
+                  //  txtFiltro.Text = string.Empty;
+               // }
+           // }
+           // else
+            //{
+             //   MessageBox.Show("No hay registros para eliminar o solo existe un usuario en la base de datos.");
+            //}
         }
 
         #region boton Refrescar
@@ -156,6 +159,11 @@ namespace Proyecto_2_PL.Proyecto_2_VentanasDelMenu
             CargarDatos();
         }
         #endregion
+
+        public void user(string user)
+        {
+            LbUser.Text = user;
+        }
 
     }
 }

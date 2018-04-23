@@ -11,6 +11,7 @@ namespace Proyecto_2_DAL.Catalogos_y_Mantenimientos
         private string _sUsername, _sPassword, _sIdEmpleado;
         private char _cIdEstado, _cBandAX;
         private char _cBandLogin;
+
         public string sUsername
         {
             get
